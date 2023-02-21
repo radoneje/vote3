@@ -25,7 +25,7 @@ try {
         btn.addEventListener("click",async ()=>{
             let responce=await fetch("/api/login/",{method: 'POST',body: JSON.stringify({email:elem.value})} )
             if(responce.ok){
-                let result = await response.json();
+                let result = await responce.json();
                 alert(result);
             }
         })
