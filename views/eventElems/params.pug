@@ -3,6 +3,8 @@ block head
 block body
     .mainTower
         include eventMenu
+        script.
+            document.querySelector(".eventMenuItem[menuid='1']").classList.add("active")
         .eventBody
             #app
 
