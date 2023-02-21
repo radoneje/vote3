@@ -9,3 +9,16 @@ document.querySelectorAll(".linkGroup").forEach(elem => {
         }, 2000)
     })
 })
+document.querySelectorAll(".linkQr").forEach(elem => {
+    elem.addEventListener("click", async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        let link=elem.parentNode.querySelector(".linkText").innerHTML;
+        document.createElement("a")
+        a.download="qr_code.png"
+        a.href="/qrcode/"+encodeURI(link)
+        a.click();
+
+    })
+})
+
