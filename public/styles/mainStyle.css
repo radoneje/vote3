@@ -173,7 +173,7 @@ body{
 }
 .switcherBox{
     position: relative;
-    width: 3 rem;
+    width: 3rem;
     box-sizing: border-box;
     height: 1.2rem;
     background-color: var(--grayColor);
@@ -184,7 +184,7 @@ body{
 .switcherElem{
     position: absolute;
     top:0;
-    left: calc(var(--pad) / 2);
+    left: calc(var(--rad) / 4);
     bottom: 0;
     width: calc(1.2rem - 2px);
     background-color: var(--backColor);
