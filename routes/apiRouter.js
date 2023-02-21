@@ -20,11 +20,11 @@ router.post("/checkCode", async (req, res) => {
     try {
         let users = await req.knex("t_users").where({email: req.body.email, confirmCode: req.body.code})
         if (users.length == 0)
-            return res.status(404)
+            return res.sendStatus(404)
         req.session.user = users[0];
         res.json({guid: users[0].guid})
     } catch (e) {
-        res.status(404)
+        res.sendStatus(404)
     }
 })
 
