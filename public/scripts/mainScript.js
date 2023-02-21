@@ -36,7 +36,9 @@ const activateCodeForm=(email)=>{
             document.location.href="/userEvent/"+result.guid;
         }
         else {
-
+            elem.parentNode.classList.add("error")
+            elem.focus();
+            elem.value=""
         }
     });
 }
