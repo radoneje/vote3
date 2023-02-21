@@ -112,7 +112,8 @@ body{
 .eventMenuItem:hover{
     background-color: var(--hoverColor);
     color: var(--backColor);
-    border-radius: 0,var(--rad),var(--rad),0;
+    border-top-left-radius:var(--rad);
+    border-top-right-radius:var(--rad);
 }
 .eventMenuItem.active{
     border-bottom: 2px solid var(--buttonColor);
