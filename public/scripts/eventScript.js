@@ -29,4 +29,11 @@ if(qEnable){
     })
 
 }
+let qPreModEnable=document.getElementById("qEnable")
+if(qEnable){
+    qEnable.addEventListener("click",()=>{
+        qEnable.classList.toggle("active")
+    })
+
+}
 
