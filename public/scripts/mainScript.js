@@ -22,17 +22,20 @@ try {
     }
     let btn=document.querySelector("#regBoxButton")
     if(btn){
-        btn.addEventListener("click",async ()=>{
-            let responce=await fetch("/api/login/",{
+        btn.addEventListener("click",async ()=> {
+            let responce = await fetch("/api/login/", {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json;charset=utf-8'},
-                body: JSON.stringify({email:elem.value})
-            } )
-            if(responce.ok){
+                body: JSON.stringify({email: elem.value})
+            })
+            if (responce.ok) {
                 let result = await responce.json();
-                document.querySelector(".emailInput").style.display="none"
-                document.querySelector(".codeInput").style.display="block"
+                document.querySelectorAll(".emailInput").forEach(e => {
+                    e.style.display = "none"
+                })
+                document.querySelectorAll(".codeInput").forEach(e => {
+                    e.style.display = "block"
+                })
             }
-        })
-    }
+        }
 } catch (e) { console.warn(e) }
