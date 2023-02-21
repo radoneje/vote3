@@ -32,8 +32,8 @@ router.post("/login", async (req, res) => {
         let info = await transporter.sendMail({
             from: 'news@uralcyberfin.ru', // sender address
             to: r[0].email, // list of receivers
-            subject: subj, // Subject line
-            html: "Ваш код для входа <b>" + r[0].confirmCode + "</b>", // html body
+            subject: "Код для входа", // Subject line
+            html: "Ваш код для входа: <b>" + r[0].confirmCode + "</b>", // html body
         });
     }
     catch (e){console.warn(e)}
