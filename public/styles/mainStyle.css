@@ -98,10 +98,10 @@ body{
 .codeInput{
     display: none;
 }
-.eventMenu{
+.eventMenu {
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
 }
 .eventMenuItem{
      padding:  var(--pad);
