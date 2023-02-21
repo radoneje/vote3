@@ -21,8 +21,8 @@ try {
         })
     }
     let btn=document.querySelector("#regBoxButton")
-    if(btn){
-        btn.addEventListener("click",async ()=> {
+    if(btn) {
+        btn.addEventListener("click", async () => {
             let responce = await fetch("/api/login/", {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json;charset=utf-8'},
@@ -37,5 +37,6 @@ try {
                     e.style.display = "block"
                 })
             }
-        }
+        })
+    }
 } catch (e) { console.warn(e) }
