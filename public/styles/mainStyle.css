@@ -186,7 +186,7 @@ body{
     top:0;
     left: calc(var(--rad) / 4);
     bottom: 0;
-    width: calc(1.2rem - 2px);
+    width: calc(1.2rem - 4px);
     background-color: var(--backColor);
     border-radius: 50%;
     border:1px solid var(--borderColor);
