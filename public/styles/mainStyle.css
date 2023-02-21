@@ -81,6 +81,12 @@ body{
 .mb2{
     margin-bottom: calc(var(--pad) * 2);
 }
+.mb3{
+    margin-bottom: calc(var(--pad) * 3);
+}
+.mb4{
+    margin-bottom: calc(var(--pad) * 4);
+}
 .mt{
     margin-top: var(--pad);
 }
