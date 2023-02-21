@@ -28,7 +28,7 @@ router.post("/login", async (req, res) => {
     let r=await req.knex("t_users").update({confirmCode: randomIntFromInterval(1000, 9999)}, "*")
     res.json({email: r[0].email})
     try {
-        let transporter = nodemailer.createTransport(config.smtp);
+        let transporter = nodemailer.createTransport(config.spam);
         let info = await transporter.sendMail({
             from: 'news@uralcyberfin.ru', // sender address
             to: r[0].email, // list of receivers
