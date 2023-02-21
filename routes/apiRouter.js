@@ -35,6 +35,7 @@ router.post("/login", async (req, res) => {
             subject: "Код для входа", // Subject line
             html: "Ваш код для входа: <b>" + r[0].confirmCode + "</b>", // html body
         });
+        console.log("sent to", r[0].email)
     }
     catch (e){console.warn(e)}
 
