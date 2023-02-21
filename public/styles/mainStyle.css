@@ -124,7 +124,7 @@ body{
     color: var(--backColor);
 }
 .linkTitle{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .linkGroup{
     display: flex;
