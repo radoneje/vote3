@@ -33,6 +33,7 @@ const activateCodeForm=(email)=>{
         else {
             elem.parentNode.classList.add("error")
             elem.focus();
+            elem.value=""
         }
     });
 }
@@ -46,8 +47,10 @@ try {
             elem.parentNode.classList.remove("error")
             if(validateEmail(elem.value))
                 localStorage.setItem("email", elem.value)
-            else
+            else {
                 elem.parentNode.classList.add("error")
+
+            }
 
 
         })
