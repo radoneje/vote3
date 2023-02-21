@@ -266,7 +266,8 @@ body{
 .qItemBtnGroup{}
 .qItemBtn{
     width: 80px;
-    text-align: left;
+    text-align: center;
+    font-size: .8rem;
     padding: calc(var(--pad) / 2);
     background-color: var(--grayColor);
     border:1px solid var(--borderColor)
