@@ -167,6 +167,9 @@ body{
     padding: 0 var(--pad);
 
 }
+.linkGroup .btn{
+    padding: calc(var(--pad) / 2) var(--pad);
+}
 
 .eventBody{
     margin-top: calc(var(--pad) * 6);
