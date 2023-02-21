@@ -186,9 +186,9 @@ body{
     top:0;
     left: 0;
     bottom: 0;
-    width: 50%;
-    background-color: var(--disableColor);
-    border-radius: var(--rad);
+    width: calc(1rem - 2px);
+    background-color: var(--backColor);
+    border-radius: 50%;
 }
 .switcherCap{
 
