@@ -191,6 +191,15 @@ body{
     border-radius: 50%;
     border:1px solid var(--borderColor);
 }
-.switcherCap{
+.switcherBox.active{
+    background-color: var(--buttonColor);
+}
+.switcherBox.active .switcherElem{
+
+    left:inherit;
+    right: calc(var(--rad) / 4);;
+    bottom: 0;
+
 
 }
+
