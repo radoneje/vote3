@@ -1,0 +1,20 @@
+{
+  "pgConnection": {
+    "host": "127.0.0.1",
+    "user": "postgres",
+    "password": "gbplf13",
+    "database": "uralcyberfin"
+  },
+  "sha256Secret": "Bldfnjrn%^hg",
+  "port": 3002,
+  "uloadPath":"uploads/",
+  "smtp": {
+    "host": "smtp.mail.ru",
+    "port": 465,
+    "secure": true,
+    "auth": {
+      "user": "info@uralcyberfin",
+      "pass":"--"
+    }
+  }
+}

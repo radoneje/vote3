@@ -1,0 +1,12 @@
+extends layout
+block head
+block body
+  .mainTower
+    h1 test
+    .regBox
+      .regBoxTile.mb Для начала работы введите ваш email:
+      .inputGroup
+        .errorMessaage Ошибка email
+        input.regBoxEmail(type="email" value=email)
+        input.regBoxButton(type="button" value="Вход")
+  script(src="/scripts/mainScript.js")
