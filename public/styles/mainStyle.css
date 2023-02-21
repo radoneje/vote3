@@ -290,7 +290,7 @@ body{
     border-right:1px solid var(--borderColor);
 }
 .red{
-    background-color: var(--rad) !important;
+    background-color: var(--errorColor) !important;
     color: #FFFFFF !important;
 }
 
