@@ -134,6 +134,7 @@ body{
     color: var(--backColor);
     border-radius: var(--rad);
     cursor: pointer;
+    width: max-content;
 }
 .linkText{
     font-size: 1.5rem;
