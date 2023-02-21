@@ -238,6 +238,8 @@ body{
     box-sizing: border-box;
     padding: var(--pad);
     background-color: var(--grayColor);
+    height: calc(100vh - 11rem);
+    overflow-y: auto;
 
 }
 
