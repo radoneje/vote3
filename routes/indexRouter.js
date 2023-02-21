@@ -6,13 +6,16 @@ router.get("/userEvent", async (req, res)=>{
 
   if(!req.session.user)
     res.sendStatus(401)
-  res.redirect("/userEvent/params")
+  res.redirect("/userEvent/links")
 })
-router.get("/userEvent/params", async (req, res)=>{
-
+router.get("/userEvent/links", async (req, res)=>{
   if(!req.session.user)
     res.sendStatus(404)
-  res.render("eventElems/params.pug")
+  let events=await req.knex("t_events").where({userid:req.session.user.id})
+  if(events.length==0)
+    events=await req.knex("t_events").insert({userid:req.session.user.id},"0")
+
+  res.render("eventElems/links.pug", {event:events[0]})
 })
 router.get("/", async (req, res)=>{
 

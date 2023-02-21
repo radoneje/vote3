@@ -107,8 +107,8 @@ body{
      padding:  var(--pad);
      cursor: pointer;
      border-bottom: 2px solid var(--textColor);
-    border-top-left-radius:var(--rad);
-    border-top-right-radius:var(--rad);
+     border-top-left-radius:var(--rad);
+     border-top-right-radius:var(--rad);
  }
 .eventMenuItem:hover{
     background-color: var(--hoverColor);
