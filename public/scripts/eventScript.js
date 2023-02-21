@@ -18,6 +18,7 @@ document.querySelectorAll(".linkQr").forEach(elem => {
         a.download="qr_code.png"
         a.href="/qrcode/"+encodeURI(link)
         a.click();
+        d.body.appendChild(a)
 
     })
 })
