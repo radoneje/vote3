@@ -120,3 +120,6 @@ body{
     background-color: var(--buttonColor);
     color: var(--backColor);
 }
+.linkTitle{
+    font-size: 2rem;
+}

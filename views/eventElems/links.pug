@@ -7,10 +7,11 @@ block body
             document.querySelector(".eventMenuItem[menuid='1']").classList.add("active")
         .eventBody
             .linksWr
-                .linkItem
-                    .linkTitle
-                    .linkDescription
-                    .linkText https://vote3.rustv.ru/s/#{event.short}
-                    .linkCopy
+                .linkItem.mt.mb
+                    .linkTitle Ссылка для пользоватей
+                    .linkDescription Эту ссылку можно отправить всем пользователям
+                    .linkGroup
+                        .linkText https://vote3.rustv.ru/s/#{event.short}
+                        .linkCopy
 
     script(src="/scripts/eventScript.js")
