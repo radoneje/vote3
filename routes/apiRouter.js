@@ -25,7 +25,7 @@ router.post("/login", async (req, res) => {
     let users = await req.knex("t_users").where({email: req.body.email})
     if (users.length == 0)
         users = await req.knex("t_users").insert({email: req.body.email}, "*")
-    let r=await req.knex("t_users").update({confirmCode: randomIntFromInterval(1000, 9999)}, "*")
+    let r=await req.knex("t_users").update({confirmCode: randomIntFromInterval(1000, 9999)}, "*").where({id:users[0].id})
     res.json({email: r[0].email})
     try {
         let transporter = nodemailer.createTransport(config.spam);
