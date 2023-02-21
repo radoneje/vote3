@@ -191,6 +191,18 @@ body{
     border-radius: 50%;
     border:1px solid var(--borderColor);
 }
+.switcherTextOff{
+    display: block;
+}
+.switcherTextOn{
+    display: none;
+}
+.active .switcherTextOff{
+    display: none;
+}
+.active .switcherTextOn{
+    display: block;
+}
 .active .switcherBox{
     background-color: var(--buttonColor);
 }
