@@ -61,6 +61,17 @@ body{
 .inputGroup input[type='button']:hover{
     background-color: var(--hoverColor);
 }
+.btn{
+    background-color: var(--buttonColor);
+    color: var(--backColor);
+    border:1px solid var(--hoverColor);
+    border-right: none;
+    padding: var(--pad);
+}
+.btn:hover{
+    background-color: var(--hoverColor);
+
+}
 
 .mb{
     margin-bottom: var(--pad);
