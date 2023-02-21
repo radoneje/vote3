@@ -232,4 +232,12 @@ body{
     align-items: center;
     justify-content: left;
 }
+.qWr{
+    border-radius: var(--rad);
+    border:1px solid var(--borderColor);
+    box-sizing: border-box;
+    padding: var(--pad);
+    background-color: var(--disableColor);
+
+}
 
