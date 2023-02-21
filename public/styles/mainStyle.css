@@ -11,6 +11,7 @@
     --buttonColor:#64B8E8;
     --hoverColor:#49a6dc;
     --errorColor:#881B1B;
+    --grayColor:#F5F7F9;
 
 }
 input:focus, input:active, textarea:focus, textarea:active{
@@ -168,4 +169,13 @@ body{
 
 .eventBody{
     margin-top: calc(var(--pad) * 6);
+}
+.switcherBox{
+    position: relative;
+    width: 100px;
+    box-sizing: border-box;
+    height: calc(1rem + (var(--pad) * 2 ));
+    background-color: var(--grayColor);
+    border:1px solid var(--borderColor);
+    border-radius: var(--rad);
 }
