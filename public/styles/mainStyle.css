@@ -269,5 +269,9 @@ body{
     text-align: left;
     padding: calc(var(--pad) / 2);
     background-color: var(--grayColor);
+    border:1px solid var(--borderColor)
+}
+.qItemBtn:first-child{
+    border-radius: var(--rad) 0 0 var(--rad);
 }
 
