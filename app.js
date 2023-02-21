@@ -16,6 +16,7 @@ import session  from 'express-session'
 //import multer  from 'multer'
 
 import indexRouter from './routes/indexRouter.js';
+import indexRouter from './routes/apiRouter.js';
 
 
 import { createRequire } from 'module';
@@ -67,9 +68,6 @@ app.use(
         saveUninitialized: true,
         cookie: {
             maxAge: 10 * 24 * 60 * 60 * 1000,
-            // secure: true,
-            //httpOnly: true,
-            //sameSite: 'none',
         }, // 10 days
         store: new pgSession({conObject: config.pgConnection})
     })
@@ -79,3 +77,4 @@ app.use('/',(req, res,next)=>{
     next();
 });
 app.use('/', indexRouter);
+app.use('/', apiRouter);
