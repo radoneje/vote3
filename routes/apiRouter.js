@@ -10,6 +10,7 @@ router.get("/", async (req, res) => {
     res.json([])
 })
 router.post("/login", async (req, res) => {
+
     let users = await req.knex("t_users").where({email: req.body.email})
     if (users.length == 0)
         users = await req.knex("t_users").insert({email: req.body.email}, "*")
@@ -18,6 +19,9 @@ router.post("/login", async (req, res) => {
 })
 router.post("/checkCode", async (req, res) => {
     try {
+        if(!req.body.code.match(/^\d+$/))
+            res.sendStatus(404)
+
         let users = await req.knex("t_users").where({email: req.body.email, confirmCode: req.body.code})
         if (users.length == 0)
             return res.sendStatus(404)

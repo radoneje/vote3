@@ -21,6 +21,11 @@ const activateCodeForm=(email)=>{
             btn.click();
     }
     btn.addEventListener("click", async () => {
+        if(!elem.value.match(/^\d+$/)){
+            elem.parentNode.classList.add("error")
+            elem.focus();
+            elem.value=""
+        }
         let responce = await fetch("/api/checkCode/", {
             method: 'POST',
             headers: {'Content-Type': 'application/json;charset=utf-8'},
@@ -31,9 +36,7 @@ const activateCodeForm=(email)=>{
             document.location.href="/userEvent/"+result.guid;
         }
         else {
-            elem.parentNode.classList.add("error")
-            elem.focus();
-            elem.value=""
+
         }
     });
 }
