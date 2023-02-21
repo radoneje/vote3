@@ -154,7 +154,7 @@ body{
     width: max-content;
 }
 .linkText{
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     align-items: center;
     justify-content: left;
     padding: 0 var(--pad);
