@@ -170,6 +170,7 @@ body{
     border-radius: var(--rad) 0 0 var(--rad);
     border-right: none;
     color: var(--textColor);
+    background-color: var(--grayColor);
 
 }
 .linkGroup .btn{
