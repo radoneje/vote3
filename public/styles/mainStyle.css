@@ -219,6 +219,7 @@ body{
     justify-content: left;
     align-items: center;
     padding-right: var(--pad);
+    width: 50%;
 }
 .flex{
     display: flex;
