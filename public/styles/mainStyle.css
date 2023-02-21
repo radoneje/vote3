@@ -140,5 +140,6 @@ body{
     font-size: 1.5rem;
     align-items: center;
     justify-content: left;
+    padding: 0 var(--pad);
 
 }
