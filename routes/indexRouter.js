@@ -6,6 +6,7 @@ router.get("/userEvent", async (req, res)=>{
 
   if(!req.session.user)
     res.sendStatus(401)
+
   res.redirect("/userEvent/links")
 })
 router.get("/userEvent/links", async (req, res)=>{
@@ -19,6 +20,7 @@ router.get("/userEvent/links", async (req, res)=>{
 })
 router.get("/", async (req, res)=>{
 
+  console.log(req.session.user)
   res.render("index", {user:req.session.user})
 })
 
