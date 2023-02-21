@@ -14,7 +14,7 @@ document.querySelectorAll(".linkQr").forEach(elem => {
         e.preventDefault();
         e.stopPropagation();
         let link=elem.parentNode.querySelector(".linkText").innerHTML;
-        document.createElement("a")
+        let a=document.createElement("a")
         a.download="qr_code.png"
         a.href="/qrcode/"+encodeURI(link)
         a.click();
