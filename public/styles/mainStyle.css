@@ -240,6 +240,11 @@ body{
     background-color: var(--grayColor);
     height: calc(100vh - 11rem);
     overflow-y: auto;
+}
+.qItem{
+    padding: var(--pad);
+    background-color: var(--backColor);
+    border-radius: var(--rad);
 
 }
 
