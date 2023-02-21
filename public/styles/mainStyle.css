@@ -218,5 +218,6 @@ body{
     display: flex;
     justify-content: left;
     align-items: center;
+    padding-right: var(--pad);
 }
 
