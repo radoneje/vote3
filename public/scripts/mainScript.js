@@ -61,7 +61,7 @@ try {
                 })
                 let code=document.querySelector("#regBoxCode")
                 code.focus();
-                activateCodeFortm(elem.value);
+                activateCodeForm(elem.value);
             }
         })
     }
