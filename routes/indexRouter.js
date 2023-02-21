@@ -9,7 +9,13 @@ router.get("/userEvent", async (req, res)=>{
 
   if(!req.session.user)
     res.sendStatus(404)
-  res.render("event", {user:req.session.user})
+  res.redirect("/userEvent/params")
+})
+router.get("/userEvent", async (req, res)=>{
+
+  if(!req.session.user)
+    res.sendStatus(404)
+  res.render("eventElems/params.pug")
 })
 
 
