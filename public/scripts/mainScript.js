@@ -6,7 +6,7 @@ const validateEmail = (email) => {
       );
   };
 
-  
+
 try {
     let email = localStorage.getItem("email")
     let elem = document.querySelector(".regBoxEmail")
@@ -16,9 +16,18 @@ try {
             elem.parentNode.classList.remove("error")
             if(validateEmail(elem.value))
                 localStorage.setItem("email", elem.value)
-            else 
+            else
                 elem.parentNode.classList.add("error")
-
+        })
+    }
+    let btn=document.querySelector(".regBoxButton")
+    if(btn){
+        btn.addEventListener("click",async ()=>{
+            let responce=await fetch("/api/login/",{method: 'POST',body: JSON.stringify({email:elem.value})} )
+            if(responce.ok){
+                let result = await response.json();
+                alert(result);
+            }
         })
     }
 } catch (e) { console.warn(e) }
