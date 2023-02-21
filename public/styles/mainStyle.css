@@ -193,9 +193,11 @@ body{
 }
 .switcherTextOff{
     display: block;
+    padding-left: var(--pad);
 }
 .switcherTextOn{
     display: none;
+    padding-left: var(--pad);
 }
 .active .switcherTextOff{
     display: none;
@@ -211,7 +213,10 @@ body{
     left:inherit;
     right: calc(var(--rad) / 4);;
     bottom: 0;
-
-
+}
+.switcherWr{
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
