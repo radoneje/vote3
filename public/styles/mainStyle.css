@@ -116,5 +116,7 @@ body{
     border-top-right-radius:var(--rad);
 }
 .eventMenuItem.active{
-    border-bottom: 2px solid var(--buttonColor);
+    border-bottom: 2px solid var(--hoverColor);
+    background-color: var(--buttonColor);
+    color: var(--backColor);
 }
