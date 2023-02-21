@@ -2,7 +2,13 @@ import express from 'express';
 
 const router = express.Router();
 import nodemailer from  'nodemailer'
-import config from "../config.json"
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const config= require('./config.json');
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 const randomIntFromInterval = (min, max) => { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
