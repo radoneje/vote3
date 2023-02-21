@@ -108,9 +108,7 @@ body{
     display: none;
 }
 .eventMenu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
     position: fixed;
     left: 0;
     right: 0;
@@ -118,6 +116,11 @@ body{
     box-shadow: 0 0 4px 0 var(--textColor);
     z-index: 100;
     background: white;
+}
+.eventMenuWr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .eventMenuItem{
      padding:  var(--pad);
