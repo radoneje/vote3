@@ -4,14 +4,19 @@ block body
   .mainTower
     h1 test
     .regBox
-      .regBoxTile.mb.emailInput Для начала работы введите ваш email:
-      .inputGroup.emailInput
-        .errorMessaage Ошибка email
-        input.regBoxEmail#regBoxEmail(type="email" value=email)
-        input.regBoxButton#regBoxButton(type="button" value="Вход")
-      .regBoxTile.mb.codeInput Введите код, прислынный на ваш email:
-      .inputGroup.codeInput
-        .errorMessaage Код неверный, попробуйте еще раз
-        input.regBoxEmail#regBoxCode(type="text" value=email)
-        input.regBoxButton#regBoxConfirmButton(type="button" value="Проверить")
+      if user
+        .regBoxTile.mb.emailInput Для начала работы введите ваш email:
+        .inputGroup.emailInput
+          .errorMessaage Ошибка email
+          input.regBoxEmail#regBoxEmail(type="email" value=email)
+          input.regBoxButton#regBoxButton(type="button" value="Вход")
+        .regBoxTile.mb.codeInput Введите код, прислынный на ваш email:
+        .inputGroup.codeInput
+          .errorMessaage Код неверный, попробуйте еще раз
+          input.regBoxEmail#regBoxCode(type="text" value=email)
+          input.regBoxButton#regBoxConfirmButton(type="button" value="Проверить")
+      else
+        .regBoxTile.mb.emailInput Перейти к мероприятию
+        input.regBoxButton(onclick="document.location.href='/userEvent/"+user.giud+"'")
+
   script(src="/scripts/mainScript.js")
