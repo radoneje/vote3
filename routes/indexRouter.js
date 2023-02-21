@@ -25,6 +25,7 @@ router.get("/userEvent/links", async (req, res)=>{
 router.get("/qrcode/:uri", async (req, res)=>{
 
   let url=decodeURI(req.params.uri);
+
   res.setHeader('content-type','image/png');
   QRCode.toFileStream(res, url,
       {
