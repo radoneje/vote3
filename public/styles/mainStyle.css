@@ -274,12 +274,13 @@ body{
     cursor: pointer;
     border-right: none;
 }
-.qItemBtn:hover{
-    background-color: var(--hoverColor);
-    color:var(--backColor);
-}
+
 .qItemBtn.active{
     background-color: var(--buttonColor);
+    color:var(--backColor);
+}
+.qItemBtn:hover{
+    background-color: var(--hoverColor);
     color:var(--backColor);
 }
 .qItemBtn:first-child{
