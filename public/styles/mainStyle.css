@@ -128,11 +128,15 @@ body{
 }
 .linkGroup{
     display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: var(--buttonColor);
+    color: var(--backColor);
+    border-radius: var(--rad);
 }
 .linkText{
     font-size: 1.5rem;
     align-items: center;
     justify-content: left;
-    background-color: var(--buttonColor);
-    color: var(--backColor);
+
 }
