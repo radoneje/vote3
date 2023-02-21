@@ -272,6 +272,7 @@ body{
     background-color: var(--grayColor);
     border:1px solid var(--borderColor);
     cursor: pointer;
+    border-right: none;
 }
 .qItemBtn:hover{
     background-color: var(--hoverColor);
@@ -286,5 +287,10 @@ body{
 }
 .qItemBtn:last-child{
     border-radius: 0 var(--rad)  var(--rad) 0;
+    border-right:1px solid var(--borderColor);
+}
+.red{
+    background-color: var(--rad) !important;
+    color: #FFFFFF !important;
 }
 
