@@ -1,10 +1,13 @@
 extends ../layout
 block head
 block body
-    .mainTower
-        include eventMenu
-        script.
+
+
+    include eventMenu
+    script.
             document.querySelector(".eventMenuItem[menuid='1']").classList.add("active")
+    .mainTower
+
         .eventBody
             .linksWr.mb2
                 .linkItem.mt.mb3
