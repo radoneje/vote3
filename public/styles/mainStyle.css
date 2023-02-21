@@ -237,7 +237,7 @@ body{
     border:1px solid var(--borderColor);
     box-sizing: border-box;
     padding: var(--pad);
-    background-color: var(--disableColor);
+    background-color: var(--grayColor);
 
 }
 
