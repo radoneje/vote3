@@ -4,7 +4,7 @@ block body
   .mainTower
     h1 test
     .regBox !{JSON.stringify( user)}
-      if user
+      if user.guid
         .regBoxTile.mb.emailInput Для начала работы введите ваш email:
         .inputGroup.emailInput
           .errorMessaage Ошибка email
