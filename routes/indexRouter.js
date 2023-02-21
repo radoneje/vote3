@@ -1,5 +1,6 @@
 import express from 'express';
 const router = express.Router();
+import  QRCode from 'qrcode'
 
 
 router.get("/userEvent", async (req, res)=>{
@@ -18,6 +19,19 @@ router.get("/userEvent/links", async (req, res)=>{
     events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
 
   res.render("eventElems/links.pug", {event:events[0]})
+})
+
+
+router.get("/qrcode/:uri", async (req, res)=>{
+
+  let url=decodeURI(req.params.uri);
+  res.setHeader('content-type','image/png');
+  QRCode.toFileStream(res, url,
+      {
+        type: 'png',
+        width: 400,
+        errorCorrectionLevel: 'H'
+      });
 })
 router.get("/", async (req, res)=>{
 
