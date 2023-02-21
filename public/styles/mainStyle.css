@@ -16,6 +16,9 @@
 input:focus, input:active, textarea:focus, textarea:active{
     outline: none !important;
 }
+a{
+    text-decoration: none;
+}
 
 body{
    font-family: 'Rubik', sans-serif;
