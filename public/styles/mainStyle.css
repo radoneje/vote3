@@ -220,4 +220,15 @@ body{
     align-items: center;
     padding-right: var(--pad);
 }
+.flex{
+    display: flex;
+}
+.center{
+    align-items: center;
+    justify-content: center;
+}
+.left{
+    align-items: center;
+    justify-content: left;
+}
 
