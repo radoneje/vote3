@@ -245,6 +245,9 @@ body{
     padding: var(--pad);
     background-color: var(--backColor);
     border-radius: var(--rad);
-
+}
+.qItemHead{
+    font-weight: bold;
+    margin-bottom: calc(var(--pad) / 2);
 }
 
