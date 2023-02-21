@@ -9,9 +9,11 @@ const activateCodeForm=(email)=>{
     let elem = document.querySelector("#regBoxCode")
     elem.addEventListener("change", () => {
         elem.parentNode.classList.remove("error")
-        if(!elem.value.length)
+        if(!elem.value.length) {
             elem.parentNode.classList.add("error")
-        return;
+            elem.focus();
+            return;
+        }
     })
     let btn=document.querySelector("#regBoxConfirmButton")
     btn.addEventListener("click", async () => {
@@ -20,6 +22,14 @@ const activateCodeForm=(email)=>{
             headers: {'Content-Type': 'application/json;charset=utf-8'},
             body: JSON.stringify({email, code:elem.value})
         })
+        if (responce.ok) {
+            let result = await responce.json();
+            document.location.href="/userEvent/"+result.guid;
+        }
+        else {
+            elem.parentNode.classList.add("error")
+            elem.focus();
+        }
     });
 }
 
@@ -34,12 +44,7 @@ try {
                 localStorage.setItem("email", elem.value)
             else
                 elem.parentNode.classList.add("error")
-            if (responce.ok) {
-                let result = await responce.json();
-                document.location.href="/userEvent/"+result.guid;
-            }
-            else
-                elem.parentNode.classList.add("error")
+
 
         })
     }
