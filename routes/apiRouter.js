@@ -25,9 +25,18 @@ router.post("/login", async (req, res) => {
     let users = await req.knex("t_users").where({email: req.body.email})
     if (users.length == 0)
         users = await req.knex("t_users").insert({email: req.body.email}, "*")
-    let r=await req.knex("t_users").update({confirmCode: randomIntFromInterval(1000, 9999)})
+    let r=await req.knex("t_users").update({confirmCode: randomIntFromInterval(1000, 9999)}, "*")
     res.json({email: r[0].email})
-    let transporter = nodemailer.createTransport(config.smtp);
+    try {
+        let transporter = nodemailer.createTransport(config.smtp);
+        let info = await transporter.sendMail({
+            from: 'news@uralcyberfin.ru', // sender address
+            to: r[0].email, // list of receivers
+            subject: subj, // Subject line
+            html: "Ваш код для входа <b>" + r[0].confirmCode + "</b>", // html body
+        });
+    }
+    catch (e){console.warn(e)}
 
 })
 router.post("/checkCode", async (req, res) => {
