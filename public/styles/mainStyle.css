@@ -12,6 +12,7 @@
     --hoverColor:#49a6dc;
     --errorColor:#881B1B;
     --grayColor:#F5F7F9;
+    --disableColor:#708ab8
 
 }
 input:focus, input:active, textarea:focus, textarea:active{
@@ -179,4 +180,15 @@ body{
     border:1px solid var(--borderColor);
     border-radius: var(--rad);
     cursor: pointer;
+}
+.switcherElem{
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: var(--disableColor);
+}
+.switcherCap{
+
 }
