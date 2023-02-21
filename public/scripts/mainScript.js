@@ -23,7 +23,11 @@ try {
     let btn=document.querySelector(".regBoxButton")
     if(btn){
         btn.addEventListener("click",async ()=>{
-            let responce=await fetch("/api/login/",{method: 'POST',body: JSON.stringify({email:elem.value})} )
+            let responce=await fetch("/api/login/",{
+                method: 'POST',
+                headers: {'Content-Type': 'application/json;charset=utf-8'},
+                body: JSON.stringify({email:elem.value})
+            } )
             if(responce.ok){
                 let result = await responce.json();
                 alert(result);
