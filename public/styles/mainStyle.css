@@ -104,7 +104,6 @@ body{
     justify-content: left;
 }
 .eventMenuItem{
-    margin-right: var(--pad);
     padding:  var(--pad);
     cursor: pointer;
 }
