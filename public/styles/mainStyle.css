@@ -107,10 +107,12 @@ body{
      padding:  var(--pad);
      cursor: pointer;
      border-bottom: 2px solid transparent;
+    border-radius: 0,var(--rad),var(--rad),0;
  }
 .eventMenuItem:hover{
     background-color: var(--hoverColor);
     color: var(--backColor);
+
 }
 .eventMenuItem.active{
     border-bottom: 2px solid var(--buttonColor);
