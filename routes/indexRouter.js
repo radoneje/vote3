@@ -30,7 +30,7 @@ router.get("/qrcode/", async (req, res)=>{
   QRCode.toFileStream(res, url,
       {
         type: 'png',
-        width: 400,
+        width: 600,
         errorCorrectionLevel: 'H'
       });
 })
