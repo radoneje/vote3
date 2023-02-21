@@ -178,4 +178,5 @@ body{
     background-color: var(--grayColor);
     border:1px solid var(--borderColor);
     border-radius: var(--rad);
+    cursor: pointer;
 }
