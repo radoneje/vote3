@@ -1,6 +1,8 @@
 import express from 'express';
 
 const router = express.Router();
+import nodemailer from  'nodemailer'
+import config from "../config.json"
 
 const randomIntFromInterval = (min, max) => { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -14,8 +16,10 @@ router.post("/login", async (req, res) => {
     let users = await req.knex("t_users").where({email: req.body.email})
     if (users.length == 0)
         users = await req.knex("t_users").insert({email: req.body.email}, "*")
-    await req.knex("t_users").update({confirmCode: randomIntFromInterval(1000, 9999)})
-    res.json({email: users[0].email})
+    let r=await req.knex("t_users").update({confirmCode: randomIntFromInterval(1000, 9999)})
+    res.json({email: r[0].email})
+    let transporter = nodemailer.createTransport(config.smtp);
+
 })
 router.post("/checkCode", async (req, res) => {
     try {
