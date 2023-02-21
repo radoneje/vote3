@@ -4,7 +4,7 @@ const router = express.Router();
 import nodemailer from  'nodemailer'
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
-const config= require('./config.json');
+const config= require('../config.json');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
