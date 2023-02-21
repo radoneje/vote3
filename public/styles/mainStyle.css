@@ -68,6 +68,7 @@ body{
     border-right: none;
     padding: var(--pad);
     cursor: pointer;
+    border-radius: var(--rad);
 }
 .btn:hover{
     background-color: var(--hoverColor);
