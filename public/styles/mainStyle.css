@@ -275,4 +275,7 @@ body{
 .qItemBtn:first-child{
     border-radius: var(--rad) 0 0 var(--rad);
 }
+.qItemBtn:last-child{
+    border-radius: 0 var(--rad)  var(--rad) 0;
+}
 
