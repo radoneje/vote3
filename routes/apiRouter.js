@@ -16,11 +16,11 @@ router.post("/login", async (req, res)=>{
   res.json({email:users[0].email})
 })
 router.post("/checkCode", async (req, res)=>{
-  let users=await req.knex("t_users").where({email:req.body.email, code:req.body.code})
+  let users=await req.knex("t_users").where({email:req.body.email, confirmCode:req.body.code})
   if(users.length==0)
     return req.sendStatus(404)
-  await req.knex("t_users").update({confirmCode:randomIntFromInterval(1000,9999)})
-  res.json({email:users[0].email})
+  req.session.user=users[0];
+  res.json({guid:users[0].guid})
 })
 
 
