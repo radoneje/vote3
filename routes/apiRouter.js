@@ -2,6 +2,8 @@ import express from 'express';
 
 const router = express.Router();
 import nodemailer from  'nodemailer'
+import path from 'path';
+import fs from 'fs';
 import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 const require = createRequire(import.meta.url);
