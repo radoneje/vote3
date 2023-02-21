@@ -156,6 +156,7 @@ body{
     padding: 0 var(--pad);
 
 }
-.linksWr{
-    margin-top:calc(var(--pad) * 4)
+
+.eventBody{
+    margin-top: calc(var(--pad) * 6);
 }
