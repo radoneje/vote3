@@ -5,7 +5,7 @@ router.get("/", async (req, res)=>{
   res.json([])
 })
 router.post("/login", async (req, res)=>{
-  res.json([req.body.email])
+  res.json({email:req.body.email})
 })
 
 
