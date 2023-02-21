@@ -263,4 +263,11 @@ body{
     font-weight: bold;
     margin-bottom: calc(var(--pad) / 2);
 }
+.qItemBtnGroup{}
+.qItemBtn{
+    width: 80px;
+    text-align: left;
+    padding: calc(var(--pad) / 2);
+    background-color: var(--grayColor);
+}
 
