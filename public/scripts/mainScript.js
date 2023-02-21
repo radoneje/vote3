@@ -33,7 +33,7 @@ const activateCodeForm=(email)=>{
         })
         if (responce.ok) {
             let result = await responce.json();
-            document.location.href="/userEvent/"+result.guid;
+            document.location.href="/userEvent/";
         }
         else {
             elem.parentNode.classList.add("error")
