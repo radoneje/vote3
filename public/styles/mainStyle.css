@@ -98,3 +98,13 @@ body{
 .codeInput{
     display: none;
 }
+.eventMenu{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.eventMenuItem{
+    margin-right: var(--pad);
+    padding:  var(--pad);
+    cursor: pointer;
+}
