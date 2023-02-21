@@ -165,9 +165,10 @@ body{
     font-size: 1.0rem;
     align-items: center;
     justify-content: left;
-    padding: 0 var(--pad);
+    padding: calc(var(--pad) / 2)  var(--pad);
     border: 1px solid var(--borderColor) ;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: var(--rad) 0 0 var(--rad);
+    border-right: none;
     color: var(--textColor);
 
 }
