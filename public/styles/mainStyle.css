@@ -294,4 +294,7 @@ body{
     background-color: var(--errorColor) !important;
     color: #FFFFFF !important;
 }
+.qTotal{
+    padding-left: var(--pad);
+}
 
