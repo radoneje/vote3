@@ -16,7 +16,7 @@ import session  from 'express-session'
 //import multer  from 'multer'
 
 import indexRouter from './routes/indexRouter.js';
-import indexRouter from './routes/apiRouter.js';
+import apiRouter from './routes/apiRouter.js';
 
 
 import { createRequire } from 'module';
