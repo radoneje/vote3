@@ -166,7 +166,8 @@ body{
     align-items: center;
     justify-content: left;
     padding: 0 var(--pad);
-    border-color: var(--borderColor) ;
+    border: 1px solid var(--borderColor) ;
+    border-radius: 10px 10px 10px 10px;
     color: var(--textColor);
 
 }
