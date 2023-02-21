@@ -126,3 +126,6 @@ body{
 .linkTitle{
     font-size: 2rem;
 }
+.linkGroup{
+    display: flex;
+}
