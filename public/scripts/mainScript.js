@@ -16,6 +16,10 @@ const activateCodeForm=(email)=>{
         }
     })
     let btn=document.querySelector("#regBoxConfirmButton")
+    elem.onkeydown=(e)=>{
+        if(e.keyCode==13)
+            btn.click();
+    }
     btn.addEventListener("click", async () => {
         let responce = await fetch("/api/checkCode/", {
             method: 'POST',
@@ -49,6 +53,10 @@ try {
         })
     }
     let btn=document.querySelector("#regBoxButton")
+    elem.onkeydown=(e)=>{
+        if(e.keyCode==13)
+            btn.click();
+    }
     if(btn) {
         btn.addEventListener("click", async () => {
             let responce = await fetch("/api/login/", {
