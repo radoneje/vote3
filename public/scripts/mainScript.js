@@ -9,7 +9,7 @@ const validateEmail = (email) => {
 
 try {
     let email = localStorage.getItem("email")
-    let elem = document.querySelector(".regBoxEmail")
+    let elem = document.querySelector("#regBoxEmail")
     if (elem) {
         elem.value = email;
         elem.addEventListener("change", () => {
@@ -36,6 +36,8 @@ try {
                 document.querySelectorAll(".codeInput").forEach(e => {
                     e.style.display = "block"
                 })
+                let code=document.querySelector("#regBoxCode")
+                code.focus();
             }
         })
     }

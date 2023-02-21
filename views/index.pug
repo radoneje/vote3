@@ -7,11 +7,11 @@ block body
       .regBoxTile.mb.emailInput Для начала работы введите ваш email:
       .inputGroup.emailInput
         .errorMessaage Ошибка email
-        input.regBoxEmail(type="email" value=email)
+        input.regBoxEmail#regBoxEmail(type="email" value=email)
         input.regBoxButton#regBoxButton(type="button" value="Вход")
       .regBoxTile.mb.codeInput Введите код, прислынный на ваш email:
       .inputGroup.codeInput
         .errorMessaage Ошибка email
-        input.regBoxEmail(type="text" value=email)
+        input.regBoxEmail#regBoxCode(type="text" value=email)
         input.regBoxButton#regBoxConfirmButton(type="button" value="Вход")
   script(src="/scripts/mainScript.js")
