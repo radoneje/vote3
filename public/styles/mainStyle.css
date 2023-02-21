@@ -104,9 +104,12 @@ body{
     justify-content: left;
 }
 .eventMenuItem{
-    padding:  var(--pad);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
+     padding:  var(--pad);
+     cursor: pointer;
+     border-bottom: 2px solid transparent;
+ }
+.eventMenuItem:hover{
+    background-color: var(--hoverColor);
 }
 .eventMenuItem.active{
     border-bottom: 2px solid var(--buttonColor);
