@@ -191,10 +191,10 @@ body{
     border-radius: 50%;
     border:1px solid var(--borderColor);
 }
-.switcherBox.active{
+.active .switcherBox{
     background-color: var(--buttonColor);
 }
-.switcherBox.active .switcherElem{
+.active .switcherBox .switcherElem{
 
     left:inherit;
     right: calc(var(--rad) / 4);;

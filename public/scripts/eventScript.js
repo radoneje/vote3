@@ -24,6 +24,9 @@ document.querySelectorAll(".linkQr").forEach(elem => {
 })
 let qEnable=document.getElementById("qEnable")
 if(qEnable){
-    qEnable.classList.toggle("active")
+    qEnable.addEventListener("click",()=>{
+        qEnable.classList.toggle("active")
+    })
+
 }
 
