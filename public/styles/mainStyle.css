@@ -268,7 +268,7 @@ body{
     width: 80px;
     text-align: center;
     font-size: .8rem;
-    padding: calc(var(--pad) / 2);
+    padding: calc(var(--pad) / 4);
     background-color: var(--grayColor);
     border:1px solid var(--borderColor);
     cursor: pointer;
