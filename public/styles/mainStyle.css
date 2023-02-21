@@ -175,7 +175,7 @@ body{
     position: relative;
     width: 100px;
     box-sizing: border-box;
-    height: calc(1rem + (var(--pad) * 2 ));
+    height: 1rem;
     background-color: var(--grayColor);
     border:1px solid var(--borderColor);
     border-radius: var(--rad);
