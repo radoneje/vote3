@@ -61,7 +61,7 @@ body{
 .inputGroup input[type='button']:hover{
     background-color: var(--hoverColor);
 }
-   
+
 .mb{
     margin-bottom: var(--pad);
 }
@@ -81,4 +81,7 @@ body{
 }
 .inputGroup.error input{
     border-color: var(--errorColor);
+}
+.codeInput{
+    display: none;
 }

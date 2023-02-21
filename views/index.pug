@@ -5,8 +5,12 @@ block body
     h1 test
     .regBox
       .regBoxTile.mb Для начала работы введите ваш email:
-      .inputGroup
+      .inputGroup.emailInput
         .errorMessaage Ошибка email
         input.regBoxEmail(type="email" value=email)
-        input.regBoxButton(type="button" value="Вход")
+        input.regBoxButton#regBoxButton(type="button" value="Вход")
+      .inputGroup.codeInput
+        .errorMessaage Ошибка email
+        input.regBoxEmail(type="email" value=email)
+        input.regBoxButton#regBoxConfirmButton(type="button" value="Вход")
   script(src="/scripts/mainScript.js")

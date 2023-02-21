@@ -20,7 +20,7 @@ try {
                 elem.parentNode.classList.add("error")
         })
     }
-    let btn=document.querySelector(".regBoxButton")
+    let btn=document.querySelector("#regBoxButton")
     if(btn){
         btn.addEventListener("click",async ()=>{
             let responce=await fetch("/api/login/",{
@@ -30,7 +30,8 @@ try {
             } )
             if(responce.ok){
                 let result = await responce.json();
-                alert(result);
+                document.querySelector(".emailInput").style.display="none"
+                document.querySelector(".codeInput").style.display="block"
             }
         })
     }
