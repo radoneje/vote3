@@ -7,11 +7,11 @@ block body
             .pQWr(v-if="event.isQ")
                 .h.mb3 Вопросы:
                 .pqBox.mb3
-                    .pqItem(v-if="q.length==0")
+                    .qItem.mb(v-if="q.length==0")
                         .pqItemTitle Пока вопросов не задано
-                    .pqItem(v-for="item in q")
-                        .pqItemTitle Пока вопросов не задано
-                        .pqItemText Пока вопросов не задано
+                    .qItem.mb(v-for="item in q")
+                        .qItemHead {{item.date}} {{item.i}} {{item.f}}
+                        .pqItemText {{item.text}}
 
                 .qSendWr(v-if="event.isQ")
                     textarea.mb(placeholder="Ваш вопрос" v-model="qText")
