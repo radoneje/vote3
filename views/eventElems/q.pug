@@ -6,8 +6,7 @@ block body
     include eventMenu
     script.
             document.querySelector(".eventMenuItem[menuid='2']").classList.add("active")
-    .mainTower
-
+    .mainTower#app
         .eventBody.mt
             .qSelectors.flex.left.mb2
                 .switcherWr#qEnable
@@ -46,5 +45,7 @@ block body
                         .qItemBtn.red Удалить
 
 
-
+    script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventScript.js")
+    script(src="/scripts/vue.min.js")
+    script(src="/scripts/eventQScript.js")
