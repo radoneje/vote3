@@ -13,6 +13,7 @@ router.get("/userEvent", async (req, res)=>{
 router.get("/userEvent/links", async (req, res)=>{
   if(!req.session.user)
     res.sendStatus(404)
+    console.log(req)
 
   let events=await req.knex("t_events").where({userid:req.session.user.id})
   if(events.length==0)
@@ -30,6 +31,8 @@ router.get("/userEvent/q", async (req, res)=>{
 
     res.render("eventElems/q.pug", {event:events[0]})
 })
+
+
 
 
 router.get("/qrcode/", async (req, res)=>{

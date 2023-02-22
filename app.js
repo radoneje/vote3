@@ -17,6 +17,8 @@ import session  from 'express-session'
 
 import indexRouter from './routes/indexRouter.js';
 import apiRouter from './routes/apiRouter.js';
+import cacheRouter from './routes/cacheRouter.js';
+
 
 
 import { createRequire } from 'module';
@@ -78,6 +80,7 @@ app.use('/',(req, res,next)=>{
 });
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
+app.use('/c', cacheRouter);
 
 app.use(function (err, req, res, next) {
     // set locals, only providing error in development
