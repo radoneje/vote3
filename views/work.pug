@@ -10,6 +10,27 @@ block body
                         div Отправить
             .fullScreenWr.flex.center(v-if="showPersonBox")
                 .fullScreenBox
+                    .btnClose(v-on:click="showPersonBox=false")
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_210_6140)">
+                        <circle cx="32" cy="28" r="28" fill="#E8E6EE"/>
+                        <path d="M41.3609 35.7603L24.24 18.6394C23.8088 18.2082 23.1096 18.2082 22.6784 18.6394C22.2472 19.0706 22.2472 19.7697 22.6784 20.201L39.7993 37.3219C40.2305 37.7531 40.9297 37.7531 41.3609 37.3219C41.7921 36.8906 41.7921 36.1915 41.3609 35.7603Z" fill="#666E74" stroke="#5C76BA" stroke-width="0.2"/>
+                        <path d="M39.7603 18.6779L22.6394 35.7988C22.2081 36.23 22.2081 36.9292 22.6394 37.3604C23.0706 37.7916 23.7697 37.7916 24.2009 37.3604L41.3218 20.2395C41.7531 19.8083 41.7531 19.1091 41.3218 18.6779C40.8906 18.2467 40.1915 18.2467 39.7603 18.6779Z" fill="#666E74" stroke="#5C76BA" stroke-width="0.2"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d_210_6140" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.25098 0 0 0 0 0.290196 0 0 0 0 0.317647 0 0 0 0.2 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_210_6140"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_210_6140" result="shape"/>
+                        </filter>
+                        </defs>
+                        </svg>
+
                     .flex.center
                         .h.mb3.mt Пожалуйста, зарегистрируйтесь
                     .mb3
