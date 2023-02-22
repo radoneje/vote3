@@ -408,7 +408,7 @@ textarea{
 .pqContainer{
     position: relative;
 }
-.pqItemText{
+.pqItemText,.qItemText{
     word-break: break-word;
 }
 .pbNewQWr{
