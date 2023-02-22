@@ -362,4 +362,18 @@ textarea{
     width: 100%;
     height: auto;
 }
+.regGroupCap{
+    padding-left: var(--pad);
+}
+.border{
+    border-radius: var(--rad);
+    border:1px solid var(--borderColor);
+}
+.checkBox{
+    width: 1rem;
+    height: 1rem;
+
+    background-color: var(--backColor);
+
+}
 
