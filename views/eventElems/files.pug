@@ -13,9 +13,9 @@ block body
             .qItemBtnGroup.flex.left.mb
                 .group.flex.left
                     .qItemBtn.active( v-on:click="selectFile()") Загрузить файл
-                    .qItemBtn( v-on:click="approveAllQ( 'isMod', true)") Показать все
-                    .qItemBtn.red( v-on:click="approveAllQ( 'isMod', false)") Скрыть все
-                    .qItemBtn.red(v-on:click="if(confirm('Удалить все файлы?')) approveAllQ( 'isDeleted', true)") Удалить все
+                    .qItemBtn( v-on:click="approveAllFile( 'isMod', true)") Показать все
+                    .qItemBtn.red( v-on:click="approveAllFile( 'isMod', false)") Скрыть все
+                    .qItemBtn.red(v-on:click="if(confirm('Удалить все файлы?')) approveAllFile( 'isDeleted', true)") Удалить все
                 .qTotal Всего файлов: {{files.length}}
             .qWr#fileWr
                 .qItem.mb(v-if="files.length==0")
