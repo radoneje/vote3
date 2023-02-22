@@ -1,4 +1,4 @@
-import {fileURLToPath} from "url";
+
 
 let app = new Vue({
     el:"#app",
