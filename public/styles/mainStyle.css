@@ -481,6 +481,9 @@ textarea{
     color: var(--backColor);
     font-size: .5rem;
 }
+.fileTitleWr{
+    width: calc(100% - 100px);
+ }
 .fileTitleWr input{
     width: 400px;
     border:1px solid var(--buttonColor);
@@ -495,7 +498,7 @@ textarea{
 .qItemFileDescr{
     padding-left:var(--pad);
     word-break: break-word;
-    width: calc(100% - 100px);
+
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
