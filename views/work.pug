@@ -49,10 +49,10 @@ block body
                         .regGroup.mb.flex.left
                             .regGroupTitle Организация
                             input#persOrg(v-model="person.org" type="text")
-                    .regGroup.mb3.flex.left#persConfirm(v-on:click="person.approve!=person.approve")
+                    .regGroup.mb3.flex.left#persConfirm(v-on:click="person.approve=person.approve?false:true")
                         div
                             .regGroupCap.checkBox.border
-                        .regGroupCap Соглашаюсь с условиями обработки персональных данных
+                        .regGroupCap Соглашаюсь с условиями обработки персональных данных {{person.approve}}
 
                     .btn.flex.center(v-if="person.approve")
                         div Зарегистрироваться
