@@ -27,7 +27,8 @@ block body
                     .regGroup.mb.flex.left
                         .regGroupTitle Организация
                         input(v-model="person.org" type="text")
-                    .btn Зарегистрироваться
+                    .btn.flex.center
+                        div Зарегистрироваться
 
     script let short=!{JSON.stringify(event.short)}
     script(src="/scripts/vue.min.js")
