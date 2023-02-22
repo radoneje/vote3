@@ -40,9 +40,9 @@ let app = new Vue({
             })
 
             if (responce.ok) {
-                this.showPersonBox=null;
-                let result = await responce.json();
 
+                let result = await responce.json();
+                this.showPersonBox=null;
                // this.personid=result.personid;
                 //await this.sendQ();
             }
