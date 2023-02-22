@@ -64,7 +64,7 @@ router.get("/file/:short", async (req, res)=>{
     try {
 
         let r=await req.knex("t_files").where({short:req.params.short});
-        res.download(__dirname+"/"+r[0].path, r[0].originalname )
+        res.download(__dirname+"/../"+r[0].path, r[0].originalname )
     } catch (e) {
         res.status(404).send(e.toString())
     }
