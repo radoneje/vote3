@@ -10,7 +10,8 @@ block body
                         div Отправить
             .fullScreenWr.flex.center(v-if="showPersonBox")
                 .fullScreenBox
-                    .h.mb2.mt Пожалуйста, зарегистрируйтесь
+                    .flex.center
+                        .h.mb2.mt Пожалуйста, зарегистрируйтесь
                     .regGroup.mb.flex.left
                         .regGroupTitle *Имя
                         input(v-model="person.f" type="text")
@@ -26,6 +27,7 @@ block body
                     .regGroup.mb.flex.left
                         .regGroupTitle Организация
                         input(v-model="person.org" type="text")
+                    .btn Зарегистрироваться
 
     script let short=!{JSON.stringify(event.short)}
     script(src="/scripts/vue.min.js")
