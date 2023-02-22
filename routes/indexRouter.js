@@ -13,8 +13,6 @@ router.get("/userEvent", async (req, res)=>{
 router.get("/userEvent/links", async (req, res)=>{
   if(!req.session.user)
     res.sendStatus(404)
-    console.log(req)
-
   let events=await req.knex("t_events").where({userid:req.session.user.id})
   if(events.length==0)
     events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
