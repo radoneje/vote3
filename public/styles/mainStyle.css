@@ -492,6 +492,10 @@ textarea{
 .fileTitleWr .qItemHead{
     padding-left: var(--pad);
 }
+.qItemFileDescr{
+    padding-left:var(--pad);
+    word-break: break-word;
+}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
 

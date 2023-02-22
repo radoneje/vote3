@@ -24,8 +24,8 @@ block body
                         .btn.flex.center(v-on:click="sendQ()")
                             div Отправить
             .pQWr.mb3(v-if="files.length>0")
-                h.mb3 Файлы:
-                    .pqContainer
+                .h.mb3 Файлы:
+                .pqContainer
                         .pqBox.mb
                             .qItem.mb(v-for="item in files")
                                 .flex.left.mb2
