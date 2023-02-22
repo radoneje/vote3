@@ -49,12 +49,12 @@ block body
                         .regGroup.mb.flex.left
                             .regGroupTitle Организация
                             input#persOrg(v-model="person.org" type="text")
-                    .regGroup.mb3.flex.left#persConfirm
+                    .regGroup.mb3.flex.left#persConfirm(v-on:click="person.approve!=person.approve")
                         div
                             .regGroupCap.checkBox.border
                         .regGroupCap Соглашаюсь с условиями обработки персональных данных
 
-                    .btn.flex.center
+                    .btn.flex.center(v-if="person.approve")
                         div Зарегистрироваться
 
     script let short=!{JSON.stringify(event.short)}
