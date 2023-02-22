@@ -30,8 +30,15 @@ router.get("/u/:short", async (req, res) => {
 router.get("/status/:short/:lastTime?", async (req, res) => {
     try {
         let lastTime=req.params.lastTime||0;
-        let timeout=5;
-       res.json({timeout, lastTime})
+        let ret={timeout:5, lastTime}
+        let events=await req.knex("t_events").where({short:req.params.short, isDeleted:false}).andWhere("modtime", ">", lastTime)
+        if(events.length>0)
+            ret.event={
+                short:events[0].short,
+                title:events[0].title,
+                isQ:events[0].isQ,
+            }
+        res.json(ret)
     }
     catch (e){
         console.warn(e)
