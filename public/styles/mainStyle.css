@@ -295,7 +295,7 @@ textarea{
 .qItemBtn:first-child{
     border-radius: var(--rad) 0 0 var(--rad);
 }
-.qItemBtn:last-child{
+.qItemBtn:last-of-type{
     border-radius: 0 var(--rad)  var(--rad) 0;
     border-right:1px solid var(--borderColor);
 }
