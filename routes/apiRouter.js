@@ -65,9 +65,9 @@ router.post("/regPerson", async (req, res) => {
             email:req.body.email,
             org:req.body.org
         },"*")
-        res.json({personid:r[0].personid})
+        res.json({personid:r[0].id})
     } catch (e) {
-        res.status(404).send(e.toString())
+        res.status(404).send(e)
     }
 })
 
