@@ -12,6 +12,7 @@ block body
                     .qItem.mb(v-for="item in q")
                         .qItemHead {{item.date}} {{item.i}} {{item.f}}
                         .pqItemText {{item.text}}
+                        .errorMessaage(v-if="!item.isMod") Вопрос на модерации
 
                 .qSendWr(v-if="event.isQ")
                     textarea.mb(placeholder="Ваш вопрос" v-model="qText")
