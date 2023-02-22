@@ -46,7 +46,7 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
             ret.q=q;
             let arr=[]
             q.forEach(qq=>{arr.push(qq.modtime)})
-            ret._a=Math.max( [ret.lastTime, Math.max(...arr)]);
+            ret._a=Math.max( ret.modtime, Math.max(...arr));
             //ret.lastTime=Math.max([ret.lastTime, Math.max(...arr)]);
         }
         res.json(ret)
