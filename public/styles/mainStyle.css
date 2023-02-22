@@ -467,8 +467,8 @@ textarea{
 .fileDlWr{
     background-color: var(--buttonColor);
     border-radius:calc( var(--rad) );
-    padding: var(--pad);
-    margin-right: calc(var(--pad) / 2) var(--pad);
+    padding:  calc(var(--pad) / 2) var(--pad);
+    margin-right:  var(--pad);
     text-align: center;
 }
 .fileDlIco{}
