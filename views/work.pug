@@ -14,7 +14,7 @@ block body
                             .qItemHead {{item.date}} {{item.i}} {{item.f}}
                             .pqItemText {{item.text}}
                             .errorMessaage(v-if="!item.isMod") Вопрос на модерации
-                    .pbNewQWr(v-if="newQ>0")
+                    .pbNewQWr(v-if="newQ>0" v-on:click="scrollQ()")
                             .pbNewQText {{newQ}}
                             .pbNewQDescr новых
 

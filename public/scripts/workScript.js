@@ -12,6 +12,11 @@ let app = new Vue({
         newQ:0,
     },
     methods:{
+        scrollQ:function(e){
+            let objDiv = document.querySelector(".pqBox")
+            if(objDiv)
+                objDiv.scrollTop = objDiv.scrollHeight;
+        },
         onScrollQ:function(e){
             console.log("onScrollQ",e.target.scrollTop,e.target.scrollHeight-e.target.offsetHeight  )
             if(e.target.scrollTop>= (e.target.scrollHeight-e.target.offsetHeight -20))
@@ -91,8 +96,7 @@ let app = new Vue({
                                 let lastElem = document.querySelector(".qItem[qid='" + this.q[this.q.length - 1].id + "']")
                                 if (lastElem && isInViewport(lastElem))
                                     setTimeout(() => {
-                                        let objDiv = document.querySelector(".pqBox")
-                                        objDiv.scrollTop = objDiv.scrollHeight;
+                                        this.scrollQ()
                                     }, 100)
                                 else
                                     this.newQ++;
@@ -140,9 +144,7 @@ let app = new Vue({
     mounted:async function (){
         this.updateStatus(0)
         setTimeout(() => {
-            let objDiv = document.querySelector(".pqBox")
-            if(objDiv)
-            objDiv.scrollTop = objDiv.scrollHeight;
+            this.scrollQ();
         }, 1000)
         try {
             this.personid=localStorage.getItem("personid")
