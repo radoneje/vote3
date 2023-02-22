@@ -70,6 +70,16 @@ router.post("/regPerson", async (req, res) => {
         res.status(404).send(e)
     }
 })
+router.post("/newQ", async (req, res) => {
+    try {
+        let r=await req.knex("t_q").insert(req.body,"*")
+        r=await req.knex("t_q").where({id:r[0].id});
+        res.json(r[0])
+    } catch (e) {
+        res.status(404).send(e)
+    }
+})
+
 
 
 
