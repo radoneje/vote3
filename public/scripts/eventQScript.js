@@ -5,10 +5,10 @@ let app = new Vue({
         q:[],
     },
     methods:{
-        toogleAllQ:async function(column){
+        approveAllQ:async function(column, status){
             for(let item of this.q)
             {
-                item[column]=true;
+                item[column]=status;
                 let dt={id:item.id}
                 dt[column]=item[column]
                 this.q=this.q.filter(qq=>!qq.isDeleted);
