@@ -52,7 +52,7 @@ block body
                     .regGroup.mb3.flex.left#persConfirm(v-on:click="person.approve=person.approve?false:true")
                         div
                             .regGroupCap.checkBox.border(v-bind:class="{active:person.approve}")
-                        .regGroupCap Соглашаюсь с условиями обработки персональных данных {{person.approve}}
+                        .regGroupCap Соглашаюсь с условиями обработки персональных данных
 
                     .btn.flex.center(v-if="person.approve")
                         div Зарегистрироваться

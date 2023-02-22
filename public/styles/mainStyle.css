@@ -383,3 +383,11 @@ textarea{
     background-color: var(--buttonColor);
 }
 
+.checkBox.active::after{
+   content: "U+2714";
+    color: var(--backColor);
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
