@@ -28,7 +28,7 @@ block body
 
                 .qItem.mb(v-for="item in q")
                     .qItemHead {{item.date}} {{item.i}} {{item.f}}
-                    .qItemText.mb {{item.tex}}
+                    .qItemText.mb {{item.text}}
                     .qItemBtnGroup.flex.left
                         .qItemBtn(v-bind:class="{active:item.isMod}") Принять
                         .qItemBtn(v-bind:class="{active:item.isSpk}") Спикеру
