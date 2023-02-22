@@ -291,10 +291,7 @@ textarea{
     background-color: var(--buttonColor);
     color:var(--backColor);
 }
-.qItemBtn:hover{
-    background-color: var(--hoverColor);
-    color:var(--backColor);
-}
+
 .qItemBtn:first-child{
     border-radius: var(--rad) 0 0 var(--rad);
 }
