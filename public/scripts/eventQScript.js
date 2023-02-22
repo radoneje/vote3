@@ -1,11 +1,34 @@
+import {fileURLToPath} from "url";
+
 let app = new Vue({
     el:"#app",
     data:{
         event:event,
         q:[],
         files:[],
+        uploading:[]
     },
     methods:{
+        uploadFile:async function(){
+            let fd=new FormData();
+            fd.append("file", file)
+            const xhr = new XMLHttpRequest()
+            xhr.responseType = 'json'
+            xhr.onload = () => {
+                console.log(xhr.response)
+            }
+            xhr.open('POST', "/api/uploadFile")
+            xhr.send(formData)
+
+        },
+        selectFile:function (){
+            let inp=document.createElement("input")
+            inp.type="file";
+            inp.click();
+            inp.onchange= ()=>{
+                this.uploadFile(inp.files[0]);
+            }
+        },
         approveAllQ:async function(column, status){
             for(let item of this.q)
             {

@@ -8,6 +8,8 @@ import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 const require = createRequire(import.meta.url);
 const config= require('../config.json');
+import multer  from 'multer'
+const upload = multer({dest: config.uloadPath})
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -105,6 +107,22 @@ router.post("/q", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+router.post("/uploadFile", upload.single('file'), async (req, res) => {
+
+    if(!req.session.user)
+        res.sendStatus(401)
+    try {
+        let newFileName = req.file.destination + req.file.filename + path.extname(req.file.originalname)
+        fs.renameSync(req.file.destination + req.file.filename, newFileName)
+
+       // await req.knex("t_filesPgm").insert({file: newFileName, isRu: req.body.lang == "ru"}, "*");
+        res.json(newFileName)
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+})
+
+
 
 
 

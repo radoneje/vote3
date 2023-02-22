@@ -19,7 +19,7 @@ block body
             .qWr
                 .qItem.mb(v-if="files.length==0")
                     .qItemText.mb Пока файлы не добавлены
-                    .qItemBtn.active( v-on:click="uploadFile()") Загрузить файл
+                    .qItemBtn.active( v-on:click="selectFile()") Загрузить файл
 
                 .qItem.mb(v-for="item in files")
                     .qItemHead {{item.date}} {{item.i}} {{item.f}}
