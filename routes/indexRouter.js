@@ -68,8 +68,6 @@ router.get("/file/:short", async (req, res)=>{
     } catch (e) {
         res.status(404).send(e.toString())
     }
-
-    res.render("index", {user:req.session.user})
 })
 router.get("/", async (req, res)=>{
 
