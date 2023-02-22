@@ -9,7 +9,12 @@ let app = new Vue({
         uploading:[]
     },
     methods:{
-
+        downloadEventFile:function (item){
+            let a=document.createElement("a")
+            a.href="/file/"+item.fileid
+            a.download=item.original.name;
+            a.click();
+        },
         uploadFile:async function(file){
 
             let res=await get("/api/newFile")

@@ -56,11 +56,24 @@ router.get("/qrcode/", async (req, res)=>{
         errorCorrectionLevel: 'H'
       });
 })
+router.get("/file/:id", async (req, res)=>{
+    try {
+
+        let r=await req.knex("t_files").where({id:req.params.id});
+        res.file(r[0].path)
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+
+    res.render("index", {user:req.session.user})
+})
 router.get("/", async (req, res)=>{
 
 
   res.render("index", {user:req.session.user})
 })
+
+
 
 
 export default router
