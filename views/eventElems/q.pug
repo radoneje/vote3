@@ -9,13 +9,13 @@ block body
     .mainTower#app
         .eventBody.mt
             .qSelectors.flex.left.mb2
-                .switcherWr#qEnable(v-on:click="toogleEvent( 'isQ')" v-bind:class="{active:event.isQ}")
+                .switcherWr(v-on:click="toogleEvent( 'isQ')" v-bind:class="{active:event.isQ}")
                     .switcherBox
                         .switcherElem
                         .switcherCap
                     .switcherTextOff Выключено, пользователи не могут задавать вопросы
                     .switcherTextOn Включено, пользователи могут задавать вопросы
-                .switcherWr#qPreModEnable(v-on:click="toogleEvent( 'isQpreMod')" v-bind:class="{active:event.isQpreMod}")
+                .switcherWr(v-on:click="toogleEvent( 'isQpreMod')" v-bind:class="{active:event.isQpreMod}")
                     .switcherBox
                         .switcherElem
                         .switcherCap
