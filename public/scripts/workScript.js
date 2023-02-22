@@ -57,7 +57,7 @@ let app = new Vue({
                 return ;
             if(!this.personid)
                 return this.showPersonBox=true
-            let ret=post("/api/newQ",{personid:this.personid, text:qText})
+            let ret=post("/api/newQ",{personid:this.personid, text:qText, short})
             console.log(ret)
         },
         updateStatus:async function(lastTime){
