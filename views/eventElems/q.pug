@@ -25,7 +25,7 @@ block body
             .qItemBtnGroup.flex.left.mb
                 .qItemBtn( v-on:click="toogleAllQ( 'isMod')") Принять все
                 .qItemBtn( v-on:click="toogleAllQ( 'isSpk')") Спикеру все
-                .qItemBtn( v-on:click="toogleAllQ( 'isScreen')")  На экран все
+                .qItemBtn( v-on:click="toogleAllQ( 'isScreen')")  На экран
                 .qItemBtn.red(v-on:click="if(confirm('Удалить все вопросы?')) toogleAllQ( 'isDeleted')") Удалить все
                 .qTotal Всего вопросов: {{q.length}}
             .qWr
