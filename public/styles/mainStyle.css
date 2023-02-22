@@ -38,6 +38,7 @@ textarea{
     line-height: 1.2em;
     background-color: var(--backColor);
     color: var(--textColor);
+    resize: none;
 }
 .mainTower{
     width: var(--width);
