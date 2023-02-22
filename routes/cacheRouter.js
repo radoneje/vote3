@@ -33,6 +33,12 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
 
         let ret={timeout:5, lastTime}
         let events=await req.knex("t_events").where({short:req.params.short, isDeleted:false}).andWhere("modtime", ">", lastTime)
+        let params={ eventshort:req.params.short}
+        if(req.query.prm!="all")
+            params.isMod=true
+        let q=await req.knex("v_q").where(params).andWhere("modtime", ">", lastTime).orderBy("id" )
+        let files=await req.knex("v_eventfiles").where(params).andWhere("modtime", ">", lastTime).orderBy("id", )
+
         if(events.length>0) {
             ret.event = {
                 short: events[0].short,
@@ -44,16 +50,18 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
             }
             ret.lastTime=events[0].modtime
         }
-        let params={ eventshort:req.params.short}
-        if(req.query.prm!="all")
-            params.isMod=true
-        let q=await req.knex("v_q").where(params).andWhere("modtime", ">", lastTime).orderBy("id", )
+
         if(q.length>0){
             ret.q=q;
             let arr=[]
             q.forEach(qq=>{arr.push(qq.modtime)})
             ret.lastTime=Math.max( ret.lastTime, Math.max(...arr));
-            //ret.lastTime=Math.max([ret.lastTime, Math.max(...arr)]);
+        }
+        if(files.length>0){
+            ret.files=files;
+            let arr=[]
+            files.forEach(qq=>{arr.push(qq.modtime)})
+            ret.lastTime=Math.max( ret.lastTime, Math.max(...arr));
         }
         res.json(ret)
     }
