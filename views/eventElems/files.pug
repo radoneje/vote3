@@ -11,7 +11,7 @@ block body
 
 
             .qItemBtnGroup.flex.left.mb
-                .group
+                .group.flex.left
                     .qItemBtn.active( v-on:click="selectFile()") Загрузить файл
                     .qItemBtn( v-on:click="approveAllQ( 'isMod', true)") Показать все
                     .qItemBtn.red( v-on:click="approveAllQ( 'isMod', false)") Убрать все
