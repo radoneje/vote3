@@ -110,7 +110,7 @@ let app = new Vue({
                         else{
                             this.q.forEach(qq=>{
                                 if(qq.id==item.id){
-                                    qq.trxt=item.text;
+                                    qq.text=item.text;
                                     qq.isMod=item.isMod;
                                     qq.isDeleted=item.isDeleted;
                                 }
@@ -119,6 +119,26 @@ let app = new Vue({
                     })
                     this.q=this.q.filter(qq=>!qq.isDeleted)
                 }
+                /////////////
+                if(r.files){
+                    r.files.forEach(item=>{
+                        if(this.files.filter(qq=>qq.id==item.id).length==0) {
+
+                            this.files.push(item)
+                        }
+                        else{
+                            this.files.forEach(qq=>{
+                                if(qq.id==item.id){
+                                    qq.title=item.title;
+                                    qq.isMod=item.isMod;
+                                    qq.isDeleted=item.isDeleted;
+                                }
+                            })
+                        }
+                    })
+                    this.files=this.files.filter(qq=>!qq.isDeleted)
+                }
+                /////////////
             }
             setTimeout(()=>{
                 this.updateStatus(lastTime)
