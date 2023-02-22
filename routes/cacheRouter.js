@@ -20,7 +20,7 @@ router.get("/u/:short", async (req, res) => {
        let events = await req.knex("t_events").where({short: req.params.short, isDeleted: false})
        if (events.length == 0)
            return res.sendStatus(404);
-       res.json({a: "ok"})
+       res.render("work", {event:events[0]})
    }
    catch (e){
        console.warn(e)
