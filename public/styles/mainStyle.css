@@ -406,8 +406,15 @@ textarea{
     max-height: calc(100vh - 330px);
     overflow-y: auto;
     padding-right: var(--pad);
+    position: relative;
 }
 .pqItemText{
     word-break: break-word;
+}
+.pbNewQWr{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--grayColor);
 }
 
