@@ -40,7 +40,7 @@ let app = new Vue({
                     }
                 }
             }
-            xhr.onprogress=(ev)=>{
+            xhr.upload.onprogress=(ev)=>{
                 uploadItem.done=ev.loaded
                 uploadItem.total=ev.total
                 uploadItem.percent=parseInt((parseFloat(ev.loaded)/parseFloat(ev.total))*100)+"%"
