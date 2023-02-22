@@ -387,7 +387,7 @@ textarea{
    content: "\2714";
     color: var(--backColor);
     position: absolute;
-    top:0;
-    left: 0;
+    top:4px;
+    left: 4px;
 }
 
