@@ -34,4 +34,4 @@ router.get("/u/:short", async (req, res) => {
 
 
 
-export default router
+export default router2
