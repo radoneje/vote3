@@ -337,4 +337,7 @@ textarea{
     font-size: 1.2rem;
     /*font-weight: bold;*/
 }
+.regGroupTitle{
+    width: 100px;
+}
 
