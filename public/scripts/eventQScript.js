@@ -137,7 +137,9 @@ const get =(url)=>{
             method: 'GET',
         })
         if(res.ok){
-            resolve({data:await res.json()})
+            let ret=await res.json()
+            console.log(ret);
+            resolve({data:data})
         }
         else
             resolve({err:true, message:await res.text()})
