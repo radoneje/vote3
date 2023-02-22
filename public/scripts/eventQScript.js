@@ -15,6 +15,8 @@ let app = new Vue({
             if(res.err)
                 return console.warn(res.message);
             let fileid=res.data
+            let uploadItem={id:fileid, name:file.name, done:0, total:file.size, percent:0, status:0}
+            this.uploading.push(uploadItem);
             let fd=new FormData();
             fd.append("file", file)
             fd.append("name", file.name)
@@ -30,6 +32,7 @@ let app = new Vue({
                         console.warn(res.message)
                 }
             }
+
             xhr.open('POST', "/api/uploadFile")
             xhr.send(fd)
 

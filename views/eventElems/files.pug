@@ -36,6 +36,12 @@ block body
                             span(v-else) На экране
                         .qItemBtn.red(v-on:click="if(confirm('Удалить вопрос?')) toogleQ( 'isDeleted', item)") Удалить
 
+        .uploading(v-if="uploading.length>0")
+            .uploadingTitle.mb загрузка файлов
+            .uploadingWr
+                .uploadingItem.mb(v-for="item in uploading")
+                    .uploadingItemTitle
+                        span  {{item.name}} : {{item.percent}}
 
 
     script let event=!{JSON.stringify(event)}

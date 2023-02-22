@@ -423,5 +423,8 @@ textarea{
     padding:var(--pad);
     cursor: pointer;
 }
+.uploading{
+
+}
 
 
