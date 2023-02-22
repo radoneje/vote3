@@ -12,6 +12,9 @@ let app = new Vue({
         newQ:0,
     },
     methods:{
+        onScrollQ:function(){
+            console.log("onScrollQ")
+        },
         regPerson: async function(){
             if(!this.person.i || this.person.i.length<0){
                 this.regError="Поле Имя должно быть заполнено";
