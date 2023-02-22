@@ -7,7 +7,9 @@ let app = new Vue({
     methods:{
         toogleEvent:async function(column){
             this.event[column]=!this.event[column]
-            await post("/api/event/",{column:this.event[column], id:event.id});
+            let dt={id:event.id}
+            dt[column]=this.event[column]
+            await post("/api/event/",dt);
         },
         updateStatus:async function(lastTime){
             let timeout=20;
