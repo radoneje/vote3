@@ -1,7 +1,7 @@
 let app = new Vue({
     el:"#app",
     data:{
-
+        event:{}
     },
     methods:{
         updateStatus:async function(lastTime){
@@ -11,6 +11,8 @@ let app = new Vue({
                 let r=await res.json();
                 timeout=r.timeout;
                 lastTime=r.lastTime;
+                if(e.event)
+                    this.event=e.event;
             }
             setTimeout(()=>{
                 this.updateStatus(lastTime)
