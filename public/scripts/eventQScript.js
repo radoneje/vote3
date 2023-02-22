@@ -10,6 +10,12 @@ let app = new Vue({
     },
     methods:{
         uploadFile:async function(file){
+            let res=get("/api/newFile")
+            if(res.err)
+                return console.warn(res.message);
+            let fileid=res.data
+            console.log(fileid)
+            return;
             let fd=new FormData();
             fd.append("file", file)
             const xhr = new XMLHttpRequest()
@@ -123,9 +129,19 @@ const post =(url, body)=>{
             resolve({err:true, message:await res.text()})
 
     })
+}
+const get =(url)=>{
+    return new Promise(async (resolve, reject)=>{
+        let res = await fetch(url, {
+            method: 'GET',
+        })
+        if(res.ok){
+            resolve({data:await res.json()})
+        }
+        else
+            resolve({err:true, message:await res.text()})
 
-
-
+    })
 }
 const isInViewport=(element) =>{
     const rect = element.getBoundingClientRect();

@@ -107,6 +107,18 @@ router.post("/q", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+
+router.get("/newFile", upload.single('file'), async (req, res) => {
+    if(!req.session.user)
+        res.sendStatus(401)
+    try {
+        let files=await req.knex("t_files").insert({},"*")
+        res.json(files[0].id)
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+
+});
 router.post("/uploadFile", upload.single('file'), async (req, res) => {
 
     if(!req.session.user)
