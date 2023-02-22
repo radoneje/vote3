@@ -5,8 +5,8 @@ let app = new Vue({
         q:[],
     },
     methods:{
-        toogle:async function(table,column, item){
-            item[column]=!item[column]
+        toogleEvent:async function(column){
+            this.event[column]=!this.event[column]
         },
         updateStatus:async function(lastTime){
             let timeout=20;
