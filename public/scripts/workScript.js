@@ -81,17 +81,13 @@ let app = new Vue({
                     r.q.forEach(item=>{
                         if(this.q.filter(qq=>qq.id==item.id).length==0) {
 
-                            let objDiv = document.querySelector(".pqBox")
-                            if(objDiv) {
-                                console.log(objDiv.scrollTop, objDiv.scrollHeight)
-                                let lastElem=document.querySelector(".qItem[qid='"+this.q[this.q.length-1].id+"']")
-                                console.log(isInViewport(lastElem))
-                            }
+                            let lastElem=document.querySelector(".qItem[qid='"+this.q[this.q.length-1].id+"']")
+                            if(lastElem && isInViewport(lastElem))
+                                setTimeout(()=>{
+                                    let objDiv = document.querySelector(".pqBox")
+                                    objDiv.scrollTop = objDiv.scrollHeight;
+                                },100)
                             this.q.push(item)
-                            setTimeout(()=>{
-                                let objDiv = document.querySelector(".pqBox")
-                                objDiv.scrollTop = objDiv.scrollHeight;
-                            },0)
                         }
                         else{
                             this.q.forEach(qq=>{
@@ -172,6 +168,6 @@ const post =(url, body)=>{
 const isInViewport=(element) =>{
     const rect = element.getBoundingClientRect();
     const parentRect = element.parentNode.getBoundingClientRect();
-    return rect.top>parentRect.bottom
+    return rect.top<parentRect.bottom
 
 }
