@@ -20,7 +20,7 @@ block body
             .qWr#fileWr
                 .qItem.mb(v-if="files.length==0")
                     .qItemText.mb Пока файлы не добавлены.
-                    .qItemText.mb Их можно загрузить, нажав кнопку вверху или перетащить мышью сюда.
+                    .qItemText.mb Их можно загрузить нажав кнопку вверху или перетащить мышью сюда.
 
                 .qItem.mb(v-for="item in files")
                     .qItemHead {{item.originalname}}
