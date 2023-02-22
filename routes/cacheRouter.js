@@ -51,7 +51,7 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
     }
     catch (e){
         console.warn(e)
-        res.status(500).send(e)
+        res.status(500).send(e.toString())
     }
 })
 
