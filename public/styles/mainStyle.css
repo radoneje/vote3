@@ -393,4 +393,13 @@ textarea{
     top:0px;
     left: 2px;
 }
+.pQWr{
+    border-radius: var(--rad);
+    border:1px solid var(--borderColor);
+    box-sizing: border-box;
+    padding: var(--pad);
+    padding-right: calc(var(--pad) * 2);
+    background-color: var(--grayColor);
+    overflow-y: auto;
+}
 
