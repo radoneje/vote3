@@ -24,7 +24,7 @@ router.get("/u/:short", async (req, res) => {
    }
    catch (e){
        console.warn(e)
-       res.text(e).sendStatus(500)
+       res.send(e).sendStatus(500)
    }
 })
 
