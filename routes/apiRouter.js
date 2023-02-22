@@ -145,7 +145,7 @@ router.post("/fileToEvent", async (req, res) => {
         res.sendStatus(401)
     try {
         let files=await req.knex("t_eventfiles").insert({fileid:req.body.fileid, eventshort:req.body.short},"*")
-        files=await req.knex("v_eventfiles").where({id:f[0].id})
+        files=await req.knex("v_eventfiles").where({id:files[0].id})
         res.json(files[0])
 
     } catch (e) {
