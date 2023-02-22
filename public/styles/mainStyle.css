@@ -484,7 +484,9 @@ textarea{
     padding: calc(var(--pad) / 2) var(--pad);
     color:var(--textColor);
     background-color: var(--backColor);
-
+}
+.fileTitleWr .qItemHead{
+    padding-left: var(--pad);
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
