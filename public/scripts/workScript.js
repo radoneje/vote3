@@ -32,7 +32,7 @@ let app = new Vue({
                 return;
             }
             this.regError=false;
-
+            this.showPersonBox=null;
             let responce = await fetch("/api/regPerson/", {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json;charset=utf-8'},
@@ -40,9 +40,9 @@ let app = new Vue({
             })
             if (responce.ok) {
                 let result = await responce.json();
-                this.showPersonBox=null;
-                this.personid=result.personid;
-                await this.sendQ();
+
+               // this.personid=result.personid;
+                //await this.sendQ();
             }
             else {
                 this.regError="Ошибка регистрации, попробуйте позже";
