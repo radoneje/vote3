@@ -81,12 +81,14 @@ let app = new Vue({
                     r.q.forEach(item=>{
                         if(this.q.filter(qq=>qq.id==item.id).length==0) {
 
-                            let lastElem=document.querySelector(".qItem[qid='"+this.q[this.q.length-1].id+"']")
-                            if(lastElem && isInViewport(lastElem))
-                                setTimeout(()=>{
-                                    let objDiv = document.querySelector(".pqBox")
-                                    objDiv.scrollTop = objDiv.scrollHeight;
-                                },100)
+                            if(this.q.length>1) {
+                                let lastElem = document.querySelector(".qItem[qid='" + this.q[this.q.length - 1].id + "']")
+                                if (lastElem && isInViewport(lastElem))
+                                    setTimeout(() => {
+                                        let objDiv = document.querySelector(".pqBox")
+                                        objDiv.scrollTop = objDiv.scrollHeight;
+                                    }, 100)
+                            }
                             this.q.push(item)
                         }
                         else{
