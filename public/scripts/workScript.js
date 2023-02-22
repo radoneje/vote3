@@ -133,7 +133,7 @@ let app = new Vue({
                         else{
                             this.files.forEach(qq=>{
                                 if(qq.id==item.id){
-                                    qq.title=item.text;
+                                    qq.title=item.title;
                                     qq.isMod=item.isMod;
                                     qq.isDeleted=item.isDeleted;
                                 }
