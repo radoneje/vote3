@@ -19,7 +19,7 @@ block body
                 .qTotal Всего файлов: {{files.length}}
             .qWr#fileWr
                 .qItem.mb(v-if="files.length==0")
-                    .qItemText.mb.h Пока файлы не добавлены.
+                    .qItemText.mb.h Файлы еще не добавлены.
                     .qItemText.mb Их можно загрузить нажав кнопку вверху или перетащить мышью сюда.
 
                 .qItem.mb(v-for="item in files")
