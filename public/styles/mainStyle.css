@@ -418,10 +418,12 @@ textarea{
     position: absolute;
     bottom: 0;
     right: 0;
-    background-color: var(--buttonColor);
+    background-color: var(--grayColor);
     text-align: center;
     color:var(--buttonColor);
-    border:1px solid var(--buttonColor)
+    border:1px solid var(--buttonColor);
+    border-radius: var(--rad);
+    padding:var(--pad);
 }
 
 
