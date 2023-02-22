@@ -59,7 +59,7 @@ let app = new Vue({
             if(!this.personid)
                 return this.showPersonBox=true
             let ret=await post("/api/newQ",{personid:this.personid, text:this.qText, eventshort:short})
-            this.q.push(ret)
+            this.q.push(ret.data)
             this.qText="";
 
             console.log(ret)
