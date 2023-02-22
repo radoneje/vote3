@@ -17,6 +17,7 @@ let app = new Vue({
             let fileid=res.data
             let fd=new FormData();
             fd.append("file", file)
+            console.log(file)
             fd.append("id", fileid)
             const xhr = new XMLHttpRequest()
             xhr.responseType = 'json'
