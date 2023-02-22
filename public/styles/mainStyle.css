@@ -331,5 +331,6 @@ textarea{
     color: var(--textColor);
     background-color: var(--backColor);
     border:1px solid var(--borderColor);
+    box-shadow: 0px 1px 4px 0 var(--borderColor);
 }
 
