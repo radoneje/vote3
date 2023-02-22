@@ -12,21 +12,22 @@ block body
                 .fullScreenBox
                     .flex.center
                         .h.mb3.mt Пожалуйста, зарегистрируйтесь
-                    .regGroup.mb.flex.left
-                        .regGroupTitle *Имя
-                        input(v-model="person.f" type="text")
-                    .regGroup.mb.flex.left
-                        .regGroupTitle *Фамилия
-                        input(v-model="person.f" type="text")
-                    .regGroup.mb.flex.left
-                        .regGroupTitle *Телефон
-                        input(v-model="person.phone" type="tel")
-                    .regGroup.mb.flex.left
-                        .regGroupTitle *Email
-                        input(v-model="person.email" type="email")
-                    .regGroup.mb.flex.left
-                        .regGroupTitle Организация
-                        input(v-model="person.org" type="text")
+                    .mb3
+                        .regGroup.mb.flex.left
+                            .regGroupTitle *Имя
+                            input(v-model="person.f" type="text")
+                        .regGroup.mb.flex.left
+                            .regGroupTitle *Фамилия
+                            input(v-model="person.f" type="text")
+                        .regGroup.mb.flex.left
+                            .regGroupTitle *Телефон
+                            input(v-model="person.phone" type="tel")
+                        .regGroup.mb.flex.left
+                            .regGroupTitle *Email
+                            input(v-model="person.email" type="email")
+                        .regGroup.mb.flex.left
+                            .regGroupTitle Организация
+                            input(v-model="person.org" type="text")
                     .btn.flex.center
                         div Зарегистрироваться
 
