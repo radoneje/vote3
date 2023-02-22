@@ -43,7 +43,7 @@ let app = new Vue({
 
                 let result = await responce.json();
                 this.showPersonBox=null;
-               // this.personid=result.personid;
+                this.personid=result.personid;
                // console.log( this.personid, result.personid,  result)
                // await this.sendQ();
             }
