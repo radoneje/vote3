@@ -457,7 +457,7 @@ textarea{
 .uploadingItem.err .uploadingItemBg{
     background-color: var(--errorColor);
 }
-.uploadingItem.err .uploadingItem{
+.uploadingItem.err .uploadingItemTitle{
     color:var(--backColor)
 }
 
