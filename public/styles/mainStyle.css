@@ -326,7 +326,7 @@ textarea{
 .fullScreenBox{
     box-sizing: border-box;
     width: 600px;
-    padding: var(--pad);
+    padding: calc(var(--pad) * 2 );
     border-radius: var(--rad);
     color: var(--textColor);
     background-color: var(--backColor);
