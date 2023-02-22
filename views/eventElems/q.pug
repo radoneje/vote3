@@ -23,11 +23,10 @@ block body
                     .switcherTextOn Премодерация выключена
             .qTotal.mb Всего вопросов: 234
             .qWr
-                .qItem.mb
+                .qItem.mb(v-if="q.length==0")
                     .qItemText Пока вопросов не задано
-                .qItem.mb
-                    .qItemText Пока вопросов не задано
-                .qItem.mb
+
+                .qItem.mb(v-for="item in q")
                     .qItemHead 12.02.2023 12:34  Вася Иванов
                     .qItemText.mb Пока вопросов не задано
                     .qItemBtnGroup.flex.left
@@ -35,14 +34,7 @@ block body
                         .qItemBtn.active Спикеру
                         .qItemBtn На экран
                         .qItemBtn.red Удалить
-                .qItem.mb
-                    .qItemHead 12.02.2023 12:34  Вася Иванов
-                    .qItemText.mb Пока вопросов не задано
-                    .qItemBtnGroup.flex.left
-                        .qItemBtn Принять
-                        .qItemBtn.active Спикеру
-                        .qItemBtn На экран
-                        .qItemBtn.red Удалить
+
 
 
     script let event=!{JSON.stringify(event)}
