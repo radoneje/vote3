@@ -61,6 +61,10 @@ let app = new Vue({
             let ret=await post("/api/newQ",{personid:this.personid, text:this.qText, eventshort:short})
             this.q.push(ret.data)
             this.qText="";
+            setTimeout(()=>{
+                let objDiv = document.querySelector(".pqBox")
+                objDiv.scrollTop = objDiv.scrollHeight;
+            },0)
 
             console.log(ret)
         },
