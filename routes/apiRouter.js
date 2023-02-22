@@ -128,7 +128,7 @@ router.post("/uploadFile", upload.single('file'), async (req, res) => {
         fs.renameSync(req.file.destination + req.file.filename, newFileName)
         let files=await req.knex("t_files").update({
             status:2,
-            originalname:req.file.originalname,
+            originalname:req.body.name,
             mimetype:req.file.mimetype,
             size:req.file.size,
             path:newFileName
