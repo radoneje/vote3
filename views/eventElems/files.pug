@@ -1,0 +1,58 @@
+extends ../layout
+block head
+block body
+
+
+    include eventMenu
+    script.
+            document.querySelector(".eventMenuItem[menuid='3']").classList.add("active")
+    .mainTower#app
+        .eventBody.mt
+            .qSelectors.flex.left.mb2
+                .switcherWr(v-on:click="toogleEvent( 'isQ')" v-bind:class="{active:event.isQ}")
+                    .switcherBox
+                        .switcherElem
+                        .switcherCap
+                    .switcherTextOff Выключено, пользователи не могут задавать вопросы
+                    .switcherTextOn Включено, пользователи могут задавать вопросы
+                .switcherWr(v-on:click="toogleEvent('isQpreMod')" v-bind:class="{active:event.isQpreMod}")
+                    .switcherBox
+                        .switcherElem
+                        .switcherCap
+                    .switcherTextOff Премодерация выключена
+                    .switcherTextOn Премодерация включена
+
+            .qItemBtnGroup.flex.left.mb
+                .qItemBtn( v-on:click="approveAllQ( 'isMod', true)") Принять все
+                .qItemBtn( v-on:click="approveAllQ( 'isSpk', true)") Спикеру все
+                .qItemBtn( v-on:click="approveAllQ( 'isScreen', true)")  На экран все
+                //.qItemBtn.red( v-on:click="approveAllQ( 'isMod', false)") Скрыть все
+                .qItemBtn.red( v-on:click="approveAllQ( 'isSpk', false)") От спикера все
+                .qItemBtn.red( v-on:click="approveAllQ( 'isScreen', false)")  С экрана все
+                .qItemBtn.red(v-on:click="if(confirm('Удалить все вопросы?')) approveAllQ( 'isDeleted', true)") Удалить все
+                .qTotal Всего вопросов: {{q.length}}
+            .qWr
+                .qItem.mb(v-if="q.length==0")
+                    .qItemText Пока вопросов не задано
+
+                .qItem.mb(v-for="item in q")
+                    .qItemHead {{item.date}} {{item.i}} {{item.f}}
+                    .qItemText.mb {{item.text}}
+                    .qItemBtnGroup.flex.left
+                        .qItemBtn(v-bind:class="{active:item.isMod}" v-on:click="toogleQ( 'isMod', item)")
+                            span(v-if="item.isMod") Принят
+                            span(v-else) Принять
+                        .qItemBtn(v-bind:class="{active:item.isSpk}" v-on:click="toogleQ( 'isSpk', item)")
+                            span(v-if="!item.isSpk") Спикеру
+                            span(v-else) У Спикера
+                        .qItemBtn(v-bind:class="{active:item.isScreen}" v-on:click="toogleQ( 'isScreen', item)")
+                            span(v-if="!item.isScreen") На экран
+                            span(v-else) На экране
+                        .qItemBtn.red(v-on:click="if(confirm('Удалить вопрос?')) toogleQ( 'isDeleted', item)") Удалить
+
+
+
+    script let event=!{JSON.stringify(event)}
+    script(src="/scripts/eventScript.js")
+    script(src="/scripts/vue.min.js")
+    script(src="/scripts/eventQScript.js")
