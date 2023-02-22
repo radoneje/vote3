@@ -368,11 +368,11 @@ textarea{
 .border{
     border-radius: var(--rad);
     border:1px solid var(--borderColor);
+    box-sizing: border-box;
 }
 .checkBox{
     width: 1rem;
     height: 1rem;
     background-color: var(--backColor);
-
 }
 
