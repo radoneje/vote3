@@ -45,7 +45,7 @@ block body
                         .qItemBtn(v-bind:class="{active:item.isSpk}" v-on:click="toogleQ( 'isSpk', item)")
                             span(v-if="item.isSpk") Спикеру
                             span(else) У Спикера
-                        .qItemBtn(v-bind:class="{active:item.isScreen}" v-on:click="toogleQ( 'isScreen', item)")  На экран
+                        .qItemBtn(v-bind:class="{active:item.isScreen}" v-on:click="toogleQ( 'isScreen', item)")
                             span(v-if="item.isSpk") На экран
                             span(else) На экране
                         .qItemBtn.red(v-on:click="if(confirm('Удалить вопрос?')) toogleQ( 'isDeleted', item)") Удалить
