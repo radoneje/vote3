@@ -123,10 +123,10 @@ const post =(url, body)=>{
             body: JSON.stringify(body)
         })
         if(res.ok){
-            resolve({data:await responce.json()})
+            resolve({data:await res.json()})
         }
         else
-            resolve({err:true, message:await responce.text()})
+            resolve({err:true, message:await res.text()})
 
     })
 
