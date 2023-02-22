@@ -6,7 +6,8 @@ block body
             .qSendWr(v-if="event.isQ")
                 textarea.mb(placeholder="Ваш вопрос" v-model="qText")
                 .qBtnGroup
-                    .btn Отправить
+                    .btn.flex.center
+                        div Отправить
     script let short=!{JSON.stringify(event.short)}
     script(src="/scripts/vue.min.js")
     script(src="/scripts/workScript.js")
