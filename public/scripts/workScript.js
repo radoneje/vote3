@@ -28,7 +28,7 @@ let app = new Vue({
             }
             if(!this.person.email || this.person.email.length<0 || !validateEmail(this.person.email)){
                 this.regError="Поле Email должно быть заполнено корректно";
-                document.getElementById("persPhone").focus()
+                document.getElementById("persEmail").focus()
                 return;
             }
         },
