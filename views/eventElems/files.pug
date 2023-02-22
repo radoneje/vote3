@@ -24,7 +24,7 @@ block body
 
                 .qItem.mb(v-for="item in files")
                     .qItemHead {{item.originalname}}
-                    input.mb(v-model="item.title")
+                    input.mb(v-model="item.title" v-on:change="changeFile(item)")
                     .qItemBtnGroup.flex.left
                         .qItemBtn(v-bind:class="{active:item.isMod}" v-on:click="toogleFile( 'isMod', item)")
                             span(v-if="item.isMod") Принят

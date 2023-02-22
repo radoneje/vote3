@@ -70,6 +70,10 @@ let app = new Vue({
                 await post("/api/q/",dt);
             }
         },
+        changeFile:async function(column, item){
+           ;
+            await post("/api/file/",item);
+        },
         toogleFile:async function(column, item){
             item[column]=!item[column]
             let dt={id:item.id}
