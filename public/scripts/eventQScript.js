@@ -12,7 +12,7 @@ let app = new Vue({
         downloadEventFile:function (item){
             let a=document.createElement("a")
             a.href="/file/"+item.fileid
-            a.download=item.original.name;
+            a.download=item.originalname;
             a.click();
         },
         uploadFile:async function(file){
