@@ -26,7 +26,7 @@ block body
                 .qItemBtn( v-on:click="approveAllQ( 'isMod', true)") Принять все
                 .qItemBtn( v-on:click="approveAllQ( 'isSpk', true)") Спикеру все
                 .qItemBtn( v-on:click="approveAllQ( 'isScreen', true)")  На экран все
-                .qItemBtn.red( v-on:click="approveAllQ( 'isMod', false)") Скрыть все
+                //.qItemBtn.red( v-on:click="approveAllQ( 'isMod', false)") Скрыть все
                 .qItemBtn.red( v-on:click="approveAllQ( 'isSpk', false)") От спикера все
                 .qItemBtn.red( v-on:click="approveAllQ( 'isScreen', false)")  С экрана все
                 .qItemBtn.red(v-on:click="if(confirm('Удалить все вопросы?')) approveAllQ( 'isDeleted', true)") Удалить все
