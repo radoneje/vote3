@@ -9,7 +9,7 @@ block body
                 .pqBox.mb
                     .qItem.mb(v-if="q.length==0")
                         .pqItemTitle Пока вопросов не задано
-                    .qItem.mb(v-for="item in q")
+                    .qItem.mb(v-for="item in q" :qid="item.id")
                         .qItemHead {{item.date}} {{item.i}} {{item.f}}
                         .pqItemText {{item.text}}
                         .errorMessaage(v-if="!item.isMod") Вопрос на модерации
