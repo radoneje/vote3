@@ -402,4 +402,9 @@ textarea{
     background-color: var(--grayColor);
     overflow-y: auto;
 }
+.pqBox{
+    max-height: calc(100vh - 330px);
+    overflow-y: auto;
+    padding-right: var(--pad);
+}
 
