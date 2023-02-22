@@ -1,3 +1,4 @@
+
 let app = new Vue({
     el:"#app",
     data:{
@@ -22,6 +23,11 @@ let app = new Vue({
             }
             if(!this.person.phone || this.person.phone.length<0){
                 this.regError="Поле Телефон должно быть заполнено";
+                document.getElementById("persPhone").focus()
+                return;
+            }
+            if(!this.person.email || this.person.email.length<0 || !validateEmail(this.person.email)){
+                this.regError="Поле Email должно быть заполнено корректно";
                 document.getElementById("persPhone").focus()
                 return;
             }
@@ -61,3 +67,10 @@ let app = new Vue({
         }
     }
 })
+const validateEmail = (email) => {
+    return String(email)
+        .toLowerCase()
+        .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+};
