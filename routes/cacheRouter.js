@@ -40,6 +40,13 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
             }
             ret.lastTime=events[0].modtime
         }
+        let q=await req.knex("v_q").where({isMod:true, eventshort:req.params.short}).andWhere("modtime", ">", lastTime).orderBy("date", "desc")
+        if(q.length>0){
+            ret.q=q;
+            let arr=[]
+            q.forEach(qq=>{arr.push(qq.modtime)})
+            lastTime=Math.max([lastTime, Math.max(...arr)]);
+        }
         res.json(ret)
     }
     catch (e){
