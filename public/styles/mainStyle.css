@@ -453,6 +453,7 @@ textarea{
     left: 0;
     width: 0%;
     background-color: var(--buttonColor);
+    border-radius:calc( var(--rad) / 2 )
 }
 .uploadingItem.err .uploadingItemBg{
     background-color: var(--errorColor);
