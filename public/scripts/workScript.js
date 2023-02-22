@@ -81,9 +81,10 @@ let app = new Vue({
                     r.q.forEach(item=>{
                         if(this.q.filter(qq=>qq.id==item.id).length==0) {
                             this.q.push(item)
-                            let objDiv = document.querySelector(".pqBox")
-                            console.log( objDiv.scrollTop , objDiv.scrollHeight)
+
                             setTimeout(()=>{
+                                let objDiv = document.querySelector(".pqBox")
+                                console.log( objDiv.scrollTop , objDiv.scrollHeight)
                                 objDiv.scrollTop = objDiv.scrollHeight;
                             },0)
                         }
