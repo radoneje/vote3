@@ -33,8 +33,6 @@ let app = new Vue({
             }
             this.regError=false;
 
-
-
             let responce = await fetch("/api/regPerson/", {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json;charset=utf-8'},
@@ -42,7 +40,7 @@ let app = new Vue({
             })
             if (responce.ok) {
                 let result = await responce.json();
-                this.showPersonBox=false;
+                this.showPersonBox=null;
                 this.personid=result.personid;
                 await this.sendQ();
             }
