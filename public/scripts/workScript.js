@@ -1,7 +1,7 @@
 let app = new Vue({
     el:"#app",
     data:{
-        short:short,
+
     },
     methods:{},
     watch:{},
