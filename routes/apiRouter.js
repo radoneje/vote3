@@ -80,8 +80,9 @@ router.post("/newQ", async (req, res) => {
     }
 })
 router.post("/event", async (req, res) => {
+
     if(!req.session.user)
-        res.sendStatus(404)
+        res.sendStatus(401)
     try {
         let id=req.body.id;
         delete req.body.id;
