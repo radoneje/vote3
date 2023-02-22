@@ -32,6 +32,9 @@ let app = new Vue({
                         console.warn(res.message)
                 }
             }
+            xhr.onprogress=(ev)=>{
+                console.log(ev)
+            }
 
             xhr.open('POST', "/api/uploadFile")
             xhr.send(fd)
