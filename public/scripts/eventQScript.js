@@ -15,7 +15,7 @@ let app = new Vue({
             if(res.err)
                 return console.warn(res.message);
             let fileid=res.data
-            let uploadItem={id:fileid, name:file.name, done:0, total:file.size, percent:0, status:0}
+            let uploadItem={id:fileid, name:file.name, done:0, total:file.size, percent:0, status:0, err:false}
             this.uploading.push(uploadItem);
             let fd=new FormData();
             fd.append("file", file)
@@ -25,11 +25,19 @@ let app = new Vue({
             xhr.responseType = 'json'
             xhr.onreadystatechange = async ()=> {
                 if (xhr.readyState == XMLHttpRequest.DONE) {
-                    let res=await post("/api/fileToEvent",{fileid, short:event.short})
-                    if(!res.err)
-                        this.files.push(res.data)
-                    else
-                        console.warn(res.message)
+                    if(xhr.status == 200) {
+                        let res = await post("/api/fileToEvent", {fileid, short: event.short})
+                        if (!res.err) {
+                            this.files.push(res.data)
+                            setTimeout(() => {
+                                this.uploading = this.uploading.filter(u => u.id != uploadItem.id)
+                            }, 2000)
+                        } else
+                            console.warn(res.message)
+                    }
+                    else {
+                        uploadItem.err=true
+                    }
                 }
             }
             xhr.onprogress=(ev)=>{

@@ -454,5 +454,11 @@ textarea{
     width: 0%;
     background-color: var(--buttonColor);
 }
+.uploadingItem.err .uploadingItemBg{
+    background-color: var(--errorColor);
+}
+.uploadingItem.err .uploadingItem{
+    color:var(--backColor)
+}
 
 
