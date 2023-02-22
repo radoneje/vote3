@@ -443,12 +443,15 @@ textarea{
 }
 .uploadingItem{
     position: relative;
-    padding: calc(var(--pad) ) /2;
+    padding: calc(var(--pad) / 2 ) ;
 }
 .uploadingItemBg{
     position: absolute;
-    top:0;
+    top: 0;
+    height: 100%;
+    z-index: -1;
     left: 0;
+    width: 0%;
     background-color: var(--buttonColor);
 }
 
