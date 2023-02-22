@@ -128,7 +128,7 @@ router.post("/uploadFile", upload.single('file'), async (req, res) => {
         fs.renameSync(req.file.destination + req.file.filename, newFileName)
 
        // await req.knex("t_filesPgm").insert({file: newFileName, isRu: req.body.lang == "ru"}, "*");
-        res.json(newFileName)
+        res.json({newFileName, id:req.body.id, file:req.file })
     } catch (e) {
         res.status(404).send(e.toString())
     }
