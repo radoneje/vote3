@@ -473,6 +473,9 @@ textarea{
     cursor: pointer;
     width: 60px;
 }
+.fileDlWr:hover{
+    background-color: var(--hoverColor);
+}
 .fileDlIco{}
 .fileDlSize{
     color: var(--backColor);
