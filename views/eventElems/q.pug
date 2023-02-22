@@ -40,13 +40,13 @@ block body
                     .qItemText.mb {{item.text}}
                     .qItemBtnGroup.flex.left
                         .qItemBtn(v-bind:class="{active:item.isMod}" v-on:click="toogleQ( 'isMod', item)")
-                            span(v-if="item.isMod") Принять
-                            span(v-else) Принят
+                            span(v-if="item.isMod") Принят
+                            span(v-else) Принять
                         .qItemBtn(v-bind:class="{active:item.isSpk}" v-on:click="toogleQ( 'isSpk', item)")
-                            span(v-if="item.isSpk") Спикеру
+                            span(v-if="!item.isSpk") Спикеру
                             span(v-else) У Спикера
                         .qItemBtn(v-bind:class="{active:item.isScreen}" v-on:click="toogleQ( 'isScreen', item)")
-                            span(v-if="item.isSpk") На экран
+                            span(v-if="!item.isSpk") На экран
                             span(v-else) На экране
                         .qItemBtn.red(v-on:click="if(confirm('Удалить вопрос?')) toogleQ( 'isDeleted', item)") Удалить
 
