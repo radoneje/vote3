@@ -70,7 +70,7 @@ let app = new Vue({
                 await post("/api/q/",dt);
             }
         },
-        changeFile:async function(column, item){
+        changeFile:async function( item){
            ;
             await post("/api/file/",item);
         },
