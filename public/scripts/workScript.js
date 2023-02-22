@@ -5,9 +5,17 @@ let app = new Vue({
         qText:'',
         personid:null,
         person:{approve:false},
-        showPersonBox:false
+        showPersonBox:false,
+        regError:""
     },
     methods:{
+        regPerson: async function(){
+            if(!person.i ||person.i.length<0){
+                this.regError="Поле Имя должно быть заполнено";
+                document.getElementById("persI").focus()
+                return;
+            }
+        },
         sendQ:async function(lastTime){
             if(!this.personId) {
                 return this.showPersonBox=true
