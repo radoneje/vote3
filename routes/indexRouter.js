@@ -17,7 +17,7 @@ router.get("/userEvent/links", async (req, res)=>{
   if(events.length==0)
     events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
 
-  res.render("eventElems/links.pug", {event:events[0], host:req.protocol + '://' + req.get('host')})
+  res.render("eventElems/links.pug", {event:events[0], host:req.protocol + 's://' + req.get('host')})
 })
 router.get("/userEvent/q", async (req, res)=>{
     if(!req.session.user)
