@@ -127,7 +127,6 @@ let app = new Vue({
                     r.files.forEach(item=>{
                         if(this.files.filter(qq=>qq.id==item.id).length==0) {
 
-
                             this.files.push(item)
                         }
                         else{
@@ -141,6 +140,7 @@ let app = new Vue({
                         }
                     })
                     this.files=this.files.filter(qq=>!qq.isDeleted)
+                    this.files=this.files.filter(qq=>qq.isMod)
                 }
                 /////////////
             }
