@@ -9,6 +9,15 @@ let app = new Vue({
         uploading:[]
     },
     methods:{
+        dropFileHandler:async function(ev){
+            ev.preventDefault();
+            console.log(ev)
+
+        },
+        dragOverFileHandler:async function(ev){
+            ev.preventDefault();
+
+        },
         uploadFile:async function(file){
 
             let res=await get("/api/newFile")
