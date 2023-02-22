@@ -108,6 +108,9 @@ textarea{
 .inputGroup .errorMessaage{
     display: none;
 }
+.errorMessaage{
+    color: var(--errorColor);
+}
 .inputGroup.error .errorMessaage{
     display: block;
     position: absolute;
