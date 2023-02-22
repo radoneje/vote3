@@ -14,10 +14,11 @@ let app = new Vue({
             if(res.err)
                 return console.warn(res.message);
             let fileid=res.data
-            console.log(fileid)
-            return;
+            console.log(res)
+            return l
             let fd=new FormData();
             fd.append("file", file)
+            fd.append("id", fileid)
             const xhr = new XMLHttpRequest()
             xhr.responseType = 'json'
             xhr.onload = () => {
