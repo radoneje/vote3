@@ -15,7 +15,7 @@ block body
                         .switcherCap
                     .switcherTextOff Выключено, пользователи не могут задавать вопросы
                     .switcherTextOn Включено, пользователи могут задавать вопросы
-                .switcherWr#qPreModEnable
+                .switcherWr#qPreModEnable(v-on:click="toogleEvent( 'isQpreMod')" v-bind:class="{active:event.isQpreMod}")
                     .switcherBox
                         .switcherElem
                         .switcherCap
