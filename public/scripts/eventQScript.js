@@ -11,7 +11,7 @@ let app = new Vue({
     methods:{
         downloadEventFile:function (item){
             let a=document.createElement("a")
-            a.href="/file/"+item.fileid
+            a.href="/file/"+item.short
             a.download=item.originalname;
             a.click();
         },

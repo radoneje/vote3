@@ -56,10 +56,10 @@ router.get("/qrcode/", async (req, res)=>{
         errorCorrectionLevel: 'H'
       });
 })
-router.get("/file/:id", async (req, res)=>{
+router.get("/file/:short", async (req, res)=>{
     try {
 
-        let r=await req.knex("t_files").where({id:req.params.id});
+        let r=await req.knex("t_files").where({short:req.params.short});
         res.file(r[0].path)
     } catch (e) {
         res.status(404).send(e.toString())
