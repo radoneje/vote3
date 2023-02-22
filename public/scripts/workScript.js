@@ -43,10 +43,9 @@ let app = new Vue({
 
                 let result = await responce.json();
                 this.showPersonBox=null;
-
-                this.personid=result.personid;
-                console.log( this.personid, result.personid,  result)
-                await this.sendQ();
+               // this.personid=result.personid;
+               // console.log( this.personid, result.personid,  result)
+               // await this.sendQ();
             }
             else {
                 this.regError="Ошибка регистрации, попробуйте позже";
