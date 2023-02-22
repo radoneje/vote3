@@ -478,7 +478,7 @@ textarea{
     font-size: .5rem;
 }
 .fileTitleWr input{
-    width: 100%;
+    width: 400px;
     border:1px solid var(--buttonColor);
     border-radius: var(--rad);
     padding: calc(var(--pad) / 2) var(--pad);
