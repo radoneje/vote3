@@ -79,6 +79,19 @@ router.post("/newQ", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+router.post("/event", async (req, res) => {
+    if(!req.session.user)
+        res.sendStatus(404)
+    try {
+        let id=req.body.id;
+        delete req.body.id;
+        let r=await req.knex("t_events").update(req.body,"*").where({id:id});
+        res.json(r[0])
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+})
+
 
 
 
