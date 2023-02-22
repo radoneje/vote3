@@ -15,6 +15,16 @@ let app = new Vue({
                 document.getElementById("persI").focus()
                 return;
             }
+            if(!this.person.f || this.person.f.length<0){
+                this.regError="Поле Фамилия должно быть заполнено";
+                document.getElementById("persF").focus()
+                return;
+            }
+            if(!this.person.phone || this.person.phone.length<0){
+                this.regError="Поле Телефон должно быть заполнено";
+                document.getElementById("persPhone").focus()
+                return;
+            }
         },
         sendQ:async function(lastTime){
             if(!this.personId) {
