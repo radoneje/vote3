@@ -85,7 +85,7 @@ let app = new Vue({
                             if(objDiv) {
                                 console.log(objDiv.scrollTop, objDiv.scrollHeight)
                                 let lastElem=document.querySelector(".qItem[qid='"+this.q[this.q.length-1].id+"']")
-                                console.log(lastElem.offsetParent)
+                                console.log(isInViewport(lastElem))
                             }
                             this.q.push(item)
                             setTimeout(()=>{
@@ -165,5 +165,15 @@ const post =(url, body)=>{
             resolve({err:true, message:await res.text()})
 
     })
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
 
 }
