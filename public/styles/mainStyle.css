@@ -354,6 +354,14 @@ textarea{
     position: absolute;
     top:calc(0 - (var(--pad) / 2));
     right:calc(0 - (var(--pad) / 2));
+    top: -16px;
+    right: -18px;
     cursor: pointer;
+    width: 64px;
+    height: 64px;
+}
+.btnClose svg{
+    width: 100%;
+    height: auto;
 }
 
