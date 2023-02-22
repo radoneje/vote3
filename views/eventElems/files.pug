@@ -18,7 +18,7 @@ block body
                 .qTotal Всего файлов: {{q.length}}
             .qWr
                 .qItem.mb(v-if="files.length==0")
-                    .qItemText.mb Пока файлов не добавлено
+                    .qItemText.mb Пока файлы не добавлены
                     .qItemBtn.active( v-on:click="uploadFile()") Загрузить файл
 
                 .qItem.mb(v-for="item in files")
