@@ -126,7 +126,7 @@ const post =(url, body)=>{
             resolve({data:await responce.json()})
         }
         else
-            resolve({err:true})
+            resolve({err:true, message:await responce.text()})
 
     })
 
