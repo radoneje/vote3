@@ -8,7 +8,11 @@ let app = new Vue({
         toogleAllQ:async function(column){
             for(let item of this.q)
             {
-                await this.toogleQ(column, item)
+                item[column]=true;
+                let dt={id:item.id}
+                dt[column]=item[column]
+                this.q=this.q.filter(qq=>!qq.isDeleted);
+                await post("/api/q/",dt);
             }
         },
         toogleQ:async function(column, item){
