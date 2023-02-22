@@ -71,7 +71,6 @@ let app = new Vue({
             }
         },
         changeFile:async function( item){
-           ;
             await post("/api/file/",item);
         },
         toogleFile:async function(column, item){
