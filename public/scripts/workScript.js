@@ -5,7 +5,7 @@ let app = new Vue({
         event:{},
         qText:'',
         personid:null,
-        person:{approve:false},
+        person:{approve:false, eventid:eventid},
         showPersonBox:false,
         regError:""
     },
@@ -32,8 +32,27 @@ let app = new Vue({
                 return;
             }
             this.regError=false;
+
+
+
+            let responce = await fetch("/api/regPerson/", {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json;charset=utf-8'},
+                body: JSON.stringify(this.person)
+            })
+            if (responce.ok) {
+                let result = await responce.json();
+                this.showPersonBox=false;
+                this.personid=result.personid;
+                await this.sendQ();
+            }
+            else {
+                this.regError="Ошибка регистрации, попробуйте позже";
+            }
+
+
         },
-        sendQ:async function(lastTime){
+        sendQ:async function(){
             if(!this.personId) {
                 return this.showPersonBox=true
             }
