@@ -6,7 +6,7 @@ let app = new Vue({
     },
     methods:{
         toogleAllQ:async function(column){
-            for(let q of this.q)
+            for(let item of this.q)
             {
                 await this.toogleQ(column, item)
             }
