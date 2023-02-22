@@ -172,7 +172,6 @@ const post =(url, body)=>{
 const isInViewport=(element) =>{
     const rect = element.getBoundingClientRect();
     const parentRect = element.parentNode.getBoundingClientRect();
-    console.log(rect.top,Parentrect.bottom )
     return rect.top>parentRect.bottom
 
 }
