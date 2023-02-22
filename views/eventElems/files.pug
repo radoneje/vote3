@@ -14,7 +14,7 @@ block body
                 .qItemBtn.active( v-on:click="uploadFile()") Загрузить файл
                 .qItemBtn( v-on:click="approveAllQ( 'isMod', true)") Показать все
                 .qItemBtn.red( v-on:click="approveAllQ( 'isMod', false)") Убрать все
-                .qItemBtn.red(v-on:click="if(confirm('Удалить все вопросы?')) approveAllQ( 'isDeleted', true)") Удалить все
+                .qItemBtn.red(v-on:click="if(confirm('Удалить все файлы?')) approveAllQ( 'isDeleted', true)") Удалить все
                 .qTotal Всего файлов: {{q.length}}
             .qWr
                 .qItem.mb(v-if="files.length==0")
