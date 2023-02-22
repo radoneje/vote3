@@ -330,5 +330,6 @@ textarea{
     border-radius: var(--rad);
     color: var(--textColor);
     background-color: var(--backColor);
+    border:1px solid var(--borderColor);
 }
 
