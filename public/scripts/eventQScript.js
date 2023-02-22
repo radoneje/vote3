@@ -10,7 +10,7 @@ let app = new Vue({
     },
     methods:{
         uploadFile:async function(file){
-            let res=get("/api/newFile")
+            let res=await get("/api/newFile")
             if(res.err)
                 return console.warn(res.message);
             let fileid=res.data
