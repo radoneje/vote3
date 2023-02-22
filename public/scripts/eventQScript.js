@@ -33,7 +33,10 @@ let app = new Vue({
                 }
             }
             xhr.onprogress=(ev)=>{
-                console.log(ev)
+                uploadItem.done=ev.loaded
+                uploadItem.total=ev.total
+                uploadItem.percent=parseInt((parseFloat(ev.loaded)/parseFloat(ev.total))*100)+"%"
+                console.log(ev.loaded, ev.total)
             }
 
             xhr.open('POST', "/api/uploadFile")
