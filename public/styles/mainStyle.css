@@ -407,4 +407,7 @@ textarea{
     overflow-y: auto;
     padding-right: var(--pad);
 }
+.pqItemText{
+    word-break: break-word;
+}
 
