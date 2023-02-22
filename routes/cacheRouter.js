@@ -27,7 +27,17 @@ router.get("/u/:short", async (req, res) => {
        res.status(500).send(e)
    }
 })
-
+router.get("/status/:short/:lastTime?", async (req, res) => {
+    try {
+        let lastTime=req.params.lastTime||0;
+        let timeout=5;
+       res.json({timeout, lastTime})
+    }
+    catch (e){
+        console.warn(e)
+        res.status(500).send(e)
+    }
+})
 
 
 export default router

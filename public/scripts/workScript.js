@@ -3,9 +3,22 @@ let app = new Vue({
     data:{
 
     },
-    methods:{},
+    methods:{
+        updateStatus:async function(lastTime){
+            let timeout=20;
+            let res=await fetch("/c/status/"+short)
+            if(res.ok){
+                let r=await res.json();
+                timeout=r.timeout;
+                lastTime=r.lastTime;
+            }
+            setTimeout(()=>{
+                this.updateStatus(lastTime)
+            }, timeout*1000);
+        }
+    },
     watch:{},
     mounted:async function (){
-        console.log("vie mounted")
+        this.updateStatus(0)
     }
 })
