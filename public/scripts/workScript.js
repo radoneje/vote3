@@ -13,7 +13,7 @@ let app = new Vue({
     },
     methods:{
         onScrollQ:function(e){
-            console.log("onScrollQ",e.target.scrollTop,e.target.getBoundingClientRect().top , e.target.getClientRect().bottom)
+            console.log("onScrollQ",e.target.scrollTop,e.target.getClientRect().top , e.target.getClientRect().bottom)
         },
         regPerson: async function(){
             if(!this.person.i || this.person.i.length<0){
