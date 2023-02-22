@@ -76,7 +76,7 @@ router.post("/newQ", async (req, res) => {
         r=await req.knex("v_q").where({id:r[0].id, isMod:true});
         res.json(r[0])
     } catch (e) {
-        res.status(404).send(e)
+        res.status(404).send(e.toString())
     }
 })
 
