@@ -372,7 +372,6 @@ textarea{
 .checkBox{
     width: 1rem;
     height: 1rem;
-
     background-color: var(--backColor);
 
 }
