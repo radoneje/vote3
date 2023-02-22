@@ -352,8 +352,8 @@ textarea{
 }
 .btnClose{
     position: absolute;
-    top:var(--pad);
-    right:var(--pad);
+    top:calc(0 - (var(--pad) / 2));
+    right:calc(0 - (var(--pad) / 2));
     cursor: pointer;
 }
 
