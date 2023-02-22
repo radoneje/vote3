@@ -70,6 +70,13 @@ let app = new Vue({
                 await post("/api/q/",dt);
             }
         },
+        toogleFile:async function(column, item){
+            item[column]=!item[column]
+            let dt={id:item.id}
+            dt[column]=item[column]
+            this.files=this.files.filter(qq=>!qq.isDeleted);
+            await post("/api/file/",dt);
+        },
         toogleQ:async function(column, item){
             item[column]=!item[column]
             let dt={id:item.id}
