@@ -31,7 +31,7 @@ block body
                                 </svg>
                             .fileDlSize {{item.pg_size_pretty}}
                         .fileTitleWr
-                            .qItemHead {{item.originalname}}
+                            .qItemHead.mb {{item.originalname}}
                             input.mb(v-model="item.title" v-on:change="changeFile(item)" placeholder="Введите заголовок файла")
                     .qItemBtnGroup.flex.left
                         .qItemBtn(v-bind:class="{active:item.isMod}" v-on:click="toogleFile( 'isMod', item)")

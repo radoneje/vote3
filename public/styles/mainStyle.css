@@ -477,6 +477,15 @@ textarea{
     color: var(--backColor);
     font-size: .5rem;
 }
+.fileTitleWr input{
+    width: 100%;
+    border:1px solid var(--buttonColor);
+    border-radius: var(--rad);
+    padding:var(--pad);
+    color:var(--textColor);
+    background-color: var(--backColor);
+
+}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
 
