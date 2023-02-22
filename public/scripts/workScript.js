@@ -1,7 +1,8 @@
 let app = new Vue({
     el:"#app",
     data:{
-        event:{}
+        event:{},
+        qText:''
     },
     methods:{
         updateStatus:async function(lastTime){
