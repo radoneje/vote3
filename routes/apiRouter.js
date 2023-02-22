@@ -1,6 +1,6 @@
 import express from 'express';
 
-const router2 = express.Router();
+const router = express.Router();
 import nodemailer from  'nodemailer'
 import path from 'path';
 import fs from 'fs';
@@ -12,17 +12,7 @@ const config= require('../config.json');
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-let router={
-    get:(url,params)=>{
-        try {
-            router2.get(url, params)
-        }
-        catch (e){
-            params.res.sendStatus(500);
-            comsole.log(e)
-        }
-    }
-}
+
 
 
 const randomIntFromInterval = (min, max) => { // min and max included

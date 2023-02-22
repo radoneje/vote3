@@ -1,6 +1,6 @@
 import express from 'express';
 
-const router = express.Router();
+const router2 = express.Router();
 import nodemailer from  'nodemailer'
 import path from 'path';
 import fs from 'fs';
@@ -12,7 +12,17 @@ const config= require('../config.json');
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
+let router={
+    get:(url,params)=>{
+        try {
+            router2.get(url, params)
+        }
+        catch (e){
+            params.res.sendStatus(500);
+            comsole.log(e)
+        }
+    }
+}
 
 
 router.get("/u/:short", async (req, res) => {
