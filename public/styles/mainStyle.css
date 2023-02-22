@@ -406,6 +406,9 @@ textarea{
     max-height: calc(100vh - 330px);
     overflow-y: auto;
     padding-right: var(--pad);
+
+}
+.pqContainer{
     position: relative;
 }
 .pqItemText{

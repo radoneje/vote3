@@ -6,16 +6,17 @@ block body
             .mb3
             .pQWr(v-if="event.isQ")
                 .h.mb3 Вопросы:
-                .pqBox.mb(v-on:scroll="onScrollQ($event)")
-                    .qItem.mb(v-if="q.length==0")
-                        .pqItemTitle Пока вопросов не задано
-                    .qItem.mb(v-for="item in q" :qid="item.id")
-                        .qItemHead {{item.date}} {{item.i}} {{item.f}}
-                        .pqItemText {{item.text}}
-                        .errorMessaage(v-if="!item.isMod") Вопрос на модерации
+                .pqContainer
+                    .pqBox.mb(v-on:scroll="onScrollQ($event)")
+                        .qItem.mb(v-if="q.length==0")
+                            .pqItemTitle Пока вопросов не задано
+                        .qItem.mb(v-for="item in q" :qid="item.id")
+                            .qItemHead {{item.date}} {{item.i}} {{item.f}}
+                            .pqItemText {{item.text}}
+                            .errorMessaage(v-if="!item.isMod") Вопрос на модерации
                     .pbNewQWr(v-if="newQ>0")
-                        .pbNewQText {{newQ}}
-                        .pbNewQDescr новых
+                            .pbNewQText {{newQ}}
+                            .pbNewQDescr новых
 
                 .qSendWr(v-if="event.isQ")
                     textarea.mb(placeholder="Ваш вопрос" v-model="qText")
