@@ -75,7 +75,7 @@ let app = new Vue({
                 if(r.q){
                     r.q.forEach(item=>{
                         if(this.q.filter(qq=>qq.id==item.id).length==0)
-                            this.qq.push(item)
+                            this.q.push(item)
                         else{
                             this.q.forEach(qq=>{
                                 if(qq.id==item.id){
