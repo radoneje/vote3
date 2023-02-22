@@ -84,7 +84,7 @@ let app = new Vue({
                             let objDiv = document.querySelector(".pqBox")
                             if(objDiv) {
                                 console.log(objDiv.scrollTop, objDiv.scrollHeight)
-                                let lastElem=document.querySelector(".qitem[qid='"+this.q[this.q.length-1].id+"']")
+                                let lastElem=document.querySelector(".qItem[qid='"+this.q[this.q.length-1].id+"']")
                                 console.log(lastElem)
                             }
                             this.q.push(item)
