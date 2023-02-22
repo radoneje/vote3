@@ -85,7 +85,7 @@ let app = new Vue({
                             if(objDiv) {
                                 console.log(objDiv.scrollTop, objDiv.scrollHeight)
                                 let lastElem=document.querySelector(".qItem[qid='"+this.q[this.q.length-1].id+"']")
-                                console.log(lastElem)
+                                console.log(lastElem.offsetParent)
                             }
                             this.q.push(item)
                             setTimeout(()=>{
