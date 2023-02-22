@@ -15,7 +15,7 @@ let app = new Vue({
                 return console.warn(res.message);
             let fileid=res.data
             console.log(res)
-            return l
+            return ;
             let fd=new FormData();
             fd.append("file", file)
             fd.append("id", fileid)
