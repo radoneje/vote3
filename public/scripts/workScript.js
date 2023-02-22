@@ -7,7 +7,8 @@ let app = new Vue({
         personid:null,
         person:{approve:false, short:short},
         showPersonBox:false,
-        regError:""
+        regError:"",
+        q:[]
     },
     methods:{
         regPerson: async function(){
@@ -71,6 +72,22 @@ let app = new Vue({
                 lastTime=r.lastTime;
                 if(r.event)
                     this.event=r.event;
+                if(r.q){
+                    r.q.forEach(item=>{
+                        if(this.q.filter(qq=>qq.id==item.id).length==0)
+                            this.qq.push(item)
+                        else{
+                            this.q.forEach(qq=>{
+                                if(qq.id==item.id){
+                                    qq.trxt=item.text;
+                                    qq.isMod=item.isMod;
+                                    qq.isDeleted=item.isDeleted;
+                                }
+                            })
+                        }
+                    })
+                    this.q=this.q.filter(qq=>!qq.isDeleted)
+                }
             }
             setTimeout(()=>{
                 this.updateStatus(lastTime)
