@@ -41,7 +41,7 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
             }
             ret.lastTime=events[0].modtime
         }
-        let q=await req.knex("v_q").where({isMod:true, eventshort:req.params.short}).andWhere("modtime", ">", lastTime).orderBy("date", "desc")
+        let q=await req.knex("v_q").where({isMod:true, eventshort:req.params.short}).andWhere("modtime", ">", lastTime).orderBy("id", )
         if(q.length>0){
             ret.q=q;
             let arr=[]
