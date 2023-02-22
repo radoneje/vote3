@@ -56,6 +56,22 @@ router.post("/checkCode", async (req, res) => {
         res.sendStatus(404)
     }
 })
+router.post("/regPerson", async (req, res) => {
+    try {
+        let r=await req.knex("t_persons").insert({
+            i:req.body.i,
+            f:req.body.f,
+            phone:req.body.phone,
+            email:req.body.email,
+            org:req.body.org
+        },"*")
+        res.json({personid:r[0].personid})
+    } catch (e) {
+        res.sendStatus(404)
+    }
+})
+
+
 
 
 export default router
