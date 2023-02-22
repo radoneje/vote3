@@ -12,8 +12,8 @@ let app = new Vue({
                 let r=await res.json();
                 timeout=r.timeout;
                 lastTime=r.lastTime;
-                if(e.event)
-                    this.event=e.event;
+                if(r.event)
+                    this.event=r.event;
             }
             setTimeout(()=>{
                 this.updateStatus(lastTime)
