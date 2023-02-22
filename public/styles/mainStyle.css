@@ -298,4 +298,11 @@ body{
 .qTotal{
     padding-left: var(--pad);
 }
+.qqSendWr textarea{
+    box-sizing: border-box;
+    border:1px solid var(--borderColor);
+    border-radius: var(--rad);
+    padding: var(--pad);
+    width: 100%;
+}
 
