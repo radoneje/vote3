@@ -67,7 +67,7 @@ router.post("/regPerson", async (req, res) => {
         },"*")
         res.json({personid:r[0].personid})
     } catch (e) {
-        res.sendStatus(404)
+        res.status(404).send(e.toString())
     }
 })
 
