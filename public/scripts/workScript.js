@@ -45,7 +45,7 @@ let app = new Vue({
                 this.showPersonBox=null;
                 this.personid=result.personid;
                 console.log( this.personid, result.personid,  result)
-               // await this.sendQ();
+                await this.sendQ();
             }
             else {
                 this.regError="Ошибка регистрации, попробуйте позже";
@@ -54,7 +54,7 @@ let app = new Vue({
 
         },
         sendQ:async function(){
-            if(!this.personId) {
+            if(!this.personid) {
                 return this.showPersonBox=true
             }
         },
