@@ -22,7 +22,10 @@ let app = new Vue({
             xhr.onreadystatechange = async function() {
                 if (xhr.readyState == XMLHttpRequest.DONE) {
                     let res=await post("/api/fileToEvent",{fileid, short:event.short})
-                    console.log(res)
+                    if(!res.err)
+                        files.push(res.data)
+                    else
+                        console.warn(res.message)
                 }
             }
             xhr.open('POST', "/api/uploadFile")
