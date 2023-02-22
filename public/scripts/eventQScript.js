@@ -138,8 +138,8 @@ const get =(url)=>{
         })
         if(res.ok){
             let ret=await res.json()
-            console.log(ret);
-            resolve({data:data})
+
+            resolve({data:ret})
         }
         else
             resolve({err:true, message:await res.text()})
