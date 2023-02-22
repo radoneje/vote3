@@ -18,7 +18,7 @@ let app = new Vue({
                 console.log(xhr.response)
             }
             xhr.open('POST', "/api/uploadFile")
-            xhr.send(formData)
+            xhr.send(fd)
 
         },
         selectFile:function (){
