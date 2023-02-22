@@ -5,6 +5,12 @@ let app = new Vue({
         q:[],
     },
     methods:{
+        toogleAllQ:async function(column){
+            for(let q of this.q)
+            {
+                await toogleQ(column, item)
+            }
+        },
         toogleQ:async function(column, item){
             item[column]=!item[column]
             let dt={id:item.id}

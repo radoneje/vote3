@@ -21,7 +21,13 @@ block body
                         .switcherCap
                     .switcherTextOff Премодерация выключена
                     .switcherTextOn Премодерация включена
-            .qTotal.mb Всего вопросов: {{q.length}}
+
+            .qItemBtnGroup.flex.left.mb
+                .qItemBtn( v-on:click="toogleAllQ( 'isMod')") Принять все
+                .qItemBtn( v-on:click="toogleAllQ( 'isSpk')") Спикеру все
+                .qItemBtn( v-on:click="toogleAllQ( 'isScreen')")  На экран все
+                .qItemBtn.red(v-on:click="if(confirm('Удалить все вопросы?')) toogleAllQ( 'isDeleted')") Удалить все
+                .qTotal Всего вопросов: {{q.length}}
             .qWr
                 .qItem.mb(v-if="q.length==0")
                     .qItemText Пока вопросов не задано
