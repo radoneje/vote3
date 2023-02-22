@@ -23,13 +23,14 @@ block body
                     .switcherTextOn Премодерация включена
 
             .qItemBtnGroup.flex.left.mb
-                .qItemBtn( v-on:click="approveAllQ( 'isMod', true)") Принять все
-                .qItemBtn( v-on:click="approveAllQ( 'isSpk', true)") Спикеру все
-                .qItemBtn( v-on:click="approveAllQ( 'isScreen', true)")  На экран все
-                //.qItemBtn.red( v-on:click="approveAllQ( 'isMod', false)") Скрыть все
-                .qItemBtn.red( v-on:click="approveAllQ( 'isSpk', false)") От спикера все
-                .qItemBtn.red( v-on:click="approveAllQ( 'isScreen', false)")  С экрана все
-                .qItemBtn.red(v-on:click="if(confirm('Удалить все вопросы?')) approveAllQ( 'isDeleted', true)") Удалить все
+                .group.flex.left
+                    .qItemBtn( v-on:click="approveAllQ( 'isMod', true)") Принять все
+                    .qItemBtn( v-on:click="approveAllQ( 'isSpk', true)") Спикеру все
+                    .qItemBtn( v-on:click="approveAllQ( 'isScreen', true)")  На экран все
+                    //.qItemBtn.red( v-on:click="approveAllQ( 'isMod', false)") Скрыть все
+                    .qItemBtn.red( v-on:click="approveAllQ( 'isSpk', false)") От спикера все
+                    .qItemBtn.red( v-on:click="approveAllQ( 'isScreen', false)")  С экрана все
+                    .qItemBtn.red(v-on:click="if(confirm('Удалить все вопросы?')) approveAllQ( 'isDeleted', true)") Удалить все
                 .qTotal Всего вопросов: {{q.length}}
             .qWr
                 .qItem.mb(v-if="q.length==0")
