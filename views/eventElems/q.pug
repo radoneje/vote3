@@ -21,14 +21,14 @@ block body
                         .switcherCap
                     .switcherTextOff Премодерация включена
                     .switcherTextOn Премодерация выключена
-            .qTotal.mb Всего вопросов: 234
+            .qTotal.mb Всего вопросов: {{q.length}}
             .qWr
                 .qItem.mb(v-if="q.length==0")
                     .qItemText Пока вопросов не задано
 
                 .qItem.mb(v-for="item in q")
-                    .qItemHead 12.02.2023 12:34  Вася Иванов
-                    .qItemText.mb Пока вопросов не задано
+                    .qItemHead {{item.date}} {{item.i}} {{item.f}}
+                    .qItemText.mb {{item.tex}}
                     .qItemBtnGroup.flex.left
                         .qItemBtn Принять
                         .qItemBtn.active Спикеру
