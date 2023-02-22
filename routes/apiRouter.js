@@ -126,9 +126,16 @@ router.post("/uploadFile", upload.single('file'), async (req, res) => {
     try {
         let newFileName = req.file.destination + req.file.filename + path.extname(req.file.originalname)
         fs.renameSync(req.file.destination + req.file.filename, newFileName)
-
+//{"newFileName":"public/uploads/db0b96e9f41c7db61278c7cdfdd45291.pdf","id":"14","file":{"fieldname":"file","originalname":"uralcyberfin-ÐÐ¾Ð»Ð¾Ð´ÐµÐ¶Ñ.drawio (1) (1).pdf","encoding":"7bit","mimetype":"application/pdf","destination":"public/uploads/","filename":"db0b96e9f41c7db61278c7cdfdd45291","path":"public/uploads/db0b96e9f41c7db61278c7cdfdd45291","size":34627}}
        // await req.knex("t_filesPgm").insert({file: newFileName, isRu: req.body.lang == "ru"}, "*");
-        res.json({newFileName, id:req.body.id, file:req.file })
+        let files=await req.knex("t_files").update({
+            status:2,
+            originalname:req.file.originalname,
+            mimetype:req.file.mimetype,
+            size:req.file.size,
+            path:newFileName
+        },"*").where({id:req.body.id})
+        res.json(files[0])
     } catch (e) {
         res.status(404).send(e.toString())
     }
