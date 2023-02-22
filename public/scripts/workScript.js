@@ -12,8 +12,8 @@ let app = new Vue({
         newQ:0,
     },
     methods:{
-        onScrollQ:function(){
-            console.log("onScrollQ")
+        onScrollQ:function(e){
+            console.log("onScrollQ",e)
         },
         regPerson: async function(){
             if(!this.person.i || this.person.i.length<0){
