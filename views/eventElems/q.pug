@@ -30,7 +30,7 @@ block body
                     .qItemHead {{item.date}} {{item.i}} {{item.f}}
                     .qItemText.mb {{item.text}}
                     .qItemBtnGroup.flex.left
-                        .qItemBtn(v-bind:class="{active:item.isMod}") Принять
+                        .qItemBtn(v-bind:class="{active:item.isMod}" v-on:click="toogleQ( 'isMod', item)") Принять
                         .qItemBtn(v-bind:class="{active:item.isSpk}") Спикеру
                         .qItemBtn(v-bind:class="{active:item.isScreen}")  На экран
                         .qItemBtn.red() Удалить

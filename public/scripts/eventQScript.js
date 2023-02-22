@@ -5,6 +5,13 @@ let app = new Vue({
         q:[],
     },
     methods:{
+        toogleQ:async function(column, item){
+            item[column]=!item[column]
+            let dt={id:item.id}
+            dt[column]=item[column]
+            this.q=this.q.filter(qq=>!qq.isDeleted);
+            await post("/api/q/",dt);
+        },
         toogleEvent:async function(column){
             this.event[column]=!this.event[column]
             let dt={id:event.id}
