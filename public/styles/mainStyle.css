@@ -384,7 +384,7 @@ textarea{
 }
 
 .checkBox.active::after{
-   content: "U+2714";
+   content: "\2714";
     color: var(--backColor);
     position: absolute;
     top:0;
