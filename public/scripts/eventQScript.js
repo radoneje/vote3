@@ -3,6 +3,7 @@ let app = new Vue({
     data:{
         event:event,
         q:[],
+        files:[],
     },
     methods:{
         approveAllQ:async function(column, status){
