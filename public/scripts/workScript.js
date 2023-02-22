@@ -53,9 +53,12 @@ let app = new Vue({
 
         },
         sendQ:async function(){
-            if(!this.personid) {
+            if(this.qText.length==0)
+                return ;
+            if(!this.personid)
                 return this.showPersonBox=true
-            }
+            let ret=post("/api/newQ",{personid:this.personid, text:qText})
+            console.log(ret)
         },
         updateStatus:async function(lastTime){
             let timeout=20;
@@ -111,3 +114,20 @@ const validateEmail = (email) => {
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         );
 };
+
+const post =(url, body)=>{
+    return new Promise(async (resolve, reject)=>{
+        let res = await fetch(url, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json;charset=utf-8'},
+            body: JSON.stringify(body)
+        })
+        if(res.ok){
+            resolve({data:await responce.json()})
+        }
+        else
+            resolve({err:true})
+
+    })
+
+}
