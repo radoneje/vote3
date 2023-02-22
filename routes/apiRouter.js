@@ -73,7 +73,7 @@ router.post("/regPerson", async (req, res) => {
 router.post("/newQ", async (req, res) => {
     try {
         let r=await req.knex("t_q").insert(req.body,"*")
-        r=await req.knex("v_q").where({id:r[0].id});
+        r=await req.knex("v_q").where({id:r[0].id, isMod:true});
         res.json(r[0])
     } catch (e) {
         res.status(404).send(e)
