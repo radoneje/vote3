@@ -323,4 +323,12 @@ textarea{
     z-index: 1000;
     background-color: #FFFFFF55;
 }
+.fullScreenBox{
+    box-sizing: border-box;
+    width: 300px;
+    padding: var(--pad);
+    border-radius: var(--rad);
+    color: var(--textColor);
+    background-color: var(--backColor);
+}
 
