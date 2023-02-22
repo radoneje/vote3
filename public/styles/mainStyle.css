@@ -461,5 +461,8 @@ textarea{
 .uploadingItem.err .uploadingItemTitle{
     color:var(--backColor)
 }
+#fileWr.highlight{
+    border-color: var(--buttonColor);
+}
 
 
