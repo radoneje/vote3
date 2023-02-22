@@ -32,6 +32,13 @@ body{
    background-color: var(--backColor);
    color: var(--textColor);
 }
+textarea{
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    line-height: 1.2em;
+    background-color: var(--backColor);
+    color: var(--textColor);
+}
 .mainTower{
     width: var(--width);
     margin: 0 auto;
@@ -304,5 +311,6 @@ body{
     border-radius: var(--rad);
     padding: var(--pad);
     width: 100%;
+    height: 6em;
 }
 
