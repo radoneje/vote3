@@ -9,7 +9,7 @@ let app = new Vue({
         uploading:[]
     },
     methods:{
-        uploadFile:async function(){
+        uploadFile:async function(file){
             let fd=new FormData();
             fd.append("file", file)
             const xhr = new XMLHttpRequest()
