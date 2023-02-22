@@ -8,7 +8,8 @@ let app = new Vue({
         person:{approve:false, short:short},
         showPersonBox:false,
         regError:"",
-        q:[]
+        q:[],
+        newQ:0,
     },
     methods:{
         regPerson: async function(){
@@ -88,6 +89,8 @@ let app = new Vue({
                                         let objDiv = document.querySelector(".pqBox")
                                         objDiv.scrollTop = objDiv.scrollHeight;
                                     }, 100)
+                                else
+                                    this.newQ++;
                             }
                             this.q.push(item)
                         }
@@ -131,6 +134,11 @@ let app = new Vue({
     },
     mounted:async function (){
         this.updateStatus(0)
+        setTimeout(() => {
+            let objDiv = document.querySelector(".pqBox")
+            if(objDiv)
+            objDiv.scrollTop = objDiv.scrollHeight;
+        }, 1000)
         try {
             this.personid=localStorage.getItem("personid")
             let person = localStorage.getItem("person")
