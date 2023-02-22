@@ -325,7 +325,7 @@ textarea{
 }
 .fullScreenBox{
     box-sizing: border-box;
-    width: 300px;
+    width: 600px;
     padding: var(--pad);
     border-radius: var(--rad);
     color: var(--textColor);
@@ -335,6 +335,6 @@ textarea{
 }
 .h{
     font-size: 1.2rem;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
