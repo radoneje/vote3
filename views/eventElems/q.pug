@@ -31,9 +31,9 @@ block body
                     .qItemText.mb {{item.text}}
                     .qItemBtnGroup.flex.left
                         .qItemBtn(v-bind:class="{active:item.isMod}" v-on:click="toogleQ( 'isMod', item)") Принять
-                        .qItemBtn(v-bind:class="{active:item.isSpk}") Спикеру
-                        .qItemBtn(v-bind:class="{active:item.isScreen}")  На экран
-                        .qItemBtn.red() Удалить
+                        .qItemBtn(v-bind:class="{active:item.isSpk}" v-on:click="toogleQ( 'isSpk', item)") Спикеру
+                        .qItemBtn(v-bind:class="{active:item.isScreen}" v-on:click="toogleQ( 'isScreen', item)")  На экран
+                        .qItemBtn.red(v-on:click="if(confirm('Удалить вопрос?')) toogleQ( 'isDeleted', item)") Удалить
 
 
 
