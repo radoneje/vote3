@@ -10,6 +10,7 @@ let app = new Vue({
     },
     methods:{
         uploadFile:async function(file){
+
             let res=await get("/api/newFile")
             if(res.err)
                 return console.warn(res.message);
@@ -19,11 +20,11 @@ let app = new Vue({
             fd.append("id", fileid)
             const xhr = new XMLHttpRequest()
             xhr.responseType = 'json'
-            xhr.onreadystatechange = async function() {
+            xhr.onreadystatechange = async ()=> {
                 if (xhr.readyState == XMLHttpRequest.DONE) {
                     let res=await post("/api/fileToEvent",{fileid, short:event.short})
                     if(!res.err)
-                        files.push(res.data)
+                        this.files.push(res.data)
                     else
                         console.warn(res.message)
                 }
