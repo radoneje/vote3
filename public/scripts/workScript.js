@@ -31,6 +31,7 @@ let app = new Vue({
                 document.getElementById("persEmail").focus()
                 return;
             }
+            this.regError=false;
         },
         sendQ:async function(lastTime){
             if(!this.personId) {
@@ -53,6 +54,13 @@ let app = new Vue({
         }
     },
     watch:{
+        person:function (){
+            try {
+                localStorage.setItem("person", JSON.stringify(this.person))
+            }catch (e) {
+                console.warn(e)
+            }
+        },
         showPersonBox:function (){
             if(this.showPersonBox)
                 setTimeout(()=>{document.getElementById("persI").focus()},0);
@@ -62,6 +70,9 @@ let app = new Vue({
         this.updateStatus(0)
         try {
             this.personid=localStorage.getItem("personid")
+            let person = localStorage.getItem("person")
+            if(person )
+                this.person=JSON.parse(person)
         } catch (e) {
             console.warn("cant access to Local Storage")
         }
