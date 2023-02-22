@@ -16,7 +16,7 @@ block body
                 .qItemBtn.red( v-on:click="approveAllQ( 'isMod', false)") Убрать все
                 .qItemBtn.red(v-on:click="if(confirm('Удалить все файлы?')) approveAllQ( 'isDeleted', true)") Удалить все
                 .qTotal Всего файлов: {{files.length}}
-            .qWr(v-on:dragover="dragOverFileHandler($event)" v-on:drop="dropFileHandler($event)")
+            .qWr#fileWr
                 .qItem.mb(v-if="files.length==0")
                     .qItemText.mb Пока файлы не добавлены
                     .qItemBtn.active( v-on:click="selectFile()") Загрузить файл

@@ -9,15 +9,7 @@ let app = new Vue({
         uploading:[]
     },
     methods:{
-        dropFileHandler:async function(ev){
-            ev.preventDefault();
-            console.log(ev)
 
-        },
-        dragOverFileHandler:async function(ev){
-            ev.preventDefault();
-
-        },
         uploadFile:async function(file){
 
             let res=await get("/api/newFile")
@@ -140,6 +132,20 @@ let app = new Vue({
         this.updateStatus(0)
     }
 })
+
+let dropArea = document.getElementById('fileWr')
+if(dropArea){
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, preventDefaults, false)
+    })
+
+    function preventDefaults (e) {
+        e.preventDefault()
+        e.stopPropagation()
+    }
+}
+
+
 const validateEmail = (email) => {
     return String(email)
         .toLowerCase()
