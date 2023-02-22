@@ -10,7 +10,7 @@ let app = new Vue({
     },
     methods:{
         regPerson: async function(){
-            if(!person.i ||person.i.length<0){
+            if(!person.i || (person.i && person.i.length<0)){
                 this.regError="Поле Имя должно быть заполнено";
                 document.getElementById("persI").focus()
                 return;
