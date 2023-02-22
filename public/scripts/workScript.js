@@ -28,7 +28,12 @@ let app = new Vue({
             }, timeout*1000);
         }
     },
-    watch:{},
+    watch:{
+        showPersonBox:function (){
+            if(this.showPersonBox)
+                setTimeout(()=>{document.getElementById("persI").focus()},0);
+        }
+    },
     mounted:async function (){
         this.updateStatus(0)
         try {
