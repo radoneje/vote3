@@ -18,10 +18,10 @@ block body
                 .qTotal Всего файлов: {{q.length}}
             .qWr
                 .qItem.mb(v-if="files.length==0")
-                    .qItemText Пока файлов не добавлено
+                    .qItemText.mb Пока файлов не добавлено
                     .qItemBtn.active( v-on:click="uploadFile()") Загрузить файл
 
-                .qItem.mb(v-for="item in q")
+                .qItem.mb(v-for="item in files")
                     .qItemHead {{item.date}} {{item.i}} {{item.f}}
                     .qItemText.mb {{item.text}}
                     .qItemBtnGroup.flex.left
