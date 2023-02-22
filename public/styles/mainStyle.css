@@ -464,5 +464,17 @@ textarea{
 #fileWr.highlight{
     border-color: var(--buttonColor);
 }
+.fileDlWr{
+    background-color: var(--buttonColor);
+    border-radius:calc( var(--rad) );
+    padding: var(--pad);
+    margin-right: var(--pad);;
+}
+.fileDlIco{}
+.fileDlSize{
+    color: var(--backColor);
+    font-size: .5rem;
+}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         .fileDlSize
 
 
