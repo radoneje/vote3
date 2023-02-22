@@ -5,6 +5,9 @@ let app = new Vue({
         q:[],
     },
     methods:{
+        toogle:async function(table,column, item){
+            item[column]=!item[column]
+        },
         updateStatus:async function(lastTime){
             let timeout=20;
             let res=await fetch("/c/status/"+event.short+"/"+lastTime+"?prm=all")
