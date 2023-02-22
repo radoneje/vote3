@@ -11,6 +11,21 @@ block body
             .fullScreenWr.flex.center(v-if="showPersonBox")
                 .fullScreenBox
                     .h.mb.mt Пожалуйста, зарегистрируйтесь
+                    .regGroup.mb.flex.left
+                        .regGroupTitle *Имя
+                        input(v-model="person.f")
+                    .regGroup.mb.flex.left
+                        .regGroupTitle *Фамилия
+                        input(v-model="person.f")
+                    .regGroup.mb.flex.left
+                        .regGroupTitle *Телефон
+                        input(v-model="person.phone")
+                    .regGroup.mb.flex.left
+                        .regGroupTitle *Email
+                        input(v-model="person.email")
+                    .regGroup.mb.flex.left
+                        .regGroupTitle Организация
+                        input(v-model="person.org")
 
     script let short=!{JSON.stringify(event.short)}
     script(src="/scripts/vue.min.js")

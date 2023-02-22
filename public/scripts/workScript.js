@@ -4,6 +4,7 @@ let app = new Vue({
         event:{},
         qText:'',
         personid:null,
+        person:{},
         showPersonBox:false
     },
     methods:{
