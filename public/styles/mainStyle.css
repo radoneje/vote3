@@ -340,5 +340,13 @@ textarea{
 .regGroupTitle{
     width: 100px;
 }
-.regGroup input[type='text'],input[type='tel'], input[type='email']
+.regGroup input[type='text'],.regGroup  input[type='tel'],.regGroup  input[type='email']{
+    box-sizing: border-box;
+    padding: var(--pad);
+    border-radius: var(--rad);
+    color: var(--textColor);
+    background-color: var(--backColor);
+    border:1px solid var(--borderColor);
+    width: calc(100% - 100px);
+}
 
