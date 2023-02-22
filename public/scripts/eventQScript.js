@@ -19,9 +19,13 @@ let app = new Vue({
             fd.append("id", fileid)
             const xhr = new XMLHttpRequest()
             xhr.responseType = 'json'
-            xhr.onload = () => {
-                console.log(xhr.response)
+            xhr.onreadystatechange = async function() {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    let res=await post("/api/fileToEvent",{fileid, short:event.short})
+                    console.log(xhr.response)
+                }
             }
+
             xhr.open('POST', "/api/uploadFile")
             xhr.send(fd)
 
