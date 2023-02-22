@@ -1,6 +1,10 @@
 import express from 'express';
 const router = express.Router();
 import  QRCode from 'qrcode'
+import { fileURLToPath } from 'url';
+import path from "path";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 router.get("/userEvent", async (req, res)=>{
@@ -60,7 +64,7 @@ router.get("/file/:short", async (req, res)=>{
     try {
 
         let r=await req.knex("t_files").where({short:req.params.short});
-        res.file(r[0].path)
+        res.download(__dirname+"/"+r[0].path, r[0].originalname )
     } catch (e) {
         res.status(404).send(e.toString())
     }
