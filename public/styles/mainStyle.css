@@ -374,8 +374,12 @@ textarea{
     width: 1.2rem;
     height: 1.2rem;
     background-color: var(--backColor);
+    position: relative;
 }
 #persConfirm{
     cursor: pointer;
+}
+.checkBox.active{
+    background-color: var(--buttonColor);
 }
 
