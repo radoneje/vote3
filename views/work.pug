@@ -53,7 +53,7 @@ block body
                         div
                             .regGroupCap.checkBox.border(v-bind:class="{active:person.approve}")
                         .regGroupCap Соглашаюсь с условиями обработки персональных данных
-                    .errorMessaage.mb3(v-if="regError") {{regError}}
+                    .errorMessaage.mb(v-if="regError") {{regError}}
                     .btn.flex.center(v-if="person.approve" v-on:click="regPerson()")
                         div Зарегистрироваться
 
