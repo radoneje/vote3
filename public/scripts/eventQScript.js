@@ -157,6 +157,15 @@ if(dropArea){
     function unhighlight(e) {
         dropArea.classList.remove('highlight')
     }
+    dropArea.addEventListener('drop', handleDrop, false)
+
+    async function handleDrop(e) {
+        let dt = e.dataTransfer
+        let files = dt.files
+        for(let file of files){
+            await app.uploadFile(file)
+        }
+    }
 }
 
 
