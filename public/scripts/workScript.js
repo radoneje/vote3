@@ -73,6 +73,13 @@ let app = new Vue({
         }
     },
     watch:{
+        personid:function (){
+            try {
+                localStorage.setItem("personid", this.personid)
+            }catch (e) {
+                console.warn(e)
+            }
+        },
         person:function (){
             try {
                 localStorage.setItem("person", JSON.stringify(this.person))
