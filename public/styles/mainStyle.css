@@ -424,7 +424,32 @@ textarea{
     cursor: pointer;
 }
 .uploading{
-
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: var(--backColor);
+    /* border: 1px solid; */
+    padding: calc(var(--pad) / 2);
+    font-size: .75rem;
+    box-shadow: 0 0 2px 0 black;
+    border-top-left-radius: var(--rad);
+}
+.uploadingTitle{
+    font-weight: bold;
+}
+.uploadingWr{
+    max-height: 30vh;
+    overflow-y: auto;
+}
+.uploadingItem{
+    position: relative;
+    padding: calc(var(--pad) ) /2;
+}
+.uploadingItemBg{
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color: var(--buttonColor);
 }
 
 

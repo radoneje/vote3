@@ -40,6 +40,7 @@ block body
             .uploadingTitle.mb загрузка файлов
             .uploadingWr
                 .uploadingItem.mb(v-for="item in uploading")
+                    .uploadingItemBg
                     .uploadingItemTitle
                         span  {{item.name}} : {{item.percent}}
 
