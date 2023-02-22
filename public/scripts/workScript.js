@@ -38,8 +38,9 @@ let app = new Vue({
                 headers: {'Content-Type': 'application/json;charset=utf-8'},
                 body: JSON.stringify(this.person)
             })
-            this.showPersonBox=null;
+
             if (responce.ok) {
+                this.showPersonBox=null;
                 let result = await responce.json();
 
                // this.personid=result.personid;
