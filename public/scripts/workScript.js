@@ -5,7 +5,7 @@ let app = new Vue({
         event:{},
         qText:'',
         personid:null,
-        person:{approve:false, eventid:eventid},
+        person:{approve:false, short:short},
         showPersonBox:false,
         regError:""
     },
