@@ -13,19 +13,19 @@ block body
                     .h.mb2.mt Пожалуйста, зарегистрируйтесь
                     .regGroup.mb.flex.left
                         .regGroupTitle *Имя
-                        input(v-model="person.f")
+                        input(v-model="person.f" type="text")
                     .regGroup.mb.flex.left
                         .regGroupTitle *Фамилия
-                        input(v-model="person.f")
+                        input(v-model="person.f" type="text")
                     .regGroup.mb.flex.left
                         .regGroupTitle *Телефон
-                        input(v-model="person.phone")
+                        input(v-model="person.phone" type="tel")
                     .regGroup.mb.flex.left
                         .regGroupTitle *Email
-                        input(v-model="person.email")
+                        input(v-model="person.email" type="email")
                     .regGroup.mb.flex.left
                         .regGroupTitle Организация
-                        input(v-model="person.org")
+                        input(v-model="person.org" type="text")
 
     script let short=!{JSON.stringify(event.short)}
     script(src="/scripts/vue.min.js")

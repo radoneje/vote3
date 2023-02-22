@@ -340,4 +340,5 @@ textarea{
 .regGroupTitle{
     width: 100px;
 }
+.regGroup input[type='text'],input[type='tel'], input[type='email']
 
