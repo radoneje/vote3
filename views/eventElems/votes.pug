@@ -20,7 +20,7 @@ block body
                     .qItemText.mb.h Голосования еще не добавлены.
                     .qItemText.mb Их можно создать нажав кнопку вверху.
 
-                .qItem.mb(v-for="item in votes")
+                .qItem.voteItem.mb(v-for="item in votes")
                     .qSelectors.flex.left.mb2
                         .switcherWr(v-on:click="toogleVote( 'isMulti', item)" v-bind:class="{active:item.isMulti}")
                             .switcherBox

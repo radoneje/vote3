@@ -511,6 +511,9 @@ textarea{
     color: var(--textColor);
     background-color: var(--backColor);
 }
+.voteItem .switcherWr{
+    width: 33.3333%;
+}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
 
