@@ -14,6 +14,8 @@ let app = new Vue({
     },
     methods: {
         formatPerc:function(num){
+            if(num==100 || num==0)
+                return num
             return (Math.round(num * 100) / 100).toFixed(2);
         },
         unvote: async function (answer) {

@@ -8,6 +8,11 @@ let app = new Vue({
         votes: []
     },
     methods: {
+        formatPerc:function(num){
+            if(num==100 || num==0)
+                return num
+            return (Math.round(num * 100) / 100).toFixed(2);
+        },
         addAnswer: async function (item) {
             let r = await post("/api/addAnswer", {id: item.id})
             if (r.err)
