@@ -45,7 +45,7 @@ block body
                     .vVoteBox.mb2
                         .btn.small.mb2 Добавить ответ
                         .vAnswBox
-                            .vAnswerItem.mb(v-for="(a, i) in item.answers")
+                            .vAnswerItem.mb(v-for="(a, i) in item.answers" v-if="!a.isDeleted")
                                 .qItemBtnGroup.mb.flex.left
                                     .vVoteAnswInputNumber {{i+1}}&nbsp;
                                     input.vVoteAnswInput(v-model="a.title" :placeholder="'Введите ответ '+(i+1)" v-on:change="changeAnswer('title', a)")
