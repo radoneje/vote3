@@ -157,8 +157,8 @@ let app = new Vue({
 
                                     //qq = item;// structuredClone(item)
                                     qq.title=item.title;
-                                    for(let keyID of Object.keys(item.title)){
-                                        let key=Object.keys(item.title)[keyID]
+
+                                    for(let key of Object.keys(item)){
                                         if(key!="id")
                                             qq[key]=item[key]
                                     }
