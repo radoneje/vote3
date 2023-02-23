@@ -523,6 +523,9 @@ textarea{
     align-items: baseline;
     justify-content: left;
 }
+.vAnswBox{
+    padding-left: var(--pad);
+}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
 
