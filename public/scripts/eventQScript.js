@@ -102,6 +102,8 @@ let app = new Vue({
             await post("/api/file/",item);
         },
         toogleVote:async function(column, item){
+            if(column=="isComplite" && !item.isActive)
+                return;
             item[column]=!item[column]
             let dt={id:item.id}
             dt[column]=item[column]
