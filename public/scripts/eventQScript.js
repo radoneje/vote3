@@ -8,6 +8,11 @@ let app = new Vue({
         votes: []
     },
     methods: {
+        scrollQ: function (e) {
+            let objDiv = document.querySelector(".pqBox")
+            if (objDiv)
+                objDiv.scrollTop = objDiv.scrollHeight;
+        },
         formatPerc:function(num){
             if(num==100 || num==0)
                 return num
@@ -35,6 +40,14 @@ let app = new Vue({
             if (r.err)
                 return console.warn(e.message)
             this.votes.push(r.data);
+            if(this.votes.length>1)
+            let lastElem = document.querySelector(".qItem[voteid='" + this.votes[this.votes.length - 2].id + "']")
+            if (lastElem )
+                setTimeout(() => {
+                    this.scrollQ()
+                }, 100)
+
+
         },
         downloadEventFile: function (item) {
             let a = document.createElement("a")
