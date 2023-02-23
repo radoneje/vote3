@@ -201,7 +201,13 @@ router.post("/vote", async (req, res) => {
     try {
         let id=req.body.id;
         delete req.body.id;
-        await req.knex("t_votes").update({isActive:req.body.isActive, isDeleted:req.body.isDeleted,isComplite:req.body.isComplite},"*").where({id:id});
+        await req.knex("t_votes").update({
+            isActive:req.body.isActive,
+            isDeleted:req.body.isDeleted,
+            isComplite:req.body.isComplite,
+            isNumber:req.body.isNumber,
+            isMulti:req.body.isMulti
+        },"*").where({id:id});
         let votes=await req.knex("v_votes").where({id})
         res.json(votes[0])
     } catch (e) {
