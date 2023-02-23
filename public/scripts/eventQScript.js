@@ -106,6 +106,19 @@ let app = new Vue({
         changeFile:async function( item){
             await post("/api/file/",item);
         },
+        toogleAnswer:async function(column, item){
+            //if(column=="isComplite" && !item.isActive)
+            //    return;
+            item[column]=!item[column]
+            let dt={id:item.id}
+            dt[column]=item[column]
+            this.votes.forEach(vote=>{
+                if(vote.id==item.voteid){
+                    vote.answers=vote.answers.filter(a=>!a.isDeleted)
+                }
+            })
+            await post("/api/vote/",dt);
+        },
         toogleVote:async function(column, item){
             //if(column=="isComplite" && !item.isActive)
             //    return;
