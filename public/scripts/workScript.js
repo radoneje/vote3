@@ -10,7 +10,8 @@ let app = new Vue({
         regError:"",
         q:[],
         newQ:0,
-        files:[]
+        files:[],
+        votes:[],
     },
     methods:{
         downloadEventFile:function (item){
@@ -143,6 +144,26 @@ let app = new Vue({
                     this.files=this.files.filter(qq=>qq.isMod)
                 }
                 /////////////
+                if (r.votes) {
+                    r.votes.forEach(item => {
+                        if (this.votes.filter(qq => qq.id == item.id).length == 0) {
+
+                            this.votes.push(item)
+                        } else {
+                            this.votes.forEach(qq => {
+                                if (qq.id == item.id) {
+                                    qq = structuredClone(item)
+                                    //qq.title=item.title;
+                                    //qq.isMod=item.isMod;
+                                    //qq.isDeleted=item.isDeleted;
+                                }
+                            })
+                        }
+                    })
+                    this.votes = this.votes.filter(qq => !qq.isDeleted)
+                }
+
+                ////////////
             }
             setTimeout(()=>{
                 this.updateStatus(lastTime)
