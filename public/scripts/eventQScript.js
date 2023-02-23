@@ -130,9 +130,8 @@ let app = new Vue({
                 lastTime=r.lastTime;
                 if(r.event)
                     this.event=r.event;
-                if(r.votes)
-                    this.votes=r.votes;
-                console.log(this.votes,r.votes )
+
+
                 if(r.q){
                     r.q.forEach(item=>{
                         if(this.q.filter(qq=>qq.id==item.id).length==0) {
@@ -180,6 +179,27 @@ let app = new Vue({
                     this.files=this.files.filter(qq=>!qq.isDeleted)
                 }
                 /////////////
+                if(r.votes){
+                    r.votes.forEach(item=>{
+                        if(this.votes.filter(qq=>qq.id==item.id).length==0) {
+
+                            this.votes.push(item)
+                        }
+                        else{
+                            this.votes.forEach(qq=>{
+                                if(qq.id==item.id){
+                                    qq=structuredClone(item)
+                                    //qq.title=item.title;
+                                    //qq.isMod=item.isMod;
+                                    //qq.isDeleted=item.isDeleted;
+                                }
+                            })
+                        }
+                    })
+                    this.files=this.files.filter(qq=>!qq.isDeleted)
+                }
+
+                /////
             }
             setTimeout(()=>{
                 this.updateStatus(lastTime)
