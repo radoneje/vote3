@@ -114,7 +114,7 @@ let app = new Vue({
                 let exit = false;
                 this.votes.forEach(v => {
                     if (v.id == item.voteid) {
-                        if(v.answers.filter(a=>!a.isDeleted)<=1)
+                        if(v.answers.filter(a=>!a.isDeleted).length<=1)
                             exit=true
                     }
                 })
