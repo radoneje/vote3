@@ -157,6 +157,10 @@ let app = new Vue({
 
                                     //qq = item;// structuredClone(item)
                                     qq.title=item.title;
+                                    for(let key of Object.keys(item.title)){
+                                        if(key!="id")
+                                            qq[key]=item[key]
+                                    }
                                     //qq.isMod=item.isMod;
                                     //qq.isDeleted=item.isDeleted;
                                 }
