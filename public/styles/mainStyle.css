@@ -528,7 +528,7 @@ textarea{
 }
 .vVoteAnswInput{
     padding:calc(var(--pad)/4) var(--pad);
-    border: 1px solid var(--buttonColor);
+    border: 1px solid var(--buttonColor) 0 0 1px solid var(--buttonColor);
     border-radius: var(--rad);
     box-sizing: border-box;
 }
