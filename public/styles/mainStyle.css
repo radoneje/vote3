@@ -500,6 +500,17 @@ textarea{
     word-break: break-word;
 
 }
+.vItemTitle input{
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 1px solid var(--buttonColor);
+    border-radius: var(--rad);
+    padding: calc(var(--pad) / 2) var(--pad);
+    color: var(--textColor);
+    background-color: var(--backColor);
+}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
 
