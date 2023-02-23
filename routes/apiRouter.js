@@ -215,6 +215,21 @@ router.post("/vote", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+router.post("/changeAnswer", async (req, res) => {
+
+    if(!req.session.user)
+        res.sendStatus(401)
+    try {
+
+        await req.knex("t_answers").update(req.body.prm,"*").where({id:req.body.id})
+        let answers=await req.knex("v_answers").where({id:req.body.id})
+        res.json(answers[0])
+
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+})
+
 
 
 
