@@ -18,7 +18,7 @@ let app = new Vue({
             return localStorage.getItem("answer_"+answer.id)
         },
         voting:async function(answer, vote){
-            if(!answer.isMulti){
+            if(!vote.isMulti){
                 vote.answers.forEach(a=>{
                     localStorage.removeItem("answer_"+a.id)
                 })
