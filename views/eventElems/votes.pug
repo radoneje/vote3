@@ -22,13 +22,13 @@ block body
 
                 .qItem.mb(v-for="item in votes")
                     .qSelectors.flex.left.mb2
-                        .switcherWr(v-on:click="toogleVote( 'isMulti')" v-bind:class="{active:item.isMulti}")
+                        .switcherWr(v-on:click="toogleVote( 'isMulti', item)" v-bind:class="{active:item.isMulti}")
                             .switcherBox
                                 .switcherElem
                                 .switcherCap
                             .switcherTextOff Можно выбрать один вариант
                             .switcherTextOn Можно выбрать несколько вариантов
-                        .switcherWr(v-on:click="toogleVote('isNumber')" v-bind:class="{active:item.isNumber}")
+                        .switcherWr(v-on:click="toogleVote('isNumber', item)" v-bind:class="{active:item.isNumber}")
                             .switcherBox
                                 .switcherElem
                                 .switcherCap
