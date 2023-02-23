@@ -24,7 +24,7 @@ block body
                     .vItemTitle.mb2
                         input(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeVote('title', item)")
 
-                    .switcherWr(v-on:click="toogleEvent( 'isComplite')" v-bind:class="{active:event.isQ}" v-if="item.isActive")
+                    .switcherWr(v-on:click="toogleVote( 'isComplite')" v-bind:class="{active:event.isQ}" v-if="item.isActive")
                         .switcherBox
                             .switcherElem
                             .switcherCap
