@@ -10,6 +10,12 @@ let app = new Vue({
         votes:[]
     },
     methods:{
+        addAnswer:async function (item){
+            let r=await post("/api/addAnswer",{id:item.id})
+            if(r.err)
+                return console.warn(r.message)
+            item.answers.push(r.data)
+        },
         changeAnswer:async function (col,item){
             let prm={};
             prm[col]=item[col]

@@ -43,7 +43,7 @@ block body
                     .vItemTitle.mb
                         input(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeVote('title', item)")
                     .vVoteBox.mb2
-                        .btn.small.mb2 Добавить ответ
+                        .btn.small.mb2(v-on:click="addAnswer(item)") Добавить ответ
                         .vAnswBox
                             .vAnswerItem.mb(v-for="(a, i) in item.answers" v-if="!a.isDeleted")
                                 .qItemBtnGroup.mb.flex.left
