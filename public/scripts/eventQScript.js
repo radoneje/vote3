@@ -124,6 +124,8 @@ let app = new Vue({
                 lastTime=r.lastTime;
                 if(r.event)
                     this.event=r.event;
+                if(r.votes)
+                    this.votes=r.votes;
                 if(r.q){
                     r.q.forEach(item=>{
                         if(this.q.filter(qq=>qq.id==item.id).length==0) {
