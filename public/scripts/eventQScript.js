@@ -113,7 +113,7 @@ let app = new Vue({
             if (column == "isDeleted") {
                 let exit = false;
                 this.votes.forEach(v => {
-                    if (v.id == item.id) {
+                    if (v.id == item.voteid) {
                         if(v.answers.filter(a=>!a.isDeleted)<=1)
                             exit=true
                     }
