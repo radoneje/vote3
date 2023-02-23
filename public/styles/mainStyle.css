@@ -528,8 +528,8 @@ textarea{
 }
 .vVoteAnswInput{
     padding:calc(var(--pad)/4) var(--pad);
-    border: 1px solid var(--buttonColor) 0 0 1px solid var(--buttonColor);
-    border-radius: var(--rad);
+    border: 1px solid var(--buttonColor) ;
+    border-radius: var(--rad) 0 0 var(--rad);
     box-sizing: border-box;
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
