@@ -40,12 +40,13 @@ let app = new Vue({
             if (r.err)
                 return console.warn(e.message)
             this.votes.push(r.data);
-            if(this.votes.length>1)
-            let lastElem = document.querySelector(".qItem[voteid='" + this.votes[this.votes.length - 2].id + "']")
-            if (lastElem )
-                setTimeout(() => {
-                    this.scrollQ()
-                }, 100)
+            if(this.votes.length>1) {
+                let lastElem = document.querySelector(".qItem[voteid='" + this.votes[this.votes.length - 2].id + "']")
+                if (lastElem)
+                    setTimeout(() => {
+                        this.scrollQ()
+                    }, 100)
+            }
 
 
         },
