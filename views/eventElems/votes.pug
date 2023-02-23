@@ -15,7 +15,7 @@ block body
                     .qItemBtn( v-on:click="approveAllFile( 'isMod', true)") Запустить все
                     .qItemBtn.red( v-on:click="approveAllFile( 'isMod', false)") Остановть все
                 .qTotal Всего голосований: {{votes.length}}, запущенных: {{votes.filter(v=>v.isActive).length}}
-            .qWr.pqBox#fileWr
+            .qWr.scroolBox#fileWr
                 .qItem.mb(v-if="votes.length==0")
                     .qItemText.mb.h Голосования еще не добавлены.
                     .qItemText.mb Их можно создать нажав кнопку вверху.

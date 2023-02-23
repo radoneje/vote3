@@ -9,7 +9,7 @@ let app = new Vue({
     },
     methods: {
         scrollQ: function (e) {
-            let objDiv = document.querySelector(".pqBox")
+            let objDiv = document.querySelector(".scroolBox")
             if (objDiv)
                 objDiv.scrollTop = objDiv.scrollHeight;
         },
