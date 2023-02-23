@@ -538,6 +538,17 @@ textarea{
     font-size: .8em;
     width: 15px;
 }
+.voteButton{
+    border: 1px solid var(--borderColor) ;
+    background-color: var(--grayColor);
+    padding-left: var(--pad);
+    width: 125px;
+}
+.voteAnswerTitle{
+    box-sizing: border-box;
+    padding-left: var(--pad);
+    width: calc(100% - 125px);
+}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
 
