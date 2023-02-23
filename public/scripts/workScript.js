@@ -43,7 +43,7 @@ let app = new Vue({
             let r=await post("/api/hand",{answer:answer.short, personid:this.personid})
             if(r.err)
                 return console.log(r.message)
-            this.personid=r.personid;
+            this.personid=r.data.personid;
             this.$forceUpdate();
         },
         downloadEventFile: function (item) {
