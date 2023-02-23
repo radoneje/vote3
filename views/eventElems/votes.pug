@@ -46,7 +46,7 @@ block body
                         .btn.small.mb2 Добавить ответ
                         .vAnswBox
                             .vAnswerItem.mb(v-for="(a, i) in item.answers")
-                                .qItemBtnGroup.mb2.flex.left
+                                .qItemBtnGroup.mb.flex.left
                                     .small {{i+1}}&nbsp;
                                     input.vVoteAnswInput(v-model="a.title" placeholder="Введите ответ" v-on:change="changeAnswer('title', a)")
                                     .qItemBtn.red(v-on:click="if(confirm('Удалить вопрос?')) toogleAnswer( 'isDeleted', item)") Удалить
