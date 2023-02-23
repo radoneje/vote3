@@ -21,6 +21,19 @@ block body
                     .qItemText.mb Их можно создать нажав кнопку вверху.
 
                 .qItem.mb(v-for="item in votes")
+                    .qSelectors.flex.left.mb2
+                        .switcherWr(v-on:click="toogleEvent( 'isQ')" v-bind:class="{active:event.isQ}")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff Можно выбрать несколько вариантов
+                            .switcherTextOn Можно выбрать один вариант
+                        .switcherWr(v-on:click="toogleEvent('isQpreMod')" v-bind:class="{active:event.isQpreMod}")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff Показать проценты
+                            .switcherTextOn Показать проценты и голоса
                     .vItemTitle.mb2
                         input(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeVote('title', item)")
 
