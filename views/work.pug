@@ -6,9 +6,9 @@ block body
             .mb3
             .pQWr.mb3(v-for="vote in votes")
                 .h.mb3 {{vote.title}}
-                    .voteAnswers.mb
-                        .voteAnswer.flex.left(v-for="a in vote.answers")
-                            .voteAnswerTitle {{a.title}}
+                .voteAnswers.mb
+                    .voteAnswer.flex.left(v-for="a in vote.answers")
+                        .voteAnswerTitle {{a.title}}
             .pQWr.mb3(v-if="event.isQ")
                 .h.mb3 Вопросы:
                 .pqContainer
