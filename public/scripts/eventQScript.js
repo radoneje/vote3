@@ -6,7 +6,8 @@ let app = new Vue({
         event:event,
         q:[],
         files:[],
-        uploading:[]
+        uploading:[],
+        votes:[]
     },
     methods:{
         downloadEventFile:function (item){
