@@ -11,7 +11,7 @@ block body
         .eventBody.mt
             .qItemBtnGroup.flex.left.mb
                 .group.flex.left
-                    .qItemBtn.active( v-on:click="selectFile()") Создать голосование
+                    .qItemBtn.active( v-on:click="selectFile()") Создать
                     .qItemBtn( v-on:click="approveAllFile( 'isMod', true)") Запустить все
                     .qItemBtn.red( v-on:click="approveAllFile( 'isMod', false)") Остановть все
                 .qTotal Всего голосований: {{votes.length}}, запущенных: {{votes.filter(v=>v.isActive).length}}
