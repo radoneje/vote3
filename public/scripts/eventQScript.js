@@ -13,7 +13,7 @@ let app = new Vue({
         changeVote:async function (col,item){
            let prm={};
             prm[col]=item[col]
-            let r=await post("/api/vote",{id:item.id,prm})
+            let r=await post("/api/changeVote",{id:item.id,prm})
         },
 
         addVote:async function (item){
@@ -100,6 +100,13 @@ let app = new Vue({
         },
         changeFile:async function( item){
             await post("/api/file/",item);
+        },
+        toogleVote:async function(column, item){
+            item[column]=!item[column]
+            let dt={id:item.id}
+            dt[column]=item[column]
+            this.votes=this.votes.filter(qq=>!qq.isDeleted);
+            await post("/api/vote/",dt);
         },
         toogleFile:async function(column, item){
             item[column]=!item[column]

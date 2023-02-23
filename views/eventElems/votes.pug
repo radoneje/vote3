@@ -24,11 +24,14 @@ block body
                     .vItemTitle.mb2
                         input(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeVote('title', item)")
                     .qItemBtnGroup.flex.left
-                        .qItemBtn(v-bind:class="{active:item.isActive}" v-on:click="toogleFile( 'isMod', item)")
+                        .qItemBtn(v-bind:class="{active:item.isActive}" v-on:click="toogleVote( 'isActive', item)")
                             span(v-if="item.isActive") Запущено
                             span(v-else) Остановлено
+                        .qItemBtn(v-bind:class="{active:item.isComplite}" v-on:click="toogleVote( 'isComplite', item)")
+                            span(v-if="item.isComplite") Голосование
+                            span(v-else) Результаты
 
-                        .qItemBtn.red(v-on:click="if(confirm('Удалить голосование?')) toogleFile( 'isDeleted', item)") Удалить
+                        .qItemBtn.red(v-on:click="if(confirm('Удалить голосование?')) toogleVote( 'isDeleted', item)") Удалить
 
 
 
