@@ -543,6 +543,8 @@ textarea{
     background-color: var(--grayColor);
     padding-left: var(--pad);
     width: 125px;
+    cursor: pointer;
+    border-radius: var(--rad);
 }
 .voteAnswerTitle{
     box-sizing: border-box;
