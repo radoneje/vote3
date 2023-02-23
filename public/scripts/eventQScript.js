@@ -10,6 +10,12 @@ let app = new Vue({
         votes:[]
     },
     methods:{
+        addVote:async function (item){
+            let r=await post("/api/addVote",event.short)
+            if(r.err)
+                return console.warn(e.message)
+            this.votes.push(r.data);
+        },
         downloadEventFile:function (item){
             let a=document.createElement("a")
             a.href="/file/"+item.short

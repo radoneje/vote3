@@ -125,6 +125,20 @@ router.get("/newFile", upload.single('file'), async (req, res) => {
     if(!req.session.user)
         res.sendStatus(401)
     try {
+        let votes=await req.knex("t_votes").insert({},"*")
+        await req.knex("t_answers").insert({voteid:votes[0].id, sort:10, title:"Первый ответ"},"*")
+        await req.knex("t_answers").insert({voteid:votes[0].id, sort:20, title:"Второй ответ"},"*")
+        res.json(votes[0].id)
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+
+});
+
+router.get("/newFile", upload.single('file'), async (req, res) => {
+    if(!req.session.user)
+        res.sendStatus(401)
+    try {
         let files=await req.knex("t_files").insert({},"*")
         res.json(files[0].id)
     } catch (e) {
