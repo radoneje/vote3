@@ -229,7 +229,7 @@ router.post("/changeAnswer", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
-router.post("/vote", async (req, res) => {
+router.post("/answer", async (req, res) => {
 
     if(!req.session.user)
         res.sendStatus(401)
