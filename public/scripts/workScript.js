@@ -154,10 +154,6 @@ let app = new Vue({
                         } else {
                             this.votes.forEach(qq => {
                                 if (qq.id == item.id) {
-
-                                    //qq = item;// structuredClone(item)
-                                    qq.title=item.title;
-
                                     for(let key of Object.keys(item)){
                                         if(key!="id")
                                             qq[key]=item[key]
