@@ -554,6 +554,10 @@ textarea{
     padding-left: var(--pad);
     width: calc(100% - 125px);
 }
+.voteAnswer.active .voteButton{
+    background-color: var(--buttonColor);
+    color: var(--backColor);
+}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
 

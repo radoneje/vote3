@@ -20,7 +20,7 @@ let app = new Vue({
         voting:async function(answer, vote){
           localStorage.setItem("vote_"+vote.id, true)
           localStorage.setItem("answer_"+answer.id, true)
-
+            this.$forceUpdate();
         },
         downloadEventFile:function (item){
             let a=document.createElement("a")
