@@ -14,7 +14,9 @@ let app = new Vue({
     },
     methods: {
         unvote: async function (answer) {
-            return
+            if(!this.personid)
+                return
+            let r=await post("/api/unHand",{answer:answer.short, personid:this.personid})
         },
         isAnswered: function (answer) {
             return localStorage.getItem("answer_" + answer.id)

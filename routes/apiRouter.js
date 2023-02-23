@@ -271,6 +271,17 @@ router.post("/hand", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+router.post("/unHand", async (req, res) => {
+    try {
+
+        let a=await req.knex("t_hands").delete({answershort:req.body.answer, personid:req.body.personid});
+        res.json(a)
+
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+})
+
 
 
 
