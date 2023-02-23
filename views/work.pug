@@ -7,7 +7,7 @@ block body
             .pQWr.mb3(v-for="vote in votes")
                 .h.mb3 {{vote.title}}
                     .voteAnswers.mb
-                        .voteAnswer.flex.left(v-for="a in vote")
+                        .voteAnswer.flex.left(v-for="a in vote.answers")
                             .voteAnswerTitle {{a.vote}}
             .pQWr.mb3(v-if="event.isQ")
                 .h.mb3 Вопросы:
