@@ -532,11 +532,11 @@ textarea{
     border: 1px solid var(--buttonColor) ;
     border-radius: var(--rad) 0 0 var(--rad);
     box-sizing: border-box;
-    width: 800px;
+    width: 700px;
 }
 .vVoteAnswInputNumber{
     font-size: .8em;
-    width: 15px;
+    width: 60px;
 }
 .voteAnswer{
     cursor: pointer;
