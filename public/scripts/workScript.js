@@ -154,7 +154,7 @@ let app = new Vue({
                         } else {
                             this.votes.forEach(qq => {
                                 if (qq.id == item.id) {
-                                    qq = structuredClone(item)
+                                    qq = item;// structuredClone(item)
                                     //qq.title=item.title;
                                     //qq.isMod=item.isMod;
                                     //qq.isDeleted=item.isDeleted;
