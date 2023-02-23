@@ -121,7 +121,7 @@ router.post("/file", async (req, res) => {
     }
 })
 
-router.get("/newFile", upload.single('file'), async (req, res) => {
+router.get("/addVote", upload.single('file'), async (req, res) => {
     if(!req.session.user)
         res.sendStatus(401)
     try {
