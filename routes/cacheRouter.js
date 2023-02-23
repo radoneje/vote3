@@ -38,6 +38,10 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
         if(req.query.prm!="all")
             params.isMod=true
         let q=await req.knex("v_q").where(params).andWhere("modtime", ">", lastTime).orderBy("id" )
+        delete  params.isMod
+        if(req.query.prm!="all")
+            params.isActive=true
+        let votes=await req.knex("v_votes").where(params).andWhere("modtime", ">", lastTime).orderBy("id" )
 
 
         if(events.length>0) {
@@ -62,6 +66,12 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
             ret.files=files;
             let arr=[]
             files.forEach(qq=>{arr.push(qq.modtime)})
+            ret.lastTime=Math.max( ret.lastTime, Math.max(...arr));
+        }
+        if(votes.length>0){
+            ret.votes=votes;
+            let arr=[]
+            votes.forEach(qq=>{arr.push(Math.max(qq.amodtime, qq.modtime))})
             ret.lastTime=Math.max( ret.lastTime, Math.max(...arr));
         }
         res.json(ret)
