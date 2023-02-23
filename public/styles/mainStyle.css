@@ -514,6 +514,10 @@ textarea{
 .voteItem .switcherWr{
     width: 33.3333%;
 }
+.btn.small{
+    width: max-content;
+    padding:calc(var(--pad)/2) var(--pad);
+}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
 

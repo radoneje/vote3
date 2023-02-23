@@ -42,7 +42,7 @@ block body
                             .switcherTextOn На экране результаты в процессе
                     .vItemTitle.mb
                         input(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeVote('title', item)")
-                    .btn.mb2 Добавить вариант ответа
+                    .btn.small.mb2 Добавить вариант ответа
                     .switcherWr.mb2(v-on:click=" toogleVote( 'isComplite', item)" v-bind:class="{active:item.isComplite}" )
                         .switcherBox
                             .switcherElem
