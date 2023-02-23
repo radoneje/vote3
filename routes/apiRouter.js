@@ -121,11 +121,11 @@ router.post("/file", async (req, res) => {
     }
 })
 
-router.get("/addVote", upload.single('file'), async (req, res) => {
+router.post("/addVote", upload.single('file'), async (req, res) => {
     if(!req.session.user)
         res.sendStatus(401)
     try {
-        let votes=await req.knex("t_votes").insert({},"*")
+        let votes=await req.knex("t_votes").insert({eventshort:req.body.short},"*")
         await req.knex("t_answers").insert({voteid:votes[0].id, sort:10, title:"Первый ответ"},"*")
         await req.knex("t_answers").insert({voteid:votes[0].id, sort:20, title:"Второй ответ"},"*")
         res.json(votes[0])

@@ -11,7 +11,7 @@ let app = new Vue({
     },
     methods:{
         addVote:async function (item){
-            let r=await post("/api/addVote",event.short)
+            let r=await post("/api/addVote",{short:event.short})
             if(r.err)
                 return console.warn(e.message)
             this.votes.push(r.data);
