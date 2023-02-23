@@ -36,11 +36,13 @@ block body
                         .qItemBtn.red(v-on:click="if(confirm('Удалить голосование?')) toogleVote( 'isDeleted', item)") Удалить
 
                     .switcherWr(v-on:click=" toogleVote( 'isComplite', item)" v-bind:class="{active:item.isComplite}" )
-                        .switcherBox(v-if="item.isActive")
+                        .switcherBox
                             .switcherElem
                             .switcherCap
-                        .switcherTextOff Идет, пользователи голосуют
-                        .switcherTextOn Окончено, пользователи видят результаты
+                        .switcherTextOff(v-if="item.isActive") Идет, пользователи голосуют
+                        .switcherTextOn(v-if="item.isActive") Окончено, пользователи видят результаты
+                        .switcherTextOff(v-if="!item.isActive") Когда будет запущено, пользователи смогут голосовать
+                        .switcherTextOn(v-if="!item.isActive") Когда будет запущено, пользователи увидят результаты
 
 
 
