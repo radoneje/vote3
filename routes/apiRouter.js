@@ -274,7 +274,7 @@ router.post("/hand", async (req, res) => {
 router.post("/unHand", async (req, res) => {
     try {
 
-        let a=await req.knex("t_hands").delete({answershort:req.body.answer, personid:req.body.personid});
+        let a=await req.knex("t_hands").where({answershort:req.body.answer, personid:req.body.personid}).del();
         res.json(a)
 
     } catch (e) {
