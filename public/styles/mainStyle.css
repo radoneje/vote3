@@ -511,7 +511,7 @@ textarea{
     color: var(--textColor);
     background-color: var(--backColor);
 }
-.voteItem .switcherWr{
+.switcherWr.w3{
     width: 33.3333%;
 }
 .btn.small{

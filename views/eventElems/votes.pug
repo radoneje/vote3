@@ -22,19 +22,19 @@ block body
 
                 .qItem.voteItem.mb(v-for="item in votes")
                     .qSelectors.flex.left.mb
-                        .switcherWr(v-on:click="toogleVote( 'isMulti', item)" v-bind:class="{active:item.isMulti}")
+                        .switcherWr.w3(v-on:click="toogleVote( 'isMulti', item)" v-bind:class="{active:item.isMulti}")
                             .switcherBox
                                 .switcherElem
                                 .switcherCap
                             .switcherTextOff Можно выбрать один вариант
                             .switcherTextOn Можно выбрать несколько вариантов
-                        .switcherWr(v-on:click="toogleVote('isNumber', item)" v-bind:class="{active:item.isNumber}")
+                        .switcherWr.w3(v-on:click="toogleVote('isNumber', item)" v-bind:class="{active:item.isNumber}")
                             .switcherBox
                                 .switcherElem
                                 .switcherCap
                             .switcherTextOff Показать проценты
                             .switcherTextOn Показать проценты и голоса
-                        .switcherWr(v-on:click="toogleVote('isScreenResult', item)" v-bind:class="{active:item.isScreenResult}")
+                        .switcherWr.w3(v-on:click="toogleVote('isScreenResult', item)" v-bind:class="{active:item.isScreenResult}")
                             .switcherBox
                                 .switcherElem
                                 .switcherCap
