@@ -51,7 +51,7 @@ router.get("/userEvent/votes", async (req, res)=>{
     if(events.length==0)
         events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
 
-    res.render("eventElems/files.pug", {event:events[0]})
+    res.render("eventElems/votes.pug", {event:events[0]})
 })
 
 
