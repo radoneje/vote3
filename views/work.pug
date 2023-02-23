@@ -8,7 +8,7 @@ block body
                 .h.mb3 {{vote.title}}
                     .voteAnswers.mb
                         .voteAnswer.flex.left(v-for="a in vote.answers")
-                            .voteAnswerTitle {{a.vote}}
+                            .voteAnswerTitle {{a.title}}
             .pQWr.mb3(v-if="event.isQ")
                 .h.mb3 Вопросы:
                 .pqContainer
