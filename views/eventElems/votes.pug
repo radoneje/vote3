@@ -43,7 +43,7 @@ block body
                     .vItemTitle.mb
                         input(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeVote('title', item)")
                     .vVoteBox
-                        .btn.small.mb2 Добавить вариант ответа
+                        .btn.small.mb2 Добавить ответ
                         .vAnswBox
                             .vAnswerItem.mb(v-for="(a, i) in item.answers")
                                 span {{i+1}}&nbsp;
