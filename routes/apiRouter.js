@@ -202,7 +202,7 @@ router.post("/vote", async (req, res) => {
         let id=req.body.id;
         delete req.body.id;
         await req.knex("t_votes").update({isActive:req.body.isActive, isDeleted:req.body.isDeleted,isComplite:req.body.isComplite},"*").where({id:id});
-        let votes=await req.knex("v_votes").where({id:req.body.id})
+        let votes=await req.knex("v_votes").where({id})
         res.json(votes[0])
     } catch (e) {
         res.status(404).send(e.toString())
