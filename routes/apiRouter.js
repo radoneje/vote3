@@ -229,6 +229,24 @@ router.post("/changeAnswer", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+router.post("/vote", async (req, res) => {
+
+    if(!req.session.user)
+        res.sendStatus(401)
+    try {
+        let id=req.body.id;
+        delete req.body.id;
+        await req.knex("t_answers").update({
+            isDeleted:req.body.isDeleted,
+            title:req.body.title,
+            sort:req.body.sort
+        },"*").where({id:id});
+        let votes=await req.knex("v_votes").where({id})
+        res.json(votes[0])
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+})
 
 
 

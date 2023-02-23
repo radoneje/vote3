@@ -117,7 +117,7 @@ let app = new Vue({
                     vote.answers=vote.answers.filter(a=>!a.isDeleted)
                 }
             })
-            await post("/api/vote/",dt);
+            await post("/api/answer/",dt);
         },
         toogleVote:async function(column, item){
             //if(column=="isComplite" && !item.isActive)
