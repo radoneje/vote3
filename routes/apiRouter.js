@@ -241,7 +241,7 @@ router.post("/answer", async (req, res) => {
             title:req.body.title,
             sort:req.body.sort
         },"*").where({id:id});
-        let votes=await req.knex("v_votes").where({id})
+        let votes=await req.knex("v_answers").where({id})
         res.json(votes[0])
     } catch (e) {
         res.status(404).send(e.toString())
