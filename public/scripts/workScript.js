@@ -15,7 +15,7 @@ let app = new Vue({
     },
     methods:{
         isAnswered:function(answer){
-            return localStorage.setItem("answer_"+answer.id)
+            return localStorage.getItem("answer_"+answer.id)
         },
         vote:async function(answer, vote){
           localStorage.setItem("vote_"+vote.id, true)
