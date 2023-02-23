@@ -30,9 +30,11 @@ let app = new Vue({
             if (vote.isMulti && localStorage.getItem("answer_" + answer.id) ){
                 localStorage.removeItem("answer_" + answer.id)
                 await this.unvote(answer);
+                this.$forceUpdate();
                 return;
             }
             if (!vote.isMulti && localStorage.getItem("answer_" + answer.id) ){
+                this.$forceUpdate();
                 return;
             }
 
