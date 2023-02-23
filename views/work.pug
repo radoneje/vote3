@@ -8,6 +8,7 @@ block body
                 .h.mb3 {{vote.title}}
                 .voteAnswers.mb
                     .voteAnswer.flex.left.mb2(v-for="a in vote.answers")
+                        .btn Выбрать ответ
                         .voteAnswerTitle {{a.title}}
             .pQWr.mb3(v-if="event.isQ")
                 .h.mb3 Вопросы:
