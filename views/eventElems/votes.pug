@@ -21,7 +21,8 @@ block body
                     .qItemText.mb Их можно создать нажав кнопку вверху.
 
                 .qItem.mb(v-for="item in votes")
-
+                    .vItemTitle
+                        input(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeVote('title', item)")
                     .qItemBtnGroup.flex.left
                         .qItemBtn(v-bind:class="{active:item.isActive}" v-on:click="toogleFile( 'isMod', item)")
                             span(v-if="item.isActive") Запущено

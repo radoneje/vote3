@@ -180,6 +180,21 @@ router.post("/fileToEvent", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+router.post("/vote", async (req, res) => {
+
+    if(!req.session.user)
+        res.sendStatus(401)
+    try {
+
+        await req.knex("t_votes").update(req.body.prm,"*").where({id:req.body.id})
+        let votes=await req.knex("v_votes").where({id:req.body.id})
+        res.json(votes[0])
+
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+})
+
 
 
 
