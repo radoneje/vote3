@@ -261,6 +261,18 @@ router.post("/addAnswer", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+router.post("/hand", async (req, res) => {
+    try {
+
+        let a=await req.knex("t_hands").insert({answershort:req.body.answer, personid:req.body.personid},"*");
+        res.json({personid:a[0].personid})
+
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+})
+
+
 
 
 

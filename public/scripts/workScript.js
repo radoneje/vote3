@@ -40,6 +40,10 @@ let app = new Vue({
 
             localStorage.setItem("vote_" + vote.id, true)
             localStorage.setItem("answer_" + answer.id, true)
+            let r=await post("/api/hand",{answer:answer.short, personid:this.personid})
+            if(r.err)
+                return console.log(r.message)
+            this.personid=r.personid;
             this.$forceUpdate();
         },
         downloadEventFile: function (item) {
@@ -102,7 +106,7 @@ let app = new Vue({
         sendQ: async function () {
             if (this.qText.length == 0)
                 return;
-            if (!this.personid)
+            if (!this.personid || this.personid<0)
                 return this.showPersonBox = true
             let ret = await post("/api/newQ", {personid: this.personid, text: this.qText, eventshort: short})
             this.q.push(ret.data)
