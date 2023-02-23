@@ -46,7 +46,7 @@ block body
                         .btn.small.mb2 Добавить вариант ответа
                         .vAnswBox
                             .vAnswerItem.mb(v-for="(a, i) in item.answers")
-                                span {{i+1}}
+                                span {{i+1}}&nbsp;
                                 span
                                     input(v-model="a.title" placeholder="Введите ответ" v-on:change="changeAnswer('title', a)")
 
