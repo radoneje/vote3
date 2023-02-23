@@ -23,13 +23,13 @@ let app = new Vue({
             if (!vote.isMulti) {
                 for (let a of vote.answers) {
                     if (localStorage.getItem("answer_" + a.id))
-                        await this.unvote();
+                        await this.unvote(answer);
                     localStorage.removeItem("answer_" + a.id)
                 }
             }
             if (vote.isMulti && localStorage.getItem("answer_" + answer.id) ){
-                localStorage.removeItem("answer_" + a.id)
-                await this.unvote();
+                localStorage.removeItem("answer_" + answer.id)
+                await this.unvote(answer);
                 return;
             }
             if (!vote.isMulti && localStorage.getItem("answer_" + answer.id) ){
