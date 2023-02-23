@@ -23,11 +23,18 @@ block body
                 .qItem.mb(v-for="item in votes")
                     .vItemTitle.mb2
                         input(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeVote('title', item)")
+
+                    .switcherWr(v-on:click="toogleEvent( 'isComplite')" v-bind:class="{active:event.isQ}" v-if="item.isActive")
+                        .switcherBox
+                            .switcherElem
+                            .switcherCap
+                        .switcherTextOff Идет, пользователи голосуют
+                        .switcherTextOn Окончено, пользователи видят результаты
                     .qItemBtnGroup.flex.left
                         .qItemBtn(v-bind:class="{active:item.isActive}" v-on:click="toogleVote( 'isActive', item)")
                             span(v-if="item.isActive") Запущено
                             span(v-else) Остановлено
-                        .qItemBtn(v-bind:class="{active:item.isComplite}" v-on:click="toogleVote( 'isComplite', item)")
+                        //.qItemBtn(v-bind:class="{active:item.isComplite}" v-on:click="toogleVote( 'isComplite', item)")
                             span(v-if="item.isComplite") Голосование
                             span(v-else) Результаты
 
