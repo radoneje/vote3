@@ -205,7 +205,7 @@ let app = new Vue({
                             })
                         }
                     })
-                    this.files=this.files.filter(qq=>!qq.isDeleted)
+                    this.votes=this.votes.filter(qq=>!qq.isDeleted)
                 }
 
                 /////
