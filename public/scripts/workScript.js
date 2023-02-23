@@ -122,6 +122,7 @@ let app = new Vue({
                         }
                     })
                     this.q=this.q.filter(qq=>!qq.isDeleted)
+                    this.$forceUpdate();
                 }
                 /////////////
                 if(r.files){
@@ -142,6 +143,7 @@ let app = new Vue({
                     })
                     this.files=this.files.filter(qq=>!qq.isDeleted)
                     this.files=this.files.filter(qq=>qq.isMod)
+                    this.$forceUpdate();
                 }
                 /////////////
                 if (r.votes) {
@@ -161,6 +163,7 @@ let app = new Vue({
                         }
                     })
                     this.votes = this.votes.filter(qq => !qq.isDeleted)
+                    this.$forceUpdate();
                 }
 
                 ////////////
