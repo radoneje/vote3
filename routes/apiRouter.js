@@ -128,7 +128,7 @@ router.get("/newFile", upload.single('file'), async (req, res) => {
         let votes=await req.knex("t_votes").insert({},"*")
         await req.knex("t_answers").insert({voteid:votes[0].id, sort:10, title:"Первый ответ"},"*")
         await req.knex("t_answers").insert({voteid:votes[0].id, sort:20, title:"Второй ответ"},"*")
-        res.json(votes[0].id)
+        res.json(votes[0])
     } catch (e) {
         res.status(404).send(e.toString())
     }
