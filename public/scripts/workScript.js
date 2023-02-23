@@ -14,6 +14,14 @@ let app = new Vue({
         votes:[],
     },
     methods:{
+        isAnswered:function(answer){
+            return localStorage.setItem("answer_"+answer.id)
+        },
+        vote:async function(answer, vote){
+          localStorage.setItem("vote_"+vote.id, true)
+          localStorage.setItem("answer_"+answer.id, true)
+
+        },
         downloadEventFile:function (item){
             let a=document.createElement("a")
             a.href="/file/"+item.short

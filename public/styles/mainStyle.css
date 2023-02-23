@@ -538,6 +538,9 @@ textarea{
     font-size: .8em;
     width: 15px;
 }
+.voteAnswer{
+    cursor: pointer;
+}
 .voteButton{
     border: 1px solid var(--borderColor) ;
     background-color: var(--grayColor);
