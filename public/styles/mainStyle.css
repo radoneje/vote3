@@ -532,6 +532,10 @@ textarea{
     border-radius: var(--rad) 0 0 var(--rad);
     box-sizing: border-box;
 }
+.vVoteAnswInputNumber{
+    font-size: .8em;
+    width: 20px;
+}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
 
