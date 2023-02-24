@@ -71,9 +71,7 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
             if(req.query.prm!="all"){
                 votes.forEach(vote=>{
                     if(!vote.isActive)
-                        delete vote.title;
-                        delete vote.answers;
-                        //vote={id:vote.id, isActive:false}
+                        vote={id:vote.id, isActive:false}
                 })
             }
             ret.votes=votes;
