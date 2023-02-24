@@ -200,7 +200,7 @@ let app = new Vue({
                             })
                         }
                     })
-                    this.votes = this.votes.filter(qq => !qq.isDeleted && !qq.isActive)
+                    this.votes = this.votes.filter(qq => !qq.isDeleted && qq.isActive)
                     this.$forceUpdate();
                 }
 
