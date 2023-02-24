@@ -69,6 +69,12 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
             ret.lastTime=Math.max( ret.lastTime, Math.max(...arr));
         }
         if(votes.length>0){
+            if(req.query.prm!="all"){
+                votes.forEach(vote=>{
+                    if(!vote.isActive)
+                        vote={id:voye.id, isActive:false}
+                })
+            }
             ret.votes=votes;
             let arr=[]
             votes.forEach(qq=>{arr.push( qq.modtime)})
