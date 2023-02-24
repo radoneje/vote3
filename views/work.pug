@@ -7,7 +7,7 @@ block body
             .pQWr.mb3(v-for="vote in votes" )
                 .h.mb3 {{vote.title}}
                 .voteAnswers.mb
-                    .voteAnswer.flex.left.mb2(v-for="a in vote.answers" v-on:click="voting(a, vote)" v-bind:class="{active:isAnswered(a)}" v-if="a.title.length>0" )
+                    .voteAnswer.flex.left.mb2(v-for="a in vote.answers" v-on:click="voting(a, vote)" v-bind:class="{active:isAnswered(a)}" v-if="a.title && a.title.length>0" )
                         .voteButton Выбрать ответ
                         .voteAnswerTitle {{a.title}}
             .pQWr.mb3(v-if="event.isQ")
