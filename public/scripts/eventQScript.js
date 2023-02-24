@@ -23,6 +23,11 @@ let app = new Vue({
             if (r.err)
                 return console.warn(r.message)
             item.answers.push(r.data)
+            setTimeout(()=>{
+                let lastElem = document.querySelector(".vVoteAnswInput[answerid='" + r.data.id + "']")
+                if(lastElem)
+                    lastElem.focus();
+            },0)
         },
         changeAnswer: async function (col, item) {
             let prm = {};
