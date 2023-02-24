@@ -35,13 +35,12 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
         let events=await req.knex("t_events").where({short:req.params.short, isDeleted:false}).andWhere("modtime", ">", lastTime)
         let params={ eventshort:req.params.short}
         let files=await req.knex("v_eventfiles").where(params).andWhere("modtime", ">", lastTime).orderBy("id", )
+        let votes=await req.knex("v_votes").where(params).andWhere("modtime", ">", lastTime).orderBy("id" )
         if(req.query.prm!="all")
             params.isMod=true
         let q=await req.knex("v_q").where(params).andWhere("modtime", ">", lastTime).orderBy("id" )
-        delete  params.isMod
-        if(req.query.prm!="all")
-            params.isActive=true
-        let votes=await req.knex("v_votes").where(params).andWhere("modtime", ">", lastTime).orderBy("id" )
+
+
 
 
         if(events.length>0) {
