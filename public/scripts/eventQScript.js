@@ -47,6 +47,11 @@ let app = new Vue({
                         this.scrollQ()
                     }, 100)
             }
+            setTimeout(()=>{
+                let lastElem = document.querySelector(".qItem[voteid='" + r.data.id + "']")
+                if(lastElem)
+                    lastElem.querySelector(".vItemTitleInput").focus();
+            },0)
 
 
         },
