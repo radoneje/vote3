@@ -16,7 +16,7 @@ block body
                 .qTotal Всего голосований: {{clouds.length}}, запущенных: {{clouds.filter(v=>v.isActive).length}}
             .qWr#fileWr
                 .qItem.fileItem.mb(v-if="clouds.length==0" )
-                    .qItemText.mb.h Облака слов еще не добавлены.
+                    .qItemText.mb.h Облака тегов еще не добавлены.
                     .qItemText.mb Для создания нажмите кнопку вверху.
 
                 .qItem.fileItem.mb(v-for="item in clouds" v-bind:class="{started:item.isMod}")
