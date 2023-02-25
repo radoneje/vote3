@@ -569,6 +569,12 @@ textarea{
 }
 .voteResBox{
     width: 125px;
+    box-sizing: border-box;
+    padding: var(--pad);
+}
+.voteResBox.active{
+    color: var(--backColor);
+    background-color: var(--backColor);
 }
 .voteResBoxPers, .voteResCountBox{
     box-sizing: border-box;
