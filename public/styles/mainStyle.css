@@ -575,6 +575,7 @@ textarea{
 .voteResBox.active{
     color: var(--backColor);
     background-color: var(--buttonColor);
+    border-radius: var(--rad);
 }
 .voteResBoxPers, .voteResCountBox{
     box-sizing: border-box;
