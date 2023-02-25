@@ -14,12 +14,12 @@ block body
                     .qItemBtn( v-on:click="approveAllCloud( 'isActive', true)") Запустить все
                     .qItemBtn.red( v-on:click="approveAllCloud( 'isActive', false)") Остановть все
                 .qTotal Всего голосований: {{clouds.length}}, запущенных: {{clouds.filter(v=>v.isActive).length}}
-            .qWr#fileWr
-                .qItem.fileItem.mb(v-if="clouds.length==0" )
+            .qWr#cloudWr
+                .qItem.cloudItem.mb(v-if="clouds.length==0" )
                     .qItemText.mb.h Облака тегов еще не добавлены.
                     .qItemText.mb Для создания нажмите кнопку вверху.
 
-                .qItem.fileItem.mb(v-for="item in clouds" v-bind:class="{started:item.isMod}")
+                .qItem.cloudItem.mb(v-for="item in clouds" :cloudid="item.id" v-bind:class="{started:item.isMod}")
                     .vItemTitle.mb
                         input.vItemTitleInput(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeCloud('title', item)")
 
