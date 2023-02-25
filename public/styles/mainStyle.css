@@ -12,7 +12,10 @@
     --hoverColor:#49a6dc;
     --errorColor:#881B1B;
     --grayColor:#F5F7F9;
-    --disableColor:#708ab8
+    --disableColor:#708ab8;
+    --backgroundYellowColor: #f9843429;
+    --yellowColor: #f98434;
+    --yellowHoverColor:#ff5900;
 
 }
 input:focus, input:active, textarea:focus, textarea:active{
@@ -548,6 +551,10 @@ textarea{
     width: 125px;
     cursor: pointer;
     border-radius: var(--rad);
+}
+.voteItem.active{
+    background-color: var(--backgroundYellowColor);
+
 }
 .voteAnswerTitle{
     box-sizing: border-box;
