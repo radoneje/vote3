@@ -584,10 +584,9 @@ textarea{
 }
 .voteButton.process{
     position: relative;
-
 }
 .voteButton.process:before{
-    content: 'Вашвыбор учтен';
+    content: 'Ваш голос учтен';
     background-color: var(--yellowColor) !important;
     color: var(--backColor) !important;
     border-radius: var(--rad);
