@@ -42,7 +42,7 @@ block body
                                 .switcherCap
                             .switcherTextOff Сортировка по результатам выключена
                             .switcherTextOn Сортировка по результатам выключена
-                        .switcherWr.w3(v-on:click="toogleVote('isScreenResult', item)" v-bind:class="{active:item.isScreenResult}")
+                        .switcherWr(v-on:click="toogleVote('isScreenResult', item)" v-bind:class="{active:item.isScreenResult}")
                             .switcherBox
                                 .switcherElem
                                 .switcherCap
