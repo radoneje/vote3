@@ -552,7 +552,7 @@ textarea{
     cursor: pointer;
     border-radius: var(--rad);
 }
-.voteItem.active{
+.voteItem.started{
     background-color: var(--backgroundYellowColor);
 
 }
