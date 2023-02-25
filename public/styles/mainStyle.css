@@ -558,7 +558,7 @@ textarea{
 }
 .voteAnswerTitle{
     box-sizing: border-box;
-    padding-left: var(--pad);
+    padding: 0 var(--pad);
     width: calc(100% - 125px);
 }
 .voteAnswer.active .voteButton{
