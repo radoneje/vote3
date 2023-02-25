@@ -207,7 +207,8 @@ router.post("/vote", async (req, res) => {
             isComplite:req.body.isComplite,
             isNumber:req.body.isNumber,
             isMulti:req.body.isMulti,
-            isScreenResult: req.body.isScreenResult
+            isScreenResult: req.body.isScreenResult,
+            isSortByResult:req.body.isSortByResult
         },"*").where({id:id});
         let votes=await req.knex("v_votes").where({id})
         res.json(votes[0])
