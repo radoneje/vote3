@@ -11,7 +11,7 @@ block body
                         .voteAnswerTitle {{a.title}}
                         .voteButton(:id="'voteBtn'+a.id" )
                             span(v-if="!isAnswered(a)") Выбрать ответ
-                            span(v-else") Ваш выбор
+                            span(v-else) Ваш выбор
 
                 .voteAnswers.m3.isComplite(v-if="vote.isComplite")
                     .voteAnswer.mb2(v-for="a in vote.answers"  v-bind:class="{active:isAnswered(a)}" v-if="a.title && a.title.length>0 && !a.isDeleted" )
