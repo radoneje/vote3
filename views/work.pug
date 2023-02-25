@@ -20,7 +20,7 @@ block body
                         .flex.left.mb
                             .voteAnswerTitle {{a.title}}
                             .voteResBox.flex.left.h
-                                .voteResBoxPers {{a.perc}}%
+                                .voteResBoxPers {{formatPerc(a.perc)}}%
                                     span(v-if="a.hands") , {{a.hands}}
                         .voteResPercent(:style="'width:'+a.perc +'%'")
 
