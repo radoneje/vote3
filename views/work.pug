@@ -11,8 +11,8 @@ block body
                         .voteAnswerTitle {{a.title}}
                         .voteButton Выбрать ответ
                 .voteAnswers.mb(v-if="vote.isComplite")
-                    .voteAnswer(v-for="a in vote.answers"  v-bind:class="{active:isAnswered(a)}" v-if="a.title && a.title.length>0 && !a.isDeleted" )
-                        .flex.left.mb2
+                    .voteAnswer.mb2(v-for="a in vote.answers"  v-bind:class="{active:isAnswered(a)}" v-if="a.title && a.title.length>0 && !a.isDeleted" )
+                        .flex.left
                             .voteAnswerTitle {{a.title}}
                             .voteResBox.flex.left.h
                                 .voteResBoxPers {{a.perc}}%
