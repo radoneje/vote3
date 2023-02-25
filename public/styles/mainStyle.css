@@ -579,6 +579,9 @@ textarea{
     margin-bottom: calc(0  - var(--pad));
     background-color: var(--backgroundYellowColor);
 }
+.voteAnswers.isComplite .voteAnswer{
+    padding-bottom: 0;
+}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
 
