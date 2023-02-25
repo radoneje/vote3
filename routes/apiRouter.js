@@ -245,6 +245,28 @@ router.post("/vote", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+
+router.post("/cloud", async (req, res) => {
+
+    if(!req.session.user)
+        res.sendStatus(401)
+    try {
+        let id=req.body.id;
+        delete req.body.id;
+        await req.knex("t_votes").update({
+            isActive:req.body.isActive,
+            isDeleted:req.body.isDeleted,
+            isComplite:req.body.isComplite,
+
+            isScreenResult: req.body.isScreenResult,
+
+        },"*").where({id:id});
+        let votes=await req.knex("v_clouds").where({id})
+        res.json(votes[0])
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+})
 router.post("/changeAnswer", async (req, res) => {
 
     if(!req.session.user)

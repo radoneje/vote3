@@ -204,6 +204,15 @@ let app = new Vue({
             this.votes = this.votes.filter(qq => !qq.isDeleted);
             await post("/api/vote/", dt);
         },
+        toogleCloud: async function (column, item) {
+            //if(column=="isComplite" && !item.isActive)
+            //    return;
+            item[column] = !item[column]
+            let dt = {id: item.id}
+            dt[column] = item[column]
+            this.votes = this.votes.filter(qq => !qq.isDeleted);
+            await post("/api/cloud/", dt);
+        },
         toogleFile: async function (column, item) {
             item[column] = !item[column]
             let dt = {id: item.id}
