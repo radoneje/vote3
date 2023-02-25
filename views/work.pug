@@ -8,8 +8,10 @@ block body
                 .h.mb {{cloud.title}}
                 .errorMessaage.mb2 Введите ваши варианты ответа через запятую.
                 .vItemTitle.mb2
-                    input.vItemTitleInput(v-model="cloudAnswer[cloud.short]"  v-on:change="changeCloud(cloud)")
-
+                    input.vItemTitleInput(v-model="cloudAnswer[cloud.short]"  )
+                .qBtnGroup
+                    .btn.flex.center(v-on:click="sendCloud(cloud)")
+                        div Отправить
             .pQWr.mb3(v-for="vote in votes" v-if="vote.isActive" )
                 .h.mb {{vote.title}}
                 .errorMessaage.mb3(v-if="vote.isMulti") Выбрите несколько ответов. Выбор можно изменить до окончания голосования.
