@@ -12,7 +12,7 @@ block body
                         .voteButton Выбрать ответ
                 .voteAnswers.mb.isComplite(v-if="vote.isComplite")
                     .voteAnswer.mb2(v-for="a in vote.answers"  v-bind:class="{active:isAnswered(a)}" v-if="a.title && a.title.length>0 && !a.isDeleted" )
-                        .flex.left.mb2
+                        .flex.left.mb
                             .voteAnswerTitle {{a.title}}
                             .voteResBox.flex.left.h
                                 .voteResBoxPers {{a.perc}}%
