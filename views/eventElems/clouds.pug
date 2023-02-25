@@ -17,7 +17,7 @@ block body
             .qWr#fileWr
                 .qItem.fileItem.mb(v-if="clouds.length==0" )
                     .qItemText.mb.h Облака слов еще не добавлены.
-                    .qItemText.mb Их можно создать нажав кнопку вверху.
+                    .qItemText.mb Для создания нажмите кнопку вверху.
 
                 .qItem.fileItem.mb(v-for="item in files" v-bind:class="{started:item.isMod}")
                     .flex.left.mb2
