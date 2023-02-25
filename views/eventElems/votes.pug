@@ -22,7 +22,7 @@ block body
 
                 .qItem.voteItem.mb(v-for="item in votes" :voteid="item.id" v-bind:class="{started:item.isActive}")
                     .qSelectors.flex.left.mb
-                        .switcherWr.w3(v-on:click="toogleVote( 'isMulti', item)" v-bind:class="{active:item.isMulti}")
+                        .switcherWr(v-on:click="toogleVote( 'isMulti', item)" v-bind:class="{active:item.isMulti}")
                             .switcherBox
                                 .switcherElem
                                 .switcherCap
@@ -34,6 +34,13 @@ block body
                                 .switcherCap
                             .switcherTextOff Кол-во голосов скрыто
                             .switcherTextOn Показаны и проценты и голоса
+                    .qSelectors.flex.left.mb
+                        .switcherWr.w3(v-on:click="toogleVote('isSortByResult', item)" v-bind:class="{active:item.isSortByResult}")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff Сортировка по результатам выключена
+                            .switcherTextOn Сортировка по результатам выключена
                         .switcherWr.w3(v-on:click="toogleVote('isScreenResult', item)" v-bind:class="{active:item.isScreenResult}")
                             .switcherBox
                                 .switcherElem
