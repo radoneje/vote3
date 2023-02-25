@@ -136,6 +136,20 @@ router.post("/addVote", upload.single('file'), async (req, res) => {
 
 });
 
+router.post("/addCloud", upload.single('file'), async (req, res) => {
+    if(!req.session.user)
+        res.sendStatus(401)
+    try {
+        let votes=await req.knex("t_clouds").insert({eventshort:req.body.short},"*")
+
+        votes=await req.knex("v_clouds").where({id:votes[0].id})
+        res.json(votes[0])
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+
+});
+
 router.get("/newFile", upload.single('file'), async (req, res) => {
     if(!req.session.user)
         res.sendStatus(401)
