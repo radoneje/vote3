@@ -8,8 +8,9 @@ block body
                 .h.mb3 {{vote.title}}
                 .voteAnswers.mb
                     .voteAnswer.flex.left.mb2(v-for="a in vote.answers" v-on:click="voting(a, vote)" v-bind:class="{active:isAnswered(a)}" v-if="a.title && a.title.length>0 && !a.isDeleted" )
-                        .voteButton Выбрать ответ
                         .voteAnswerTitle {{a.title}}
+                        .voteButton Выбрать ответ
+
             .pQWr.mb3(v-if="event.isQ")
                 .h.mb3 Вопросы:
                 .pqContainer
