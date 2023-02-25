@@ -13,8 +13,9 @@ block body
                 .voteAnswers.mb(v-if="vote.isComplite")
                     .voteAnswer.flex.left.mb2(v-for="a in vote.answers"  v-bind:class="{active:isAnswered(a)}" v-if="a.title && a.title.length>0 && !a.isDeleted" )
                         .voteAnswerTitle {{a.title}}
-                        .voteResBox.flex.left
-                            .voteResBox {{a.perc}}
+                        .voteResBox.flex.left.h
+                            .voteResBox {{a.perc%}}
+                            .voteResCountBox {{a.hand}}
 
 
 
