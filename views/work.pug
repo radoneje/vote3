@@ -5,7 +5,9 @@ block body
         #app.mb3
             .mb3
             .pQWr.mb3(v-for="vote in votes" v-if="vote.isActive" )
-                .h.mb3 {{vote.title}}
+                .h.mb {{vote.title}}
+                .errorMessaage.mb3(v-if="vote.isMulti") Выбрите несколько ответов. Выбор можно изменить до окончания голосования.
+                .errorMessaage.mb3(v-else) Выбрите один ответ. Выбор можно изменить до окончания голосования.
                 .voteAnswers.mb(v-if="!vote.isComplite")
                     .voteAnswer.flex.left.mb2(v-for="a in vote.answers" v-on:click="voting(a, vote)" v-bind:class="{active:isAnswered(a)}" v-if="a.title && a.title.length>0 && !a.isDeleted" )
                         .voteAnswerTitle {{a.title}}
@@ -21,8 +23,7 @@ block body
                                 .voteResBoxPers {{a.perc}}%
                                     span(v-if="a.hands") , {{a.hands}}
                         .voteResPercent(:style="'width:'+a.perc +'%'")
-                .errorMessaage(v-if="vote.isMulti") Выбрите несколько ответов. Выбор можно изменить до окончания голосования.
-                .errorMessaage(v-else) Выбрите один ответ. Выбор можно изменить до окончания голосования.
+
 
 
 
