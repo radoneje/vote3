@@ -15,19 +15,19 @@ block body
                     .qItemBtn.red( v-on:click="approveAllCloud( 'isActive', false)") Остановть все
                 .qTotal Всего голосований: {{clouds.length}}, запущенных: {{clouds.filter(v=>v.isActive).length}}
             .qWr.scroolBox#cloudWr
-                .qSelectors.flex.left.mb
 
-                    .switcherWr(v-on:click="toogleCloud('isScreenResult', item)" v-bind:class="{active:item.isScreenResult}")
-                        .switcherBox
-                            .switcherElem
-                            .switcherCap
-                        .switcherTextOff На экране результаты после окончания
-                        .switcherTextOn На экране результаты в процессе
                 .qItem.cloudItem.mb(v-if="clouds.length==0" )
                     .qItemText.mb.h Облака тегов еще не добавлены.
                     .qItemText.mb Для создания нажмите кнопку вверху.
 
                 .qItem.cloudItem.mb2(v-for="item in clouds" :cloudid="item.id" v-bind:class="{started:item.isMod}")
+                    .qSelectors.flex.left.mb
+                        .switcherWr(v-on:click="toogleCloud('isScreenResult', item)" v-bind:class="{active:item.isScreenResult}")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff На экране результаты после окончания
+                            .switcherTextOn На экране результаты в процессе
                     .vItemTitle.mb2
                         input.vItemTitleInput(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeCloud('title', item)")
                     .switcherWr.mb2(v-on:click=" toogleCloud( 'isComplite', item)" v-bind:class="{active:item.isComplite}" )
