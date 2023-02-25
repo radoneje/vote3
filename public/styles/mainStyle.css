@@ -543,7 +543,7 @@ textarea{
 }
 .voteAnswer{
     cursor: pointer;
-    border-bottom: 1px solid var(--borderColor);
+    border-bottom: 1px solid var(--backColor);
     padding-bottom: var(--pad);
 }
 .voteButton{
