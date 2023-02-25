@@ -16,6 +16,7 @@ block body
                         .voteResBox.flex.left.h
                             .voteResBoxPers {{a.perc}}%
                                 span(v-if="a.hands") , {{a.hands}}
+                        .voteResPercent(:style="'width:'+a.perc +'%'")
 
 
 

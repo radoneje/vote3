@@ -574,6 +574,11 @@ textarea{
     box-sizing: border-box;
     padding-right: var(--pad);
 }
+.voteResPercent{
+    height: var(--pad);
+    margin-bottom: calc(0  - var(--pad));
+    background-color: var(--backgroundYellowColor);
+}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
 
