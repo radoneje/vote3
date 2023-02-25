@@ -28,14 +28,15 @@ block body
                                 .switcherCap
                             .switcherTextOff Можно выбрать один вариант
                             .switcherTextOn Можно выбрать несколько вариантов
-                        .switcherWr.w3(v-on:click="toogleVote('isNumber', item)" v-bind:class="{active:item.isNumber}")
+                        .switcherWr(v-on:click="toogleVote('isNumber', item)" v-bind:class="{active:item.isNumber}")
+                            //w3 добавть до трех
                             .switcherBox
                                 .switcherElem
                                 .switcherCap
                             .switcherTextOff Кол-во голосов скрыто
                             .switcherTextOn Показаны и проценты и голоса
                     .qSelectors.flex.left.mb
-                        .switcherWr.w3(v-on:click="toogleVote('isSortByResult', item)" v-bind:class="{active:item.isSortByResult}")
+                        .switcherWr(v-on:click="toogleVote('isSortByResult', item)" v-bind:class="{active:item.isSortByResult}")
                             .switcherBox
                                 .switcherElem
                                 .switcherCap
