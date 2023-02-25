@@ -36,6 +36,8 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
         let params={ eventshort:req.params.short}
         let files=await req.knex("v_eventfiles").where(params).andWhere("modtime", ">", lastTime).orderBy("id", )
         let votes=await req.knex("v_votes").where(params).andWhere("modtime", ">", lastTime).orderBy("id" )
+        let clouds=await req.knex("v_clouds").where(params).andWhere("modtime", ">", lastTime).orderBy("id" )
+
         if(req.query.prm!="all")
             params.isMod=true
         let q=await req.knex("v_q").where(params).andWhere("modtime", ">", lastTime).orderBy("id" )
@@ -65,6 +67,17 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
             ret.files=files;
             let arr=[]
             files.forEach(qq=>{arr.push(qq.modtime)})
+            ret.lastTime=Math.max( ret.lastTime, Math.max(...arr));
+        }
+        if(clouds.length>0){
+            if(req.query.prm!="all"){
+                clouds.forEach(cloud=>{
+                    delete cloud.title;
+                    delete cloud.result;
+                })
+            }
+            let arr=[]
+            clouds.forEach(qq=>{arr.push( qq.modtime)})
             ret.lastTime=Math.max( ret.lastTime, Math.max(...arr));
         }
         if(votes.length>0){

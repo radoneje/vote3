@@ -40,6 +40,11 @@ let app = new Vue({
             prm[col] = item[col]
             let r = await post("/api/changeVote", {id: item.id, prm})
         },
+        changeCloud:async function (col, item) {
+            let prm = {};
+            prm[col] = item[col]
+            let r = await post("/api/changeCloud", {id: item.id, prm})
+        },
 
         addVote: async function (item) {
             let r = await post("/api/addVote", {short: event.short})
@@ -48,6 +53,26 @@ let app = new Vue({
             this.votes.push(r.data);
             if(this.votes.length>1) {
                 let lastElem = document.querySelector(".qItem[voteid='" + this.votes[this.votes.length - 2].id + "']")
+                if (lastElem)
+                    setTimeout(() => {
+                        this.scrollQ()
+                    }, 100)
+            }
+            setTimeout(()=>{
+                let lastElem = document.querySelector(".qItem[voteid='" + r.data.id + "']")
+                if(lastElem)
+                    lastElem.querySelector(".vItemTitleInput").focus();
+            },0)
+
+
+        },
+        addCloud: async function (item) {
+            let r = await post("/api/addCloud", {short: event.short})
+            if (r.err)
+                return console.warn(e.message)
+            this.clouds.push(r.data);
+            if(this.clouds.length>1) {
+                let lastElem = document.querySelector(".qItem[cloudid='" + this.clouds[this.clouds.length - 2].id + "']")
                 if (lastElem)
                     setTimeout(() => {
                         this.scrollQ()

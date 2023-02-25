@@ -20,6 +20,8 @@ block body
                     .qItemText.mb Для создания нажмите кнопку вверху.
 
                 .qItem.fileItem.mb(v-for="item in clouds" v-bind:class="{started:item.isMod}")
+                    .vItemTitle.mb
+                        input.vItemTitleInput(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeCloud('title', item)")
 
 
 

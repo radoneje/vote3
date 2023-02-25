@@ -194,6 +194,21 @@ router.post("/changeVote", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+
+router.post("/changeCloud", async (req, res) => {
+
+    if(!req.session.user)
+        res.sendStatus(401)
+    try {
+
+        await req.knex("t_clouds").update(req.body.prm,"*").where({id:req.body.id})
+        let votes=await req.knex("v_clouds").where({id:req.body.id})
+        res.json(votes[0])
+
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+})
 router.post("/vote", async (req, res) => {
 
     if(!req.session.user)
