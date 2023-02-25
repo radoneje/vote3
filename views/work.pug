@@ -15,7 +15,7 @@ block body
                         .voteAnswerTitle {{a.title}}
                         .voteResBox.flex.left.h
                             .voteResBoxPers {{a.perc}}%
-                                span , {{a.hands}}
+                                span(if="a.hands") , {{a.hands}}
 
 
 
