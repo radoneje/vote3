@@ -70,13 +70,13 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
         if(votes.length>0){
             if(req.query.prm!="all"){
                 votes.forEach(vote=>{
+                    if(!vote.isNumber  && vote.isActive)
+                        vote.answers.forEach(a=>{
+                            delete a.hands
+                        })
                     if(!vote.isActive) {
                         delete vote.title;
                         delete vote.answers;
-                        if(!vote.isNumber && req.query.prm!="all")
-                            vote.answers.forEach(a=>{
-                                delete a.hands
-                            })
                     }
                 })
             }
