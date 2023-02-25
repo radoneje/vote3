@@ -18,11 +18,11 @@ block body
                     .qItemBtn.red(v-on:click="if(confirm('Удалить все файлы?')) approveAllFile( 'isDeleted', true)") Удалить все
                 .qTotal Всего файлов: {{files.length}}
             .qWr#fileWr
-                .qItem.mb(v-if="files.length==0")
+                .qItem.fileItem.mb(v-if="files.length==0" ")
                     .qItemText.mb.h Файлы еще не добавлены.
                     .qItemText.mb Их можно загрузить нажав кнопку вверху или перетащить мышью сюда.
 
-                .qItem.mb(v-for="item in files")
+                .qItem.fileItem.mb(v-for="item in files" v-bind:class="{started:item.isMod}")
                     .flex.left.mb2
                         .fileDlWr(v-on:click="downloadEventFile(item)")
                             .fileDlIco

@@ -554,7 +554,7 @@ textarea{
     cursor: pointer;
     border-radius: var(--rad);
 }
-.voteItem.started{
+.voteItem.started, .fileItem.started{
     background-color: var(--backgroundYellowColor);
 
 }
