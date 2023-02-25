@@ -14,7 +14,7 @@ block body
                     .qItemBtn( v-on:click="approveAllCloud( 'isActive', true)") Запустить все
                     .qItemBtn.red( v-on:click="approveAllCloud( 'isActive', false)") Остановть все
                 .qTotal Всего голосований: {{clouds.length}}, запущенных: {{clouds.filter(v=>v.isActive).length}}
-            .qWr#cloudWr
+            .qWr.scroolBox#cloudWr
                 .qItem.cloudItem.mb(v-if="clouds.length==0" )
                     .qItemText.mb.h Облака тегов еще не добавлены.
                     .qItemText.mb Для создания нажмите кнопку вверху.
