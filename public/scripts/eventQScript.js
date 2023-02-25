@@ -79,7 +79,7 @@ let app = new Vue({
                     }, 100)
             }
             setTimeout(()=>{
-                let lastElem = document.querySelector(".qItem[voteid='" + r.data.id + "']")
+                let lastElem = document.querySelector(".qItem[cloudid='" + r.data.id + "']")
                 if(lastElem)
                     lastElem.querySelector(".vItemTitleInput").focus();
             },0)
