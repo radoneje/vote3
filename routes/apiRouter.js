@@ -253,7 +253,7 @@ router.post("/cloud", async (req, res) => {
     try {
         let id=req.body.id;
         delete req.body.id;
-        await req.knex("t_votes").update({
+        await req.knex("t_clouds").update({
             isActive:req.body.isActive,
             isDeleted:req.body.isDeleted,
             isComplite:req.body.isComplite,
