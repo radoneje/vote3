@@ -570,7 +570,7 @@ textarea{
 .voteResBox .voteResCountBox{
     width: 50%;
     box-sizing: border-box;
-    padding-right:  1em;
+    padding-right: var(--pad);
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
