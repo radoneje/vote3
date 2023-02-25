@@ -584,7 +584,7 @@ textarea{
 }
 .voteButton.process{
     background-color: var(--yellowColor);
-    color: var(--backColor);
+    color: var(--backColor) !important;
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
