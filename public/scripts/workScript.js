@@ -11,7 +11,8 @@ let app = new Vue({
         newQ: 0,
         files: [],
         votes: [],
-        clouds:[]
+        clouds:[],
+        cloudAnswer:[]
     },
     methods: {
         formatPerc:function(num){

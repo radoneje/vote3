@@ -8,6 +8,7 @@ block body
                 .h.mb {{cloud.title}}
                 .mb3
                     .errorMessaage Введите ваши варианты ответа через запятую.
+                input.vItemTitleInput(v-model="cloudAnswer[cloud.short]"  v-on:change="changeCloud(cloud)")
 
             .pQWr.mb3(v-for="vote in votes" v-if="vote.isActive" )
                 .h.mb {{vote.title}}
