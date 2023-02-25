@@ -115,6 +115,15 @@ let app = new Vue({
                 this.uploadFile(inp.files[0]);
             }
         },
+        approveAllVote: async function (column, status) {
+            for (let item of this.files) {
+                item[column] = status;
+                let dt = {id: item.id}
+                dt[column] = item[column]
+                this.votes = this.votes.filter(qq => !qq.isDeleted);
+                await post("/api/vote/", dt);
+            }
+        },
         approveAllFile: async function (column, status) {
             for (let item of this.files) {
                 item[column] = status;
