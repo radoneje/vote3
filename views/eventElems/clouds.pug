@@ -19,9 +19,26 @@ block body
                     .qItemText.mb.h Облака тегов еще не добавлены.
                     .qItemText.mb Для создания нажмите кнопку вверху.
 
-                .qItem.cloudItem.mb(v-for="item in clouds" :cloudid="item.id" v-bind:class="{started:item.isMod}")
-                    .vItemTitle.mb
+                .qItem.cloudItem.mb2(v-for="item in clouds" :cloudid="item.id" v-bind:class="{started:item.isMod}")
+                    .vItemTitle.mb2
                         input.vItemTitleInput(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeCloud('title', item)")
+                    .switcherWr.mb2(v-on:click=" toogleCloud( 'isComplite', item)" v-bind:class="{active:item.isComplite}" )
+                        .switcherBox
+                            .switcherElem
+                            .switcherCap
+                        .switcherTextOff(v-if="item.isActive") Идет, пользователи голосуют
+                        .switcherTextOn(v-if="item.isActive") Окончено, пользователи видят результаты
+                        .switcherTextOff(v-if="!item.isActive") Когда будет запущено, пользователи смогут голосовать
+                        .switcherTextOn(v-if="!item.isActive") Когда будет запущено, пользователи увидят результаты
+                    .qItemBtnGroup.mb2.flex.left
+                        .qItemBtn(v-bind:class="{active:item.isActive}" v-on:click="toogleCloud( 'isActive', item)")
+                            span(v-if="item.isActive") Запущено
+                            span(v-else) Остановлено
+                        //.qItemBtn(v-bind:class="{active:item.isComplite}" v-on:click="toogleVote( 'isComplite', item)")
+                            span(v-if="item.isComplite") Голосование
+                            span(v-else) Результаты
+
+                        .qItemBtn.red(v-on:click="if(confirm('Удалить голосование?')) toogleCloud( 'isDeleted', item)") Удалить
 
 
 
