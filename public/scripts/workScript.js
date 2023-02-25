@@ -220,6 +220,28 @@ let app = new Vue({
                     this.$forceUpdate();
                 }
 
+                if (r.clouds) {
+                    r.clouds.forEach(item => {
+                        if (this.clouds.filter(qq => qq.id == item.id).length == 0) {
+
+                            this.clouds.push(item)
+                        } else {
+                            this.clouds.forEach(qq => {
+                                if (qq.id == item.id) {
+                                    for (let key of Object.keys(item)) {
+                                        if (key != "id")
+                                            qq[key] = item[key]
+                                    }
+                                    //qq.isMod=item.isMod;
+                                    //qq.isDeleted=item.isDeleted;
+                                }
+                            })
+                        }
+                    })
+                    this.clouds = this.clouds.filter(qq => !qq.isDeleted && qq.isActive)
+                    this.$forceUpdate();
+                }
+
                 ////////////
             }
             setTimeout(() => {

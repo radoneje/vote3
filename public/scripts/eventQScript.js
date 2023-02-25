@@ -301,6 +301,26 @@ let app = new Vue({
                 }
 
                 /////
+                if (r.clouds) {
+                    r.clouds.forEach(item => {
+                        if (this.clouds.filter(qq => qq.id == item.id).length == 0) {
+
+                            this.clouds.push(item)
+                        } else {
+                            this.clouds.forEach(qq => {
+                                if (qq.id == item.id) {
+                                    for(let key of Object.keys(item)){
+                                        if(key!="id")
+                                            qq[key]=item[key]
+                                    }
+                                }
+                            })
+                        }
+                    })
+                    this.clouds = this.clouds.filter(qq => !qq.isDeleted)
+                    this.$forceUpdate();
+                }
+                ///////
             }
             setTimeout(() => {
                 this.updateStatus(lastTime)
