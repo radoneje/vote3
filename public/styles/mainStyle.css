@@ -582,6 +582,10 @@ textarea{
 .voteAnswers.isComplite .voteAnswer{
     padding-bottom: 0;
 }
+.voteButton.process{
+    background-color: var(--yellowColor);
+    color: var(--backColor);
+}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
 

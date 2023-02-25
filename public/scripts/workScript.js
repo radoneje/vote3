@@ -27,6 +27,10 @@ let app = new Vue({
             return localStorage.getItem("answer_" + answer.id)
         },
         voting: async function (answer, vote) {
+            let btn=document.getElementById("voteBtn"+answer.id);
+            if(btn.classList.contains('process'))
+                return
+            btn.classList.add('process')
             if (!vote.isMulti) {
                 for (let a of vote.answers) {
                     if (localStorage.getItem("answer_" + a.id))
@@ -38,20 +42,31 @@ let app = new Vue({
                 localStorage.removeItem("answer_" + answer.id)
                 await this.unvote(answer);
                 this.$forceUpdate();
+                btn.classList.remove('process')
                 return;
             }
             if (!vote.isMulti && localStorage.getItem("answer_" + answer.id) ){
                 this.$forceUpdate();
+                btn.classList.remove('process')
                 return;
             }
 
             localStorage.setItem("vote_" + vote.id, true)
             localStorage.setItem("answer_" + answer.id, true)
+            let txt=btn.innerHTML;
+            btn.innerHTML="Голос принят"
             let r=await post("/api/hand",{answer:answer.short, personid:this.personid})
-            if(r.err)
+            if(r.err) {
+                btn.innerHTML=txt
+                btn.classList.remove('process')
                 return console.log(r.message)
+            }
             this.personid=r.data.personid;
             this.$forceUpdate();
+            setTimeout(()=>{
+                btn.innerHTML=txt;
+                btn.classList.remove('process')
+            },1000)
         },
         downloadEventFile: function (item) {
             let a = document.createElement("a")
