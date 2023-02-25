@@ -14,7 +14,7 @@ block body
                     .voteAnswer.flex.left.mb2(v-for="a in vote.answers"  v-bind:class="{active:isAnswered(a)}" v-if="a.title && a.title.length>0 && !a.isDeleted" )
                         .voteAnswerTitle {{a.title}}
                         .voteResBox.flex.left
-                            .voteResBox {{vote.percent}}
+                            .voteResBox {{a.perc}}
 
 
 
