@@ -18,8 +18,8 @@ block body
                                 .voteResBoxPers {{a.perc}}%
                                     span(v-if="a.hands") , {{a.hands}}
                         .voteResPercent(:style="'width:'+a.perc +'%'")
-                .errorMessaage(v-if="vote.isMulti") Выбрите один ответ, это можно изменить до окончания голосования
-                .errorMessaage(v-else) Выбрите несколько ответов, это можно изменить до окончания голосования
+                .errorMessaage(v-if="vote.isMulti") Выбрите несколько ответов. Выбор можно изменить до окончания голосования
+                .errorMessaage(v-else) Выбрите один ответ. Выбор можно изменить до окончания голосования
 
 
 
