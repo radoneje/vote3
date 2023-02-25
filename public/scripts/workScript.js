@@ -54,17 +54,17 @@ let app = new Vue({
             localStorage.setItem("vote_" + vote.id, true)
             localStorage.setItem("answer_" + answer.id, true)
             let txt=btn.innerHTML;
-            btn.innerHTML="Голос принят"
+            //btn.innerHTML="Голос принят"
             let r=await post("/api/hand",{answer:answer.short, personid:this.personid})
             if(r.err) {
-                btn.innerHTML=txt
+                //btn.innerHTML=txt
                 btn.classList.remove('process')
                 return console.log(r.message)
             }
             this.personid=r.data.personid;
             this.$forceUpdate();
             setTimeout(()=>{
-                btn.innerHTML=txt;
+               // btn.innerHTML=txt;
                 btn.classList.remove('process')
             },1000)
         },
