@@ -36,7 +36,7 @@ block body
                 .qItem.mb(v-if="q.length==0")
                     .qItemText Пока вопросов не задано
 
-                .qItem.mb(v-for="item in q")
+                .qItem.mb(v-for="item in q" v-bind:class="{started:item.isMod}")
                     .qItemHead {{item.date}} {{item.i}} {{item.f}}
                     .qItemText.mb {{item.text}}
                     .qItemBtnGroup.flex.left
