@@ -11,11 +11,12 @@ block body
                         .voteAnswerTitle {{a.title}}
                         .voteButton Выбрать ответ
                 .voteAnswers.mb(v-if="vote.isComplite")
-                    .voteAnswer.flex.left.mb2(v-for="a in vote.answers"  v-bind:class="{active:isAnswered(a)}" v-if="a.title && a.title.length>0 && !a.isDeleted" )
-                        .voteAnswerTitle {{a.title}}
-                        .voteResBox.flex.left.h
-                            .voteResBoxPers {{a.perc}}%
-                                span(v-if="a.hands") , {{a.hands}}
+                    .voteAnswer
+                        .flex.left.mb2(v-for="a in vote.answers"  v-bind:class="{active:isAnswered(a)}" v-if="a.title && a.title.length>0 && !a.isDeleted" )
+                            .voteAnswerTitle {{a.title}}
+                            .voteResBox.flex.left.h
+                                .voteResBoxPers {{a.perc}}%
+                                    span(v-if="a.hands") , {{a.hands}}
                         .voteResPercent(:style="'width:'+a.perc +'%'")
 
 
