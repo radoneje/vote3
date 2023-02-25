@@ -18,7 +18,7 @@ block body
                     .qItemBtn.red(v-on:click="if(confirm('Удалить все файлы?')) approveAllFile( 'isDeleted', true)") Удалить все
                 .qTotal Всего файлов: {{files.length}}
             .qWr#fileWr
-                .qItem.fileItem.mb(v-if="files.length==0" ")
+                .qItem.fileItem.mb(v-if="files.length==0" )
                     .qItemText.mb.h Файлы еще не добавлены.
                     .qItemText.mb Их можно загрузить нажав кнопку вверху или перетащить мышью сюда.
 
