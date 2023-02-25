@@ -583,9 +583,22 @@ textarea{
     padding-bottom: 0;
 }
 .voteButton.process{
+    position: relative;
+
+}
+.voteButton.process:before{
+    content: 'Вашвыбор учтен';
     background-color: var(--yellowColor) !important;
     color: var(--backColor) !important;
+    border-radius: var(--rad);
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: var(--pad);
 }
+
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
 
 
