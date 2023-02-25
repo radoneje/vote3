@@ -571,7 +571,6 @@ textarea{
     width: 125px;
 }
 .voteResBoxPers, .voteResCountBox{
-    width: 50%;
     box-sizing: border-box;
     padding-right: var(--pad);
 }
