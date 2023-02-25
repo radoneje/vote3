@@ -583,7 +583,7 @@ textarea{
     padding-bottom: 0;
 }
 .voteButton.process{
-    background-color: var(--yellowColor);
+    background-color: var(--yellowColor) !important;
     color: var(--backColor) !important;
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
