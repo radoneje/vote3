@@ -19,7 +19,7 @@ block body
                     .voteAnswer.mb2(v-for="a in vote.answers"  v-bind:class="{active:isAnswered(a)}" v-if="a.title && a.title.length>0 && !a.isDeleted" )
                         .flex.left.mb
                             .voteAnswerTitle {{a.title}}
-                            .voteResBox.flex.left.h
+                            .voteResBox.flex.left.h(v-bind:class="{active:isAnswered(a)}")
                                 .voteResBoxPers {{formatPerc(a.perc)}}%
                                     span(v-if="a.hands") , {{a.hands}}
                         .voteResPercent(:style="'width:'+a.perc +'%'")
