@@ -116,7 +116,7 @@ let app = new Vue({
             }
         },
         approveAllVote: async function (column, status) {
-            for (let item of this.files) {
+            for (let item of this.votes) {
                 item[column] = status;
                 let dt = {id: item.id}
                 dt[column] = item[column]
