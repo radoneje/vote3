@@ -5,7 +5,8 @@ let app = new Vue({
         q: [],
         files: [],
         uploading: [],
-        votes: []
+        votes: [],
+        clouds:[],
     },
     methods: {
         scrollQ: function (e) {
