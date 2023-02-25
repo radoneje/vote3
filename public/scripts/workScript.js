@@ -66,7 +66,7 @@ let app = new Vue({
             setTimeout(()=>{
                 btn.innerHTML=txt;
                 btn.classList.remove('process')
-            },100000)
+            },1000)
         },
         downloadEventFile: function (item) {
             let a = document.createElement("a")
