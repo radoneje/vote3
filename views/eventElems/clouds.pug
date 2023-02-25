@@ -20,7 +20,7 @@ block body
                     .qItemText.mb.h Облака тегов еще не добавлены.
                     .qItemText.mb Для создания нажмите кнопку вверху.
 
-                .qItem.cloudItem.mb2(v-for="item in clouds" :cloudid="item.id" v-bind:class="{started:item.isMod}")
+                .qItem.cloudItem.mb2(v-for="item in clouds" :cloudid="item.id" v-bind:class="{started:item.isActive}")
                     .qSelectors.flex.left.mb
                         .switcherWr(v-on:click="toogleCloud('isScreenResult', item)" v-bind:class="{active:item.isScreenResult}")
                             .switcherBox
