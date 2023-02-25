@@ -8,12 +8,15 @@ block body
             document.querySelector(".eventMenuItem[menuid='5']").classList.add("active")
     .mainTower#app
         .eventBody.mt
-
-
-
+            .qItemBtnGroup.flex.left.mb
+                .group.flex.left
+                    .qItemBtn.active( v-on:click="addCloud()") Создать
+                    .qItemBtn( v-on:click="approveAllCloud( 'isActive', true)") Запустить все
+                    .qItemBtn.red( v-on:click="approveAllCloud( 'isActive', false)") Остановть все
+                .qTotal Всего голосований: {{clouds.length}}, запущенных: {{clouds.filter(v=>v.isActive).length}}
             .qWr#fileWr
                 .qItem.fileItem.mb(v-if="clouds.length==0" )
-                    .qItemText.mb.h Голосования еще не добавлены.
+                    .qItemText.mb.h Облака слов еще не добавлены.
                     .qItemText.mb Их можно создать нажав кнопку вверху.
 
                 .qItem.fileItem.mb(v-for="item in files" v-bind:class="{started:item.isMod}")
