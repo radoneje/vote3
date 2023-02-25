@@ -76,6 +76,7 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
                     delete cloud.result;
                 })
             }
+            res.clouds=clouds;
             let arr=[]
             clouds.forEach(qq=>{arr.push( qq.modtime)})
             ret.lastTime=Math.max( ret.lastTime, Math.max(...arr));
