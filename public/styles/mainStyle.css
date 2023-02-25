@@ -567,6 +567,9 @@ textarea{
     background-color: var(--buttonColor);
     color: var(--backColor);
 }
+.voteResBox{
+    width: 125px;
+}
 .voteResBox, .voteResCountBox{
     width: 50%;
     box-sizing: border-box;
