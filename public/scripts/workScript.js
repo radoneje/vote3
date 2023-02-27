@@ -16,7 +16,7 @@ let app = new Vue({
     },
     methods: {
         getCloudRes:async function (cloud) {
-
+            return "bla-bla"
         },
         formatPerc:function(num){
             if(num==100 || num==0)
