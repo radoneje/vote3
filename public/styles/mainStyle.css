@@ -677,6 +677,9 @@ textarea{
     padding: calc(var(--pad)/2);
     border:1px solid var(--borderColor);
     font-size: .8em;
+    box-sizing: border-box;
+    height: 4em;
+    width: 100%;
 }
 
 
