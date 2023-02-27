@@ -27,7 +27,7 @@ block body
                         .aPlayerInputWr
                             .linkDescription.mb Введите код Iframe YouTube или Rutube {{event.YT}}
                             textarea.aPlayerInput(v-model="player.YT" v-on:change="changePlayer('YT',player)")
-                    .hallf
+                    .half
                         .videoWrapper(v-html="player.YT")
 
                 //
