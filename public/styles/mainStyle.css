@@ -681,7 +681,7 @@ textarea{
 
     width: 100%;
 }
-textarea .aPlayerInput{
+textarea.aPlayerInput{
     height: 8em;
 }
 .half{
