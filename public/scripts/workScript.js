@@ -16,16 +16,7 @@ let app = new Vue({
         cloudHTML:[]
     },
     methods: {
-        getCloudRes: function (cloud) {
-            this.cloudHTML[cloud.short]="подождите, идет загрузка..."
-            fetch("/c/сloudRes/"+cloud.short)
-                .then(async res=>{
-                    if(res.ok){
-                        this.cloudHTML[cloud.short]=await res.text();
-                    }
-                })
 
-        },
         formatPerc:function(num){
             if(num==100 || num==0)
                 return num
@@ -269,6 +260,16 @@ let app = new Vue({
                                     //qq.isDeleted=item.isDeleted;
                                 }
                             })
+                        }
+                        if(item.isActive && item.isComplite){
+                            this.cloudHTML[item.short]="подождите, идет загрузка..."
+                            fetch("/c/сloudRes/"+item.short)
+                                .then(async res=>{
+                                    if(res.ok){
+                                        this.cloudHTML[item.short]=await res.text();
+                                    }
+                                })
+
                         }
                     })
                     this.clouds = this.clouds.filter(qq => !qq.isDeleted && qq.isActive)
