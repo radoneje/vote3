@@ -433,6 +433,7 @@ const initSelectCtrl=(ctrl)=>{
     ctrl.querySelectorAll(".aSelectCtrlItem").forEach(elem=>{
         elem.onclick=()=>{
             ctrl.setAttribute("value", elem.getAttribute("value"))
+            ctrl.querySelector(".aSelectCtrlTItleSelected").innerHTML=ctrl.innerHTML
         }
     })
 }
