@@ -37,7 +37,9 @@ block body
                             .linkDescription.mb Введите URL картинки-постера(16/9)
                             input.aPlayerInput(v-model="player.poster" v-on:change="changePlayer('poster',player)")
                     .half
-                        .videoWrapper(v-html="player.YT")
+                        .videoWrapper
+                            video.video(width='1280' height='720' controls="controls" :poster="poster")
+                                source(:src="player.url" :type="player.urlType")
 
                 //
 
