@@ -7,6 +7,7 @@ let app = new Vue({
         uploading: [],
         votes: [],
         clouds:[],
+
     },
     methods: {
         playerTypeChange:async function(){
