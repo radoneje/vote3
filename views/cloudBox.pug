@@ -1,23 +1,18 @@
 
 
-script let data=!{JSON.stringify(data)}
+script
 <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
 <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-tag-cloud.min.js"></script>
 script.
-    var data = [
-        {x: "learning", value: 80},
-        {x: "includes", value: 56},
-        {x: "lists", value: 44},
-        {x: "meaning", value: 40},
-        {x: "useful", value: 36},
-        {x: "different", value: 32}
-    ];
+    (()=> {
+        let data = !{JSON.stringify(data)}
 
-    // create a chart and set the data
-    chart = anychart.tagCloud(data);
+        // create a chart and set the data
+        chart = anychart.tagCloud(data);
 
-    // set the container id
-    chart.container("container");
+        // set the container id
+        chart.container("container");
 
-    // initiate drawing the chart
-    chart.draw();
+        // initiate drawing the chart
+        chart.draw();
+    })();
