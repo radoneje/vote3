@@ -12,11 +12,19 @@ let app = new Vue({
         files: [],
         votes: [],
         clouds:[],
-        cloudAnswer:[]
+        cloudAnswer:[],
+        cloudHTML:[]
     },
     methods: {
         getCloudRes: function (cloud) {
-            return "bla-bla"
+            this.cloudHTML[cloud.short]="подождите, идет загрузка..."
+            fetch("/c/сloudRes/"+cloud.short)
+                .then(async res=>{
+                    if(res.ok){
+                        this.cloudHTML[cloud.short]=await res.text();
+                    }
+                })
+
         },
         formatPerc:function(num){
             if(num==100 || num==0)
