@@ -123,11 +123,7 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
 router.get("/cloudRes/:short", async (req, res) => {
 
     let dt=await req.knex("v_getclouds").where({short:req.params.short})
-    let tagCloud = require('tag-cloud');
-    tagCloud.tagCloud(dt[0].clouds, function (err, data) {
-        console.log(err, data);
-        res.send(data)
-    });
+    res.render("cloudBox", {data:dt[0].clouds})
 
 
 })
