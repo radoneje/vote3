@@ -16,7 +16,7 @@ block body
                             .switcherCap
                         .switcherTextOff Выключено, пользователи не видят плейер
                         .switcherTextOn Включено, пользователи видят плейер
-                .aSelectCtrl.mb3#playerSelect(:value="player.type" v-on:change="playerTypeChange()" )
+                .aSelectCtrl.PlayerTypeSelect.mb3(:value="player.type" v-on:change="playerTypeChange()" )
                     .aSelectCtrlTItle Выбрите тип плейерa
                     .aSelectCtrlTItleSelected
                     .aSelectCtrlItemsWr
@@ -28,10 +28,16 @@ block body
                             .linkDescription.mb Введите код Iframe YouTube или Rutube {{event.YT}}
                             textarea.aPlayerInput(v-model="event.YT" v-on:change="changeEvent('YT')")
                     .hallf
-                //script initSelectCtrl(document.getElementById("playerSelect"))
+                //
 
     script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventScript.js")
     script(src="/scripts/vue.min.js")
     script(src="/scripts/eventQScript.js")
+    script.
+        setTimeout(()=>{
+            document.querySelectorAll(".PlayerTypeSelect").forEach(e=>{
+                initSelectCtrl(e)
+            })
+        },100)
 
