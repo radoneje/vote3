@@ -10,13 +10,13 @@ block body
         .eventBody.mt
             .playerWr(v-for="player in players")
                 .qSelectors.flex.left.mb2
-                    .switcherWr(v-on:click="tooglePlayer( 'isPlayer', player)" v-bind:class="{active:event.isPlayer}")
+                    .switcherWr(v-on:click="tooglePlayer( 'isActive', player)" v-bind:class="{active:player.isActive}")
                         .switcherBox
                             .switcherElem
                             .switcherCap
                         .switcherTextOff Выключено, пользователи не видят плейер
                         .switcherTextOn Включено, пользователи видят плейер
-                .aSelectCtrl.mb3#playerSelect(value="0" v-on:change="playerTypeChange()" )
+                .aSelectCtrl.mb3#playerSelect(:value="player.type" v-on:change="playerTypeChange()" )
                     .aSelectCtrlTItle Выбрите тип плейерa
                     .aSelectCtrlTItleSelected
                     .aSelectCtrlItemsWr
