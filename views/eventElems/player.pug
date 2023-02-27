@@ -38,7 +38,7 @@ block body
                             input.aPlayerInput(v-model="player.poster" v-on:change="changePlayer('poster',player)")
                     .half
                         .videoWrapper
-                            video.video(width='1280' height='720' controls="controls" :poster="poster")
+                            video.video(width='1280' height='720' controls="controls" :poster="player.poster")
                                 source(:src="player.url" :type="player.urlType")
 
                 //
