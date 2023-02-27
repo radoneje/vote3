@@ -436,4 +436,9 @@ const initSelectCtrl=(ctrl)=>{
             ctrl.querySelector(".aSelectCtrlTItleSelected").innerHTML=elem.innerHTML
         }
     })
+    let initValue=ctrl.getAttribute("value")
+    if(initValue)
+        ctrl.querySelector(".aSelectCtrlItem[value='"+initValue+"']").click()
+    else
+        ctrl.removeAttribute("value")
 }
