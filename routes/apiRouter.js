@@ -337,8 +337,9 @@ router.post("/cloudAnswer", async (req, res) => {
         words.forEach(w=>{
             try {
                 w=w.replace(/\s+/g," ")
-                w = capitalizeFirstLetter(w.trim().toLowerCase());
-                w=w.trim;
+                w.trim()
+                w = capitalizeFirstLetter(w.toLowerCase());
+
                 w=w.replace(/^\s*/,"")
                 w=w.replace(/\s*$/,"")
             }catch (e){
