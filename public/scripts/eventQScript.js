@@ -425,7 +425,7 @@ const isInViewport = (element) => {
 }
 const initSelectCtrl=(ctrl)=>{
     console.log(ctrl)
-    elem.addEventListener(
+    ctrl.addEventListener(
         "build",
         (e) => {
             console.log(e)
