@@ -15,7 +15,7 @@ block body
                         .switcherCap
                     .switcherTextOff Выключено, пользователи не видят плейер
                     .switcherTextOn Включено, пользователи видят плейер
-            .aSelectCtrl#playerSelect(value="0" o)
+            .aSelectCtrl#playerSelect(value="0" v-on:change="playerTypeChange()" )
                 .aSelectCtrlTItle Выбрите тип плейерa
                 .aSelectCtrlTItleSelected
                 .aSelectCtrlItemsWr

@@ -9,6 +9,9 @@ let app = new Vue({
         clouds:[],
     },
     methods: {
+        playerTypeChange:async function(){
+            console.log("change")
+        },
         scrollQ: function (e) {
             let objDiv = document.querySelector(".scroolBox")
             if (objDiv)
