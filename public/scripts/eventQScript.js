@@ -425,6 +425,13 @@ const isInViewport = (element) => {
 }
 const initSelectCtrl=(ctrl)=>{
     console.log(ctrl)
+    elem.addEventListener(
+        "build",
+        (e) => {
+            console.log(e)
+        },
+        false
+    );
     if(!ctrl)
         return;
     ctrl.onclick=()=>{
@@ -433,7 +440,9 @@ const initSelectCtrl=(ctrl)=>{
     ctrl.querySelectorAll(".aSelectCtrlItem").forEach(elem=>{
         elem.onclick=()=>{
             ctrl.setAttribute("value", elem.getAttribute("value"))
-            ctrl.querySelector(".aSelectCtrlTItleSelected").innerHTML=elem.innerHTML
+            ctrl.querySelector(".aSelectCtrlTItleSelected").innerHTML=elem.innerHTML;
+            const event = new Event("build");
+            elem.dispatchEvent(event);
         }
     })
     let initValue=ctrl.getAttribute("value")
