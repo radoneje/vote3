@@ -426,7 +426,7 @@ const isInViewport = (element) => {
 const initSelectCtrl=(ctrl)=>{
     console.log(ctrl)
     ctrl.addEventListener(
-        "build",
+        "change",
         (e) => {
             console.log(e)
         },
@@ -447,7 +447,7 @@ const initSelectCtrl=(ctrl)=>{
         elem.onclick=()=>{
             ctrl.setAttribute("value", elem.getAttribute("value"))
             ctrl.querySelector(".aSelectCtrlTItleSelected").innerHTML=elem.innerHTML;
-            const event = new Event("build");
+            const event = new Event("change");
             ctrl.dispatchEvent(event);
         }
     })
