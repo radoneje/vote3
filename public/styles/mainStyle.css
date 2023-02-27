@@ -614,7 +614,9 @@ textarea{
     width: 600px;
     height: 600px;
 }
-
+.anychart-credits{
+    display: none !important;
+}
 
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
