@@ -448,7 +448,7 @@ const initSelectCtrl=(ctrl)=>{
             ctrl.setAttribute("value", elem.getAttribute("value"))
             ctrl.querySelector(".aSelectCtrlTItleSelected").innerHTML=elem.innerHTML;
             const event = new Event("build");
-            elem.dispatchEvent(event);
+            ctrl.dispatchEvent(event);
         }
     })
     let initValue=ctrl.getAttribute("value")
