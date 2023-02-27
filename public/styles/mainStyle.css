@@ -663,6 +663,9 @@ textarea{
 
 }
 .aSelectCtrlItem:hover{
+    background-color: var(--grayColor);
+}
+.aSelectCtrlItem.active{
     background-color: var(--hoverColor);
     color: var(--backColor);
     border-radius: var(--rad);
