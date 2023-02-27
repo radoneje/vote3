@@ -263,7 +263,7 @@ let app = new Vue({
                         }
                         if(item.isActive && item.isComplite){
                             this.cloudHTML[item.short]="подождите, идет загрузка..."
-                            fetch("/c/сloudRes/"+item.short)
+                            fetch("/c/cloudRes/"+item.short)
                                 .then(async res=>{
                                     if(res.ok){
                                         this.cloudHTML[item.short]=await res.text();
