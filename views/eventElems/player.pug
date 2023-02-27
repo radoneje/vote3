@@ -1,0 +1,22 @@
+extends ../layout
+block head
+block body
+
+
+    include eventMenu
+    script.
+            document.querySelector(".eventMenuItem[menuid='6']").classList.add("active")
+    .mainTower#app
+        .eventBody.mt
+            .qSelectors.flex.left.mb2
+                .switcherWr(v-on:click="tooglePlayer( 'isActive')" v-bind:class="{active:event.isQ}")
+                    .switcherBox
+                        .switcherElem
+                        .switcherCap
+                    .switcherTextOff Выключено, пользователи не видят плейер
+                    .switcherTextOn Включено, пользователи видят плейер
+
+    script let event=!{JSON.stringify(event)}
+    script(src="/scripts/eventScript.js")
+    script(src="/scripts/vue.min.js")
+    script(src="/scripts/eventQScript.js")
