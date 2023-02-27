@@ -266,10 +266,16 @@ let app = new Vue({
                             fetch("/c/cloudRes/"+item.short)
                                 .then(async res=>{
                                     if(res.ok){
-                                        this.cloudHTML[item.short]=await res.text();
-                                        setTimeout(()=>{
-                                            createTagView(item.short);
-                                        },0)
+                                        //.cloudResContainer(id="cloudResContainer"+short  data=)
+                                        let dt=await res.json();
+                                        if(!dr.err) {
+                                            this.cloudHTML[item.short] =dt.data
+                                                setTimeout(() => {
+                                                    let chart = anychart.tagCloud(this.cloudHTML[item.short]);
+                                                    chart.container("cloudResContainer"+item.short);
+                                                    chart.draw();
+                                                }, 0)
+                                        }
                                     }
                                 })
 
@@ -352,7 +358,4 @@ const isInViewport = (element) => {
     const parentRect = element.parentNode.getBoundingClientRect();
     return rect.top < parentRect.bottom
 
-}
-const createTagView=(cloudshort)=>{
-    alert(cloudshort)
 }

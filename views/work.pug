@@ -13,8 +13,9 @@ block body
                     .qBtnGroup
                         .btn.flex.center.btnCloud(:id="'cloudBtn'+cloud.id" v-on:click="sendCloud(cloud)") Отправить
                 .mb(v-if="cloud.isComplite")
-                    .cloudRes(v-html="cloudHTML[cloud.short]")
+                    .cloudRes(v-if="!cloudHTML[cloud.short]")
                         .h Подождите, идет загрузка...
+                    .cloudResContainer(v-else :id="'cloudResContainer'+cloud.short")
             .pQWr.mb3(v-for="vote in votes" v-if="vote.isActive" )
                 .h.mb {{vote.title}}
                 .errorMessaage.mb3(v-if="vote.isMulti") Выбрите несколько ответов. Выбор можно изменить до окончания голосования.
