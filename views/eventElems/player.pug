@@ -16,7 +16,7 @@ block body
                             .switcherCap
                         .switcherTextOff Выключено, пользователи не видят плейер
                         .switcherTextOn Включено, пользователи видят плейер
-                .aSelectCtrl.PlayerTypeSelect.mb3(:value="player.type" v-on:change="changePlayer('type',player)" )
+                .aSelectCtrl.PlayerTypeSelect.mb3(:value="player.type" v-on:change="changeTypePlayer('type',player, $event)" )
                     .aSelectCtrlTItle Выбрите тип плейерa
                     .aSelectCtrlTItleSelected
                     .aSelectCtrlItemsWr
