@@ -235,6 +235,7 @@ let app = new Vue({
             this.event[column] = !this.event[column]
             let dt = {id: event.id}
             dt[column] = this.event[column]
+            console.log(this.event[column], column)
             await post("/api/event/", dt);
         },
         updateStatus: async function (lastTime) {
