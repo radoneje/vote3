@@ -362,10 +362,4 @@ const isInViewport = (element) => {
     return rect.top < parentRect.bottom
 
 }
-const initSelectCtrl=(ctrl)=>{
-    if(!ctrl)
-        return;
-    ctrl/*.querySelector(".aSelectCtrlItemsWr")*/.click=()=>{
-        ctrl.classList.toggle("active")
-    }
-}
+
