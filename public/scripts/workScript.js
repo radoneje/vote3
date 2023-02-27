@@ -274,6 +274,9 @@ let app = new Vue({
                                                     console.log(dt)
                                                     let chart = anychart.tagCloud(dt);
                                                     chart.container("cloudResContainer"+item.short);
+                                                    chart.scale(anychart.scales.log());
+                                                    chart.mode("rect");
+                                                    chart.angles([0]);
                                                     chart.draw();
                                                 }, 0)
                                         }

@@ -611,8 +611,9 @@ textarea{
     text-align: center;
 }
 .cloudResContainer{
-    width: 600px;
-    height: 600px;
+    width: min(600px, 100%);
+    margin: 0 auto;
+
 }
 .anychart-credits{
     display: none !important;
