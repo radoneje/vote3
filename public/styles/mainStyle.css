@@ -678,8 +678,11 @@ textarea{
     border:1px solid var(--borderColor);
     font-size: .8em;
     box-sizing: border-box;
-    height: 8em;
+
     width: 100%;
+}
+textarea .aPlayerInput{
+    height: 8em;
 }
 .half{
     width: calc(50% - var(--pad));
