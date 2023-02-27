@@ -3,7 +3,7 @@ script
 <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
 <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-tag-cloud.min.js"></script>
 script.
-    (()=> {
+    setTimeout(()=> {
         let data = !{JSON.stringify(data)}
 
         // create a chart and set the data
@@ -14,4 +14,4 @@ script.
 
         // initiate drawing the chart
         chart.draw();
-    })();
+    },1000);
