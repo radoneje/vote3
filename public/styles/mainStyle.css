@@ -639,7 +639,7 @@ textarea{
     position: absolute;
     right: var(--pad);
     top:var(--pad);
-    content: '\U+2304';
+    content: '\2304';
 
 }
 .aSelectCtrlItemsWr{
