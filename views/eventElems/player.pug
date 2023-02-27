@@ -15,12 +15,16 @@ block body
                         .switcherCap
                     .switcherTextOff Выключено, пользователи не видят плейер
                     .switcherTextOn Включено, пользователи видят плейер
-            .aSelectCtrl#playerSelect(value="0" v-on:change="playerTypeChange()" )
+            .aSelectCtrl.mb3#playerSelect(value="0" v-on:change="playerTypeChange()" )
                 .aSelectCtrlTItle Выбрите тип плейерa
                 .aSelectCtrlTItleSelected
                 .aSelectCtrlItemsWr
                     .aSelectCtrlItem(value="0") YouTube или Rutube
                     .aSelectCtrlItem(value="1") Собственный плейер
+
+            .aPlayerInputWr
+                .linkDescription.mb Введите код Iframe YouTube или Rutube
+                textarea.aPlayerInput(v-model="event.YT")
 
     script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventScript.js")

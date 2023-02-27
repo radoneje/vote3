@@ -672,7 +672,11 @@ textarea{
     border-radius: var(--rad);
 }
 
-
-.fileDlSize
+.aPlayerInput{
+    border-radius: var(--rad);
+    padding: calc(var(--pad)/2);
+    border:1px solid var(--borderColor);
+    font-size: .8em;
+}
 
 
