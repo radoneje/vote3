@@ -122,8 +122,8 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
 })
 router.get("/cloudRes/:short", async (req, res) => {
 
-    res.send("<i>привед, медвед</i>")
-
+    let data=await req.knex.select(reqknex.raw("f_getclouds('"+req.params.short+"')"))
+    res.send(data)
 })
 
 
