@@ -269,7 +269,7 @@ let app = new Vue({
                                         //.cloudResContainer(id="cloudResContainer"+short  data=)
                                         let dt=await res.json();
                                         if(!dt.err) {
-                                            this.cloudHTML[item.short] =dt.data
+                                            this.cloudHTML[item.short] =dt
                                                 setTimeout(() => {
                                                     console.log(dt)
                                                     let chart = anychart.tagCloud(dt.data);
