@@ -342,7 +342,8 @@ router.post("/cloudAnswer", async (req, res) => {
                 w=w.replace(/^\s*/,"")
                 w=w.replace(/\s*$/,"")
             }catch (e){
-                console.warn(e)
+
+                console.log(w)
                 w=null;
             }
         })
