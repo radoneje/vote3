@@ -657,6 +657,13 @@ textarea{
     border-radius: var(--rad);
     border:1px solid var(--borderColor);
 }
+.aSelectCtrlItem{
+    padding: calc(var(--pad)/2);
+}
+.aSelectCtrlItem:hover{
+    background-color: var(--hoverColor);
+    color: var(--backColor);
+}
 
 
 .fileDlSize
