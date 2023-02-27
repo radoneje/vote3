@@ -63,6 +63,16 @@ router.get("/userEvent/clouds", async (req, res)=>{
 
     res.render("eventElems/clouds.pug", {event:events[0]})
 })
+router.get("/userEvent/player", async (req, res)=>{
+    if(!req.session.user)
+        res.sendStatus(404)
+
+    let events=await req.knex("t_events").where({userid:req.session.user.id})
+    if(events.length==0)
+        events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
+
+    res.render("eventElems/player.pug", {event:events[0]})
+})
 
 
 
