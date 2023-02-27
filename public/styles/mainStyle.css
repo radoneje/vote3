@@ -635,6 +635,13 @@ textarea{
     border-radius: var(--rad);
     border:1px solid var(--borderColor);
 }
+.aSelectCtrl::after{
+    position: absolute;
+    right: var(--pad);
+    top:var(--pad);
+    content: '\U+2304';
+
+}
 .aSelectCtrlItemsWr{
     display: none;
 }
