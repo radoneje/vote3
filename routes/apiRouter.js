@@ -345,7 +345,7 @@ router.post("/cloudAnswer", async (req, res) => {
                 console.log("->"+w+"<-")
             }catch (e){
 
-
+                console.warn(e)
                 w=null;
             }
         })
