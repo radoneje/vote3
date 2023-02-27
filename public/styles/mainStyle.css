@@ -650,6 +650,7 @@ textarea{
     display: block;
     left: 0;
     right: 0;
+    top: 0;
     background-color: var(--backColor);
     min-height: 100%;
     padding: var(--pad);
