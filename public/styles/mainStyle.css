@@ -640,7 +640,7 @@ textarea{
     right: var(--pad);
     top:calc(var(--pad)/2);
     content: '\2304';
-
+    z-index: 10;
 }
 .aSelectCtrlItemsWr{
     display: none;
@@ -656,9 +656,11 @@ textarea{
     padding: var(--pad);
     border-radius: var(--rad);
     border:1px solid var(--borderColor);
+    z-index: 100;
 }
 .aSelectCtrlItem{
     padding: calc(var(--pad)/2);
+
 }
 .aSelectCtrlItem:hover{
     background-color: var(--hoverColor);
