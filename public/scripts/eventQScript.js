@@ -424,6 +424,7 @@ const isInViewport = (element) => {
 
 }
 const initSelectCtrl=(ctrl)=>{
+    console.log(ctrl)
     if(!ctrl)
         return;
     ctrl/*.querySelector(".aSelectCtrlItemsWr")*/.click=()=>{
