@@ -315,8 +315,10 @@ router.post("/addAnswer", async (req, res) => {
 })
 router.post("/hand", async (req, res) => {
     try {
-
-        let a=await req.knex("t_hands").insert({answershort:req.body.answer, personid:req.body.personid},"*");
+        let personid=req.body.personid
+        if(!personid)
+            personid=(await req.knex("t_persons").insert({}))[0].id
+        let a=await req.knex("t_hands").insert({answershort:req.body.answer, personid},"*");
         res.json({personid:a[0].personid})
 
     } catch (e) {
