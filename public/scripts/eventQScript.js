@@ -315,13 +315,12 @@ let app = new Vue({
                 if(r.players){
                     r.players.forEach(item => {
                         if (this.players.filter(qq => qq.id == item.id).length == 0) {
-
                             this.players.push(item)
                         } else {
                             this.players.forEach(qq => {
                                 if (qq.id == item.id) {
-                                    qq.type = item.title;
-                                    qq.isActive = item.isMod;
+                                    qq.type = item.type;
+                                    qq.isActive = item.isActive;
                                     qq.YT = item.YT;
                                     qq.url = item.url;
                                     qq.urlType = item.urlType;
