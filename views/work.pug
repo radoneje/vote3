@@ -6,11 +6,15 @@ block body
             .mb3
             .pQWr.mb(v-for="cloud in clouds" v-if="cloud.isActive" )
                 .h.mb {{cloud.title}}
-                .errorMessaage.mb2 Введите ваши варианты ответа через запятую. Введенное можно изменить до окончания голосования.
-                .vItemTitle.mb2
-                    input.vItemTitleInput(v-model="cloudAnswer[cloud.short]"  )
-                .qBtnGroup
-                    .btn.flex.center.btnCloud(:id="'cloudBtn'+cloud.id" v-on:click="sendCloud(cloud)") Отправить
+                .mb(v-if="!cloud.isComplite")
+                    .errorMessaage.mb2 Введите ваши варианты ответа через запятую. Введенное можно изменить до окончания голосования.
+                    .vItemTitle.mb2
+                        input.vItemTitleInput(v-model="cloudAnswer[cloud.short]"  )
+                    .qBtnGroup
+                        .btn.flex.center.btnCloud(:id="'cloudBtn'+cloud.id" v-on:click="sendCloud(cloud)") Отправить
+                .mb(v-if="cloud.isComplite")
+                    .cloudRes(v-html="getCloudRes(cloud)")
+                        .h Подождите, идет загрузка...
             .pQWr.mb3(v-for="vote in votes" v-if="vote.isActive" )
                 .h.mb {{vote.title}}
                 .errorMessaage.mb3(v-if="vote.isMulti") Выбрите несколько ответов. Выбор можно изменить до окончания голосования.
