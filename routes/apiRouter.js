@@ -332,7 +332,7 @@ router.post("/cloudAnswer", async (req, res) => {
         if(!personid)
             personid=(await req.knex("t_persons").insert({},"*"))[0].id
 
-        await req.knex("t_cloudanswers").where({short:req.body.short, personid}).del();
+        await req.knex("t_cloudanswers").where({cloudshort:req.body.short, personid}).del();
         let words=req.body.value.split(',');
         words.forEach(w=>{
             try {
