@@ -360,6 +360,5 @@ const isInViewport = (element) => {
     const rect = element.getBoundingClientRect();
     const parentRect = element.parentNode.getBoundingClientRect();
     return rect.top < parentRect.bottom
-
 }
 
