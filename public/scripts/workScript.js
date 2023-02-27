@@ -267,6 +267,9 @@ let app = new Vue({
                                 .then(async res=>{
                                     if(res.ok){
                                         this.cloudHTML[item.short]=await res.text();
+                                        setTimeout(()=>{
+                                            createTagView(item.short);
+                                        },0)
                                     }
                                 })
 
