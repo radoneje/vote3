@@ -15,6 +15,9 @@ let app = new Vue({
         cloudAnswer:[]
     },
     methods: {
+        getCloudRes:async function (cloud) {
+
+        },
         formatPerc:function(num){
             if(num==100 || num==0)
                 return num
