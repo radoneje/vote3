@@ -9,7 +9,7 @@ block body
     .mainTower#app
         .eventBody.mt
             .qSelectors.flex.left.mb2
-                .switcherWr(v-on:click="tooglePlayer( 'isActive')" v-bind:class="{active:event.isQ}")
+                .switcherWr(v-on:click="toogleEvent( 'isPlayer')" v-bind:class="{active:event.isPlayer}")
                     .switcherBox
                         .switcherElem
                         .switcherCap
