@@ -239,6 +239,14 @@ let app = new Vue({
             await post("/api/event/", dt);
             this.$forceUpdate();
         },
+        changeEvent: async function (column) {
+            //this.event[column] = value
+            let dt = {id: event.id}
+            dt[column] = this.event[column]
+
+            await post("/api/event/", dt);
+            this.$forceUpdate();
+        },
         updateStatus: async function (lastTime) {
             let timeout = 20;
             let res = await fetch("/c/status/" + event.short + "/" + lastTime + "?prm=all")
