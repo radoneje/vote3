@@ -698,5 +698,8 @@ textarea{
     width: 100%;
     height: 100%;
 }
+.aPlayerCtrlBox{
+    align-items: flex-start;
+}
 
 
