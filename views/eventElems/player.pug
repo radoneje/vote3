@@ -21,10 +21,12 @@ block body
                 .aSelectCtrlItemsWr
                     .aSelectCtrlItem(value="0") YouTube или Rutube
                     .aSelectCtrlItem(value="1") Собственный плейер
-
-            .aPlayerInputWr
-                .linkDescription.mb Введите код Iframe YouTube или Rutube
-                textarea.aPlayerInput(v-model="event.YT")
+            .flex.left
+                .half
+                    .aPlayerInputWr
+                        .linkDescription.mb Введите код Iframe YouTube или Rutube
+                        textarea.aPlayerInput(v-model="event.YT")
+                .hallf
 
     script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventScript.js")

@@ -681,5 +681,10 @@ textarea{
     height: 4em;
     width: 100%;
 }
+.half{
+    width: calc(50% - var(--pad));
+    box-sizing: border-box;
+    margin-right: var(--pad);
+}
 
 
