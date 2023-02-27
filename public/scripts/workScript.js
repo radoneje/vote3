@@ -15,7 +15,7 @@ let app = new Vue({
         cloudAnswer:[]
     },
     methods: {
-        getCloudRes:async function (cloud) {
+        getCloudRes: function (cloud) {
             return "bla-bla"
         },
         formatPerc:function(num){
