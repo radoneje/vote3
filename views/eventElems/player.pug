@@ -8,7 +8,7 @@ block body
             document.querySelector(".eventMenuItem[menuid='6']").classList.add("active")
     .mainTower#app
         .eventBody.mt
-            .qSelectors.flex.left.mb2
+            .qSelectors.flex.left.mb2 {{event.isPlaye}}
                 .switcherWr(v-on:click="toogleEvent( 'isPlayer')" v-bind:class="{active:event.isPlayer}")
                     .switcherBox
                         .switcherElem
