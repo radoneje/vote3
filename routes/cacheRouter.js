@@ -120,6 +120,11 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
         res.status(500).send(req.params.short + ", " + lastTime + ", " + e.toString())
     }
 })
+router.get("/cloudRes/:short", async (req, res) => {
+
+    res.send("<b>привед, медвед</b>")
+
+})
 
 
 export default router
