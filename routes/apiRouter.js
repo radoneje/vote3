@@ -345,14 +345,11 @@ router.post("/cloudAnswer", async (req, res) => {
                 console.log("->"+w+"<-")
             }catch (e){
                 console.warn(e)
-
             }
         })
-
         for(let w of arr){
             await req.knex("t_cloudanswers").insert({word:w,cloudshort:req.body.short, personid})
         }
-       // await req.knex("t_cloudanswers").insert({answershort:req.body.answer, personid},"*");
         res.json({personid})
 
     } catch (e) {

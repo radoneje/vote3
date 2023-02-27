@@ -6,7 +6,7 @@ block body
             .mb3
             .pQWr.mb(v-for="cloud in clouds" v-if="cloud.isActive" )
                 .h.mb {{cloud.title}}
-                .errorMessaage.mb2 Введите ваши варианты ответа через запятую.
+                .errorMessaage.mb2 Введите ваши варианты ответа через запятую. Введенное можно изменить до окончания голосования.
                 .vItemTitle.mb2
                     input.vItemTitleInput(v-model="cloudAnswer[cloud.short]"  )
                 .qBtnGroup
