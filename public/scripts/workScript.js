@@ -350,3 +350,6 @@ const isInViewport = (element) => {
     return rect.top < parentRect.bottom
 
 }
+const createTagView=(cloudshort)=>{
+    alert(cloudshort)
+}

@@ -1,9 +1,10 @@
 .cloudResContainer(id="cloudResContainer"+short)
 script
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-tag-cloud.min.js"></script>
+
 script.
     setTimeout(()=> {
+        createTagView(!{short})
+        return;
         console.log("ddd", document.getElementsById("cloudResContainer!{short}"))
         let data = !{JSON.stringify(data)}
         // create a chart and set the data
