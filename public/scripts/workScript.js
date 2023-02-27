@@ -28,6 +28,12 @@ let app = new Vue({
         isAnswered: function (answer) {
             return localStorage.getItem("answer_" + answer.id)
         },
+        sendCloud: async function (cloud) {
+            let value=this.cloudAnswer[cloud.short]
+            if(!value)
+                return;
+            let btn=document.getElementById("cloudBtn"+cloud.id);
+        },
         voting: async function (answer, vote) {
             let btn=document.getElementById("voteBtn"+answer.id);
             if(btn.classList.contains('process'))
