@@ -33,7 +33,7 @@ block body
                     .half
                         .aPlayerInputWr
                             .linkDescription.mb Введите URL файла или потока
-                            input.aPlayerInput.mb3(v-model="player.url" v-on:change="changePlayer('url',player)")
+                            input.aPlayerInput.mb2(v-model="player.url" v-on:change="changePlayer('url',player)")
                             .linkDescription.mb Введите URL картинки-постера(16/9)
                             input.aPlayerInput(v-model="player.poster" v-on:change="changePlayer('poster',player)")
                     .half
