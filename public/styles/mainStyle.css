@@ -608,7 +608,7 @@ textarea{
 }
 .btnCloud.process:before{
     content: 'Отправлено';
-
+    text-align: center;
 }
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
