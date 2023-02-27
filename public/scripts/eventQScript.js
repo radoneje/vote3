@@ -453,8 +453,8 @@ const initSelectCtrl=(ctrl)=>{
     })
     let initValue=ctrl.getAttribute("value")
     if(initValue){
-        ctrl.querySelector(".aSelectCtrlItem[value='"+initValue+"']").click()
-        ctrl.classList.toggle("active")
+        let elem=ctrl.querySelector(".aSelectCtrlItem[value='"+initValue+"']")
+        ctrl.querySelector(".aSelectCtrlTItleSelected").innerHTML=elem.innerHTML;
     }
     else
         ctrl.removeAttribute("value")
