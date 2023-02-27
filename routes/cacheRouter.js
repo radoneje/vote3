@@ -49,6 +49,7 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
                 short: events[0].short,
                 title: events[0].title,
                 isQ: events[0].isQ,
+                isPlayer: events[0].isPlayer,
             }
             if (req.query.prm == "all") {
                 ret.event.isQpreMod = events[0].isQpreMod
