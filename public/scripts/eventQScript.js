@@ -241,9 +241,10 @@ let app = new Vue({
             this.$forceUpdate();
         },
         tooglePlayer: async function (column, player) {
-            player[column] = !player[column]
+            player[column] = player[column]?false:true
+
             let dt = {id: player.id}
-            dt[column] = this.event[column]
+            dt[column] =player[column]
             await post("/api/player/", dt);
            // this.$forceUpdate();
         },
