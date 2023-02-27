@@ -7,6 +7,7 @@ let app = new Vue({
         uploading: [],
         votes: [],
         clouds:[],
+        players:[]
 
     },
     methods: {
@@ -239,6 +240,13 @@ let app = new Vue({
             await post("/api/event/", dt);
             this.$forceUpdate();
         },
+        tooglePlayer: async function (column, player) {
+            player[column] = !player[column]
+            let dt = {id: player.id}
+            dt[column] = this.event[column]
+            await post("/api/player/", dt);
+           // this.$forceUpdate();
+        },
         changeEvent: async function (column) {
             //this.event[column] = value
             let dt = {id: event.id}
@@ -301,6 +309,29 @@ let app = new Vue({
                         }
                     })
                     this.files = this.files.filter(qq => !qq.isDeleted)
+                }
+                /////
+                if(r.players){
+                    r.players.forEach(item => {
+                        if (this.players.filter(qq => qq.id == item.id).length == 0) {
+
+                            this.players.push(item)
+                        } else {
+                            this.players.forEach(qq => {
+                                if (qq.id == item.id) {
+                                    qq.type = item.title;
+                                    qq.isActive = item.isMod;
+                                    qq.YT = item.YT;
+                                    qq.url = item.url;
+                                    qq.urlType = item.urlType;
+                                    qq.poster = item.poster;
+
+
+                                }
+                            })
+                        }
+                    })
+                    //this.players = this.players.filter(qq => !qq.isDeleted)
                 }
                 /////////////
                 if (r.votes) {

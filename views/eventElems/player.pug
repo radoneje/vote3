@@ -8,25 +8,26 @@ block body
             document.querySelector(".eventMenuItem[menuid='6']").classList.add("active")
     .mainTower#app
         .eventBody.mt
-            .qSelectors.flex.left.mb2
-                .switcherWr(v-on:click="toogleEvent( 'isPlayer')" v-bind:class="{active:event.isPlayer}")
-                    .switcherBox
-                        .switcherElem
-                        .switcherCap
-                    .switcherTextOff Выключено, пользователи не видят плейер
-                    .switcherTextOn Включено, пользователи видят плейер
-            .aSelectCtrl.mb3#playerSelect(value="0" v-on:change="playerTypeChange()" )
-                .aSelectCtrlTItle Выбрите тип плейерa
-                .aSelectCtrlTItleSelected
-                .aSelectCtrlItemsWr
-                    .aSelectCtrlItem(value="0") YouTube или Rutube
-                    .aSelectCtrlItem(value="1") Собственный плейер
-            .flex.left
-                .half
-                    .aPlayerInputWr
-                        .linkDescription.mb Введите код Iframe YouTube или Rutube {{event.YT}}
-                        textarea.aPlayerInput(v-model="event.YT" v-on:change="changeEvent('YT')")
-                .hallf
+            .playerWr(v-for="player in players")
+                .qSelectors.flex.left.mb2
+                    .switcherWr(v-on:click="tooglePlayer( 'isPlayer', player)" v-bind:class="{active:event.isPlayer}")
+                        .switcherBox
+                            .switcherElem
+                            .switcherCap
+                        .switcherTextOff Выключено, пользователи не видят плейер
+                        .switcherTextOn Включено, пользователи видят плейер
+                .aSelectCtrl.mb3#playerSelect(value="0" v-on:change="playerTypeChange()" )
+                    .aSelectCtrlTItle Выбрите тип плейерa
+                    .aSelectCtrlTItleSelected
+                    .aSelectCtrlItemsWr
+                        .aSelectCtrlItem(value="0") YouTube или Rutube
+                        .aSelectCtrlItem(value="1") Собственный плейер
+                .flex.left
+                    .half
+                        .aPlayerInputWr
+                            .linkDescription.mb Введите код Iframe YouTube или Rutube {{event.YT}}
+                            textarea.aPlayerInput(v-model="event.YT" v-on:change="changeEvent('YT')")
+                    .hallf
 
     script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventScript.js")

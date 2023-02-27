@@ -94,6 +94,21 @@ router.post("/event", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+
+router.post("/player", async (req, res) => {
+
+    if(!req.session.user)
+        res.sendStatus(401)
+    try {
+        let id=req.body.id;
+        delete req.body.id;
+        let r=await req.knex("t_palyers").update(req.body,"*").where({id:id});
+        r=await req.knex("v_palyers").where({id:r[0].id})
+        res.json(r[0])
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+})
 router.post("/q", async (req, res) => {
 
     if(!req.session.user)
