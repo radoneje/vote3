@@ -326,6 +326,37 @@ router.post("/hand", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+router.post("/cloudAnswer", async (req, res) => {
+    try {
+        let personid=req.body.personid
+        if(!personid)
+            personid=(await req.knex("t_persons").insert({},"*"))[0].id
+
+        await req.knex("t_cloudanswers").where({short:req.body.short, personid}).del();
+        let words=req.body.value.split(',');
+        words.forEach(w=>{
+            try {
+                w = capitalizeFirstLetter(w.trim().toLowerCase());
+                w=w.replace(/\s+/g," ")
+            }catch (e){
+                w=null;
+            }
+        })
+        words=words.filter(w=>{return w});
+        for(let w of words){
+            await req.knex("t_cloudanswers").insert({word:w,cloudshort:req.body.short, personid})
+        }
+       // await req.knex("t_cloudanswers").insert({answershort:req.body.answer, personid},"*");
+        res.json({personid})
+
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+})
+
 router.post("/unHand", async (req, res) => {
     try {
 

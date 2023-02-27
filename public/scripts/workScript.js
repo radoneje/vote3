@@ -36,6 +36,18 @@ let app = new Vue({
             if(btn.classList.contains('process'))
                 return
             btn.classList.add('process')
+
+            let r=await post("/api/cloudAnswer",{value,short:cloud.short, personid:this.personid})
+            if(r.err) {
+                //btn.innerHTML=txt
+                btn.classList.remove('process')
+                return console.log(r.message)
+            }
+            this.personid=r.data.personid;
+            this.$forceUpdate();
+            setTimeout(()=>{
+                btn.classList.remove('process')
+            },1000)
         },
         voting: async function (answer, vote) {
             let btn=document.getElementById("voteBtn"+answer.id);
