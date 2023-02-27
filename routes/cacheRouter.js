@@ -123,7 +123,7 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
 router.get("/cloudRes/:short", async (req, res) => {
 
     let data=await req.knex("v_getclouds").where({short:req.params.short})
-    res.json(data[0]clouds)
+    res.json(data[0].clouds)
 })
 
 
