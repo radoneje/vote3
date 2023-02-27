@@ -248,7 +248,7 @@ let app = new Vue({
             await post("/api/player/", dt);
            // this.$forceUpdate();
         },
-        changeTypePlayer, async function (column, player, e) {
+        changeTypePlayer: async function (column, player, e) {
 
             console.log( e.target.getAttribute("value"))
         },
