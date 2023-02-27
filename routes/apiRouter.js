@@ -334,23 +334,22 @@ router.post("/cloudAnswer", async (req, res) => {
 
         await req.knex("t_cloudanswers").where({cloudshort:req.body.short, personid}).del();
         let words=req.body.value.split(',');
+        let arr=[]
         words.forEach(w=>{
             try {
                 w=w.replace(/\s+/g," ")
                 w=w.trim()
                 w = capitalizeFirstLetter(w.toLowerCase());
-
-                w=w.replace(/^\s+/,"")
-                w=w.replace(/\s+$/,"")
+                if(w)
+                    arr.push(w)
                 console.log("->"+w+"<-")
             }catch (e){
-
                 console.warn(e)
-                w=null;
+
             }
         })
-        words=words.filter(w=>{return w});
-        for(let w of words){
+
+        for(let w of arr){
             await req.knex("t_cloudanswers").insert({word:w,cloudshort:req.body.short, personid})
         }
        // await req.knex("t_cloudanswers").insert({answershort:req.body.answer, personid},"*");
