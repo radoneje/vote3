@@ -8,7 +8,7 @@ block body
             document.querySelector(".eventMenuItem[menuid='6']").classList.add("active")
     .mainTower#app
         .eventBody.mt
-            .playerWr(v-for="player in players")
+            .playerWr(v-for="player in players" onload="console.log('player load')")
                 .qSelectors.flex.left.mb2
                     .switcherWr(v-on:click="tooglePlayer( 'isActive', player)" v-bind:class="{active:player.isActive}")
                         .switcherBox
@@ -28,9 +28,10 @@ block body
                             .linkDescription.mb Введите код Iframe YouTube или Rutube {{event.YT}}
                             textarea.aPlayerInput(v-model="event.YT" v-on:change="changeEvent('YT')")
                     .hallf
+                //script initSelectCtrl(document.getElementById("playerSelect"))
 
     script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventScript.js")
     script(src="/scripts/vue.min.js")
     script(src="/scripts/eventQScript.js")
-    script initSelectCtrl(document.getElementById("playerSelect"))
+
