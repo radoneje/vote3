@@ -427,7 +427,12 @@ const initSelectCtrl=(ctrl)=>{
     console.log(ctrl)
     if(!ctrl)
         return;
-    ctrl/*.querySelector(".aSelectCtrlItemsWr")*/.onclick=()=>{
+    ctrl.onclick=()=>{
         ctrl.classList.toggle("active")
     }
+    ctrl.querySelectorAll(".aSelectCtrlItem").forEach(elem=>{
+        elem.onclick=()=>{
+            ctrl.setAttribute("value", elem.getAttribute("value"))
+        }
+    })
 }
