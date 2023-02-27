@@ -663,6 +663,7 @@ textarea{
 .aSelectCtrlItem:hover{
     background-color: var(--hoverColor);
     color: var(--backColor);
+    border-radius: var(--rad);
 }
 
 
