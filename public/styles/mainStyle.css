@@ -613,6 +613,8 @@ textarea{
 .cloudResContainer{
     width: min(600px, 100%);
     margin: 0 auto;
+    border-radius: var(--borderColor);
+    overflow:hidden;
 
 }
 .anychart-credits{
