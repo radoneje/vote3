@@ -15,8 +15,8 @@ block body
                         .switcherCap
                     .switcherTextOff Выключено, пользователи не видят плейер
                     .switcherTextOn Включено, пользователи видят плейер
-            .aSelectCtrl
-                .aSelectCtrlTItle Выбрите тип плейерв
+            .aSelectCtrl#playerSelect
+                .aSelectCtrlTItle Выбрите тип плейерa
                 .aSelectCtrlTItleSelected
                 .aSelectCtrlItemsWr
                     .aSelectCtrlItem(type="0") Youtube или Rutube
@@ -26,3 +26,4 @@ block body
     script(src="/scripts/eventScript.js")
     script(src="/scripts/vue.min.js")
     script(src="/scripts/eventQScript.js")
+    script initSelectCtrl(document.getElementById(playerSelect))
