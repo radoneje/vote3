@@ -249,8 +249,8 @@ let app = new Vue({
            // this.$forceUpdate();
         },
         changeTypePlayer: async function (column, player, e) {
-
-            console.log( e.target.getAttribute("value"))
+            player[column]=e.target.getAttribute("value")
+           await this.changePlayer(column, player)
         },
         changePlayer: async function (column, player) {
             let dt = {id: player.id}
