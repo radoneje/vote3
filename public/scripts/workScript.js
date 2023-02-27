@@ -33,6 +33,9 @@ let app = new Vue({
             if(!value)
                 return;
             let btn=document.getElementById("cloudBtn"+cloud.id);
+            if(btn.classList.contains('process'))
+                return
+            btn.classList.add('process')
         },
         voting: async function (answer, vote) {
             let btn=document.getElementById("voteBtn"+answer.id);

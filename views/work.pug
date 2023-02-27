@@ -10,7 +10,7 @@ block body
                 .vItemTitle.mb2
                     input.vItemTitleInput(v-model="cloudAnswer[cloud.short]"  )
                 .qBtnGroup
-                    .btn.flex.center(:id="'cloudBtn'+cloud.id" v-on:click="sendCloud(cloud)") Отправить
+                    .btn.flex.center.btnCloud(:id="'cloudBtn'+cloud.id" v-on:click="sendCloud(cloud)") Отправить
             .pQWr.mb3(v-for="vote in votes" v-if="vote.isActive" )
                 .h.mb {{vote.title}}
                 .errorMessaage.mb3(v-if="vote.isMulti") Выбрите несколько ответов. Выбор можно изменить до окончания голосования.

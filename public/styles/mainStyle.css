@@ -589,10 +589,11 @@ textarea{
 .voteAnswers.isComplite .voteAnswer{
     padding-bottom: 0;
 }
-.voteButton.process{
+.voteButton.process, .btn.process{
     position: relative;
 }
-.voteButton.process:before{
+
+.voteButton.process:before, .btnCloud.process:before{
     content: 'Ваш голос учтен';
     background-color: var(--yellowColor) !important;
     color: var(--backColor) !important;
@@ -604,6 +605,10 @@ textarea{
     box-sizing: border-box;
     padding: var(--pad);
     position: absolute;
+}
+.btnCloud.process:before{
+    content: 'Отправлено';
+
 }
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .fileDlSize
