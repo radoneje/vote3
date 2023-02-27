@@ -29,7 +29,7 @@ block body
                             textarea.aPlayerInput(v-model="player.YT" v-on:change="changePlayer('YT',player)")
                     .half
                         .videoWrapper(v-html="player.YT")
-                .flex.left.aPlayerCtrlBox(v-if="player.type==0")
+                .flex.left.aPlayerCtrlBox(v-if="player.type==1")
                     .half
                         .aPlayerInputWr
                             .linkDescription.mb Введите URL файла или потока
