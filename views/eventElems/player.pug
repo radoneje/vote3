@@ -22,11 +22,20 @@ block body
                     .aSelectCtrlItemsWr
                         .aSelectCtrlItem(value="0") YouTube или Rutube
                         .aSelectCtrlItem(value="1") Собственный плейер
-                .flex.left.aPlayerCtrlBox
+                .flex.left.aPlayerCtrlBox(v-if="player.type==0")
                     .half
                         .aPlayerInputWr
                             .linkDescription.mb Введите код Iframe YouTube или Rutube {{event.YT}}
                             textarea.aPlayerInput(v-model="player.YT" v-on:change="changePlayer('YT',player)")
+                    .half
+                        .videoWrapper(v-html="player.YT")
+                .flex.left.aPlayerCtrlBox(v-if="player.type==0")
+                    .half
+                        .aPlayerInputWr
+                            .linkDescription.mb Введите URL файла или потока
+                            input.aPlayerInput.mb3(v-model="player.url" v-on:change="changePlayer('url',player)")
+                            .linkDescription.mb Введите URL картинки-постера(16/9)
+                            input.aPlayerInput(v-model="player.poster" v-on:change="changePlayer('poster',player)")
                     .half
                         .videoWrapper(v-html="player.YT")
 
