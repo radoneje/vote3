@@ -15,6 +15,12 @@ block body
                         .switcherCap
                     .switcherTextOff Выключено, пользователи не видят плейер
                     .switcherTextOn Включено, пользователи видят плейер
+            .aSelectCtrl
+                .aSelectCtrlTItle Выбрите тип плейерв
+                .aSelectCtrlTItleSelected
+                .aSelectCtrlItemsWr
+                    .aSelectCtrlItem(type="0") Youtube или Rutube
+                    .aSelectCtrlItem(type="1") Собственный плейер
 
     script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventScript.js")

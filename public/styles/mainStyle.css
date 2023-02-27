@@ -620,8 +620,30 @@ textarea{
 .anychart-credits{
     display: none !important;
 }
+.aSelectCtrl{}
+.aSelectCtrlTItle{}
+.aSelectCtrlTItleSelected{
+    display: none;
+}
+.aSelectCtrl[value] .aSelectCtrlTItle{display: none}
+.aSelectCtrl[value] .aSelectCtrlTItleSelected {display: block}
+.aSelectCtrl{
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+.aSelectCtrlItemsWr{
+    display: none;
+}
+.aSelectCtrl.active .aSelectCtrlItemsWr{
+    position: relative;
+    left: 0;
+    right: 0;
+    background-color: var(--backColor);
+    min-height: 100%;
+}
 
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         .fileDlSize
+.fileDlSize
 
 
