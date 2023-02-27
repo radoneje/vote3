@@ -631,6 +631,9 @@ textarea{
     position: relative;
     display: block;
     cursor: pointer;
+    padding: var(--pad);
+    border-radius: var(--rad);
+    border:1px solid var(--borderColor);
 }
 .aSelectCtrlItemsWr{
     display: none;
