@@ -28,6 +28,8 @@ block body
                             .linkDescription.mb Введите код Iframe YouTube или Rutube {{event.YT}}
                             textarea.aPlayerInput(v-model="player.YT" v-on:change="changePlayer('YT',player)")
                     .hallf
+                        .videoWrapper(v-html="player.YT")
+
                 //
 
     script let event=!{JSON.stringify(event)}
