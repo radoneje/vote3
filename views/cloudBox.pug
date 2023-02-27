@@ -4,8 +4,8 @@ script
 <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-tag-cloud.min.js"></script>
 script.
     setTimeout(()=> {
+        console.log("ddd", document.getElementsById("cloudResContainer!{short}"))
         let data = !{JSON.stringify(data)}
-
         // create a chart and set the data
         let chart = anychart.tagCloud(data);
 
