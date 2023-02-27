@@ -646,11 +646,15 @@ textarea{
     display: none;
 }
 .aSelectCtrl.active .aSelectCtrlItemsWr{
-    position: relative;
+    position: absolute;
+    display: block;
     left: 0;
     right: 0;
     background-color: var(--backColor);
     min-height: 100%;
+    padding: var(--pad);
+    border-radius: var(--rad);
+    border:1px solid var(--borderColor);
 }
 
 
