@@ -122,7 +122,7 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
 })
 router.get("/cloudRes/:short", async (req, res) => {
 
-    res.send("<b>привед, медвед</b>")
+    res.send("<i>привед, медвед</i>")
 
 })
 
