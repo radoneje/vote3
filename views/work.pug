@@ -13,7 +13,7 @@ block body
                     .qBtnGroup
                         .btn.flex.center.btnCloud(:id="'cloudBtn'+cloud.id" v-on:click="sendCloud(cloud)") Отправить
                 .mb(v-if="cloud.isComplite")
-                    .cloudRes(v-html="getCloudRes(cloud)")
+                    .cloudRes(v-html="cloudHTML[cloud.short]")
                         .h Подождите, идет загрузка...
             .pQWr.mb3(v-for="vote in votes" v-if="vote.isActive" )
                 .h.mb {{vote.title}}
