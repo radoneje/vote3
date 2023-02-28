@@ -260,6 +260,13 @@ let app = new Vue({
             this.files = this.files.filter(qq => !qq.isDeleted);
             await post("/api/file/", dt);
         },
+        toogleBaro: async function (column, item) {
+            item[column] = !item[column]
+            let dt = {id: item.id}
+            dt[column] = item[column]
+            this.files = this.files.filter(qq => !qq.isDeleted);
+            await post("/api/baro/", dt);
+        },
         toogleQ: async function (column, item) {
             item[column] = !item[column]
             let dt = {id: item.id}
@@ -378,6 +385,23 @@ let app = new Vue({
                         }
                     })
                     //this.players = this.players.filter(qq => !qq.isDeleted)
+                }
+                //////
+                if(r.baros) {
+                    r.baros.forEach(item => {
+                        if (this.baros.filter(qq => qq.id == item.id).length == 0) {
+                                        this.baros.push(item)
+                        } else {
+                            this.baros.forEach(qq => {
+                                if (qq.id == item.id) {
+                                    qq.isActive = item.isActive;
+                                    qq.like= item.like;
+                                    qq.dislike= item.dislike;
+                                }
+                            })
+                        }
+                    })
+
                 }
                 /////////////
                 if (r.votes) {

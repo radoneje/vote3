@@ -136,6 +136,19 @@ router.post("/file", async (req, res) => {
     }
 })
 
+router.post("/baro", async (req, res) => {
+
+    if(!req.session.user)
+        res.sendStatus(401)
+    try {
+        let id=req.body.id;
+        delete req.body.id;
+        let r=await req.knex("t_baro").update({isActive:req.body.isActive},"*").where({id:id});
+        res.json(r[0])
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+})
 router.post("/addVote", upload.single('file'), async (req, res) => {
     if(!req.session.user)
         res.sendStatus(401)

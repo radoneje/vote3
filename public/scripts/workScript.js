@@ -15,6 +15,7 @@ let app = new Vue({
         cloudAnswer:[],
         cloudHTML:[],
         players:[],
+        baros:[]
     },
     methods: {
 
@@ -265,6 +266,22 @@ let app = new Vue({
                         }
                     })
                     this.players=this.players.filter(qq => qq.isActive)
+                }
+                if(r.baros) {
+                    r.baros.forEach(item => {
+                        if (this.baros.filter(qq => qq.id == item.id).length == 0) {
+                            this.baros.push(item)
+                        } else {
+                            this.baros.forEach(qq => {
+                                if (qq.id == item.id) {
+                                    qq.isActive = item.isActive;
+                                    qq.like= item.like;
+                                    qq.dislike= item.dislike;
+                                }
+                            })
+                        }
+                    })
+                    this.baros=this.baros.filter(qq => qq.isActive)
                 }
                 ////////////////
                 if (r.clouds) {

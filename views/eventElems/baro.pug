@@ -9,46 +9,15 @@ block body
             document.querySelector(".eventMenuItem[menuid='7']").classList.add("active")
     .mainTower#app
         .eventBody.mt
-            .playerWr(v-for="player in players" onload="console.log('player load')")
+            .playerWr(v-for="baro in baros" onload="console.log('player load')")
                 .qSelectors.flex.left.mb2
-                    .switcherWr(v-on:click="toogleBaro( 'isActive', player)" v-bind:class="{active:player.isActive}")
+                    .switcherWr(v-on:click="toogleBaro( 'isActive', baro)" v-bind:class="{active:baro.isActive}")
                         .switcherBox
                             .switcherElem
                             .switcherCap
                         .switcherTextOff Выключено, пользователи не видят барометр
                         .switcherTextOn Включено, пользователи видят барометр
-                .aSelectCtrl.PlayerTypeSelect.mb3(:value="player.type" v-on:change="changeTypePlayer('type',player, $event)" )
-                    .aSelectCtrlTItle Выбрите тип плейерa
-                    .aSelectCtrlTItleSelected
-                    .aSelectCtrlItemsWr
-                        .aSelectCtrlItem(value="0") YouTube или Rutube
-                        .aSelectCtrlItem(value="1") Собственный плейер
-                .flex.left.aPlayerCtrlBox(v-if="player.type==0")
-                    .half
-                        .aPlayerInputWr
-                            .linkDescription.mb Введите код Iframe YouTube или Rutube {{event.YT}}
-                            textarea.aPlayerInput(v-model="player.YT" v-on:change="changePlayer('YT',player)")
-                    .half
-                        .videoWrapper(v-html="player.YT")
-                .flex.left.aPlayerCtrlBox(v-if="player.type==1")
-                    .half
-                        .aPlayerInputWr
-                            .linkDescription.mb Введите URL файла или потока
-                            .uploadGroup.flex.left.mb2
-                                input.aPlayerInput(v-model="player.url" v-on:change="changePlayer('url',player)")
-                                .uploadBtn(v-on:click="uploadVideoToPlayer(player)") &#x21a5;
 
-                            .linkDescription.mb Введите URL картинки-постера (16/9)
-                            .uploadGroup.flex.left.mb2
-                                input.aPlayerInput(v-model="player.poster" v-on:change="changePlayer('poster',player)")
-                                .uploadBtn(v-on:click="uploadPosterToPlayer(player)") &#x21a5;
-                    .half
-                        .videoWrapper
-                            video.video.video-js(:id="player.short" width='1280' height='720' controls="controls" playsinline)
-                                //source(:src="player.url" :type="player.urlType")
-
-
-        include sUploading.pug
 
     script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventScript.js")
