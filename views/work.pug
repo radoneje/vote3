@@ -38,8 +38,11 @@ block body
 
 
 
-            .clientPlayer.mp3(v-if="players")
-                .h.mb3 Плейер:
+            .clientPlayer.mp3
+                .videoWrapper(v-html="player.YT" v-if="player.type==0")
+                .videoWrapper
+                    video.video.video-js(:id="player.short" width='1280' height='720' controls="controls" playsinline)
+
             .pQWr.mb3(v-if="event.isQ")
                 .h.mb3 Вопросы:
                 .pqContainer
