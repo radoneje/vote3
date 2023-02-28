@@ -40,12 +40,16 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
         let votes = await req.knex("v_votes").where(params).andWhere("modtime", ">", lastTime).orderBy("id")
         let clouds = await req.knex("v_clouds").where(params).andWhere("modtime", ">", lastTime).orderBy("id")
         let players=await req.knex("v_players").where(params).andWhere("modtime", ">", lastTime).orderBy("id")
-        let baros=await req.knex("v_baro").where(params).andWhere("modtime", ">", lastTime).orderBy("id")
+
 
         if (req.query.prm != "all")
             params.isMod = true
         let q = await req.knex("v_q").where(params).andWhere("modtime", ">", lastTime).orderBy("id")
 
+        delete  params.isMod
+        if (req.query.prm != "all")
+            params.isActive=true
+        let baros=await req.knex("v_baro").where(params).orderBy("id")
 
         if (events.length > 0) {
             ret.event = {
