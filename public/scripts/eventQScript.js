@@ -11,6 +11,15 @@ let app = new Vue({
 
     },
     methods: {
+        uploadPosterToPlayer:async function(){
+            let inp = document.createElement("input")
+            inp.type = "file";
+            inp.click();
+            inp.accept="image/jpeg,image/png"
+            inp.onchange = () => {
+                this.uploadFileDo(inp.files[0]);
+            }
+        },
         playerTypeChange:async function(){
             console.log("change")
         },
@@ -97,7 +106,19 @@ let app = new Vue({
             a.download = item.originalname;
             a.click();
         },
-        uploadFile: async function (file) {
+        uploadFile:async function (file){
+            await this.uploadFileDo(file, async (fileid)=>{
+                let res = await post("/api/fileToEvent", {fileid, short: event.short})
+                if (!res.err) {
+                    this.files.push(res.data)
+                    setTimeout(() => {
+                        this.uploading = this.uploading.filter(u => u.id != uploadItem.id)
+                    }, 2000)
+                } else
+                    console.warn(res.message)
+            })
+        },
+        uploadFileDo: async function (file, callBack) {
 
             let res = await get("/api/newFile")
             if (res.err)
@@ -114,14 +135,8 @@ let app = new Vue({
             xhr.onreadystatechange = async () => {
                 if (xhr.readyState == XMLHttpRequest.DONE) {
                     if (xhr.status == 200) {
-                        let res = await post("/api/fileToEvent", {fileid, short: event.short})
-                        if (!res.err) {
-                            this.files.push(res.data)
-                            setTimeout(() => {
-                                this.uploading = this.uploading.filter(u => u.id != uploadItem.id)
-                            }, 2000)
-                        } else
-                            console.warn(res.message)
+                        callBack(fileid)
+
                     } else {
                         uploadItem.err = true
                     }
