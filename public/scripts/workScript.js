@@ -341,6 +341,8 @@ let app = new Vue({
         },
         players:function (){
             this.players.forEach(pl=>{
+                if(videoPlayers[pl.short])
+                    return location.reload()
                 if(pl.isActive && pl.type==1){
                     setTimeout(()=>{
 
