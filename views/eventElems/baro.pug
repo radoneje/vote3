@@ -17,7 +17,7 @@ block body
                             .switcherCap
                         .switcherTextOff Выключено, пользователи не видят барометр
                         .switcherTextOn Включено, пользователи видят барометр
-                .baro
+                .baro.mb3
                     .baroScroll
                     .baroScale
                         .flex.scroll
@@ -31,6 +31,10 @@ block body
                         .baroTriangleBox
                             .baroTriangle(:style="'left:calc('+baroCenter(baro)+' - 20px)'")
                                 include ../svg/triangle.svg
+                .flex
+                    .half(style="text-align:right") {{baro.likes}}
+                    .half    {{baro.dislikes}}
+
 
 
     script let event=!{JSON.stringify(event)}
