@@ -29,7 +29,7 @@ let app = new Vue({
             if(ret.err)
                 return console.warn(ret.message)
             this.personid=ret.data.personid;
-            console.log(ret)
+            console.log(this.personid)
         },
         baroUnLike:async function(baro,e){
             let elem=document.getElementById("baroUnLike"+baro.id)
