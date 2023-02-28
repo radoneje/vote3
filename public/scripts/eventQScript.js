@@ -18,9 +18,10 @@ let app = new Vue({
             inp.accept="image/jpeg,image/png"
             inp.click();
             inp.onchange = () => {
-                this.uploadFileDo(inp.files[0],(fileid, fileshort)=>{
+                this.uploadFileDo(inp.files[0],async (fileid, fileshort)=>{
                     console.log(fileshort)
                     player.poster="/file/" + fileshort
+                    await changePlayer('poster',player)
                 });
             }
         },
