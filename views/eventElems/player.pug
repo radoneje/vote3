@@ -44,7 +44,7 @@ block body
                                 .uploadBtn(v-on:click="uploadPosterToPlayer(player)") &#x21a5;
                     .half
                         .videoWrapper
-                            video.video.video-js(:id="player.short" width='1280' height='720' controls="controls" :poster="player.poster")
+                            video.video.video-js(:id="player.short" width='1280' height='720' controls="controls" )
                                 //source(:src="player.url" :type="player.urlType")
 
         include sUploading.pug
