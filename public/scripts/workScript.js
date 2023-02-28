@@ -345,10 +345,10 @@ let app = new Vue({
                     setTimeout(()=>{
 
                         if(videoPlayers[pl.short])
-                            if( videoPlayers[pl.short].short!=pl.modtime)
+                           // if( videoPlayers[pl.short].short!=pl.modtime)
                                 return location.reload()
-                            else
-                                videoPlayers[pl.short].dispose()
+                           // else
+                             //   videoPlayers[pl.short].dispose()
 
                         videoPlayers[pl.short]=videojs(pl.short)
                         videoPlayers[pl.short].short=pl.modtime;
