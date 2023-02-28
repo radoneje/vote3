@@ -48,6 +48,7 @@ let app = new Vue({
             if(ret.err)
                 return console.warn(ret.message)
             this.personid=ret;
+
         },
 
         uploadVideoToPlayer:async function(player){
