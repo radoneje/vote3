@@ -432,7 +432,7 @@ let app = new Vue({
                 if(pl.isActive && pl.type==1){
                     setTimeout(()=>{
                         console.log(pl)
-                        if(!videoPlayers[pl.short])
+                        if(videoPlayers[pl.short])
                             videojs(pl.short).dispose();
 
                         videoPlayers[pl.short]=videojs(pl.short)
