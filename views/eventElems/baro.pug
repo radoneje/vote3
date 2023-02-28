@@ -10,13 +10,15 @@ block body
     .mainTower#app
         .eventBody.mt
             .playerWr(v-for="baro in baros" onload="console.log('player load')")
-                .qSelectors.flex.left.mb2
+                .qSelectors.flex.left.mb3
                     .switcherWr(v-on:click="toogleBaro( 'isActive', baro)" v-bind:class="{active:baro.isActive}")
                         .switcherBox
                             .switcherElem
                             .switcherCap
                         .switcherTextOff Выключено, пользователи не видят барометр
                         .switcherTextOn Включено, пользователи видят барометр
+                .baro
+                    .baroScroll
 
 
     script let event=!{JSON.stringify(event)}

@@ -729,5 +729,18 @@ textarea.aPlayerInput{
     width: min(600px,100%);
     margin: 0 auto;
 }
+.baro{
+    width:100%;
+    height:40px;
+    position: relative;
+}
+.baroScroll{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    height: 20px;
+   background:linear-gradient(to left, var(--yellowColor), var(--buttonColor));
+}
 
 
