@@ -26,7 +26,21 @@ let app = new Vue({
             setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("active")},500)
             setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("clicked")},2000)
         },
-        baroUnLike:async function(baro,e){},
+        baroUnLike:async function(baro,e){
+            let elem=document.getElementById("baroUnLike"+baro.id)
+            if(!elem)
+                return;
+            if(elem.classList.contains("active")) {
+                document.getElementById("baroUnLike"+baro.id).classList.remove("active")
+                return;
+            }
+            elem.classList.add("active")
+            if(elem.classList.contains("clicked"))
+                return;
+            elem.classList.add("clicked")
+            setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("active")},500)
+            setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("clicked")},2000)
+        },
 
         uploadVideoToPlayer:async function(player){
             let inp = document.createElement("input")
