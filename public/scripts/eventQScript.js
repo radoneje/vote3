@@ -428,7 +428,7 @@ let app = new Vue({
     },
     watch: {
         players:function (){
-            players.forEach(pl=>{
+            this.players.forEach(pl=>{
                 if(pl.isActive && pl.type==1){
                     setTimeout(()=>{
                         if(!videoPlayers[pl.short])
