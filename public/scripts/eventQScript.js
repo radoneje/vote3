@@ -13,15 +13,22 @@ let app = new Vue({
     methods: {
         baroCenter(baro){
             let total=baro.likes+baro.dislikes
-            console.log()
+            console.log(baro.dislikes,baro.likes)
             if(total==0)
                 return "50%";
+            let w=100/parseFloat(total)
+            perc=50+(baro.likes*w)-(baro.dilikes*w);
+            console.log(perc)
+            return perc+"%"
+
+
+
             let perc=50;
             if(baro.likes>baro.dislikes)
-                perc=50+(parseFloat(baro.dislikes)/parseFloat(total))*50;
+                perc=50+(parseFloat(baro.likes)/parseFloat(total))*50;
             if(baro.likes<baro.dislikes)
-                perc=50-(parseFloat(baro.likes)/parseFloat(total))*50;
-            return perc+"%"
+                perc=50-(parseFloat(baro.dislikes)/parseFloat(total))*50;
+
         },
         baroLike:async function(baro){
             let elem=document.getElementById("baroLike"+baro.id)
