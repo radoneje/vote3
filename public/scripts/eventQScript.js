@@ -14,8 +14,9 @@ let app = new Vue({
         uploadPosterToPlayer:async function(player){
             let inp = document.createElement("input")
             inp.type = "file";
-            inp.click();
+
             inp.accept="image/jpeg,image/png"
+            inp.click();
             inp.onchange = () => {
                 this.uploadFileDo(inp.files[0],(fileid, fileshort)=>{
                     console.log(fileshort)
