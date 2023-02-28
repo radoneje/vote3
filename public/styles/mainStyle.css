@@ -754,6 +754,9 @@ textarea.aPlayerInput{
     top: -12px;
     right: -10px;
 }
+.baroButton:hover{
+    background-color: var(--yellowColor);
+}
 .baroButton.unlike{
     right: inherit;
     left: -10px;
@@ -761,6 +764,9 @@ textarea.aPlayerInput{
 .baroButton svg{
     height: auto;
     width: 100%;
+}
+.baroButton.unlike:hover{
+    background-color: var(--buttonColor);
 }
 
 
