@@ -292,7 +292,7 @@ let app = new Vue({
             let dt = {id: player.id}
             dt[column] =player[column]
             await post("/api/player/", dt);
-            this.$forceUpdate();
+            document.location.reload();
         },
         changeEvent: async function (column) {
             //this.event[column] = value
