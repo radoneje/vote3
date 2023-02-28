@@ -343,10 +343,12 @@ let app = new Vue({
             this.players.forEach(pl=>{
                 if(pl.isActive && pl.type==1){
                     setTimeout(()=>{
-                        console.log(pl)
+
                         if(videoPlayers[pl.short])
                             if( videoPlayers[pl.short].short!=pl.modtime)
                                 return location.reload()
+                            else
+                                videoPlayers[pl.short].dispose()
 
                         videoPlayers[pl.short]=videojs(pl.short)
                         videoPlayers[pl.short].short=pl.modtime;
