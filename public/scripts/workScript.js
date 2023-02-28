@@ -338,6 +338,31 @@ let app = new Vue({
                 setTimeout(() => {
                     document.getElementById("persI").focus()
                 }, 0);
+        },
+        players:function (){
+            this.players.forEach(pl=>{
+                if(pl.isActive && pl.type==1){
+                    setTimeout(()=>{
+                        console.log(pl)
+                        if(videoPlayers[pl.short])
+                            videojs(pl.short).dispose();
+
+                        videoPlayers[pl.short]=videojs(pl.short)
+                        let type="video/mp4"
+                        if(pl.url.match(/\.m3u8$/))
+                            type="application/x-mpegURL"
+                        if(pl.url.match(/\.smil$/))
+                            type="application/x-mpegURL"
+
+                        videoPlayers[pl.short].src({src:pl.url, type})
+                        videoPlayers[pl.short].poster( pl.poster);
+
+                    },100)
+                }
+                else
+                    delete videoPlayers[pl.short]
+
+            })
         }
     },
     mounted: async function () {
@@ -355,6 +380,8 @@ let app = new Vue({
         }
     }
 })
+let videoPlayers={};
+
 const validateEmail = (email) => {
     return String(email)
         .toLowerCase()
