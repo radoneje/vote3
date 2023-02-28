@@ -361,7 +361,7 @@ let app = new Vue({
                         videoPlayers[pl.short].src({src:pl.url, type})
                         videoPlayers[pl.short].poster( pl.poster);
 
-                    },100)
+                    },500)
                 }
                 else
                     delete videoPlayers[pl.short]
