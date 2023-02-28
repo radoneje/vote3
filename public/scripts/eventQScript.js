@@ -13,13 +13,11 @@ let app = new Vue({
     methods: {
         baroCenter(baro){
             let total=parseFloat(baro.likes)+parseFloat(baro.dislikes)
-            console.log(baro.dislikes,baro.likes, total)
             if(total==0)
                 return "50%";
             let w=parseFloat(100)/parseFloat(total)
 
             let perc=50+(parseFloat(baro.likes)*w)-(parseFloat(baro.dislikes)*w);
-            console.log(perc)
             return perc+"%"
 
 
@@ -459,8 +457,8 @@ let app = new Vue({
                             this.baros.forEach(qq => {
                                 if (qq.id == item.id) {
                                     qq.isActive = item.isActive;
-                                    qq.like= item.like;
-                                    qq.dislike= item.dislike;
+                                    qq.likes= item.likes;
+                                    qq.dislikes= item.dislikes;
                                 }
                             })
                         }

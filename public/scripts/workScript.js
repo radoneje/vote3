@@ -275,8 +275,8 @@ let app = new Vue({
                             this.baros.forEach(qq => {
                                 if (qq.id == item.id) {
                                     qq.isActive = item.isActive;
-                                    qq.like= item.like;
-                                    qq.dislike= item.dislike;
+                                    qq.likes= item.likes;
+                                    qq.dislikes= item.dislikes;
                                 }
                             })
                         }
