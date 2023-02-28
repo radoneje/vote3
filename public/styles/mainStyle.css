@@ -776,8 +776,8 @@ textarea.aPlayerInput{
 .baroTriangle{
     position: absolute;
     top:0;
-    width: 20px;
-    left: calc(50% + 10px);
+    width: 40px;
+    left: calc(50% - 20px);
 }
 .baroButton svg, .baroTriangle svg{
     height: auto;
