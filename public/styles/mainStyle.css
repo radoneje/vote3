@@ -743,14 +743,19 @@ textarea.aPlayerInput{
    background:linear-gradient(to left, var(--yellowColor), var(--buttonColor));
 }
 .baroButton{
-    width: 22px;
-    height: 22px;
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
     padding: 4px;
     border-radius: 50%;
     cursor: pointer;
     position: absolute;
     left: -10px;
-    top:0
+    top: -12px;
+}
+.baroButton.end{
+    left: inherit;
+    right: -10px;
 }
 .baroButton svg{
     height: auto;
