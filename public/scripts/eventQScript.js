@@ -36,7 +36,7 @@ let app = new Vue({
             if(ret.err)
                 return console.warn(ret.message)
             this.personid=ret.data.personid;
-            console.log(this.personid)
+            baro.likes++
         },
         baroUnLike:async function(baro,e){
             let elem=document.getElementById("baroUnLike"+baro.id)
@@ -56,6 +56,7 @@ let app = new Vue({
             if(ret.err)
                 return console.warn(ret.message)
             this.personid=ret.data.personid;
+            baro.dislikes++
 
         },
 
