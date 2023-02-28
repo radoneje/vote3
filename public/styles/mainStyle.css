@@ -750,12 +750,13 @@ textarea.aPlayerInput{
     border-radius: 50%;
     cursor: pointer;
     position: absolute;
-    left: -10px;
+
     top: -12px;
-}
-.baroButton.end{
-    left: inherit;
     right: -10px;
+}
+.baroButton.unlike{
+    right: inherit;
+    left: -10px;
 }
 .baroButton svg{
     height: auto;
