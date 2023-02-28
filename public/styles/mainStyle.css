@@ -705,11 +705,20 @@ textarea.aPlayerInput{
     align-items: flex-start;
 }
 .uploadGroup input {
-    border-radius: 0 var(--rad) var(--rad) 0;
+    border-radius:  var(--rad) 0 0  var(--rad) ;
     padding: calc(var(--pad)/2);
     border:1px solid var(--borderColor);
     font-size: .8em;
     box-sizing: border-box;
+    border-right: none;
+    width: calc(100% - 16px);
+}
+.uploadGroup .uploadBtn{
+    box-sizing: border-box;
+    border-radius:  0 var(--rad)    var(--rad) 0 ;
+    border-left: none;
+    width: 16px;
+    cursor: pointer;
 }
 
 
