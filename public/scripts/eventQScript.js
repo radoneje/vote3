@@ -11,6 +11,20 @@ let app = new Vue({
 
     },
     methods: {
+        uploadVideoToPlayer:async function(player){
+            let inp = document.createElement("input")
+            inp.type = "file";
+
+            inp.accept="video/mp4"
+            inp.click();
+            inp.onchange = () => {
+                this.uploadFileDo(inp.files[0],async (fileid, fileshort)=>{
+                    console.log(fileshort)
+                    player.url="/file/" + fileshort
+                    await this.changePlayer('url',player)
+                });
+            }
+        },
         uploadPosterToPlayer:async function(player){
             let inp = document.createElement("input")
             inp.type = "file";
