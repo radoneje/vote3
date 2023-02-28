@@ -15,8 +15,10 @@ let app = new Vue({
             let elem=document.getElementById("baroLike"+baro.id)
             if(!elem)
                 return;
-            if(elem.classList.contains("active"))
+            if(elem.classList.contains("active")) {
+                elem.classList.remove("active")
                 return;
+            }
             elem.classList.add("active")
             if(elem.classList.contains("clicked"))
                 return;
