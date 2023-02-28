@@ -790,5 +790,14 @@ textarea.aPlayerInput{
 .baroPointer:hover .baroButton.unlike{
     background-color: var(--buttonColor);
 }
+.baroTriangleWr{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-color: yellow;
+}
+.baroTriangleBox{position: relative}
 
 
