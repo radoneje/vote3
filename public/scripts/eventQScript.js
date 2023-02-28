@@ -431,6 +431,7 @@ let app = new Vue({
             this.players.forEach(pl=>{
                 if(pl.isActive && pl.type==1){
                     setTimeout(()=>{
+                        console.log(pl)
                         if(!videoPlayers[pl.short])
                             videoPlayers[pl.short]=videojs(pl.short)
                         let type="video/mp4"
