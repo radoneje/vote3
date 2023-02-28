@@ -16,7 +16,7 @@ let app = new Vue({
             if(!elem)
                 return;
             if(elem.classList.contains("active")) {
-                document.getElementById("baroLike"+baro.id).remove("active")
+                //document.getElementById("baroLike"+baro.id).classList.remove("active")
                 return;
             }
             elem.classList.add("active")
@@ -24,7 +24,7 @@ let app = new Vue({
                 return;
             elem.classList.add("clicked")
             setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("active")},500)
-            setTimeout(()=>{ document.getElementById("baroLike"+baro.id).remove("clicked")},2000)
+            setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("clicked")},2000)
         },
         baroUnLike:async function(baro,e){},
 
