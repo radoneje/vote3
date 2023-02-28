@@ -719,6 +719,8 @@ textarea.aPlayerInput{
     border-left: none;
     width: 16px;
     cursor: pointer;
+    background-color: var(--hoverColor);
+    color: var(--backColor);
 }
 
 
