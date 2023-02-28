@@ -245,7 +245,27 @@ let app = new Vue({
                     this.$forceUpdate();
                 }
                 /////////////////
+                if(r.players) {
+                    r.players.forEach(item => {
+                        if (this.players.filter(qq => qq.id == item.id).length == 0) {
+                            this.players.push(item)
+                        } else {
+                            this.players.forEach(qq => {
+                                if (qq.id == item.id) {
+                                    qq.type = item.type;
+                                    qq.isActive = item.isActive;
+                                    qq.YT = item.YT;
+                                    qq.url = item.url;
+                                    qq.urlType = item.urlType;
+                                    qq.poster = item.poster;
 
+
+                                }
+                            })
+                        }
+                    })
+                    this.players=this.players.filter(qq => qq.isActive)
+                }
                 ////////////////
                 if (r.clouds) {
                     r.clouds.forEach(item => {
