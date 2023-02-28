@@ -433,7 +433,8 @@ let app = new Vue({
                     setTimeout(()=>{
                         console.log(pl)
                         if(!videoPlayers[pl.short])
-                            videoPlayers[pl.short]=videojs(pl.short)
+                            videojs(pl.short).dispose();
+                        videoPlayers[pl.short]=videojs(pl.short)
                         let type="video/mp4"
                         if(pl.url.match(/\.m3u8$/))
                             type="application/x-mpegURL"
