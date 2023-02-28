@@ -441,11 +441,11 @@ let app = new Vue({
                             type="application/x-mpegURL"
 
                         videoPlayers[pl.short].src({src:pl.url, type})
-                        videoPlayers[pl.short].poster_=( pl.poster);
+                        videoPlayers[pl.short].poster( pl.poster);
                         // update the tech's poster
-                        videoPlayers[pl.short].techCall('setPoster', pl.poster);
+                        //videoPlayers[pl.short].techCall('setPoster', pl.poster);
                         // alert components that the poster has been set
-                        videoPlayers[pl.short].trigger('posterchange');
+                        //videoPlayers[pl.short].trigger('posterchange');
 
                     },100)
                 }
