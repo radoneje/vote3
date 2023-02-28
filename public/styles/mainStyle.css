@@ -793,10 +793,10 @@ textarea.aPlayerInput{
 .baroTriangleWr{
     position: absolute;
     top:0;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background-color: yellow;
+    left: 40px;
+    right: 40px;
+    height: 0px;
+
 }
 .baroTriangleBox{position: relative}
 
