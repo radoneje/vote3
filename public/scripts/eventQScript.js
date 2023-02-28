@@ -445,7 +445,8 @@ let app = new Vue({
                         // update the tech's poster
                         //videoPlayers[pl.short].techCall('setPoster', pl.poster);
                         // alert components that the poster has been set
-                        //videoPlayers[pl.short].trigger('posterchange');
+                        //
+                        videoPlayers[pl.short].trigger('posterchange');
 
                     },100)
                 }
