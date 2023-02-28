@@ -704,5 +704,12 @@ textarea.aPlayerInput{
 .aPlayerCtrlBox{
     align-items: flex-start;
 }
+.uploadGroup input {
+    border-radius: 0 var(--rad) var(--rad) 0;
+    padding: calc(var(--pad)/2);
+    border:1px solid var(--borderColor);
+    font-size: .8em;
+    box-sizing: border-box;
+}
 
 
