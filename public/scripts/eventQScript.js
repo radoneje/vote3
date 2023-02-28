@@ -21,7 +21,7 @@ let app = new Vue({
                 perc=50+(parseFloat(baro.likes)/parseFloat(total))*50;
             else
                 perc=50-(parseFloat(baro.dislikes)/parseFloat(total))*50;
-            onsole.log(perc)
+            console.log(perc)
             return perc+"%"
         },
         baroLike:async function(baro){
