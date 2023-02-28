@@ -761,16 +761,16 @@ textarea.aPlayerInput{
     border-radius: 50%;
     cursor: pointer;
     position: absolute;
-    left: -10px;
-    top: -12px;
 
+    top: -12px;
+    right: -20px;
 }
 .baroButton:hover{
     background-color: var(--yellowColor);
 }
 .baroButton.unlike{
-    left: inherit;
-    right: -10px;
+    right: inherit;
+    left: -10px;
 }
 .baroButton svg{
     height: auto;
