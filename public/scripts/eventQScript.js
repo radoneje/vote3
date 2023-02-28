@@ -281,6 +281,7 @@ let app = new Vue({
             let dt = {id: player.id}
             dt[column] =player[column]
             await post("/api/player/", dt);
+            document.location.reload();
            // this.$forceUpdate();
         },
         changeTypePlayer: async function (column, player, e) {
