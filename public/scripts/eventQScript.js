@@ -7,8 +7,8 @@ let app = new Vue({
         uploading: [],
         votes: [],
         clouds:[],
-        players:[]
-
+        players:[],
+        baros:[]
     },
     methods: {
         uploadVideoToPlayer:async function(player){
