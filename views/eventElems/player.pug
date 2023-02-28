@@ -35,6 +35,7 @@ block body
                             .linkDescription.mb Введите URL файла или потока
                             .uploadGroup.flex.left.mb2
                                 input.aPlayerInput(v-model="player.url" v-on:change="changePlayer('url',player)")
+                                .uploadBtn U+02191
                             .linkDescription.mb Введите URL картинки-постера(16/9)
                             input.aPlayerInput(v-model="player.poster" v-on:change="changePlayer('poster',player)")
                     .half
