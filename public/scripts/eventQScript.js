@@ -25,7 +25,7 @@ let app = new Vue({
             elem.classList.add("clicked")
             setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("active")},500)
             setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("clicked")},2000)
-            let ret =await post("/api/baroLike",{personid:this.personid, id:baro.short, value:1})
+            let ret =await post("/api/baroLike",{personid:this.personid, short:baro.short, value:1})
             if(ret.err)
                 return console.warn(ret.message)
             this.personid=ret;
