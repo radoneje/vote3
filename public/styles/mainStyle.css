@@ -802,7 +802,7 @@ textarea.aPlayerInput{
 .baroPointer.active .baroButton{
     background-color: var(--yellowColor);
 }
-.baroPointer.active .baroButton svg {
+.baroPointer .baroButton svg {
    transition: transform .5s ease;
 }
 .baroPointer.active .baroButton svg {
