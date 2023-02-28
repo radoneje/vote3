@@ -354,6 +354,20 @@ router.post("/hand", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+
+router.post("/baroLike", async (req, res) => {
+    try {
+        let personid=req.body.personid
+        if(!personid)
+            personid=(await req.knex("t_persons").insert({},"*"))[0].id
+
+        await req.knex("t_baroanswers").insert({baroshort:req.body.short, personid, value:req.body.value},"*");
+        res.json({personid})
+
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+})
 router.post("/cloudAnswer", async (req, res) => {
     try {
         let personid=req.body.personid
