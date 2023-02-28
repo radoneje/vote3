@@ -435,9 +435,9 @@ let app = new Vue({
                         if(!videoPlayers[pl.short])
                             videoPlayers[pl.short]=videojs(pl.short)
                         let type="video/mp4"
-                        if(pl.urlType.match(/\.m3u8$/))
+                        if(pl.url.match(/\.m3u8$/))
                             type="application/x-mpegURL"
-                        if(pl.urlType.match(/\.smil$/))
+                        if(pl.url.match(/\.smil$/))
                             type="application/x-mpegURL"
 
                         videoPlayers[pl.short].src({src:pl.url, type})
