@@ -11,13 +11,16 @@ let app = new Vue({
         baros:[]
     },
     methods: {
-        baroLike:async function(baro,e){
-            e.target.classList.add("active")
-            if(e.target.classList.contains("clicked"))
+        baroLike:async function(baro){
+            let elem=document.getElementById("baroLike"+baro.id)
+            if(!elem)
                 return;
-            e.target.classList.add("clicked")
-            setTimeout(()=>{ e.target.classList.remove("active")},2000)
-            setTimeout(()=>{ e.target.classList.remove("clicked")},2000)
+            elem.classList.add("active")
+            if(elemt.classList.contains("clicked"))
+                return;
+            elem.classList.add("clicked")
+            setTimeout(()=>{ elem.classList.remove("active")},2000)
+            setTimeout(()=>{ elem.classList.remove("clicked")},2000)
         },
         baroUnLike:async function(baro,e){},
 

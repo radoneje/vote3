@@ -21,10 +21,10 @@ block body
                     .baroScroll
                     .baroScale
                         .flex.scroll
-                            .half.baroPointer(v-on:click="baroUnLike(baro, $event)")
+                            .half.baroPointer(:id="'baroUnLike'+baro.id" v-on:click="baroUnLike(baro)")
                                 .baroButton.unlike
                                     include ../svg/unlike.svg
-                            .half.baroPointer(v-on:click="baroLike(baro, $event)")
+                            .half.baroPointer(:id="'baroLike'+baro.id" v-on:click="baroLike(baro)")
                                 .baroButton
                                     include ../svg/like.svg
                     .baroTriangleWr
