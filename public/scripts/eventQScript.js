@@ -434,6 +434,7 @@ let app = new Vue({
                         console.log(pl)
                         if(!videoPlayers[pl.short])
                             videojs(pl.short).dispose();
+
                         videoPlayers[pl.short]=videojs(pl.short)
                         let type="video/mp4"
                         if(pl.url.match(/\.m3u8$/))
@@ -443,11 +444,6 @@ let app = new Vue({
 
                         videoPlayers[pl.short].src({src:pl.url, type})
                         videoPlayers[pl.short].poster( pl.poster);
-                        // update the tech's poster
-                        //videoPlayers[pl.short].techCall('setPoster', pl.poster);
-                        // alert components that the poster has been set
-                        //
-                        videoPlayers[pl.short].trigger('posterchange');
 
                     },100)
                 }
