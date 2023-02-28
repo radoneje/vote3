@@ -11,6 +11,16 @@ let app = new Vue({
         baros:[]
     },
     methods: {
+        baroLike:async function(baro,e){
+            e.target.classList.add("active")
+            if(e.target.classList.contains("clicked"))
+                return;
+            e.target.classList.add("clicked")
+            setTimeout(()=>{ e.target.classList.remove("active")},2000)
+            setTimeout(()=>{ e.target.classList.remove("clicked")},2000)
+        },
+        baroUnLike:async function(baro,e){},
+
         uploadVideoToPlayer:async function(player){
             let inp = document.createElement("input")
             inp.type = "file";

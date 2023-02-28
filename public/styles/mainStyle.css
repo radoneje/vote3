@@ -799,5 +799,12 @@ textarea.aPlayerInput{
 
 }
 .baroTriangleBox{position: relative}
+.baroPointer.active .baroButton{
+    background-color: var(--yellowColor);
+}
+.baroPointer.active .baroButton svg path{
+    background-color: var(--yellowColor);
+    stroke: var(--backColor) !important;
+}
 
 
