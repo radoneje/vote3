@@ -725,5 +725,9 @@ textarea.aPlayerInput{
     text-align: center;
     font-weight: bold;
 }
+.clientPlayer{
+    width: min(600px,100%);
+    margin: 0 auto;
+}
 
 
