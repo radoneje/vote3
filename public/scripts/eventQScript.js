@@ -449,6 +449,9 @@ let app = new Vue({
 
                     },100)
                 }
+                else
+                    delete videoPlayers[pl.short]
+
             })
         }
     },
