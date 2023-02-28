@@ -426,7 +426,31 @@ let app = new Vue({
             }, timeout * 1000);
         }
     },
-    watch: {},
+    watch: {
+        players:function (){
+            players.forEach(pl=>{
+                if(pl.isActive && pl.type==1){
+                    setTimeout(()=>{
+                        if(!videoPlayers[pl.short])
+                            videoPlayers[pl.short]=videojs(pl.short)
+                        let type="video/mp4"
+                        if(pl.urlType.match(/\.m3u8$/))
+                            type="application/x-mpegURL"
+                        if(pl.urlType.match(/\.smil$/))
+                            type="application/x-mpegURL"
+
+                        videoPlayers[pl.short].src({src:pl.url, type})
+                        videoPlayers[pl.short].poster_ = pl.poster;
+                        // update the tech's poster
+                        videoPlayers[pl.short].techCall('setPoster', pl.poster);
+                        // alert components that the poster has been set
+                        videoPlayers[pl.short].trigger('posterchange');
+
+                    },100)
+                }
+            })
+        }
+    },
     mounted: async function () {
         this.updateStatus(0)
     }
@@ -470,7 +494,7 @@ if (dropArea) {
     }
 }
 
-
+let videoPlayers={};
 const validateEmail = (email) => {
     return String(email)
         .toLowerCase()
