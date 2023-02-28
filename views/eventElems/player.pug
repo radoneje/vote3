@@ -46,7 +46,7 @@ block body
                             video.video(width='1280' height='720' controls="controls" :poster="player.poster")
                                 source(:src="player.url" :type="player.urlType")
 
-                //
+        include sUploading//
 
     script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventScript.js")

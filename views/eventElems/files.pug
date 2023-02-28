@@ -39,14 +39,8 @@ block body
                             span(v-else) Скрыт
 
                         .qItemBtn.red(v-on:click="if(confirm('Удалить файл?')) toogleFile( 'isDeleted', item)") Удалить
+        include sUploading
 
-        .uploading(v-if="uploading.length>0")
-            .uploadingTitle.mb загрузка файлов
-            .uploadingWr
-                .uploadingItem.mb(v-for="item in uploading" v-bind:class="{err:item.err}")
-                    .uploadingItemBg(:style="'width:'+item.percent")
-                    .uploadingItemTitle
-                        span  {{item.name}} : {{item.percent}}
 
 
     script let event=!{JSON.stringify(event)}

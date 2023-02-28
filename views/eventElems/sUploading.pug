@@ -1,0 +1,7 @@
+.uploading(v-if="uploading.length>0")
+    .uploadingTitle.mb загрузка файлов
+    .uploadingWr
+        .uploadingItem.mb(v-for="item in uploading" v-bind:class="{err:item.err}")
+            .uploadingItemBg(:style="'width:'+item.percent")
+            .uploadingItemTitle
+                span  {{item.name}} : {{item.percent}}
