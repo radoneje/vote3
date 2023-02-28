@@ -13,7 +13,8 @@ let app = new Vue({
         votes: [],
         clouds:[],
         cloudAnswer:[],
-        cloudHTML:[]
+        cloudHTML:[],
+        players:[],
     },
     methods: {
 
@@ -243,7 +244,29 @@ let app = new Vue({
                     this.votes = this.votes.filter(qq => !qq.isDeleted && qq.isActive)
                     this.$forceUpdate();
                 }
+                /////////////////
+                if(r.players) {
+                    r.players.forEach(item => {
+                        if (this.players.filter(qq => qq.id == item.id).length == 0) {
+                            this.players.push(item)
+                        } else {
+                            this.players.forEach(qq => {
+                                if (qq.id == item.id) {
+                                    qq.type = item.type;
+                                    qq.isActive = item.isActive;
+                                    qq.YT = item.YT;
+                                    qq.url = item.url;
+                                    qq.urlType = item.urlType;
+                                    qq.poster = item.poster;
 
+
+                                }
+                            })
+                        }
+                    })
+                    this.players=this.players.filter(qq => qq.isActive)
+                }
+                ////////////////
                 if (r.clouds) {
                     r.clouds.forEach(item => {
                         if (this.clouds.filter(qq => qq.id == item.id).length == 0) {
