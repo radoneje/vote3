@@ -16,7 +16,7 @@ let app = new Vue({
             if(!elem)
                 return;
             elem.classList.add("active")
-            if(elemt.classList.contains("clicked"))
+            if(elem.classList.contains("clicked"))
                 return;
             elem.classList.add("clicked")
             setTimeout(()=>{ elem.classList.remove("active")},2000)
