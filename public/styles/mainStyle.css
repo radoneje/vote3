@@ -752,6 +752,7 @@ textarea.aPlayerInput{
 .baroPointer{
     position: relative;
     height: 20px;
+    cursor: pointer;
 }
 .baroButton{
     width: 40px;
@@ -765,7 +766,7 @@ textarea.aPlayerInput{
     top: -12px;
     right: -20px;
 }
-.baroButton:hover{
+.baroPointer:hover .baroButton{
     background-color: var(--yellowColor);
 }
 .baroButton.unlike{
@@ -776,7 +777,7 @@ textarea.aPlayerInput{
     height: auto;
     width: 100%;
 }
-.baroButton.unlike:hover{
+.baroPointer:hover .baroButton.unlike{
     background-color: var(--buttonColor);
 }
 
