@@ -802,9 +802,8 @@ textarea.aPlayerInput{
 .baroPointer.active .baroButton{
     background-color: var(--yellowColor);
 }
-.baroPointer.active .baroButton svg path{
-    background-color: var(--yellowColor);
-    stroke: var(--backColor) !important;
+.baroPointer.active .baroButton svg {
+    transform: scale(1.3);
 }
 
 
