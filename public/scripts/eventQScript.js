@@ -21,7 +21,7 @@ let app = new Vue({
                 this.uploadFileDo(inp.files[0],async (fileid, fileshort)=>{
                     console.log(fileshort)
                     player.poster="/file/" + fileshort
-                    await changePlayer('poster',player)
+                    await this.changePlayer('poster',player)
                 });
             }
         },
