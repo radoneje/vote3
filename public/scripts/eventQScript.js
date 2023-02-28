@@ -11,13 +11,15 @@ let app = new Vue({
 
     },
     methods: {
-        uploadPosterToPlayer:async function(){
+        uploadPosterToPlayer:async function(player){
             let inp = document.createElement("input")
             inp.type = "file";
             inp.click();
             inp.accept="image/jpeg,image/png"
             inp.onchange = () => {
-                this.uploadFileDo(inp.files[0]);
+                this.uploadFileDo(inp.files[0],(uploaded)=>{
+                    player.poster="/file/" + uploaded.short
+                });
             }
         },
         playerTypeChange:async function(){

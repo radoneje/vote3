@@ -40,7 +40,7 @@ block body
                             .linkDescription.mb Введите URL картинки-постера(16/9)
                             .uploadGroup.flex.left.mb2
                                 input.aPlayerInput(v-model="player.poster" v-on:change="changePlayer('poster',player)")
-                                .uploadBtn(obclick="uploadPosterToPlayer()") &#x21a5;
+                                .uploadBtn(obclick="uploadPosterToPlayer(player)") &#x21a5;
                     .half
                         .videoWrapper
                             video.video(width='1280' height='720' controls="controls" :poster="player.poster")
