@@ -13,7 +13,7 @@ let app = new Vue({
     methods: {
         baroCenter(baro){
             let total=baro.likes+baro.dislikes
-            console.log(baro.dislikes,baro.likes)
+            console.log(baro.dislikes,baro.likes, total)
             if(total==0)
                 return "50%";
             let w=parseFloat(100)/parseFloat(total)
