@@ -28,7 +28,7 @@ let app = new Vue({
             let ret =await post("/api/baroLike",{personid:this.personid, short:baro.short, value:1})
             if(ret.err)
                 return console.warn(ret.message)
-            this.personid=ret.personid;
+            this.personid=ret.data.personid;
             console.log(ret)
         },
         baroUnLike:async function(baro,e){
@@ -48,7 +48,7 @@ let app = new Vue({
             let ret =await post("/api/baroLike",{personid:this.personid, short:baro.short, value:-1})
             if(ret.err)
                 return console.warn(ret.message)
-            this.personid=ret.personid;
+            this.personid=ret.data.personid;
 
         },
 
