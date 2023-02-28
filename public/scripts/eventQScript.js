@@ -17,9 +17,9 @@ let app = new Vue({
             inp.click();
             inp.accept="image/jpeg,image/png"
             inp.onchange = () => {
-                this.uploadFileDo(inp.files[0],(uploaded)=>{
-                    console.log(uploaded)
-                    player.poster="/file/" + uploaded.short
+                this.uploadFileDo(inp.files[0],(fileid, fileshort)=>{
+                    console.log(fileshort)
+                    player.poster="/file/" + fileshort
                 });
             }
         },
@@ -126,7 +126,8 @@ let app = new Vue({
             let res = await get("/api/newFile")
             if (res.err)
                 return console.warn(res.message);
-            let fileid = res.data
+            let fileid = res.data.id;
+            let fileshort=res.data.short;
             let uploadItem = {id: fileid, name: file.name, done: 0, total: file.size, percent: 0, status: 0, err: false}
             this.uploading.push(uploadItem);
             let fd = new FormData();
@@ -138,7 +139,7 @@ let app = new Vue({
             xhr.onreadystatechange = async () => {
                 if (xhr.readyState == XMLHttpRequest.DONE) {
                     if (xhr.status == 200) {
-                        callBack(fileid)
+                        callBack(fileid, fileshort)
 
                     } else {
                         uploadItem.err = true

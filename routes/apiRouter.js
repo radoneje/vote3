@@ -170,7 +170,7 @@ router.get("/newFile", upload.single('file'), async (req, res) => {
         res.sendStatus(401)
     try {
         let files=await req.knex("t_files").insert({},"*")
-        res.json(files[0].id)
+        res.json({id:files[0].id, short:files[0].short})
     } catch (e) {
         res.status(404).send(e.toString())
     }
