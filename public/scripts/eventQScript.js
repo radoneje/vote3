@@ -18,6 +18,7 @@ let app = new Vue({
             inp.accept="image/jpeg,image/png"
             inp.onchange = () => {
                 this.uploadFileDo(inp.files[0],(uploaded)=>{
+                    console.log(uploaded)
                     player.poster="/file/" + uploaded.short
                 });
             }
