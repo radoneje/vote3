@@ -783,6 +783,10 @@ textarea.aPlayerInput{
     height: auto;
     width: 100%;
 }
+.baroTriangle svg path{
+    stroke: var(--textColor) !important;
+    fill: var(--backColor) !important;
+}
 .baroPointer:hover .baroButton.unlike{
     background-color: var(--buttonColor);
 }
