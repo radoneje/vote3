@@ -742,6 +742,17 @@ textarea.aPlayerInput{
     height: 20px;
    background:linear-gradient(to left, var(--yellowColor), var(--buttonColor));
 }
+.baroScale{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    height: 20px;
+}
+.baroPointer{
+    position: relative;
+    height: 20px;
+}
 .baroButton{
     width: 40px;
     height: 40px;

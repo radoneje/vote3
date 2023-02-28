@@ -19,10 +19,14 @@ block body
                         .switcherTextOn Включено, пользователи видят барометр
                 .baro
                     .baroScroll
-                    .baroButton
-                        include ../svg/like.svg
-                    .baroButton.unlike
-                        include ../svg/unlike.svg
+                    .baroScale
+                        .flex.scroll
+                            .half.baroPointer
+                                .baroButton
+                                    include ../svg/like.svg
+                            .half.baroPointer
+                                .baroButton.unlike
+                                    include ../svg/unlike.svg
 
 
 
