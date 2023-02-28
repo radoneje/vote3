@@ -16,7 +16,7 @@ let app = new Vue({
             if(!elem)
                 return;
             if(elem.classList.contains("active")) {
-                //document.getElementById("baroLike"+baro.id).classList.remove("active")
+                document.getElementById("baroLike"+baro.id).classList.remove("active")
                 return;
             }
             elem.classList.add("active")
