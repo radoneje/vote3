@@ -711,17 +711,19 @@ textarea.aPlayerInput{
     font-size: .8em;
     box-sizing: border-box;
     border-right: none;
-    width: calc(100% - 26px);
+    width: calc(100% - 36px);
 }
 .uploadGroup .uploadBtn{
     box-sizing: border-box;
     border-radius:  0 var(--rad)    var(--rad) 0 ;
     border-left: none;
-    width: 26px;
+    width: 36px;
     cursor: pointer;
     background-color: var(--hoverColor);
     color: var(--backColor);
     padding: calc(var(--pad)/2);
+    text-align: center;
+    font-weight: bold;
 }
 
 
