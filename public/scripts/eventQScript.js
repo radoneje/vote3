@@ -38,8 +38,8 @@ let app = new Vue({
             if(elem.classList.contains("clicked"))
                 return;
             elem.classList.add("clicked")
-            setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("active")},500)
-            setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("clicked")},2000)
+            setTimeout(()=>{ document.getElementById("baroUnLike"+baro.id).classList.remove("active")},500)
+            setTimeout(()=>{ document.getElementById("baroUnLike"+baro.id).classList.remove("clicked")},2000)
         },
 
         uploadVideoToPlayer:async function(player){
