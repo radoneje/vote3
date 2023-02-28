@@ -12,6 +12,7 @@ let app = new Vue({
     },
     methods: {
         baroCenter(baro){
+            console.log(baro.likes,baro.dislikes)
             let total=baro.likes+baro.dislikes
             if(total==0)
                 return "50%";
