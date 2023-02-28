@@ -18,7 +18,7 @@ let app = new Vue({
                 return "50%";
             let w=parseFloat(100)/parseFloat(total)
             console.log(w)
-            console.log((parseFloat(baro.likes)*w))
+            console.log(50+(parseFloat(baro.likes)*w))
             let perc=(parseFloat(baro.likes)*w)-(parseFloat(baro.dilikes)*w);
             console.log(perc)
             return perc+"%"
