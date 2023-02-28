@@ -21,7 +21,7 @@ let app = new Vue({
             if(elem.classList.contains("clicked"))
                 return;
             elem.classList.add("clicked")
-            setTimeout(()=>{ elem.classList.remove("active")},1000)
+            setTimeout(()=>{ elem.classList.remove("active")},500)
             setTimeout(()=>{ elem.classList.remove("clicked")},2000)
         },
         baroUnLike:async function(baro,e){},
