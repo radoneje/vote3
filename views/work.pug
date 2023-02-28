@@ -37,7 +37,7 @@ block body
                         .voteResPercent(:style="'width:'+a.perc +'%'")
 
 
-
+            .mb3 {{players}}
             .clientPlayer.mb3(v-for="player in players")
                 .videoWrapper(v-html="player.YT" v-if="player.type==0")
                 .videoWrapper
