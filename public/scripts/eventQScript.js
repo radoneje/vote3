@@ -19,15 +19,6 @@ let app = new Vue({
 
             let perc=50+(parseFloat(baro.likes)*w)-(parseFloat(baro.dislikes)*w);
             return perc+"%"
-
-
-/*
-            let perc=50;
-            if(baro.likes>baro.dislikes)
-                perc=50+(parseFloat(baro.likes)/parseFloat(total))*50;
-            if(baro.likes<baro.dislikes)
-                perc=50-(parseFloat(baro.dislikes)/parseFloat(total))*50;*/
-
         },
         baroLike:async function(baro){
             let elem=document.getElementById("baroLike"+baro.id)

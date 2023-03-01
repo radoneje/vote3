@@ -1,0 +1,14 @@
+.baro.mb
+    .baroScroll
+    .baroScale
+        .flex.scroll
+            .half.baroPointer(:id="'baroUnLike'+baro.id" v-on:click="baroUnLike(baro)")
+                .baroButton.unlike
+                    include ../svg/unlike.svg
+            .half.baroPointer(:id="'baroLike'+baro.id" v-on:click="baroLike(baro)")
+                .baroButton
+                    include ../svg/like.svg
+    .baroTriangleWr
+        .baroTriangleBox
+            .baroTriangle(:style="'left:calc('+baroCenter(baro)+' - 20px)'")
+                include ../svg/triangle.svg
