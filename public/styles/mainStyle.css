@@ -818,5 +818,10 @@ textarea.aPlayerInput{
     color: var(--textColor);
     background-color: var(--backColor);
 }
+.btnGroup input{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+}
 
 
