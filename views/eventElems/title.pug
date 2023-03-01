@@ -33,7 +33,7 @@ block body
                     //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
                     .vItemTitle
                         .qItemBtnGroup.mb.flex.left
-                            input(v-model="title.title" placeholder="Введите url логотипа" v-on:change="changeTitle()")
+                            input.vVoteAnswInput(v-model="title.title" placeholder="Введите url логотипа" v-on:change="changeTitle()")
                             .qItemBtn(v-on:click="uploadLogo()") Загрузить
             .linkItem.mt.mb3
                 .linkTitle.mb Лид
