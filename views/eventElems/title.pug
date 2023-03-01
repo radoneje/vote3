@@ -1,0 +1,46 @@
+extends ../layout
+block head
+block body
+
+
+    include eventMenu
+    script.
+            document.querySelector(".eventMenuItem[menuid='9']").classList.add("active")
+    .mainTower
+
+        .eventBody.mt
+            .linksWr.mb2
+                .linkItem.mt.mb3
+                    .linkTitle.mb Для пользователей
+                    .linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
+                    .linkGroup
+                        .linkText #{host}/c/u/#{event.short}
+                        .linkCopy.btn Копировать
+                        .linkCopy.btn.linkQr Скачать QR code
+                .linkItem.mt.mb3
+                    .linkTitle.mb Для спикера
+                    .linkDescription.mb Эту ссылку можно открыть на планшете спикера для чтения вопросов и результатов голосований
+                    .linkGroup
+                        .linkText #{host}/s/#{event.short}
+                        .linkCopy.btn Копировать
+                .linkItem.mt.mb3
+                    .linkTitle.mb Для помощника
+                    .linkDescription.mb Эту ссылку можно открыть на планшете помощника для модерации вопросов
+                    .linkGroup
+                        .linkText #{host}/s/#{event.short}
+                        .linkCopy.btn Копировать
+                .linkItem.mt.mb3
+                    .linkTitle.mb Для экранов
+                    .linkDescription.mb Эту ссылку можно показать на экране в полноэкренном режиме для вывода голосований
+                    .linkGroup
+                        .linkText #{host}/s/#{event.short}
+                        .linkCopy.btn Копировать
+                .linkItem.mt.mb3
+                    .linkTitle.mb Статистика
+                    .linkDescription.mb Здесь можно загрузить файл Excel со всеми заданными вопросами и проведенными голосованиями
+                    .linkGroup
+                        .linkText #{host}/s/#{event.short}
+                        .linkCopy.btn Копировать
+
+
+    script(src="/scripts/eventScript.js")
