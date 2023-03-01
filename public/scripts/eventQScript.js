@@ -415,7 +415,7 @@ let app = new Vue({
                     this.files = this.files.filter(qq => !qq.isDeleted)
                 }
                 /////
-                if(r.players){
+                if(r.players && videojs){
                     r.players.forEach(item => {
                         if (this.players.filter(qq => qq.id == item.id).length == 0) {
                             this.players.push(item)
