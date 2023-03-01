@@ -11,12 +11,10 @@ block body
         .eventBody.mt
             .linksWr.mb2
                 .linkItem.mt.mb3
-                    .linkTitle.mb Для пользователей
+                    .linkTitle.mb Название
                     .linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
-                    .linkGroup
-                        .linkText #{host}/c/u/#{event.short}
-                        .linkCopy.btn Копировать
-                        .linkCopy.btn.linkQr Скачать QR code
+                    .InputGroup
+                        .input(v-model="event.title")
                 .linkItem.mt.mb3
                     .linkTitle.mb Для спикера
                     .linkDescription.mb Эту ссылку можно открыть на планшете спикера для чтения вопросов и результатов голосований
