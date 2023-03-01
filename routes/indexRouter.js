@@ -85,6 +85,17 @@ router.get("/userEvent/baro", async (req, res)=>{
 
     res.render("eventElems/baro.pug", {event:events[0]})
 })
+router.get("/userEvent/title", async (req, res)=>{
+    if(!req.session.user)
+        res.sendStatus(404)
+
+    let events=await req.knex("t_events").where({userid:req.session.user.id})
+    if(events.length==0)
+        events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
+
+    res.render("eventElems/baro.pug", {event:events[0]})
+})
+
 
 
 
