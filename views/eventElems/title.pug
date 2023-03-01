@@ -31,7 +31,18 @@ block body
                     .switcherTextOn Включено, пользователи видят лид
                 //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
                 .vItemSubTitle
-                    input(v-model="title.lid" placeholder="Введите название" v-on:change="changeTitle()")
+                    input(v-model="title.lid" placeholder="Введите лид" v-on:change="changeTitle()")
+            .linkItem.mt.mb3
+                .linkTitle.mb Описание
+                .switcherWr.mb(v-on:click="toogleTitle( 'isDescr')" v-bind:class="{active:title.isDescr}")
+                    .switcherBox
+                        .switcherElem
+                        .switcherCap
+                    .switcherTextOff Выключено, пользователи не видят описание
+                    .switcherTextOn Включено, пользователи видят описание
+                //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
+                .vItemSubTitle
+                    input(v-model="title.descr" placeholder="Введите описанте" v-on:change="changeTitle()")
 
 
     script let event=!{JSON.stringify(event)}
