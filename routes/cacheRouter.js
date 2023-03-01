@@ -47,8 +47,8 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
         let q = await req.knex("v_q").where(params).andWhere("modtime", ">", lastTime).orderBy("id")
 
         delete  params.isMod
-        if (req.query.prm != "all")
-            params.isActive=true
+        //if (req.query.prm != "all")
+        //    params.isActive=true
         let baros=await req.knex("v_baro").where(params).orderBy("id")
 
         if (events.length > 0) {
