@@ -27,45 +27,34 @@ let app = new Vue({
             let perc=50+(parseFloat(baro.likes)*w)-(parseFloat(baro.dislikes)*w);
             return perc+"%"
         },
-        baroLike:async function(baro){
-            let elem=document.getElementById("baroLike"+baro.id)
+        baroLikeDO:async function (baro, target){
+            let elem=document.getElementById(target+baro.id)
             if(!elem)
                 return;
             if(elem.classList.contains("active")) {
-                document.getElementById("baroLike"+baro.id).classList.remove("active")
+                document.getElementById(target+baro.id).classList.remove("active")
                 return;
             }
             elem.classList.add("active")
             if(elem.classList.contains("clicked"))
                 return;
             elem.classList.add("clicked")
-            setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("active")},500)
-            setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("clicked")},2000)
-            let ret =await post("/api/baroLike",{personid:this.personid, short:baro.short, value:true})
+            setTimeout(()=>{ document.getElementById(target+baro.id).classList.remove("active")},500)
+            setTimeout(()=>{ document.getElementById(target+baro.id).classList.remove("clicked")},10000)
+            let ret =await post("/api/baroLike/",{personid:this.personid, short:baro.short, value:target})
             if(ret.err)
                 return console.warn(ret.message)
             this.personid=ret.data.personid;
+
+        },
+        baroLike:async function(baro){
+            await this.baroLikeDO(baro,"baroLike")
             baro.likes++
             this.$forceUpdate();
+
         },
         baroUnLike:async function(baro,e){
-            let elem=document.getElementById("baroUnLike"+baro.id)
-            if(!elem)
-                return;
-            if(elem.classList.contains("active")) {
-                document.getElementById("baroUnLike"+baro.id).classList.remove("active")
-                return;
-            }
-            elem.classList.add("active")
-            if(elem.classList.contains("clicked"))
-                return;
-            elem.classList.add("clicked")
-            setTimeout(()=>{ document.getElementById("baroUnLike"+baro.id).classList.remove("active")},500)
-            setTimeout(()=>{ document.getElementById("baroUnLike"+baro.id).classList.remove("clicked")},2000)
-            let ret =await post("/api/baroLike",{personid:this.personid, short:baro.short, value:false})
-            if(ret.err)
-                return console.warn(ret.message)
-            this.personid=ret.data.personid;
+            await this.baroLikeDO(baro,"baroUnLike")
             baro.dislikes++
             this.$forceUpdate();
 
