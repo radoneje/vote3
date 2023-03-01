@@ -295,6 +295,21 @@ router.post("/cloud", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+
+
+router.post("/title", async (req, res) => {
+    if(!req.session.user)
+        res.sendStatus(401)
+    try {
+        let id=req.body.id;
+        delete req.body.id;
+        await req.knex("t_title").update(req.body,"*").where({id:id});
+        let titles=await req.knex("v_titles").where({id})
+        res.json(titles[0])
+    } catch (e) {
+        res.status(404).send(e.toString())
+    }
+})
 router.post("/changeAnswer", async (req, res) => {
 
     if(!req.session.user)
@@ -354,6 +369,8 @@ router.post("/hand", async (req, res) => {
         res.status(404).send(e.toString())
     }
 })
+
+
 
 
 router.post("/baroLike", async (req, res) => {

@@ -8,7 +8,8 @@ let app = new Vue({
         votes: [],
         clouds:[],
         players:[],
-        baros:[]
+        baros:[],
+        title:{}
     },
     methods: {
         baroCenter(baro){
@@ -302,6 +303,13 @@ let app = new Vue({
             this.files = this.files.filter(qq => !qq.isDeleted);
             await post("/api/file/", dt);
         },
+        toogleTitle: async function (column, item) {
+            this.title[column] = !this.title[column]
+            await post("/api/title/", this.title);
+        },
+        changeTitle: async function (column, item) {
+            await post("/api/title/", this.title);
+        },
         toogleBaro: async function (column, item) {
             item[column] = !item[column]
             let dt = {id: item.id}
@@ -485,6 +493,9 @@ let app = new Vue({
                     })
                     this.clouds = this.clouds.filter(qq => !qq.isDeleted)
                     this.$forceUpdate();
+                }
+                if (r.titles && r.titles.length>0) {
+                    this.title=r.titles[0]
                 }
                 ///////
             }

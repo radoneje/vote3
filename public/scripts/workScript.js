@@ -15,7 +15,8 @@ let app = new Vue({
         cloudAnswer:[],
         cloudHTML:[],
         players:[],
-        baros:[]
+        baros:[],
+        title:{}
     },
     methods: {
         baroCenter(baro){
@@ -324,6 +325,9 @@ let app = new Vue({
                     this.baros=this.baros.filter(qq => qq.isActive)
                 }
                 ////////////////
+                if (r.titles && r.titles.length>0) {
+                    this.title=r.titles[0]
+                }
                 if (r.clouds) {
                     r.clouds.forEach(item => {
                         if (this.clouds.filter(qq => qq.id == item.id).length == 0) {

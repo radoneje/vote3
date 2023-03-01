@@ -40,7 +40,7 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
         let votes = await req.knex("v_votes").where(params).andWhere("modtime", ">", lastTime).orderBy("id")
         let clouds = await req.knex("v_clouds").where(params).andWhere("modtime", ">", lastTime).orderBy("id")
         let players=await req.knex("v_players").where(params).andWhere("modtime", ">", lastTime).orderBy("id")
-
+        let titles=await req.knex("v_title").where(params).andWhere("modtime", ">", lastTime).orderBy("id")
 
         if (req.query.prm != "all")
             params.isMod = true
@@ -92,6 +92,14 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
             ret.baros = baros;
             let arr = []
             baros.forEach(qq => {
+                arr.push(qq.modtime)
+            })
+            ret.lastTime = Math.max(ret.lastTime, Math.max(...arr));
+        }
+        if (titles.length > 0) {
+            ret.titles = titles;
+            let arr = []
+            titles.forEach(qq => {
                 arr.push(qq.modtime)
             })
             ret.lastTime = Math.max(ret.lastTime, Math.max(...arr));
