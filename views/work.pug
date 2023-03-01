@@ -43,7 +43,8 @@ block body
                     .videoWrapper(v-html="player.YT" v-if="player.type==0")
                     .videoWrapper(v-if="player.type==1")
                         video.video.video-js(:id="player.short" width='1280' height='720' controls="controls" playsinline)
-
+            .mb3.clientBaro(v-for="baro in baros")
+                include eventElems/sBaro
             .pQWr.mb3(v-if="event.isQ")
                 .h.mb3 Вопросы:
                 .pqContainer

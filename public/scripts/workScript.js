@@ -18,6 +18,58 @@ let app = new Vue({
         baros:[]
     },
     methods: {
+        baroCenter(baro){
+            let total=parseFloat(baro.likes)+parseFloat(baro.dislikes)
+            if(total==0)
+                return "50%";
+            let w=parseFloat(50)/parseFloat(total)
+
+            let perc=50+(parseFloat(baro.likes)*w)-(parseFloat(baro.dislikes)*w);
+            return perc+"%"
+        },
+        baroLike:async function(baro){
+            let elem=document.getElementById("baroLike"+baro.id)
+            if(!elem)
+                return;
+            if(elem.classList.contains("active")) {
+                document.getElementById("baroLike"+baro.id).classList.remove("active")
+                return;
+            }
+            elem.classList.add("active")
+            if(elem.classList.contains("clicked"))
+                return;
+            elem.classList.add("clicked")
+            setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("active")},500)
+            setTimeout(()=>{ document.getElementById("baroLike"+baro.id).classList.remove("clicked")},2000)
+            let ret =await post("/api/baroLike",{personid:this.personid, short:baro.short, value:true})
+            if(ret.err)
+                return console.warn(ret.message)
+            this.personid=ret.data.personid;
+            baro.likes++
+            this.$forceUpdate();
+        },
+        baroUnLike:async function(baro,e){
+            let elem=document.getElementById("baroUnLike"+baro.id)
+            if(!elem)
+                return;
+            if(elem.classList.contains("active")) {
+                document.getElementById("baroUnLike"+baro.id).classList.remove("active")
+                return;
+            }
+            elem.classList.add("active")
+            if(elem.classList.contains("clicked"))
+                return;
+            elem.classList.add("clicked")
+            setTimeout(()=>{ document.getElementById("baroUnLike"+baro.id).classList.remove("active")},500)
+            setTimeout(()=>{ document.getElementById("baroUnLike"+baro.id).classList.remove("clicked")},2000)
+            let ret =await post("/api/baroLike",{personid:this.personid, short:baro.short, value:false})
+            if(ret.err)
+                return console.warn(ret.message)
+            this.personid=ret.data.personid;
+            baro.dislikes++
+            this.$forceUpdate();
+
+        },
         formatPerc:function(num){
             if(num==100 || num==0)
                 return num
