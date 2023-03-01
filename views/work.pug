@@ -44,7 +44,7 @@ block body
                     .videoWrapper(v-if="player.type==1")
                         video.video.video-js(:id="player.short" width='1280' height='720' controls="controls" playsinline)
                     .clBaro(v-for="baro in baros")
-                        include eventElems/baro
+                        include eventElems/sBaro
             .pQWr.mb3(v-if="event.isQ")
                 .h.mb3 Вопросы:
                 .pqContainer
