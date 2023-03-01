@@ -12,6 +12,12 @@ block body
             .linksWr.mb2
                 .linkItem.mt.mb3
                     .linkTitle.mb Название
+                    .switcherWr.mb(v-on:click="toogleEvent( 'isQ')" v-bind:class="{active:event.isQ}")
+                        .switcherBox
+                            .switcherElem
+                            .switcherCap
+                        .switcherTextOff Выключено, пользователи не могут задавать вопросы
+                        .switcherTextOn Включено, пользователи могут задавать вопросы
                     //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
                     .vItemTitle
                         input(v-model="event.title" placeholder="Введите название")
