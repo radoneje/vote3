@@ -13,8 +13,8 @@ block body
                 .linkItem.mt.mb3
                     .linkTitle.mb Название
                     .linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
-                    .InputGroup
-                        .input(v-model="event.title")
+                    .vItemTitle
+                        input(v-model="event.title" placeholder="Введите название")
                 .linkItem.mt.mb3
                     .linkTitle.mb Для спикера
                     .linkDescription.mb Эту ссылку можно открыть на планшете спикера для чтения вопросов и результатов голосований
