@@ -311,7 +311,7 @@ textarea{
 }
 .qSendWr textarea{
     box-sizing: border-box;
-    border:1px solid var(--borderColor);
+    border:1px solid var(--buttonColor);
     border-radius: var(--rad);
     padding: var(--pad);
     width: 100%;
