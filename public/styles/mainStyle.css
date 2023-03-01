@@ -827,6 +827,7 @@ textarea.aPlayerInput{
     background-color: var(--buttonColor);
     color: var(--backColor);
     border-color: var(--buttonColor);
+    border: none;
     padding: calc(var(--pad) / 2) var(--pad);
     box-sizing: border-box;
 }
