@@ -21,6 +21,20 @@ block body
                     //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
                     .vItemTitle
                         input(v-model="title.title" placeholder="Введите название" v-on:change="changeTitle()")
+            .linksWr.mb2
+                .linkItem.mt.mb3
+                    .linkTitle.mb Логотип
+                    .switcherWr.mb(v-on:click="toogleTitle( 'isLogo')" v-bind:class="{active:title.isLogo}")
+                        .switcherBox
+                            .switcherElem
+                            .switcherCap
+                        .switcherTextOff Выключено, пользователи не видят лого
+                        .switcherTextOn Включено, пользователи видят лого
+                    //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
+                    .vItemTitle
+                        .qItemBtnGroup.mb.flex.left
+                            input(v-model="title.title" placeholder="Введите url логотипа" v-on:change="changeTitle()")
+                            .qItemBtn(v-on:click="uploadLogo()") Загрузить
             .linkItem.mt.mb3
                 .linkTitle.mb Лид
                 .switcherWr.mb(v-on:click="toogleTitle( 'isLid')" v-bind:class="{active:title.isLid}")
