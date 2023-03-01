@@ -823,5 +823,12 @@ textarea.aPlayerInput{
     border-bottom-right-radius: 0;
     border-right: 0;
 }
+.qItemBtn.blue{
+    background-color: var(--buttonColor);
+    color: var(--backColor);
+}
+.qItemBtn.blue:hover{
+    background-color: var(--hoverColor);
+}
 
 

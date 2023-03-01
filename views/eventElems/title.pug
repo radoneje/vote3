@@ -34,7 +34,7 @@ block body
                     .vItemSubTitle
                         .btnGroup.mb.flex.left
                             input.vVoteAnswInput(v-model="title.title" placeholder="Введите url логотипа" v-on:change="changeTitle()")
-                            .qItemBtn(v-on:click="uploadLogo()") Загрузить
+                            .qItemBtn.blue(v-on:click="uploadLogo()") Загрузить
             .linkItem.mt.mb3
                 .linkTitle.mb Лид
                 .switcherWr.mb(v-on:click="toogleTitle( 'isLid')" v-bind:class="{active:title.isLid}")
