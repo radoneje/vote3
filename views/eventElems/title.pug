@@ -31,7 +31,7 @@ block body
                         .switcherTextOff Выключено, пользователи не видят лого
                         .switcherTextOn Включено, пользователи видят лого
                     //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
-                    .vItemTitle3
+                    .vItemSubTitle
                         .qItemBtnGroup.mb.flex.left
                             input.vVoteAnswInput(v-model="title.title" placeholder="Введите url логотипа" v-on:change="changeTitle()")
                             .qItemBtn(v-on:click="uploadLogo()") Загрузить
