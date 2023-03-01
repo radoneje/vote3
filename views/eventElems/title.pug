@@ -56,7 +56,18 @@ block body
                     .switcherTextOn Включено, пользователи видят описание
                 //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
                 .qSendWr
-                    textarea(v-model="title.descr" placeholder="Введите описанте" v-on:change="changeTitle()")
+                    textarea(v-model="title.descr" placeholder="Введите описание" v-on:change="changeTitle()")
+            .linkItem.mt.mb3
+                .linkTitle.mb Футер
+                .switcherWr.mb(v-on:click="toogleTitle( 'isFooter')" v-bind:class="{active:title.isFooter}")
+                    .switcherBox
+                        .switcherElem
+                        .switcherCap
+                    .switcherTextOff Выключено, пользователи не видят футер
+                    .switcherTextOn Включено, пользователи видят футер
+                //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
+                .qSendWr
+                    textarea(v-model="title.footer" placeholder="Введите текст футера" v-on:change="changeTitle()")
 
 
     script let event=!{JSON.stringify(event)}
