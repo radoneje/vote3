@@ -826,6 +826,7 @@ textarea.aPlayerInput{
 .qItemBtn.blue{
     background-color: var(--buttonColor);
     color: var(--backColor);
+    border-color: var(--buttonColor);
 }
 .qItemBtn.blue:hover{
     background-color: var(--hoverColor);
