@@ -834,5 +834,13 @@ textarea.aPlayerInput{
 .qItemBtn.blue:hover{
     background-color: var(--hoverColor);
 }
+.plogoWr{
+    margin-top: var(--pad);
+    height: calc(var(--pad)*2);
+}
+.plogoWr{
+    width: auto;
+    height: 100%;
+}
 
 
