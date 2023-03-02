@@ -838,7 +838,7 @@ textarea.aPlayerInput{
     margin-top: var(--pad);
     height: calc(var(--pad)*2);
 }
-.plogoWr{
+.plogoWr img{
     width: auto;
     height: 100%;
 }
