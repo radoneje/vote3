@@ -4,13 +4,13 @@
     --width:1100px;
 
     /*colors*/
-    --backColor:#FFFFFF;
-    --textColor:#2F3C43;
+    --backColor: #201f1f;
+    --textColor: #f9f9f9;
     --borderColor:#2F3C43;
     --buttonColor:#64B8E8;
     --hoverColor:#49a6dc;
     --errorColor:#881B1B;
-    --grayColor:#F5F7F9;
+    --grayColor:#535454;
     --disableColor:#708ab8;
     --backgroundYellowColor: #f9843429;
     --yellowColor: #f98434;
