@@ -245,6 +245,7 @@ let app = new Vue({
                     })
                     this.q = this.q.filter(qq => !qq.isDeleted)
                     this.$forceUpdate();
+                    if(!this.isLoaded)
                     setTimeout(()=>{this.isLoaded=true},100)
                 }
                 /////////////
