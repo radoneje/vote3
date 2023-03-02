@@ -39,7 +39,7 @@ block body
                                 .switcherElem
                                 .switcherCap
                             .switcherTextOff Сортировка по результатам выключена
-                            .switcherTextOn Сортировка по результатам выключена
+                            .switcherTextOn Сортировка по результатам включена
 
                         .switcherWr(v-on:click="toogleVote('isNumber', item)" v-bind:class="{active:item.isNumber}")
                             .switcherBox
@@ -75,9 +75,6 @@ block body
 
                         .qItemBtn.red(v-on:click="if(confirm('Удалить голосование?')) toogleVote( 'isDeleted', item)") Удалить
     include eventFooter
-
-
-
 
     script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventScript.js")
