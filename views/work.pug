@@ -25,7 +25,7 @@ block body
                     img(:src="title.logo")
                 .pMainImageWr.mb2(v-if="title && title.isMainimage && title.mainimage")
                     img(:src="title.mainimage")
-                .pTitleWr.mb(v-if="title && title.isTitle && title.title") {{title.title}}
+                .pTitleWr.mb(v-if="title && title.isTitle && title.title" style="margin-top:32px") {{title.title}}
                 .pLidWr.mb3(v-if="title && title.isLid && title.lid") {{title.lid}}
 
                 .mb3
@@ -42,7 +42,7 @@ block body
                             .h Подождите, идет загрузка...
                         .cloudResContainer(v-else :id="'cloudResContainer'+cloud.short")
                 .pQWr.mb3(v-for="vote in votes" v-if="vote.isActive" )
-                    .mb3
+
                     .h.mb {{vote.title}}
                     .errorMessaage.mb3(v-if="vote.isMulti") Выбрите несколько ответов. Выбор можно изменить до окончания голосования.
                     .errorMessaage.mb3(v-else) Выбрите один ответ. Выбор можно изменить до окончания голосования.
