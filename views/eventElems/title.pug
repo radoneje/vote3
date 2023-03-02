@@ -39,7 +39,7 @@ block body
                                     .qItemBtn.blue(v-on:click="uploadLogo(title, 'logo')") Загрузить
                     .half
                         .plogoWr(v-if="title.logo")
-                            img(:src="title.logo")
+                            img(:src="title.logo" loading="lazy")
             .linkItem.mt.mb3
                 .linkTitle.mb Лид
                 .switcherWr.mb(v-on:click="toogleTitle( 'isLid')" v-bind:class="{active:title.isLid}")
@@ -69,7 +69,7 @@ block body
                                     .qItemBtn.blue(v-on:click="uploadLogo(title, 'mainimage')") Загрузить
                     .half
                         .pMainImageWr(v-if="title.mainimage")
-                            img(:src="title.mainimage")
+                            img(:src="title.mainimage" loading="lazy")
             .linkItem.mt.mb3
                 .linkTitle.mb Описание
                 .switcherWr.mb(v-on:click="toogleTitle( 'isDescr')" v-bind:class="{active:title.isDescr}")
