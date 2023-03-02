@@ -50,7 +50,7 @@ block body
                         video.video.video-js(:id="player.short" width='1280' height='720' controls="controls" playsinline)
             .mb3.clientBaro(v-for="baro in baros")
                 include eventElems/sBaro
-            .pDescrWr.mb3(v-if="title && title.isDescr && title.descr") {{title.descr}}
+
             .pQWr.mb3(v-if="event.isQ")
                 .h.mb3 Вопросы:
                 .pqContainer
@@ -70,6 +70,7 @@ block body
                     .qBtnGroup
                         .btn.flex.center(v-on:click="sendQ()")
                             div Отправить
+            .pDescrWr.mb3(v-if="title && title.isDescr && title.descr") {{title.descr}}
             .pQWr.mb3(v-if="files.length>0")
                 .h.mb3 Файлы:
                 .pqContainer
@@ -86,6 +87,7 @@ block body
                                         .qItemHead.mb2 {{item.originalname}}
                                         .qItemFileDescr {{item.title}}
 
+            .pDescrWr.mb3(v-if="title && title.isFooter && title.footer") {{title.footer}}
             .fullScreenWr.flex.center(v-if="showPersonBox")
                     .fullScreenBox
                         .btnClose(v-on:click="showPersonBox=false")
