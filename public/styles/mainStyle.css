@@ -850,5 +850,12 @@ textarea.aPlayerInput{
 .pDescrWr{
     white-space: break-spaces;
 }
+.pMainImageWr{
+
+}
+.pMainImageWr img{
+    width: auto;
+    height: 100%;
+}
 
 
