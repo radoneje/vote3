@@ -77,6 +77,14 @@ block body
                         .half
                             .pMainImageWr(v-if="event.settings.bgImage")
                                 img(:src="event.settings.bgImage" loading="lazy")
+                .linksWr.mb3
+                    .linkTitle.mb Ваши стили css
+                    .switcherWr.mb3(v-on:click="toogleSettings( 'isBlack')" v-bind:class="{active:event.settings.isBlack}")
+                        .switcherBox
+                            .switcherElem
+                            .switcherCap
+                        .switcherTextOff Стили выключены
+                        .switcherTextOn Стили выключены
         include sUploading.pug
     include eventFooter
     script let event=!{JSON.stringify(event)}
