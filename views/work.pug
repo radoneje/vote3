@@ -1,17 +1,14 @@
 extends ./layout
 block head
     <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
-    meta(href=event.settings.bgImage)
-    if(event.settings.isBgImage && event.settings.bgImage)
-        style.
-            body{background-image: url('!{event.settings.bgImage}')}
-
     style.
-        body{
-            filter: blur(10px);
-            -webkit-filter: blur(10px);
-        }
+        .bgImage{
+                filter: blur(10px);
+                -webkit-filter: blur(10px);
+            }
 block body
+    if(event.settings.isBgImage && event.settings.bgImage)
+        .bgImage(style="background-image:"+event.settings.bgImage)
     .mainTower !{JSON.stringify(event.settings)}
         #app.mb3
             .clientNotLoaded(v-bind:class="{hidden:isLoaded}")
