@@ -92,7 +92,7 @@ block body
                 //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
                 .qSendWr
                     textarea(v-model="title.footer" placeholder="Введите текст футера" v-on:change="changeTitle()")
-
+        include sUploading.pug
     include eventFooter
     script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventScript.js")
