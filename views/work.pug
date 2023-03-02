@@ -50,6 +50,7 @@ block body
                         video.video.video-js(:id="player.short" width='1280' height='720' controls="controls" playsinline)
             .mb3.clientBaro(v-for="baro in baros")
                 include eventElems/sBaro
+            .pDescrWr.mb3(v-if="title && title.isDescr && title.descr") {{title.descr}}
             .pQWr.mb3(v-if="event.isQ")
                 .h.mb3 Вопросы:
                 .pqContainer
