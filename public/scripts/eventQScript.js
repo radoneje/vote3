@@ -12,6 +12,19 @@ let app = new Vue({
         title:{}
     },
     methods: {
+        uploadSettings:async function(sect){
+            let inp = document.createElement("input")
+            inp.type = "file";
+            inp.accept="image/png,image/jpeg,image/svg+xml"
+            inp.click();
+            inp.onchange = () => {
+                this.uploadFileDo(inp.files[0],async (fileid, fileshort)=>{
+                    console.log(fileshort)
+                    this.event.settings[sect]="/file/" + fileshort
+                    await this.changeSettings(sect)
+                });
+            }
+        },
         uploadLogo:async function(title, sect){
             let inp = document.createElement("input")
             inp.type = "file";

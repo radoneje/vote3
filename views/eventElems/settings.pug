@@ -71,7 +71,7 @@ block body
                                 .vItemSubTitle
                                     .btnGroup.mb.flex.left
                                         input.vVoteAnswInput(v-model="event.settings.bgImage" placeholder="Введите url  картинки" v-on:change="changeSettings('bgImage')")
-                                        .qItemBtn.blue(v-on:click="uploadLogo(event.settings, 'bgImage')") Загрузить
+                                        .qItemBtn.blue(v-on:click="uploadSettings( 'bgImage')") Загрузить
                         .half
                             .pMainImageWr(v-if="event.settings.bgImage")
                                 img(:src="event.settings.bgImage" loading="lazy")
