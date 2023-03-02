@@ -842,5 +842,9 @@ textarea.aPlayerInput{
     width: auto;
     height: 100%;
 }
+.vItemTitle{
+    font-size: 1.2em;
+    font-weight: bold;
+}
 
 
