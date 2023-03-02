@@ -50,6 +50,14 @@ block body
                                 .switcherCap
                             .switcherTextOff Организацию не спрашиваем
                             .switcherTextOn Организацию  спрашиваем
+                .linksWr.mb2
+                    .linkTitle.mb Цветовая тема
+                        .switcherWr.mb2(v-on:click="toogleSettings( 'isBgImage')" v-bind:class="{active:event.settings.isBgImage}")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff Светлая тема
+                            .switcherTextOn Темная тема
 
                 .linksWr.mb2
                     .flex
