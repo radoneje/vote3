@@ -22,19 +22,24 @@ block body
                     .vItemTitle
                         input(v-model="title.title" placeholder="Введите название" v-on:change="changeTitle()")
             .linksWr.mb2
-                .linkItem.mt.mb3
-                    .linkTitle.mb Логотип
-                    .switcherWr.mb(v-on:click="toogleTitle( 'isLogo')" v-bind:class="{active:title.isLogo}")
-                        .switcherBox
-                            .switcherElem
-                            .switcherCap
-                        .switcherTextOff Выключено, пользователи не видят лого
-                        .switcherTextOn Включено, пользователи видят лого
-                    //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
-                    .vItemSubTitle
-                        .btnGroup.mb.flex.left
-                            input.vVoteAnswInput(v-model="title.logo" placeholder="Введите url логотипа" v-on:change="changeTitle()")
-                            .qItemBtn.blue(v-on:click="uploadLogo(title, 'logo')") Загрузить
+                .flex
+                    .half
+                        .linkItem.mt.mb3
+                            .linkTitle.mb Логотип
+                            .switcherWr.mb(v-on:click="toogleTitle( 'isLogo')" v-bind:class="{active:title.isLogo}")
+                                .switcherBox
+                                    .switcherElem
+                                    .switcherCap
+                                .switcherTextOff Выключено, пользователи не видят лого
+                                .switcherTextOn Включено, пользователи видят лого
+                            //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
+                            .vItemSubTitle
+                                .btnGroup.mb.flex.left
+                                    input.vVoteAnswInput(v-model="title.logo" placeholder="Введите url логотипа" v-on:change="changeTitle()")
+                                    .qItemBtn.blue(v-on:click="uploadLogo(title, 'logo')") Загрузить
+                    .half
+                        .plogoWr(v-if="title.logo")
+                            img(:src="title.logo")
             .linkItem.mt.mb3
                 .linkTitle.mb Лид
                 .switcherWr.mb(v-on:click="toogleTitle( 'isLid')" v-bind:class="{active:title.isLid}")
