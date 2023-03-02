@@ -73,8 +73,8 @@ block body
                                         input.vVoteAnswInput(v-model="event.settings.bgImage" placeholder="Введите url  картинки" v-on:change="changeSettings('bgImage')")
                                         .qItemBtn.blue(v-on:click="uploadLogo(event.settings, 'bgImage')") Загрузить
                         .half
-                            .pMainImageWr(v-if="title.mainimage")
-                                img(:src="title.mainimage" loading="lazy")
+                            .pMainImageWr(v-if="event.settings.bgImage")
+                                img(:src="event.settings.bgImage" loading="lazy")
         include sUploading.pug
     include eventFooter
     script let event=!{JSON.stringify(event)}
