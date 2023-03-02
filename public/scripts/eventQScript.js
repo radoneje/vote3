@@ -346,8 +346,10 @@ let app = new Vue({
             this.$forceUpdate();
         },
         toogleSettings: async function (column) {
-            this.event[column]=this.event[column]?false:true;
+            this.event.settings[column]=this.event.settings[column]?false:true;
+            console.log(this.event.settings)
             await this.changeEvent("settings")
+
         },
         tooglePlayer: async function (column, player) {
             player[column] = player[column]?false:true
