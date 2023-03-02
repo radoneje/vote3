@@ -34,7 +34,7 @@ block body
                     .vItemSubTitle
                         .btnGroup.mb.flex.left
                             input.vVoteAnswInput(v-model="title.logo" placeholder="Введите url логотипа" v-on:change="changeTitle()")
-                            .qItemBtn.blue(v-on:click="uploadLogo(title)") Загрузить
+                            .qItemBtn.blue(v-on:click="uploadLogo(title, 'logo')") Загрузить
             .linkItem.mt.mb3
                 .linkTitle.mb Лид
                 .switcherWr.mb(v-on:click="toogleTitle( 'isLid')" v-bind:class="{active:title.isLid}")
@@ -45,7 +45,22 @@ block body
                     .switcherTextOn Включено, пользователи видят лид
                 //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
                 .vItemSubTitle
-                    input(v-model="title.lid" placeholder="Введите лид" v-on:change="changeTitle()")
+                    input(v-model="title.lid" placeholder="Введите лид" v-on:change="changeTitle(title)")
+            .linksWr.mb2
+                .linkItem.mt.mb3
+                    .linkTitle.mb Логотип
+                    .switcherWr.mb(v-on:click="toogleTitle( 'isMainimage')" v-bind:class="{active:title.isMainimage}")
+                        .switcherBox
+                            .switcherElem
+                            .switcherCap
+                        .switcherTextOff Выключено, пользователи не видят главную картинку
+                        .switcherTextOn Включено, пользователи видят видят главную картинку
+                    //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
+                    .vItemSubTitle
+                        .btnGroup.mb.flex.left
+                            input.vVoteAnswInput(v-model="title.logo" placeholder="Введите url главной картинки" v-on:change="changeTitle(title)")
+                            .qItemBtn.blue(v-on:click="uploadLogo(title, 'mainimage')") Загрузить
+
             .linkItem.mt.mb3
                 .linkTitle.mb Описание
                 .switcherWr.mb(v-on:click="toogleTitle( 'isDescr')" v-bind:class="{active:title.isDescr}")

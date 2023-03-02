@@ -12,7 +12,7 @@ let app = new Vue({
         title:{}
     },
     methods: {
-        uploadLogo:async function(title){
+        uploadLogo:async function(title, sect){
             let inp = document.createElement("input")
             inp.type = "file";
             inp.accept="image/png,image/jpeg,image/svg+xml"
@@ -20,8 +20,8 @@ let app = new Vue({
             inp.onchange = () => {
                 this.uploadFileDo(inp.files[0],async (fileid, fileshort)=>{
                     console.log(fileshort)
-                    title.logo="/file/" + fileshort
-                    await this.changeTitle('url',title)
+                    title[sect]="/file/" + fileshort
+                    await this.changeTitle(sect,title)
                 });
             }
         },
