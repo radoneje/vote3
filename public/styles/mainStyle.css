@@ -325,6 +325,8 @@ textarea{
     right: 0;
     z-index: 1000;
     background-color: #FFFFFF55;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
 }
 .fullScreenBox{
     box-sizing: border-box;

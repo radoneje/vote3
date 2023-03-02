@@ -388,6 +388,12 @@ let app = new Vue({
         }
     },
     watch: {
+        showPersonBox: function () {
+            if(this.showPersonBox)
+                document.body.style.overflowY="hidden"
+            else
+                document.body.style.overflowY=null
+        },
         personid: function () {
             try {
                 localStorage.setItem("personid", this.personid)
