@@ -9,7 +9,7 @@ block body
             document.querySelector(".eventMenuItem[menuid='8']").classList.add("active")
     .mainTower#app.mb3
         .eventBody.mt
-            .linksWr.mb2
+            .linksWr.mb3
                 .linkItem.mt.mb3
                     .linkTitle.mb Регистрация
                     .switcherWr.mb2(v-on:click="toogleSettings( 'isReq')" v-bind:class="{active:event.settings.isReq}")
@@ -50,16 +50,16 @@ block body
                                 .switcherCap
                             .switcherTextOff Организацию не спрашиваем
                             .switcherTextOn Организацию  спрашиваем
-                .linksWr.mb2
+                .linksWr.mb3
                     .linkTitle.mb Цветовая тема
-                        .switcherWr.mb2(v-on:click="toogleSettings( 'isBgImage')" v-bind:class="{active:event.settings.isBgImage}")
+                    .switcherWr.mb3(v-on:click="toogleSettings( 'isBlack')" v-bind:class="{active:event.settings.isBlack}")
                             .switcherBox
                                 .switcherElem
                                 .switcherCap
                             .switcherTextOff Светлая тема
                             .switcherTextOn Темная тема
 
-                .linksWr.mb2
+                .linksWr.mb3
                     .flex
                         .half
                             .linkItem.mt.mb3
