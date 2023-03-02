@@ -12,7 +12,7 @@ block body
             .linksWr.mb2
                 .linkItem.mt.mb3
                     .linkTitle.mb Регистрация
-                    .switcherWr.mb(v-on:click="toogleSettings( 'isReq')" v-bind:class="{active:event.settings && event.settings.isReq}")
+                    .switcherWr.mb2(v-on:click="toogleSettings( 'isReq')" v-bind:class="{active:event.settings.isReq}")
                         .switcherBox
                             .switcherElem
                             .switcherCap
@@ -25,7 +25,31 @@ block body
                                 .switcherElem
                                 .switcherCap
                             .switcherTextOff
-                            .switcherTextOn Запрашивать имя пользователя, выключить нельзя
+                            .switcherTextOn Cпрашивать имя пользователя, выключить нельзя
+                        .switcherWr.mb(v-on:click="toogleSettings( 'isReqF')" v-bind:class="{active:event.settings.isReqF}")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff Фамилию не спрашиваем
+                            .switcherTextOn Фамилию спрашиваем
+                        .switcherWr.mb(v-on:click="toogleSettings( 'isReqEmail')" v-bind:class="{active:event.settings.isReqEmail}")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff Email не спрашиваем
+                            .switcherTextOn Email  спрашиваем
+                        .switcherWr.mb(v-on:click="toogleSettings( 'isReqPhone')" v-bind:class="{active:event.settings.isReqEmail}")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff Телефон не спрашиваем
+                            .switcherTextOn Телефон  спрашиваем
+                        .switcherWr.mb(v-on:click="toogleSettings( 'isReqOrg')" v-bind:class="{active:event.settings.isReqOrg}")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff Организацию не спрашиваем
+                            .switcherTextOn Организацию  спрашиваем
 
 
         include sUploading.pug
