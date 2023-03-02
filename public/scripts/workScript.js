@@ -378,7 +378,7 @@ let app = new Vue({
                 ////////////
             }
             if(!this.isLoaded)
-                setTimeout(()=>{this.isLoaded=true},100)
+                setTimeout(()=>{this.isLoaded=true},1000)
             setTimeout(() => {
                 this.updateStatus(lastTime)
             }, timeout * 2000);
