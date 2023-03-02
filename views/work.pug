@@ -120,24 +120,24 @@ block body
 
                             .flex.center
                                 .h.mb3.mt Пожалуйста, зарегистрируйтесь
-                                div !{JSON.stringify(event.settings)}
+                                div
                             .mb3
                                 .regGroup.mb.flex.left
                                     .regGroupTitle *Имя
                                     input#persI(v-model="person.i" type="text")
-                                if event.settings.regF
+                                if event.settings.isReqF
                                     .regGroup.mb.flex.left
                                         .regGroupTitle *Фамилия
                                         input#persF(v-model="person.f" type="text")
-                                if event.settings.regPhone
+                                if event.settings.isReqPhone
                                     .regGroup.mb.flex.left
                                         .regGroupTitle *Телефон
                                         input#persPhone(v-model="person.phone" type="tel")
-                                if event.settings.regEmail
+                                if event.settings.isReqEmail
                                     .regGroup.mb.flex.left
                                         .regGroupTitle *Email
                                         input#persEmail(v-model="person.email" type="email")
-                                if event.settings.regOrg
+                                if event.settings.isReqOrg
                                     .regGroup.mb.flex.left
                                         .regGroupTitle Организация
                                         input#persOrg(v-model="person.org" type="text")
