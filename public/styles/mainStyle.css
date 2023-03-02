@@ -429,7 +429,7 @@ textarea{
 }
 .uploading{
     position: fixed;
-    bottom: 0;
+    bottom: 34px;
     right: 0;
     background: var(--backColor);
     /* border: 1px solid; */

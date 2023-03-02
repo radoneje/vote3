@@ -352,7 +352,7 @@ let app = new Vue({
             await this.changeEvent("settings")
 
         },
-        changeSettings: async function (colum) {
+        changeSettings: async function (column) {
             this.event.settings[column] =this.event.settings[column]
             await this.changeEvent("settings")
 
