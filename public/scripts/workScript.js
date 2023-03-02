@@ -16,7 +16,8 @@ let app = new Vue({
         cloudHTML:[],
         players:[],
         baros:[],
-        title:{}
+        title:{},
+        isLoaded:false
     },
     methods: {
         baroCenter(baro){
@@ -212,6 +213,7 @@ let app = new Vue({
             let timeout = 20;
             let res = await fetch("/c/status/" + short + "/" + lastTime)
             if (res.ok) {
+
                 let r = await res.json();
                 timeout = r.timeout;
                 lastTime = r.lastTime;
@@ -243,6 +245,7 @@ let app = new Vue({
                     })
                     this.q = this.q.filter(qq => !qq.isDeleted)
                     this.$forceUpdate();
+                    setTimeout(()=>{this.isLoaded=true},100)
                 }
                 /////////////
                 if (r.files) {

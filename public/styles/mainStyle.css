@@ -877,5 +877,17 @@ textarea.aPlayerInput{
     margin-bottom: 30px;
     height: 15em;
 }
+.clientNotLoaded{
+    display: block;
+}
+.clientLoaded{
+    display: none;
+ }
+.hidden{
+    display: none;
+}
+.show{
+    display: block;
+}
 
 
