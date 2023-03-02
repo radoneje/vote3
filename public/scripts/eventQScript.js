@@ -346,7 +346,7 @@ let app = new Vue({
             this.$forceUpdate();
         },
         toogleSettings: async function (column) {
-            console.log(this.event.settings)
+
             this.event.settings[column]=this.event.settings[column]?false:true;
             console.log(this.event.settings)
             await this.changeEvent("settings")

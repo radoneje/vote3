@@ -10,7 +10,7 @@ block body
     .mainTower#app
         .eventBody.mt
             .linksWr.mb2
-                .linkItem.mt.mb3 {{event.settings}}
+                .linkItem.mt.mb3
                     .linkTitle.mb Регистрация
                     .switcherWr.mb(v-on:click="toogleSettings( 'isReq')" v-bind:class="{active:event.settings && event.settings.isReq}")
                         .switcherBox
@@ -19,8 +19,13 @@ block body
                         .switcherTextOff Выключено, пользователи регистрируются, когда задают вопросы
                         .switcherTextOn Включено, пользователи регистрируются перед входом
                     //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
-                    .vItemTitle
-                        input(v-model="title.title" placeholder="Введите название" v-on:change="changeTitle()")
+                    .qReqBody
+                        .switcherWr.mb.active(v-on:click="toogleSettings( 'isReq')")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff
+                            .switcherTextOn Запрашивать имя пользователя, выключить нельзя
 
 
         include sUploading.pug
