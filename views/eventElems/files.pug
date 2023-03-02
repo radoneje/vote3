@@ -40,7 +40,7 @@ block body
 
                         .qItemBtn.red(v-on:click="if(confirm('Удалить файл?')) toogleFile( 'isDeleted', item)") Удалить
         include sUploading
-
+    include eventFooter
 
 
     script let event=!{JSON.stringify(event)}

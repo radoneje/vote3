@@ -51,7 +51,7 @@ block body
                             span(v-else) На экране
                         .qItemBtn.red(v-on:click="if(confirm('Удалить вопрос?')) toogleQ( 'isDeleted', item)") Удалить
 
-
+    include eventFooter
 
     script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventScript.js")
