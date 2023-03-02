@@ -5,7 +5,7 @@ block head
     if(event.settings.isBgImage && event.settings.bgImage)
         style body{background-image: url('!{event.bgImage}')}
 block body
-    .mainTower
+    .mainTower !{JSON.stringify(event.settings)}
         #app.mb3
             .clientNotLoaded(v-bind:class="{hidden:isLoaded}")
                 .flex.center.clientLoading(style="height:100vh")
