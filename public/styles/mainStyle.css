@@ -860,5 +860,15 @@ textarea.aPlayerInput{
 .pLidWr{
     text-align: center;
 }
+.eventFooter{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: white;
+    box-shadow: 0 0 4px 0 var(--textColor);
+}
 
 
