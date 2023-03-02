@@ -4,7 +4,7 @@ block head
 block body
     .mainTower
         #app.mb3
-            .plogoWr.mb2(v-if="title && title.isLogo && title.logo")
+            .plogoWr.mb(v-if="title && title.isLogo && title.logo")
                 img(:src="title.logo")
             .pTitleWr.mb2(v-if="title && title.isTitle && title.title") {{title.title}}
             .pLidWr.mb3(v-if="title && title.isLid && title.lid") {{title.lid}}
