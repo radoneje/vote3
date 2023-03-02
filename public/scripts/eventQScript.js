@@ -12,6 +12,19 @@ let app = new Vue({
         title:{}
     },
     methods: {
+        uploadLogo:async function(title){
+            let inp = document.createElement("input")
+            inp.type = "file";
+            inp.accept="image/png,image/jpeg,image/svg+xml"
+            inp.click();
+            inp.onchange = () => {
+                this.uploadFileDo(inp.files[0],async (fileid, fileshort)=>{
+                    console.log(fileshort)
+                    title.logo="/file/" + fileshort
+                    await this.changeTilte('url',title)
+                });
+            }
+        },
         baroCenter(baro){
             let total=parseFloat(baro.likes)+parseFloat(baro.dislikes)
             if(total==0)
