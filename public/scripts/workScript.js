@@ -245,8 +245,7 @@ let app = new Vue({
                     })
                     this.q = this.q.filter(qq => !qq.isDeleted)
                     this.$forceUpdate();
-                    if(!this.isLoaded)
-                    setTimeout(()=>{this.isLoaded=true},100)
+
                 }
                 /////////////
                 if (r.files) {
@@ -378,9 +377,11 @@ let app = new Vue({
 
                 ////////////
             }
+            if(!this.isLoaded)
+                setTimeout(()=>{this.isLoaded=true},100)
             setTimeout(() => {
                 this.updateStatus(lastTime)
-            }, timeout * 1000);
+            }, timeout * 2000);
         }
     },
     watch: {
