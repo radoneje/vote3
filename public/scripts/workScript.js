@@ -190,6 +190,7 @@ let app = new Vue({
                 let result = await responce.json();
                 this.showPersonBox = null;
                 this.personid = result.personid;
+                document.body.style.overflowY=null
                 await this.sendQ();
             } else {
                 this.regError = "Ошибка регистрации, попробуйте позже";
