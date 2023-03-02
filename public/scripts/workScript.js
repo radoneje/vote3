@@ -159,16 +159,19 @@ let app = new Vue({
                 document.getElementById("persI").focus()
                 return;
             }
+            if(document.getElementById("persF"))
             if (!this.person.f || this.person.f.length < 0) {
                 this.regError = "Поле Фамилия должно быть заполнено";
                 document.getElementById("persF").focus()
                 return;
             }
+            if(document.getElementById("persPhone"))
             if (!this.person.phone || this.person.phone.length < 0) {
                 this.regError = "Поле Телефон должно быть заполнено";
                 document.getElementById("persPhone").focus()
                 return;
             }
+            if(document.getElementById("persEmail"))
             if (!this.person.email || this.person.email.length < 0 || !validateEmail(this.person.email)) {
                 this.regError = "Поле Email должно быть заполнено корректно";
                 document.getElementById("persEmail").focus()
@@ -447,6 +450,9 @@ let app = new Vue({
             let person = localStorage.getItem("person")
             if (person)
                 this.person = JSON.parse(person)
+            if(isReg)
+                if(!this.personid || this.personid<0)
+                    this.showPersonBox=true;
         } catch (e) {
             console.warn("cant access to Local Storage")
         }

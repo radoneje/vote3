@@ -123,18 +123,22 @@ block body
                                 .regGroup.mb.flex.left
                                     .regGroupTitle *Имя
                                     input#persI(v-model="person.i" type="text")
-                                .regGroup.mb.flex.left
-                                    .regGroupTitle *Фамилия
-                                    input#persF(v-model="person.f" type="text")
-                                .regGroup.mb.flex.left
-                                    .regGroupTitle *Телефон
-                                    input#persPhone(v-model="person.phone" type="tel")
-                                .regGroup.mb.flex.left
-                                    .regGroupTitle *Email
-                                    input#persEmail(v-model="person.email" type="email")
-                                .regGroup.mb.flex.left
-                                    .regGroupTitle Организация
-                                    input#persOrg(v-model="person.org" type="text")
+                                if event.settings.regF
+                                    .regGroup.mb.flex.left
+                                        .regGroupTitle *Фамилия
+                                        input#persF(v-model="person.f" type="text")
+                                if event.settings.regPhone
+                                    .regGroup.mb.flex.left
+                                        .regGroupTitle *Телефон
+                                        input#persPhone(v-model="person.phone" type="tel")
+                                if event.settings.regEmail
+                                    .regGroup.mb.flex.left
+                                        .regGroupTitle *Email
+                                        input#persEmail(v-model="person.email" type="email")
+                                if event.settings.regOrg
+                                    .regGroup.mb.flex.left
+                                        .regGroupTitle Организация
+                                        input#persOrg(v-model="person.org" type="text")
                             .regGroup.mb3.flex.left#persConfirm(v-on:click="person.approve=person.approve?false:true")
                                 div
                                     .regGroupCap.checkBox.border(v-bind:class="{active:person.approve}")
@@ -144,6 +148,7 @@ block body
                                 div Зарегистрироваться
 
     script let short=!{JSON.stringify(event.short)}
+    script let isReg=!{JSON.stringify(event.settings.isReg)}
     <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-tag-cloud.min.js"></script>
     script(src="/scripts/vue.min.js")
