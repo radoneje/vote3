@@ -42,6 +42,7 @@ block body
                             .h Подождите, идет загрузка...
                         .cloudResContainer(v-else :id="'cloudResContainer'+cloud.short")
                 .pQWr.mb3(v-for="vote in votes" v-if="vote.isActive" )
+                    .mb3
                     .h.mb {{vote.title}}
                     .errorMessaage.mb3(v-if="vote.isMulti") Выбрите несколько ответов. Выбор можно изменить до окончания голосования.
                     .errorMessaage.mb3(v-else) Выбрите один ответ. Выбор можно изменить до окончания голосования.
