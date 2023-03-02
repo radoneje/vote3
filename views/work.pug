@@ -7,6 +7,11 @@ block head
                     filter: blur(10px);
                     -webkit-filter: blur(10px);
                 }
+    if  event.settings.isBlack
+        link(rel="stylesheet" href="/styles/blackStyle.css")
+    if  event.settings.isCss
+        style.
+            !{event.settings.css}
 block body
     if(event.settings.isBgImage && event.settings.bgImage)
         .bgImage(style="background-image:url('"+event.settings.bgImage+"')")
