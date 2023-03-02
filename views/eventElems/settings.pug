@@ -12,7 +12,7 @@ block body
             .linksWr.mb2
                 .linkItem.mt.mb3 {{event.settings}}
                     .linkTitle.mb Регистрация
-                    .switcherWr.mb(v-on:click="toogleSettings( 'isReq')" v-bind:class="{active:event.settings.isReg}")
+                    .switcherWr.mb(v-on:click="toogleSettings( 'isReq')" v-bind:class="{active:event.settings && event.settings.isReq}")
                         .switcherBox
                             .switcherElem
                             .switcherCap
