@@ -38,7 +38,7 @@ block body
                                 .switcherCap
                             .switcherTextOff Email не спрашиваем
                             .switcherTextOn Email  спрашиваем
-                        .switcherWr.mb(v-on:click="toogleSettings( 'isReqPhone')" v-bind:class="{active:event.settings.isReqEmail}")
+                        .switcherWr.mb(v-on:click="toogleSettings( 'isReqPhone')" v-bind:class="{active:event.settings.isReqPhone}")
                             .switcherBox
                                 .switcherElem
                                 .switcherCap
@@ -53,14 +53,28 @@ block body
 
 
 
+
             .linksWr.mb3
                 .linkTitle.mb Картинка фона
-                .switcherWr.mb2(v-on:click="toogleSettings( 'isBgImage')" v-bind:class="{active:event.settings.isBgImage}")
-                        .switcherBox
-                            .switcherElem
-                            .switcherCap
-                        .switcherTextOff Картинка фона выключена
-                        .switcherTextOn Картинка фона включена
+
+                .linksWr.mb2
+                    .flex
+                        .half
+                            .linkItem.mt.mb3
+                                .linkTitle.mb Картинка фона
+                                .switcherWr.mb2(v-on:click="toogleSettings( 'isBgImage')" v-bind:class="{active:event.settings.isBgImage}")
+                                    .switcherBox
+                                        .switcherElem
+                                        .switcherCap
+                                    .switcherTextOff Картинка фона выключена
+                                    .switcherTextOn Картинка фона включена
+                                .vItemSubTitle
+                                    .btnGroup.mb.flex.left
+                                        input.vVoteAnswInput(v-model="event.settings.bgImage" placeholder="Введите url  картинки" v-on:change="changeSettings('bgImage')")
+                                        .qItemBtn.blue(v-on:click="uploadLogo(event.settings, 'bgImage')") Загрузить
+                        .half
+                            .pMainImageWr(v-if="title.mainimage")
+                                img(:src="title.mainimage" loading="lazy")
         include sUploading.pug
     include eventFooter
     script let event=!{JSON.stringify(event)}
