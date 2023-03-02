@@ -11,13 +11,13 @@ block body
         .eventBody.mt
             .linksWr.mb2
                 .linkItem.mt.mb3
-                    .linkTitle.mb Название
-                    .switcherWr.mb(v-on:click="toogleTitle( 'isTitle')" v-bind:class="{active:title.isTitle}")
+                    .linkTitle.mb Регистрация
+                    .switcherWr.mb(v-on:click="toogleSettings( 'isReq')" v-bind:class="{active:event.settings.isReg}")
                         .switcherBox
                             .switcherElem
                             .switcherCap
-                        .switcherTextOff Выключено, пользователи не видят название
-                        .switcherTextOn Включено, пользователи видят название
+                        .switcherTextOff Выключено, пользователи регистрируется, когда задают вопросы
+                        .switcherTextOn Включено, пользователи регистрируется перед входом
                     //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
                     .vItemTitle
                         input(v-model="title.title" placeholder="Введите название" v-on:change="changeTitle()")
