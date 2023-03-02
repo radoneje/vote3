@@ -7,7 +7,7 @@ block body
     include eventMenu
     script.
             document.querySelector(".eventMenuItem[menuid='8']").classList.add("active")
-    .mainTower#app
+    .mainTower#app.mb3
         .eventBody.mt
             .linksWr.mb2
                 .linkItem.mt.mb3
@@ -19,7 +19,7 @@ block body
                         .switcherTextOff Выключено, пользователи регистрируются, когда задают вопросы
                         .switcherTextOn Включено, пользователи регистрируются перед входом
                     //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
-                    .qReqBody
+                    .qReqBodyюьз3
                         .switcherWr.mb.active
                             .switcherBox
                                 .switcherElem
@@ -52,6 +52,15 @@ block body
                             .switcherTextOn Организацию  спрашиваем
 
 
+
+            .linksWr.mb2
+                .linkTitle.mb Картинка фона
+                    .switcherWr.mb2(v-on:click="toogleSettings( 'isBgImage')" v-bind:class="{active:event.settings.isBgImage}")
+                        .switcherBox
+                            .switcherElem
+                            .switcherCap
+                        .switcherTextOff Картинка фона выключена
+                        .switcherTextOn Картинка фона включена
         include sUploading.pug
     include eventFooter
     script let event=!{JSON.stringify(event)}
