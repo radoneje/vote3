@@ -848,7 +848,7 @@ textarea.aPlayerInput{
     text-align: center;
 }
 .pDescrWr{
-
+    white-space: break-spaces;
 }
 
 
