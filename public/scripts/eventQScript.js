@@ -21,7 +21,7 @@ let app = new Vue({
                 this.uploadFileDo(inp.files[0],async (fileid, fileshort)=>{
                     console.log(fileshort)
                     title.logo="/file/" + fileshort
-                    await this.changeTilte('url',title)
+                    await this.changeTitle('url',title)
                 });
             }
         },
