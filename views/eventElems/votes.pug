@@ -1,8 +1,6 @@
 extends ../layout
 block head
 block body
-
-
     include eventMenu
     script.
             document.querySelector(".eventMenuItem[menuid='4']").classList.add("active")
@@ -76,7 +74,7 @@ block body
                             span(v-else) Результаты
 
                         .qItemBtn.red(v-on:click="if(confirm('Удалить голосование?')) toogleVote( 'isDeleted', item)") Удалить
-
+    include eventFooter
 
 
 
