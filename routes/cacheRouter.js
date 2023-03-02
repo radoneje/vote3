@@ -34,6 +34,10 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
             short: req.params.short,
             isDeleted: false
         }).andWhere("modtime", ">", lastTime)
+        if (req.query.prm != "all")
+            events.forEach(e=>{
+                delete e.settings;
+            })
         let params = {eventshort: req.params.short}
 
         let files = await req.knex("v_eventfiles").where(params).andWhere("modtime", ">", lastTime).orderBy("id",)
