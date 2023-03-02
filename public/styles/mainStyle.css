@@ -899,7 +899,10 @@ textarea.aPlayerInput{
     top: 0;
     left: 0;
     position: fixed;
-    z-index: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;;
 }
 
 

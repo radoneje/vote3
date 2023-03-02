@@ -1,11 +1,12 @@
 extends ./layout
 block head
     <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
-    style.
-        .bgImage{
-                filter: blur(10px);
-                -webkit-filter: blur(10px);
-            }
+    if event.settings.isBgBlur
+        style.
+            .bgImage{
+                    filter: blur(10px);
+                    -webkit-filter: blur(10px);
+                }
 block body
     if(event.settings.isBgImage && event.settings.bgImage)
         .bgImage(style="background-image:url('"+event.settings.bgImage+"')")
