@@ -5,7 +5,7 @@ block body
     .mainTower
         #app.mb3
             .plogoWr(v-if="title && title.isLogo && title.logo")
-                img(src="title.logo")
+                img(:src="title.logo")
             .mb3
             .pQWr.mb(v-for="cloud in clouds" v-if="cloud.isActive" )
                 .h.mb {{cloud.title}}
