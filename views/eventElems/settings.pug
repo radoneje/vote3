@@ -64,16 +64,26 @@ block body
                         .half
                             .linkItem.mt.mb3
                                 .linkTitle.mb Картинка фона
-                                .switcherWr.mb2(v-on:click="toogleSettings( 'isBgImage')" v-bind:class="{active:event.settings.isBgImage}")
-                                    .switcherBox
-                                        .switcherElem
-                                        .switcherCap
-                                    .switcherTextOff Картинка фона выключена
-                                    .switcherTextOn Картинка фона включена
+                                .flex.left
+                                    .half
+                                        .switcherWr.mb2(v-on:click="toogleSettings( 'isBgImage')" v-bind:class="{active:event.settings.isBgImage}")
+                                            .switcherBox
+                                                .switcherElem
+                                                .switcherCap
+                                            .switcherTextOff Картинка фона выключена
+                                            .switcherTextOn Картинка фона включена
+                                    .half
+                                        .switcherWr.mb2(v-on:click="toogleSettings( 'isBgBlur')" v-bind:class="{active:event.settings.isBgBlur}")
+                                            .switcherBox
+                                                .switcherElem
+                                                .switcherCap
+                                            .switcherTextOff Картинка фона как есть
+                                            .switcherTextOn Картинка фона размыта
+
                                 .vItemSubTitle
-                                    .btnGroup.mb.flex.left
-                                        input.vVoteAnswInput(v-model="event.settings.bgImage" placeholder="Введите url  картинки" v-on:change="changeSettings('bgImage')")
-                                        .qItemBtn.blue(v-on:click="uploadSettings( 'bgImage')") Загрузить
+                                            .btnGroup.mb.flex.left
+                                                input.vVoteAnswInput(v-model="event.settings.bgImage" placeholder="Введите url  картинки" v-on:change="changeSettings('bgImage')")
+                                                .qItemBtn.blue(v-on:click="uploadSettings( 'bgImage')") Загрузить
                         .half
                             .pMainImageWr(v-if="event.settings.bgImage")
                                 img(:src="event.settings.bgImage" loading="lazy")
