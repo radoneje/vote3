@@ -4,7 +4,7 @@ block head
     meta(href=event.settings.bgImage)
     if(event.settings.isBgImage && event.settings.bgImage)
         style.
-            body{background-image: url('!{event.bgImage}')}
+            body{background-image: url('/file/!{event.bgImage}')}
 block body
     .mainTower !{JSON.stringify(event.settings)}
         #app.mb3
