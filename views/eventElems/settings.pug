@@ -79,12 +79,16 @@ block body
                                 img(:src="event.settings.bgImage" loading="lazy")
                 .linksWr.mb3
                     .linkTitle.mb Ваши стили css
-                    .switcherWr.mb3(v-on:click="toogleSettings( 'isBlack')" v-bind:class="{active:event.settings.isBlack}")
+                    .switcherWr.mb3(v-on:click="toogleSettings( 'isCss')" v-bind:class="{active:event.settings.isCss}")
                         .switcherBox
                             .switcherElem
                             .switcherCap
                         .switcherTextOff Стили выключены
                         .switcherTextOn Стили выключены
+                    .qSendWr.mb3
+                        textarea(v-model="event.settings.css" placeholder="Введите css" v-on:change="changeSettings('css')")
+                .mb3
+                .mb3
         include sUploading.pug
     include eventFooter
     script let event=!{JSON.stringify(event)}
