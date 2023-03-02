@@ -457,8 +457,10 @@ let app = new Vue({
             if (person)
                 this.person = JSON.parse(person)
             if(isReg)
-                if(!this.personid || this.personid<0)
-                    this.showPersonBox=true;
+                if(!this.personid || this.personid<0) {
+                    this.showPersonBox = true;
+                    document.body.style.overflowY="hidden"
+                }
         } catch (e) {
             console.warn("cant access to Local Storage")
         }
