@@ -10,7 +10,7 @@ block body
     .mainTower#app
         .eventBody.mt
             .linksWr.mb2
-                .linkItem.mt.mb3
+                .linkItem.mt.mb3 {{event}}
                     .linkTitle.mb Регистрация
                     .switcherWr.mb(v-on:click="toogleSettings( 'isReq')" v-bind:class="{active:event.settings.isReg}")
                         .switcherBox
