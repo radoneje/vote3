@@ -24,21 +24,21 @@ block body
                     .linkGroup
                         .linkText
                             a(href=host+"/c/spk/"+event.short target="_blank") #{host}/c/spk/#{event.short}
-                        .linkCopy.btn(v-on:click="copyText('#{host}/c/spk/#{event.short}', $event)") Копировать
+                        .linkCopy.btn(v-on:click="copyText('"+host+"/c/spk/"+event.short+"', $event)") Копировать
                 .linkItem.mt.mb3
                     .linkTitle.mb Для помощника
                     .linkDescription.mb Эту ссылку можно открыть на планшете помощника для модерации вопросов
                     .linkGroup
                         .linkText
                             a(href=host+"/c/hlp/"+event.short target="_blank") #{host}/c/hlp/#{event.short}
-                        .linkCopy.btn(v-on:click="copyText('#{host}/c/spk/#{event.short}', $event)")  Копировать
+                        .linkCopy.btn(v-on:click="copyText('"+host+"/c/hlp/"+event.short+"', $event)")  Копировать
                 .linkItem.mt.mb3
                     .linkTitle.mb Для экранов
                     .linkDescription.mb Эту ссылку можно показать на экране в полноэкренном режиме для вывода голосований
                     .linkGroup
                         .linkText
                             a(href=host+"/c/scr/"+event.short target="_blank") #{host}/c/scr/#{event.short}
-                        .linkCopy.btn(v-on:click="copyText('#{host}/c/scr/#{event.short}', $event)")  Копировать
+                        .linkCopy.btn(v-on:click="copyText('"+host+"/c/scr/"+event.short+"', $event)")  Копировать
                 .linkItem.mt.mb3
                     .linkTitle.mb Статистика
                     .linkDescription.mb Здесь можно загрузить файл Excel со всеми заданными вопросами и проведенными голосованиями
