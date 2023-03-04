@@ -43,7 +43,7 @@ block body
                         .linkText #{host}/s/#{event.short}
                         .linkCopy.btn Скачать
     include eventFooter
-
+    script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventScript.js")
     script(src="/scripts/vue.min.js")
     script(src="/scripts/eventQScript.js")
