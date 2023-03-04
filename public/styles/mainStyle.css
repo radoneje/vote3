@@ -909,7 +909,7 @@ textarea.aPlayerInput{
     width: auto;
 }
 .eventHead{
-    padding: var(--pad);
+    padding:calc(var(--pad)/2) var(--pad);
     background-color: var(--yellowColor);
     margin-bottom: 4px;
     color: var(--backColor);
