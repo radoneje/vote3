@@ -14,9 +14,9 @@ let app = new Vue({
     methods: {
         copyText:async function(txt, event){
             await navigator.clipboard.writeText(txt)
-            event.classList.add("yellow")
+            event.target.classList.add("yellow")
             await timeout(1000);
-            event.classList.remove("yellow")
+            event.target.classList.remove("yellow")
         },
         uploadSettings:async function(sect){
             let inp = document.createElement("input")
