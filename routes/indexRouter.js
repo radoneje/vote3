@@ -13,7 +13,7 @@ router.get("/userEvent", async (req, res)=>{
   if(!req.session.user)
     res.sendStatus(401)
 
-  res.redirect("/userEvent/links")
+  res.redirect("/userEvent/title")
 })
 router.get("/userEvent/links", async (req, res)=>{
   if(!req.session.user)
