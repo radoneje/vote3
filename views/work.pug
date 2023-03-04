@@ -21,8 +21,10 @@ block body
                 .flex.center.clientLoading(style="height:100vh")
                     .h Подождите, идет загрузка
             .clientLoaded(v-bind:class="{show:isLoaded}")
-                .flex.center.clientLoading(style="height:100vh" v-if="!(title.isMainimage || title.isLid || title.isTitle   || event.isQ || title.isFooter)")
-                    .h Оргинизаторы пока ничего не включили.<br> Подождите, пожалуйста.
+                .flex.center.clientLoading(style="height:100vh" v-if="!(title.isMainimage || title.isLid || title.isTitle   || event.isQ || title.isFooter||clouds.length>0||votes.length>0 || players.length>0|| files.length>0)")
+
+                    .h.mb2 Оргинизаторы пока ничего не включили.
+                    .h Подождите, пожалуйста.
                 .plogoWr.mb2(v-if="title && title.isLogo && title.logo")
                     img(:src="title.logo")
                 .pMainImageWr.mb2(v-if="title && title.isMainimage && title.mainimage")
