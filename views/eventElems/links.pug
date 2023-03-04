@@ -6,7 +6,7 @@ block body
     include eventMenu
     script.
             document.querySelector(".eventMenuItem[menuid='1']").classList.add("active")
-    .mainTower
+    .mainTower#app
 
         .eventBody.mt
             .linksWr.mb2
@@ -15,7 +15,7 @@ block body
                     .linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
                     .linkGroup
                         .linkText
-                            a(href=host+"/c/u/"+event.short) #{host}/c/u/#{event.short}
+                            a(href=host+"/c/u/"+event.short target="_blank") #{host}/c/u/#{event.short}
                         .linkCopy.btn Копировать
                         .linkCopy.btn.linkQr Скачать QR code
                 .linkItem.mt.mb3
@@ -45,3 +45,5 @@ block body
     include eventFooter
 
     script(src="/scripts/eventScript.js")
+    script(src="/scripts/vue.min.js")
+    script(src="/scripts/eventQScript.js")

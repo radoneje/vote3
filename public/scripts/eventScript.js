@@ -1,4 +1,4 @@
-document.querySelectorAll(".linkGroup").forEach(elem => {
+/*document.querySelectorAll(".linkGroup").forEach(elem => {
     elem.addEventListener("click", async () => {
         await navigator.clipboard.writeText(elem.querySelector(".linkText").innerHTML)
         let btn = elem.querySelector(".linkCopy")
@@ -8,7 +8,7 @@ document.querySelectorAll(".linkGroup").forEach(elem => {
             btn.innerHTML = txt
         }, 2000)
     })
-})
+})*/
 document.querySelectorAll(".linkQr").forEach(elem => {
     elem.addEventListener("click", async (e) => {
         e.preventDefault();
