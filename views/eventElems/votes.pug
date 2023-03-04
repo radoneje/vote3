@@ -19,35 +19,38 @@ block body
                     .qItemText.mb Их можно создать нажав кнопку вверху.
 
                 .qItem.voteItem.mb(v-for="(item, i) in votes" :voteid="item.id" v-bind:class="{started:item.isActive}")
-                    .qSelectors.flex.left.mb
+                    .flex.left
                         .voteNumber.yellow {{i}}
-                        .switcherWr(v-on:click="toogleVote( 'isMulti', item)" v-bind:class="{active:item.isMulti}")
-                            //w3 добавть до трех
-                            .switcherBox
-                                .switcherElem
-                                .switcherCap
-                            .switcherTextOff Можно выбрать один вариант
-                            .switcherTextOn Можно выбрать несколько вариантов
-                        .switcherWr(v-on:click="toogleVote('isScreenResult', item)" v-bind:class="{active:item.isScreenResult}")
-                            .switcherBox
-                                .switcherElem
-                                .switcherCap
-                            .switcherTextOff На экране результаты после окончания
-                            .switcherTextOn На экране результаты в процессе
-                    .qSelectors.flex.left.mb
-                        .switcherWr(v-on:click="toogleVote('isSortByResult', item)" v-bind:class="{active:item.isSortByResult}")
-                            .switcherBox
-                                .switcherElem
-                                .switcherCap
-                            .switcherTextOff Сортировка по результатам выключена
-                            .switcherTextOn Сортировка по результатам включена
+                        .selectors
+                            .qSelectors.flex.left.mb
 
-                        .switcherWr(v-on:click="toogleVote('isNumber', item)" v-bind:class="{active:item.isNumber}")
-                            .switcherBox
-                                .switcherElem
-                                .switcherCap
-                            .switcherTextOff Кол-во голосов скрыто
-                            .switcherTextOn Показаны и проценты и голоса
+                                .switcherWr(v-on:click="toogleVote( 'isMulti', item)" v-bind:class="{active:item.isMulti}")
+                                    //w3 добавть до трех
+                                    .switcherBox
+                                        .switcherElem
+                                        .switcherCap
+                                    .switcherTextOff Можно выбрать один вариант
+                                    .switcherTextOn Можно выбрать несколько вариантов
+                                .switcherWr(v-on:click="toogleVote('isScreenResult', item)" v-bind:class="{active:item.isScreenResult}")
+                                    .switcherBox
+                                        .switcherElem
+                                        .switcherCap
+                                    .switcherTextOff На экране результаты после окончания
+                                    .switcherTextOn На экране результаты в процессе
+                            .qSelectors.flex.left.mb
+                                .switcherWr(v-on:click="toogleVote('isSortByResult', item)" v-bind:class="{active:item.isSortByResult}")
+                                    .switcherBox
+                                        .switcherElem
+                                        .switcherCap
+                                    .switcherTextOff Сортировка по результатам выключена
+                                    .switcherTextOn Сортировка по результатам включена
+
+                                .switcherWr(v-on:click="toogleVote('isNumber', item)" v-bind:class="{active:item.isNumber}")
+                                    .switcherBox
+                                        .switcherElem
+                                        .switcherCap
+                                    .switcherTextOff Кол-во голосов скрыто
+                                    .switcherTextOn Показаны и проценты и голоса
                     .vItemTitle.mb
                         input.vItemTitleInput(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeVote('title', item)")
                     .vVoteBox.mb2
