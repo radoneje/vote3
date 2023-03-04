@@ -38,8 +38,7 @@ block body
                     .linkGroup
                         .linkText
                             a(href=host+"/c/scr/"+event.short target="_blank") #{host}/c/scr/#{event.short}
-                        .linkCopy.btn
-                            .linkCopy.btn(v-on:click="copyText('#{host}/c/scr/#{event.short}', $event)")  Копировать
+                        .linkCopy.btn(v-on:click="copyText('#{host}/c/scr/#{event.short}', $event)")  Копировать
                 .linkItem.mt.mb3
                     .linkTitle.mb Статистика
                     .linkDescription.mb Здесь можно загрузить файл Excel со всеми заданными вопросами и проведенными голосованиями
