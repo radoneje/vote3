@@ -142,8 +142,9 @@ router.get("/verify", async (req, res)=>{
     let access_token=dt.data.access_token;
     let user_id=dt.data.user_id;
     let email=dt.data.email;
-    console.log("https://api.vk.com/method/users.get?user_ids="+user_id+"&fields=sex&access_token="+access_token)
-    //dt=await(axios.get("https://api.vk.com/method/users.get?user_ids="+user_id+"&fields=sex&access_token="+access_token))
+
+    dt=await(axios.get("https://api.vk.com/method/users.get?v=5.103&user_ids="+user_id+"&fields=sex&access_token="+access_token))
+    console.log(dt.data);
 
     res.render("index", {user:req.session.user})
 })
