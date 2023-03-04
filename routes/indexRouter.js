@@ -142,6 +142,8 @@ router.get("/verify", async (req, res)=>{
     let access_token=dt.data.access_token;
     let user_id=dt.data.user_id;
     let email=dt.data.email;
+    if(!email)
+        email="VKuser:"+dt.data.user_id;
     let users=await req.knex("t_users").where({vkid:user_id});
     if(users.length==0){
         dt=await(axios.get("https://api.vk.com/method/users.get?v=5.103&user_ids="+user_id+"&fields=sex&access_token="+access_token))
