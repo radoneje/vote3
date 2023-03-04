@@ -21,7 +21,8 @@ block body
                 .flex.center.clientLoading(style="height:100vh")
                     .h Подождите, идет загрузка
             .clientLoaded(v-bind:class="{show:isLoaded}")
-                .flex.center.clientLoading(style="height:100vh" v-if="!(title.isMainimage || title.isLid || title.isTitle   || event.isQ || title.isFooter||clouds.length>0||votes.length>0 || players.length>0|| files.length>0)")
+
+                .flex.center.fullScreenNothing( v-if="!(title.isMainimage || title.isLid || title.isTitle   || event.isQ || title.isFooter||clouds.length>0||votes.length>0 || players.length>0|| files.length>0)")
                     div(style="text-align:center")
                         .h.mb Организаторы ничего не включили.
                         .h Подождите, пожалуйста.
