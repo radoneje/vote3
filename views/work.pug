@@ -32,7 +32,7 @@ block body
                 .pTitleWr.mb(v-if="title && title.isTitle && title.title" style="margin-top:32px") {{title.title}}
                 .pLidWr.mb3(v-if="title && title.isLid && title.lid") {{title.lid}}
 
-                .mb3
+                    .mb3
                 .pQWr.mb(v-for="cloud in clouds" v-if="cloud.isActive" )
                     .h.mb {{cloud.title}}
                     .mb(v-if="!cloud.isComplite")
@@ -67,7 +67,7 @@ block body
                             .voteResPercent(:style="'width:'+a.perc +'%'")
 
 
-                .mb3
+                    .mb3
                     .clientPlayer(v-for="player in players")
                         .videoWrapper(v-html="player.YT" v-if="player.type==0")
                         .videoWrapper(v-if="player.type==1")
