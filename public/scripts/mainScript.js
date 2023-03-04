@@ -89,7 +89,5 @@ try {
 } catch (e) { console.warn(e) }
 
 const regVK=()=>{
-  document.location.href= "https://oauth.vk.com/authorize?client_id=51571826&display=popup&scope=email&redirect_uri=https://event-24.ru/verify",
-
-
+  document.location.href= "https://oauth.vk.com/authorize?client_id=51571826&display=popup&scope=email&redirect_uri=https://event-24.ru/verify"
 }
