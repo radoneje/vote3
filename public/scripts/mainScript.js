@@ -89,7 +89,12 @@ try {
 } catch (e) { console.warn(e) }
 
 const regVK=()=>{
-    let iframe=document.createElement("iframe")
-    iframe.src="https://oauth.vk.com/authorize?client_id=51571826&display=page&scope=friends&redirect_uri=https://event-24.ru/verify"
-    document.body.appendChild(iframe);
+    const windowFeatures = "left=100,top=100,width=320,height=320";
+    const handle = window.open(
+        "https://oauth.vk.com/authorize?client_id=51571826&display=page&scope=friends&redirect_uri=https://event-24.ru/verify",
+        "mozillaWindow",
+        windowFeatures
+    );
+    return;
+
 }
