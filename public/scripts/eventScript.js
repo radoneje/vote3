@@ -10,17 +10,17 @@
     })
 })*/
 document.querySelectorAll(".linkQr").forEach(elem => {
-    elem.addEventListener("click", async (e) => {
+   /* elem.addEventListener("click", async (e) => {
         e.preventDefault();
         e.stopPropagation();
-        let link=elem.parentNode.querySelector(".linkText").innerHTML;
+        let link=elem.getAttribute("href")
         let a=document.createElement("a")
         a.download="qr_code.png"
         a.href="/qrcode/?url="+encodeURI(link)
         a.click();
         document.body.appendChild(a)
 
-    })
+    })*/
 })
 let qEnable=document.getElementById("qEnable")
 if(qEnable){

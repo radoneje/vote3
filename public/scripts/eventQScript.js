@@ -12,6 +12,18 @@ let app = new Vue({
         title:{}
     },
     methods: {
+        downloadQr:async function(txt, event){
+
+            let link=elem.getAttribute("href")
+            let a=document.createElement("a")
+            a.download="qr_code.png"
+            a.href="/qrcode/?url="+encodeURI(link)
+            a.click();
+
+            event.target.classList.add("yellow")
+            await timeout(200);
+            event.target.classList.remove("yellow")
+        },
         copyText:async function(txt, event){
             await navigator.clipboard.writeText(txt)
             event.target.classList.add("yellow")
