@@ -5,7 +5,7 @@ block body
     h1 test
     .regBox
       if !user
-        .regBoxTile.mb.emailInput Для начала работы введите ваш email:
+        .regBoxTile.mb.emailInput Войти через email:
         .inputGroup.emailInput
           .errorMessaage Ошибка email
           input.regBoxEmail#regBoxEmail(type="email" value=email)
@@ -15,12 +15,13 @@ block body
           .errorMessaage Код неверный, попробуйте еще раз
           input.regBoxEmail#regBoxCode(type="text" value=email)
           input.regBoxButton#regBoxConfirmButton(type="button" value="Проверить")
+        .regBoxTile.mb(onclick="regVK()") Войти через VK
+          .mb3
+            include svg/vk.svg
       else
-        .regBoxTile.mb.emailInput Вы уже зарегистрированы.
+        .regBoxTile.mb.emailInput Вы уже зарегистрированы как #{user.i} #{user.f} #{user.email}.
         input.btn(type="button" onclick="document.location.href='/userEvent/'" value="Вход")
-    .reqBox
-      .regBoxTile.mb Войти через
-        .mb3(onclick="regVK()")
-          include svg/vk.svg
+
+
 
   script(src="/scripts/mainScript.js")
