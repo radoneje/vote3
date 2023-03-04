@@ -167,5 +167,19 @@ router.get("/", async (req, res)=>{
 
 
 
+router.get("/verifyYandex", async (req, res)=> {
+//?code=6171931
+        if (!code)
+            return res.render("index", {user: req.session.user})
+        let ret=await axios.post("https://oauth.yandex.ru/token",{
+            code:code
+        },{auth: {
+                client_id: "57af4e88aaba4dbca54489858932356f",
+                client_secret: "0f5978a15c9849bdad5ae74e7b329fe5"
+    }})
+    res.json(ret.data)
+
+});
+
 
 export default router
