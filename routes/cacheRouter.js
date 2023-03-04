@@ -61,6 +61,8 @@ router.get("/status/:short/:lastTime?", async (req, res) => {
                 title: events[0].title,
                 isQ: events[0].isQ,
                 isPlayer: events[0].isPlayer,
+                isQDisLikes:events[0].isQDisLikes,
+                isQlikes:events[0].isQlikes,
                 settings:events[0].settings,
             }
             if (req.query.prm == "all") {
