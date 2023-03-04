@@ -138,9 +138,13 @@ router.get("/verify", async (req, res)=>{
 
     if(req.query.error)
         return res.render("index", {user:req.session.user})
-    let access_token=await(axios.get("https://oauth.vk.com/access_token/?client_id=51571826&client_secret=n7zOChnGVZv8clOYDhcx&redirect_uri=https://event-24.ru/verify&code="+req.query.code))
-//verify?code=cd83a74d881f117747
-    console.log(access_token)
+    let dt=await(axios.get("https://oauth.vk.com/access_token/?client_id=51571826&client_secret=n7zOChnGVZv8clOYDhcx&redirect_uri=https://event-24.ru/verify&code="+req.query.code))
+    let access_token=dt.data.access_token;
+    let user_id=dt.data.user_id;
+    let email=dt.data.email;
+    console.log("https://api.vk.com/method/users.get?user_ids="+user_id+"&fields=sex&access_token="+access_token)
+    //dt=await(axios.get("https://api.vk.com/method/users.get?user_ids="+user_id+"&fields=sex&access_token="+access_token))
+
     res.render("index", {user:req.session.user})
 })
 
