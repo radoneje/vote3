@@ -177,7 +177,7 @@ router.get("/verifyYandex", async (req, res)=> {
         },{
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": "Basic "+"57af4e88aaba4dbca54489858932356f"+":"+"0f5978a15c9849bdad5ae74e7b329fe5"
+                "Authorization": "Basic "+btoa("57af4e88aaba4dbca54489858932356f"+":"+"0f5978a15c9849bdad5ae74e7b329fe5")
             }
         })
     res.json(ret.data)
