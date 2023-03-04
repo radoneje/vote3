@@ -146,7 +146,7 @@ router.get("/verify", async (req, res)=>{
     if(users.length==0){
         dt=await(axios.get("https://api.vk.com/method/users.get?v=5.103&user_ids="+user_id+"&fields=sex&access_token="+access_token))
         let vkuser=dt.data.response[0];
-        users=await req.knex("t_users").insert({f:vkuser.first_name, i:vkuser.last_name, sex:vkuser.sex==2? true:false, vkid:user_id},"*")
+        users=await req.knex("t_users").insert({f:vkuser.first_name, i:vkuser.last_name,email:email, sex:vkuser.sex==2? true:false, vkid:user_id},"*")
     }
 
    if(users.length==0)
