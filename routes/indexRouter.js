@@ -181,8 +181,8 @@ router.get("/verifyYandex", async (req, res)=> {
             }
         })
 
-    let info=ret.data.access_token;
-        ret=await axios.get("https://login.yandex.ru/info?format=json",{
+    let access_token=ret.data.access_token;
+    let info=await axios.get("https://login.yandex.ru/info?format=json",{
             headers: {
                 "Authorization": "OAuth "+access_token
             }
