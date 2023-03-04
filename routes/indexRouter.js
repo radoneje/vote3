@@ -114,16 +114,21 @@ router.get("/userEvent/settings", async (req, res)=>{
 
 router.get("/qrcode/", async (req, res)=>{
 
-    console.log("url", req.query.url)
-  let url=decodeURI(req.query.url);
+    try {
+        let url = decodeURI(req.query.url);
 
-  res.setHeader('content-type','image/png');
-  QRCode.toFileStream(res, url,
-      {
-        type: 'png',
-        width: 600,
-        errorCorrectionLevel: 'H'
-      });
+        res.setHeader('content-type', 'image/png');
+        QRCode.toFileStream(res, url,
+            {
+                type: 'png',
+                width: 600,
+                errorCorrectionLevel: 'H'
+            });
+    }
+    catch (e){
+        res.json(e.toString()).sendStatus(404)
+    }
+
 })
 router.get("/file/:short", async (req, res)=>{
     try {
