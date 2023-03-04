@@ -22,7 +22,7 @@ block body
                     .h Подождите, идет загрузка
             .clientLoaded(v-bind:class="{show:isLoaded}")
                 .flex.center.clientLoading(style="height:100vh" v-if="!(title.isMainimage || title.isLid || title.isTitle ||clouds.length==0||votes.length==0 || players.length==0 || event.isQ || files.length==0 || title.isFooter)")
-                    .h Оргинизаторы пока ничего не включили.<br> Подождите, пожалуйста
+                    .h Оргинизаторы пока ничего не включили.<br> Подождите, пожалуйста.
                 .plogoWr.mb2(v-if="title && title.isLogo && title.logo")
                     img(:src="title.logo")
                 .pMainImageWr.mb2(v-if="title && title.isMainimage && title.mainimage")
