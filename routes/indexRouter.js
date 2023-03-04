@@ -126,7 +126,7 @@ router.get("/qrcode/", async (req, res)=>{
             });
     }
     catch (e){
-        res.sendStatus(404).json(e.toString())
+        res.json(e.toString())
     }
 
 })
