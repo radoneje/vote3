@@ -16,10 +16,13 @@ let app = new Vue({
             let a=document.createElement("a")
             a.download="qr_code.png"
             a.href="/qrcode/?url="+encodeURI(txt)
+            a.style.display="none";
+            document.body.appendChild(a)
             a.click();
 
             event.target.classList.add("yellow")
             await timeout(200);
+            document.body.removeChild(a)
             event.target.classList.remove("yellow")
         },
         copyText:async function(txt, event){
