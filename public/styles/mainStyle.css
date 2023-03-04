@@ -186,7 +186,7 @@ textarea{
     border-right: none;
     color: var(--textColor);
     background-color: var(--grayColor);
-
+    border: none;
 }
 .linkGroup .btn{
     padding: calc(var(--pad) / 2) var(--pad);
