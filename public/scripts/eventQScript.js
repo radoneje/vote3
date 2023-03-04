@@ -22,7 +22,7 @@ let app = new Vue({
 
             event.target.classList.add("yellow")
             await timeout(200);
-            document.body.removeChild(a)
+           // document.body.removeChild(a)
             event.target.classList.remove("yellow")
         },
         copyText:async function(txt, event){
