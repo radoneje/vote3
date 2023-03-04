@@ -912,6 +912,9 @@ textarea.aPlayerInput{
     padding: var(--pad);
     background-color: var(--yellowColor);
     margin-bottom: 4px;
-    color: white;
+    color: var(--backColor);
 }
+.eventHead a{
+    color: var(--backColor);
+ }
 
