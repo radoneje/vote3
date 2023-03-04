@@ -148,7 +148,7 @@ router.get("/verify", async (req, res)=>{
     if(users.length==0){
         dt=await(axios.get("https://api.vk.com/method/users.get?v=5.103&user_ids="+user_id+"&fields=sex&access_token="+access_token))
         let vkuser=dt.data.response[0];
-        users=await req.knex("t_users").insert({isConfirmad:true,f:vkuser.first_name, i:vkuser.last_name,email:email, sex:vkuser.sex==2? true:false, vkid:user_id},"*")
+        users=await req.knex("t_users").insert({isConfirmad:true,i:vkuser.first_name, f:vkuser.last_name,email:email, sex:vkuser.sex==2? true:false, vkid:user_id},"*")
     }
 
    if(users.length==0)
@@ -181,13 +181,28 @@ router.get("/verifyYandex", async (req, res)=> {
             }
         })
 
-    let access_token=ret.data.access_token;
+    let info=ret.data.access_token;
         ret=await axios.get("https://login.yandex.ru/info?format=json",{
             headers: {
                 "Authorization": "OAuth "+access_token
             }
         })
-    res.json(ret.data)
+    let dt=[];
+    let user_id=info.data.id;
+    let email=info.data.default_email;
+    if(!email)
+        email="YAuser:"+dt.data.id;
+    let users=await req.knex("t_users").where({yaid:user_id});
+    if(users.length==0){
+
+        users=await req.knex("t_users").insert({isConfirmad:true, i:info.data.first_name, f:info.data.last_name,email:email, sex:info.data.sex=='male'? true:false, yaid:user_id},"*")
+    }
+    if(users.length==0)
+        res.render("index", {user:req.session.user})
+
+    req.session.user=users[0];
+
+    res.render("index", {user:req.session.user})
 
 });
 
