@@ -114,6 +114,7 @@ router.get("/userEvent/settings", async (req, res)=>{
 
 router.get("/qrcode/", async (req, res)=>{
 
+    console.log("url", req.query.url)
   let url=decodeURI(req.query.url);
 
   res.setHeader('content-type','image/png');
