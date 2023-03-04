@@ -51,7 +51,7 @@ block body
                             .switcherTextOff Кол-во голосов скрыто
                             .switcherTextOn Показаны и проценты и голоса
                     .flex.left.mb
-                        .voteNumber.yellow {{i}}
+                        .voteNumber.yellow {{i+1}}
                         .vItemTitle
                             input.vItemTitleInput(v-model="item.title" placeholder="Введите название голосования" v-on:change="changeVote('title', item)")
                     .vVoteBox.mb2
