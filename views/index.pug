@@ -20,6 +20,7 @@ block body
         input.btn(type="button" onclick="document.location.href='/userEvent/'" value="Вход")
     .reqBox
       .regBoxTile.mb Войти через
-        include svg/vk.svg
+        .mb3(onclick="regVK()")
+          include svg/vk.svg
 
   script(src="/scripts/mainScript.js")

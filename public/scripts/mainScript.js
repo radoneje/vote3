@@ -87,3 +87,9 @@ try {
         })
     }
 } catch (e) { console.warn(e) }
+
+const regVK=()=>{
+    let iframe=document.createElement("iframe")
+    iframe.src="https://oauth.vk.com/authorize?client_id=51571826&display=popup&scope=friends&redirect_uri=https://event-24.ru/verify"
+    document.body.appendChild(iframe);
+}
