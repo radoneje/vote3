@@ -197,7 +197,7 @@ textarea{
 }
 
 .eventBody{
-    margin-top: calc(var(--pad) * 6);
+    margin-top: calc(var(--pad) * 8);
 }
 .switcherBox{
     position: relative;
