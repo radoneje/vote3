@@ -13,11 +13,9 @@ let app = new Vue({
     },
     methods: {
         downloadQr:async function(txt, event){
-
-            let link=elem.getAttribute("href")
             let a=document.createElement("a")
             a.download="qr_code.png"
-            a.href="/qrcode/?url="+encodeURI(link)
+            a.href="/qrcode/?url="+encodeURI(txt)
             a.click();
 
             event.target.classList.add("yellow")
