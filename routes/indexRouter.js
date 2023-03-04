@@ -180,6 +180,13 @@ router.get("/verifyYandex", async (req, res)=> {
                 "Authorization": "Basic "+btoa("57af4e88aaba4dbca54489858932356f"+":"+"0f5978a15c9849bdad5ae74e7b329fe5")
             }
         })
+
+    let access_token=ret.data.access_token;
+        ret=await axios.get("https://login.yandex.ru/info?format=json",{
+            headers: {
+                "Authorization": "OAuth "+access_token
+            }
+        })
     res.json(ret.data)
 
 });
