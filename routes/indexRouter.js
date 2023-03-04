@@ -177,7 +177,7 @@ router.get("/verifyYandex", async (req, res)=> {
         },{
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
-            }
+            },
             auth: {
                 client_id: "57af4e88aaba4dbca54489858932356f",
                 client_secret: "0f5978a15c9849bdad5ae74e7b329fe5"
