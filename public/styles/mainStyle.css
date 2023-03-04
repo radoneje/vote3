@@ -307,6 +307,11 @@ textarea{
     background-color: var(--errorColor) !important;
     color: #FFFFFF !important;
 }
+.yellow{
+    background-color: var(--yellowColor) !important;
+    color: var(--backColor) !important;
+}
+
 .qTotal{
     padding-left: var(--pad);
 }

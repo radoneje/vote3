@@ -16,7 +16,7 @@ block body
                     .linkGroup
                         .linkText
                             a(href=host+"/c/u/"+event.short target="_blank") #{host}/c/u/#{event.short}
-                        .linkCopy.btn Копировать
+                        .linkCopy.btn(v-on:click="copyText('#{host}/c/u/#{event.short}', $event)") Копировать
                         .linkCopy.btn.linkQr Скачать QR code
                 .linkItem.mt.mb3
                     .linkTitle.mb Для спикера
