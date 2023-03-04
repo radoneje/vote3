@@ -904,5 +904,8 @@ textarea.aPlayerInput{
     background-position: center;
     background-repeat: no-repeat;;
 }
-
+.regBoxTile svg{
+    height: 36px;
+    width: auto;
+}
 
