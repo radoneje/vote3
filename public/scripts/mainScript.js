@@ -91,3 +91,6 @@ try {
 const regVK=()=>{
   document.location.href= "https://oauth.vk.com/authorize?client_id=51571826&display=popup&scope=email&redirect_uri=https://event-24.ru/verify"
 }
+const regYA=()=> {
+    document.location.href="https://oauth.yandex.ru/authorize?response_type=code&client_id=57af4e88aaba4dbca54489858932356f&redirect_uri=https%3A%2F%2Fevent-24.ru%2FverifyYandex"
+}

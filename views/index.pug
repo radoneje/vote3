@@ -17,6 +17,9 @@ block body
         .regBoxTile.mb(onclick="regVK()") Войти через VK
           .mb3
             include svg/vk.svg
+        .regBoxTile.mb(onclick="regYA()") Войти через Yandex
+          .mb3
+            include svg/yalogo.svg
       else
         .regBoxTile.mb.emailInput Вы зарегистрированы как #{user.i} #{user.f} #{user.email}.
         input.btn(type="button" onclick="document.location.href='/userEvent/'" value="Перейти к мероприятию")
