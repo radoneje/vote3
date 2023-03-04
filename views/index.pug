@@ -2,7 +2,6 @@ extends layout
 block head
 block body
   .mainTower
-    h1 test
     .regBox
       if !user
         .regBoxTile.mb.emailInput Войти через email:
@@ -20,7 +19,7 @@ block body
             include svg/vk.svg
       else
         .regBoxTile.mb.emailInput Вы уже зарегистрированы как #{user.i} #{user.f} #{user.email}.
-        input.btn(type="button" onclick="document.location.href='/userEvent/'" value="Вход")
+        input.btn(type="button" onclick="document.location.href='/userEvent/'" value="Перейти к мероприятию")
 
 
 
