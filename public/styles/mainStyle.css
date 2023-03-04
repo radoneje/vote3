@@ -908,4 +908,10 @@ textarea.aPlayerInput{
     height: 36px;
     width: auto;
 }
+.eventHead{
+    padding: var(--pad);
+    background-color: var(--yellowColor);
+    margin-bottom: 4px;
+    color: white;
+}
 
