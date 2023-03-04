@@ -936,4 +936,5 @@ textarea.aPlayerInput{
     font-weight: bold;
     padding: var(--pad);
     border-radius: var(--rad);
+    margin-right: var(--pad);;
 }
