@@ -140,7 +140,7 @@ router.get("/verify", async (req, res)=>{
         return res.render("index", {user:req.session.user})
     let access_token=await(axios.get("https://oauth.vk.com/access_token/?client_id=51571826&client_secret=n7zOChnGVZv8clOYDhcx&redirect_uri=https://event-24.ru/verify"))
 //verify?code=cd83a74d881f117747
-    //res.json(access_token)
+    console.log(access_token)
     res.render("index", {user:req.session.user})
 })
 
