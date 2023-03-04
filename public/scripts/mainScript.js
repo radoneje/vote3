@@ -91,7 +91,7 @@ try {
 const regVK=()=>{
     const windowFeatures = "left=100,top=100,width=320,height=320";
     const handle = window.open(
-        "https://oauth.vk.com/authorize?client_id=51571826&display=popup&scope=friends&redirect_uri=https://event-24.ru/verify",
+        "https://oauth.vk.com/authorize?client_id=51571826&display=popup&scope=email&redirect_uri=https://event-24.ru/verify",
         "mozillaWindow",
         "popup"
     );
