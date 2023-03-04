@@ -512,6 +512,9 @@ textarea{
     word-break: break-word;
 
 }
+.vItemTitle{
+    width: 100%;
+}
 .vItemTitle input{
     box-sizing: border-box;
     width: 100%;
