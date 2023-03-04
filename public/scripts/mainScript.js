@@ -93,7 +93,7 @@ const regVK=()=>{
     const handle = window.open(
         "https://oauth.vk.com/authorize?client_id=51571826&display=page&scope=friends&redirect_uri=https://event-24.ru/verify",
         "mozillaWindow",
-        windowFeatures
+        "popup"
     );
     return;
 
