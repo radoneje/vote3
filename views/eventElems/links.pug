@@ -17,7 +17,7 @@ block body
                         .linkText
                             a(href=host+"/c/u/"+event.short target="_blank") #{host}/c/u/#{event.short}
                         .linkCopy.btn(v-on:click="copyText('"+host+"/c/u/"+event.short+"', $event)") Копировать
-                        .linkCopy.btn.linkQr(v-on:click="downloadQr('#{host}/c/u/#{event.short}', $event)") Скачать QR code
+                        .linkCopy.btn.linkQr(v-on:click="downloadQr('"+host+"/c/u/"+event.short+"', $event)") Скачать QR code
                 .linkItem.mt.mb3
                     .linkTitle.mb Для спикера
                     .linkDescription.mb Эту ссылку можно открыть на планшете спикера для чтения вопросов и результатов голосований
