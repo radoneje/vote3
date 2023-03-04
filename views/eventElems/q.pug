@@ -21,6 +21,19 @@ block body
                         .switcherCap
                     .switcherTextOff Премодерация выключена
                     .switcherTextOn Премодерация включена
+            .qSelectors.flex.left.mb2
+                .switcherWr(v-on:click="toogleEvent( 'isQlikes')" v-bind:class="{active:event.isQlikes}")
+                    .switcherBox
+                        .switcherElem
+                        .switcherCap
+                    .switcherTextOff Лайки выключены
+                    .switcherTextOn Лайки включены
+                .switcherWr(v-on:click="toogleEvent('isQDisLikes')" v-bind:class="{active:event.isQDisLikes}")
+                    .switcherBox
+                        .switcherElem
+                        .switcherCap
+                    .switcherTextOff Дислайки выключены
+                    .switcherTextOn Дислайки включены
 
             .qItemBtnGroup.flex.left.mb
                 .group.flex.left
