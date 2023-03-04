@@ -92,6 +92,101 @@ block body
                 //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
                 .qSendWr
                     textarea(v-model="title.footer" placeholder="Введите текст футера" v-on:change="changeTitle()")
+            .linksWr.mb3
+
+                .linkItem.mt.mb3
+                    .linkTitle.mb Регистрация
+                    .errorMessaage.mb2 Изменения вступят в силу после обновления страницы пользователя
+                    .switcherWr.mb2(v-on:click="toogleSettings( 'isReq')" v-bind:class="{active:event.settings.isReq}")
+                        .switcherBox
+                            .switcherElem
+                            .switcherCap
+                        .switcherTextOff Выключено, пользователи регистрируются, когда задают вопросы
+                        .switcherTextOn Включено, пользователи регистрируются перед входом
+                    //.linkDescription.mb Эту ссылку можно отправить всем пользователям. Qr code можно использовать для быстрого доступа с мобильных устройств.
+                    .qReqBody.mb3
+                        .switcherWr.mb.active
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff
+                            .switcherTextOn Cпрашивать имя пользователя, выключить нельзя
+                        .switcherWr.mb(v-on:click="toogleSettings( 'isReqF')" v-bind:class="{active:event.settings.isReqF}")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff Фамилию не спрашиваем
+                            .switcherTextOn Фамилию спрашиваем
+                        .switcherWr.mb(v-on:click="toogleSettings( 'isReqEmail')" v-bind:class="{active:event.settings.isReqEmail}")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff Email не спрашиваем
+                            .switcherTextOn Email  спрашиваем
+                        .switcherWr.mb(v-on:click="toogleSettings( 'isReqPhone')" v-bind:class="{active:event.settings.isReqPhone}")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff Телефон не спрашиваем
+                            .switcherTextOn Телефон  спрашиваем
+                        .switcherWr.mb(v-on:click="toogleSettings( 'isReqOrg')" v-bind:class="{active:event.settings.isReqOrg}")
+                            .switcherBox
+                                .switcherElem
+                                .switcherCap
+                            .switcherTextOff Организацию не спрашиваем
+                            .switcherTextOn Организацию  спрашиваем
+                .linksWr.mb3
+                    .linkTitle.mb Цветовая тема
+                    .switcherWr.mb3(v-on:click="toogleSettings( 'isBlack')" v-bind:class="{active:event.settings.isBlack}")
+                        .switcherBox
+                            .switcherElem
+                            .switcherCap
+                        .switcherTextOff Светлая тема
+                        .switcherTextOn Темная тема
+
+                .linksWr.mb3
+
+                    .linkItem.mt.mb3
+                        .linkTitle.mb Картинка фона
+                        .errorMessaage.mb2 Изменения вступят в силу после обновления страницы пользователя
+                        .flex.left
+                            .half
+                                .switcherWr.mb2(v-on:click="toogleSettings( 'isBgImage')" v-bind:class="{active:event.settings.isBgImage}")
+                                    .switcherBox
+                                        .switcherElem
+                                        .switcherCap
+                                    .switcherTextOff Картинка фона выключена
+                                    .switcherTextOn Картинка фона включена
+                            .half
+                                .switcherWr.mb2(v-on:click="toogleSettings( 'isBgBlur')" v-bind:class="{active:event.settings.isBgBlur}")
+                                    .switcherBox
+                                        .switcherElem
+                                        .switcherCap
+                                    .switcherTextOff Картинка фона без размытия
+                                    .switcherTextOn Картинка фона размыта
+                    .flex
+                        .half
+                            .vItemSubTitle
+                                .btnGroup.mb.flex.left
+                                    input.vVoteAnswInput(v-model="event.settings.bgImage" placeholder="Введите url  картинки" v-on:change="changeSettings('bgImage')")
+                                    .qItemBtn.blue(v-on:click="uploadSettings( 'bgImage')") Загрузить
+                        .half
+                            .pMainImageWr(v-if="event.settings.bgImage")
+                                img(:src="event.settings.bgImage" loading="lazy")
+                .linksWr.mb3
+                    .linkTitle.mb Ваши стили css
+                    .errorMessaage.mb2 Изменения вступят в силу после обновления страницы пользователя
+                    .switcherWr.mb3(v-on:click="toogleSettings( 'isCss')" v-bind:class="{active:event.settings.isCss}")
+                        .switcherBox
+                            .switcherElem
+                            .switcherCap
+                        .switcherTextOff Стили выключены
+                        .switcherTextOn Стили выключены
+                    .qSendWr.stylesWr.mb3
+                        textarea(v-model="event.settings.css" placeholder="Введите css" v-on:change="changeSettings('css')")
+                .mb3
+                .mb3
+            include sUploading.pug
         include sUploading.pug
     include eventFooter
     script let event=!{JSON.stringify(event)}
