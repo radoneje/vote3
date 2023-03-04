@@ -16,7 +16,7 @@ block body
     if(event.settings.isBgImage && event.settings.bgImage)
         .bgImage(style="background-image:url('"+event.settings.bgImage+"')")
     .mainTower
-        #app.mb3
+        #app
             .clientNotLoaded(v-bind:class="{hidden:isLoaded}")
                 .flex.center.clientLoading(style="height:100vh")
                     .h Подождите, идет загрузка
