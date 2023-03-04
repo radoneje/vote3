@@ -18,8 +18,9 @@ block body
                     .qItemText.mb.h Голосования еще не добавлены.
                     .qItemText.mb Их можно создать нажав кнопку вверху.
 
-                .qItem.voteItem.mb(v-for="item in votes" :voteid="item.id" v-bind:class="{started:item.isActive}")
+                .qItem.voteItem.mb(v-for="(item, i) in votes" :voteid="item.id" v-bind:class="{started:item.isActive}")
                     .qSelectors.flex.left.mb
+                        .voteNumber.yellow {{i}}
                         .switcherWr(v-on:click="toogleVote( 'isMulti', item)" v-bind:class="{active:item.isMulti}")
                             //w3 добавть до трех
                             .switcherBox

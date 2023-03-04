@@ -931,3 +931,9 @@ textarea.aPlayerInput{
     left: 0;
     z-index: 0;
 }
+.voteNumber{
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: var(--pad);
+    border-radius: var(--rad);
+}
