@@ -69,7 +69,7 @@ block body
 
 
                     .mb3
-                    .clientPlayer(v-for="player in players")
+                .clientPlayer(v-for="player in players")
                         .videoWrapper(v-html="player.YT" v-if="player.type==0")
                         .videoWrapper(v-if="player.type==1")
                             video.video.video-js(:id="player.short" width='1280' height='720' controls="controls" playsinline)
