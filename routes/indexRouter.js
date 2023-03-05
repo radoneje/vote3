@@ -15,6 +15,11 @@ router.get("/userEvent", async (req, res)=>{
 
   res.redirect("/userEvent/title")
 })
+router.get("/userEvent/:section", async (req, res)=>{
+
+
+    res.redirect("/userEvent/title")
+})
 router.get("/userEvent/links", async (req, res)=>{
   if(!req.session.user)
     res.sendStatus(404)
@@ -22,7 +27,7 @@ router.get("/userEvent/links", async (req, res)=>{
   if(events.length==0)
     events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
 
-  res.render("eventElems/links.pug", {event:events[0], host:req.protocol + 's://' + req.get('host')})
+  res.render("eventElems/links.pug", {event:events[0],user:req.session.user, host:req.protocol + 's://' + req.get('host')})
 })
 router.get("/userEvent/q", async (req, res)=>{
     if(!req.session.user)
@@ -32,7 +37,7 @@ router.get("/userEvent/q", async (req, res)=>{
     if(events.length==0)
         events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
 
-    res.render("eventElems/q.pug", {event:events[0],host:req.protocol + 's://' + req.get('host')})
+    res.render("eventElems/q.pug", {event:events[0],user:req.session.user,host:req.protocol + 's://' + req.get('host')})
 })
 router.get("/userEvent/files", async (req, res)=>{
     if(!req.session.user)
@@ -42,7 +47,7 @@ router.get("/userEvent/files", async (req, res)=>{
     if(events.length==0)
         events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
 
-    res.render("eventElems/files.pug", {event:events[0],host:req.protocol + 's://' + req.get('host')})
+    res.render("eventElems/files.pug", {event:events[0],user:req.session.user,host:req.protocol + 's://' + req.get('host')})
 })
 router.get("/userEvent/votes", async (req, res)=>{
     if(!req.session.user)
@@ -52,7 +57,7 @@ router.get("/userEvent/votes", async (req, res)=>{
     if(events.length==0)
         events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
 
-    res.render("eventElems/votes.pug", {event:events[0],host:req.protocol + 's://' + req.get('host')})
+    res.render("eventElems/votes.pug", {event:events[0],user:req.session.user,host:req.protocol + 's://' + req.get('host')})
 })
 router.get("/userEvent/clouds", async (req, res)=>{
     if(!req.session.user)
@@ -62,7 +67,7 @@ router.get("/userEvent/clouds", async (req, res)=>{
     if(events.length==0)
         events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
 
-    res.render("eventElems/clouds.pug", {event:events[0],host:req.protocol + 's://' + req.get('host')})
+    res.render("eventElems/clouds.pug", {event:events[0],user:req.session.user,host:req.protocol + 's://' + req.get('host')})
 })
 router.get("/userEvent/player", async (req, res)=>{
     if(!req.session.user)
@@ -72,7 +77,7 @@ router.get("/userEvent/player", async (req, res)=>{
     if(events.length==0)
         events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
 
-    res.render("eventElems/player.pug", {event:events[0],host:req.protocol + 's://' + req.get('host')})
+    res.render("eventElems/player.pug", {event:events[0],user:req.session.user,host:req.protocol + 's://' + req.get('host')})
 })
 
 
@@ -84,7 +89,7 @@ router.get("/userEvent/baro", async (req, res)=>{
     if(events.length==0)
         events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
 
-    res.render("eventElems/baro.pug", {event:events[0],host:req.protocol + 's://' + req.get('host')})
+    res.render("eventElems/baro.pug", {event:events[0],user:req.session.user,host:req.protocol + 's://' + req.get('host')})
 })
 router.get("/userEvent/title", async (req, res)=>{
     if(!req.session.user)
@@ -94,7 +99,7 @@ router.get("/userEvent/title", async (req, res)=>{
     if(events.length==0)
         events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
 
-    res.render("eventElems/title.pug", {event:events[0],host:req.protocol + 's://' + req.get('host')})
+    res.render("eventElems/title.pug", {event:events[0],user:req.session.user,host:req.protocol + 's://' + req.get('host')})
 })
 router.get("/userEvent/settings", async (req, res)=>{
     if(!req.session.user)
@@ -104,7 +109,7 @@ router.get("/userEvent/settings", async (req, res)=>{
     if(events.length==0)
         events=await req.knex("t_events").insert({userid:req.session.user.id},"*")
 
-    res.render("eventElems/settings.pug", {event:events[0],host:req.protocol + 's://' + req.get('host')})
+    res.render("eventElems/settings.pug", {event:events[0],user:req.session.user,host:req.protocol + 's://' + req.get('host')})
 })
 
 
