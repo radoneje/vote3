@@ -951,6 +951,10 @@ textarea.aPlayerInput{
     background-color: var(--backColor);
     color: var(--grayColor);
 }
+.logOut svg{
+    width: 1em;
+    height: auto;
+}
 .logOut:hover{
     color: var(--textColor);
 }
