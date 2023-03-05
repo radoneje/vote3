@@ -55,7 +55,7 @@ block body
                         .half
                             .qItemText {{item.text}}
                         .half
-                            textarea(v-model="item.answer" placeholder="Напишите ответ")
+                            textarea.qAnswerTextarea(v-model="item.answer" placeholder="Напишите ответ")
                     .qItemBtnGroup.flex.left
                         .qItemBtn(v-bind:class="{active:item.isMod}" v-on:click="toogleQ( 'isMod', item)")
                             span(v-if="item.isMod") Принят

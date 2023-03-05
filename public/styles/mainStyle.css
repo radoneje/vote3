@@ -970,3 +970,10 @@ textarea.aPlayerInput{
 .LoginBtn{
     margin-right: var(--pad);
 }
+.qAnswerTextarea{
+    width: 100%;
+    padding: calc(var(--pad)/2);
+    box-sizing: border-box;
+    border: 1px solid var(--borderColor);
+    border-radius: var(--rad);
+}
