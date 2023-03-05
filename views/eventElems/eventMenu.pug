@@ -1,7 +1,8 @@
 .eventMenu
     .mainTower
         .flex.center
-            .logOut !{user.i} !{user.f}&emsp;
+            .logOut.flex.center
+                div !{user.i} !{user.f}&emsp;
                 include ../svg/logout.svg
             .eventHead  Cтраница вашего мероприятия:&emsp;
                 a(href=host+"/c/u/"+event.short target="_blank") #{host}/c/u/#{event.short}
