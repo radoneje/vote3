@@ -976,4 +976,5 @@ textarea.aPlayerInput{
     box-sizing: border-box;
     border: 1px solid var(--borderColor);
     border-radius: var(--rad);
+    height: 6em;
 }
