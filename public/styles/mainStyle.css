@@ -958,3 +958,6 @@ textarea.aPlayerInput{
     background-color: var(--hoverColor);
     color:var(--backColor)
 }
+.logOut:hover svg path{
+    stroke:var(--backColor);
+}
