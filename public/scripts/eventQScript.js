@@ -299,6 +299,9 @@ let app = new Vue({
         changeFile: async function (item) {
             await post("/api/file/", item);
         },
+        changeQ: async function (item) {
+            await post("/api/q/", item);
+        },
         toogleAnswer: async function (column, item) {
             //if(column=="isComplite" && !item.isActive)
             //    return;
