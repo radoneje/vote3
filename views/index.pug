@@ -12,23 +12,23 @@ block body
               include svg/yalogo.svg
 
 
-
-        .regBoxTile.mb.emailInput Войти через email:
-        .inputGroup.emailInput
-          .errorMessaage Ошибка email
-          input.regBoxEmail#regBoxEmail(type="email" value=email)
-          input.regBoxButton#regBoxButton(type="button" value="Вход")
-        .regBoxTile.mb.codeInput Введите код, прислынный на ваш email:
-        .inputGroup.codeInput
-          .errorMessaage Код неверный, попробуйте еще раз
-          input.regBoxEmail#regBoxCode(type="text" value=email)
-          input.regBoxButton#regBoxConfirmButton(type="button" value="Проверить")
-        .regBoxTile.mb(onclick="regVK()") Войти через VK
-          .mb3
-            include svg/vk.svg
-        .regBoxTile.mb(onclick="regYA()") Войти через Yandex
-          .mb3
-            include svg/yalogo.svg
+        //.comment
+          .regBoxTile.mb.emailInput Войти через email:
+          .inputGroup.emailInput
+            .errorMessaage Ошибка email
+            input.regBoxEmail#regBoxEmail(type="email" value=email)
+            input.regBoxButton#regBoxButton(type="button" value="Вход")
+          .regBoxTile.mb.codeInput Введите код, прислынный на ваш email:
+          .inputGroup.codeInput
+            .errorMessaage Код неверный, попробуйте еще раз
+            input.regBoxEmail#regBoxCode(type="text" value=email)
+            input.regBoxButton#regBoxConfirmButton(type="button" value="Проверить")
+          .regBoxTile.mb(onclick="regVK()") Войти через VK
+            .mb3
+              include svg/vk.svg
+          .regBoxTile.mb(onclick="regYA()") Войти через Yandex
+            .mb3
+              include svg/yalogo.svg
       else
         .regBoxTile.mb.emailInput Вы зарегистрированы как #{user.i} #{user.f} #{user.email}.
         input.btn(type="button" onclick="document.location.href='/userEvent/'" value="Перейти к мероприятию")
