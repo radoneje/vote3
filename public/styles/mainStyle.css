@@ -961,3 +961,8 @@ textarea.aPlayerInput{
 .logOut:hover svg path{
     stroke:var(--backColor);
 }
+.logonBtn svg{
+    height: 20px;
+    width: auto;
+    margin-right: var(--pad);
+}
