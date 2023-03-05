@@ -4,6 +4,15 @@ block body
   .mainTower
     .regBox
       if !user
+        .mt Войти через:
+          .flex.left
+            .mb3(onclick="regVK()")
+              include svg/vk.svg
+            .mb3(onclick="regYa()")
+              include svg/yalogo.svg
+
+
+
         .regBoxTile.mb.emailInput Войти через email:
         .inputGroup.emailInput
           .errorMessaage Ошибка email
