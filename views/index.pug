@@ -32,8 +32,8 @@ block body
       else
         .regBoxTile.mb.emailInput Вы зарегистрированы как <br><b> #{user.i} #{user.f} </b>
         .flex.left
-          input.btn(type="button" onclick="document.location.href='/userEvent/'" value="Перейти к мероприятию")
-          input.btn(type="button" onclick="document.location.href='/logout/'" value="Выйти")
+          input.btn.LoginBtn(type="button" onclick="document.location.href='/userEvent/'" value="Перейти к мероприятию")
+          input.btn.LoginBtn(type="button" onclick="document.location.href='/logout/'" value="Выйти")
 
 
 

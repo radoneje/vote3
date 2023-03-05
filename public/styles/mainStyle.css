@@ -86,7 +86,7 @@ textarea{
     color: var(--backColor);
     border:1px solid var(--hoverColor);
     border-right: none;
-    padding: var(--pad);
+    padding:calc(var(--pad)/2) var(--pad);
     cursor: pointer;
     border-radius: var(--rad);
 }
@@ -966,4 +966,7 @@ textarea.aPlayerInput{
     width: auto;
     margin-right: var(--pad);
     cursor: pointer;
+}
+.LoginBtn{
+    margin-right: var(--pad);
 }
