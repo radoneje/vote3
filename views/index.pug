@@ -30,8 +30,10 @@ block body
             .mb3
               include svg/yalogo.svg
       else
-        .regBoxTile.mb.emailInput Вы зарегистрированы как #{user.i} #{user.f} #{user.email}.
-        input.btn(type="button" onclick="document.location.href='/userEvent/'" value="Перейти к мероприятию")
+        .regBoxTile.mb.emailInput Вы зарегистрированы как <br><b> #{user.i} #{user.f} </b>
+        .flex.left
+          input.btn(type="button" onclick="document.location.href='/userEvent/'" value="Перейти к мероприятию")
+          input.btn(type="button" onclick="document.location.href='/logout/'" value="Выйти")
 
 
 
