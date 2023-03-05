@@ -119,6 +119,7 @@ router.post("/q", async (req, res) => {
         delete req.body.f;
         delete req.body.i;
         delete req.body.o;
+        delete req.body.short;
         let r=await req.knex("t_q").update(req.body,"*").where({id:id});
         res.json(r[0])
     } catch (e) {
