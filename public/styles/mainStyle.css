@@ -965,4 +965,5 @@ textarea.aPlayerInput{
     height: 20px;
     width: auto;
     margin-right: var(--pad);
+    cursor: pointer;
 }
