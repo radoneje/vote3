@@ -167,7 +167,7 @@ router.get("/verify", async (req, res)=>{
 
     req.session.user=users[0];
 
-    res.render("index", {user:req.session.user})
+    res.retirect("/")
 })
 
 router.get("/", async (req, res)=>{
@@ -213,7 +213,7 @@ router.get("/verifyYandex", async (req, res)=> {
 
     req.session.user=users[0];
 
-    res.render("index", {user:req.session.user})
+    res.retirect("/")
 
 });
 
