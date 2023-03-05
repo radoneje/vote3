@@ -15,11 +15,7 @@ router.get("/userEvent", async (req, res)=>{
 
   res.redirect("/userEvent/title")
 })
-router.get("/userEvent/:section", async (req, res)=>{
 
-
-    res.redirect("/userEvent/title")
-})
 router.get("/userEvent/links", async (req, res)=>{
   if(!req.session.user)
     res.sendStatus(404)
