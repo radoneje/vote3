@@ -948,12 +948,13 @@ textarea.aPlayerInput{
     font-size: .8em;
     cursor: pointer;
     background-color: var(--backColor);
-    color: var(--grayColor);
+    color: var(--textColor);
 }
 .logOut svg{
     width: 1em;
     height: auto;
 }
 .logOut:hover{
-    color: var(--textColor);
+    background-color: var(--hoverColor);
+    color:var(--backColor)
 }
