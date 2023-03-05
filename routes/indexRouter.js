@@ -8,6 +8,13 @@ const __dirname = path.dirname(__filename);
 import axios from 'axios';
 
 
+router.get("/logout", async (req, res)=>{
+
+    req.session.user=null;
+
+
+    res.redirect("/")
+})
 router.get("/userEvent", async (req, res)=>{
 
   if(!req.session.user)
