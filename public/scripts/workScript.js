@@ -314,6 +314,7 @@ let app = new Vue({
                         }
                     })
                     this.players=this.players.filter(qq => qq.isActive)
+                    console.log("this.players",this.players)
                 }
                 if(r.baros) {
                     r.baros.forEach(item => {
