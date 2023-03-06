@@ -450,6 +450,8 @@ let app = new Vue({
                                     qq.text = item.text;
                                     qq.isMod = item.isMod;
                                     qq.isDeleted = item.isDeleted;
+                                    qq.likes = item.likes;
+                                    qq.unlikes = item.unlikes;
                                 }
                             })
                         }
