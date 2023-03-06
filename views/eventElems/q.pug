@@ -58,11 +58,11 @@ block body
                                 .likeBox.flex.left
                                     .likeIcon
                                         include ../svg/likeHand.svg
-                                    .likeCount {{q.likes}}
+                                    .likeCount {{item.likes}}
                                 .likeBox.flex.left
                                     .likeIcon.UnlikeIcon
                                             include ../svg/likeHand.svg
-                                    .likeCount {{q.unlikes}}
+                                    .likeCount {{item.unlikes}}
                         .half
                             textarea.qAnswerTextarea(v-model="item.answer" placeholder="Напишите ответ" v-on:change="changeQ( item)")
                     .qItemBtnGroup.flex.left
