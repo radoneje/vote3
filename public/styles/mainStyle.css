@@ -980,6 +980,7 @@ textarea.aPlayerInput{
 }
 .likeIcon svg{
     height: 23px;
+    width: auto;
 }
 .UnlikeIcon svg{
     transform: scale(-1, -1);
