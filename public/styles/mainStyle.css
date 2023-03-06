@@ -978,3 +978,9 @@ textarea.aPlayerInput{
     border-radius: var(--rad);
     height: 6em;
 }
+.likeIcon svg{
+    height: 23px;
+}
+.UnlikeIcon svg{
+    transform: scale(-1, -1);
+}
