@@ -985,3 +985,9 @@ textarea.aPlayerInput{
 .UnlikeIcon svg{
     transform: scale(-1, -1);
 }
+.likeIcon{
+    margin-right: calc(var(--pad)/2);
+}
+.likeBox{
+    margin-right: calc(var(--pad)/2);
+}

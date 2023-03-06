@@ -55,10 +55,14 @@ block body
                         .half
                             .qItemText {{item.text}}
                             .qLikeWr.flex.left
-                                .likeIcon
-                                    include ../svg/likeHand.svg
-                                .likeIcon.UnlikeIcon
-                                    include ../svg/likeHand.svg
+                                .likeBox.flex.left
+                                    .likeIcon
+                                        include ../svg/likeHand.svg
+                                    .likeCount {{q.likes}}
+                                .likeBox.flex.left
+                                    .likeIcon.UnlikeIcon
+                                            include ../svg/likeHand.svg
+                                        .likeCount {{q.unlikes}}
                         .half
                             textarea.qAnswerTextarea(v-model="item.answer" placeholder="Напишите ответ" v-on:change="changeQ( item)")
                     .qItemBtnGroup.flex.left
